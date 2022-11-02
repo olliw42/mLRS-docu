@@ -1,4 +1,4 @@
-# mLRS Documentation: Parameters (v0.2.04) #
+# mLRS Documentation: Parameters (v0.3.00) #
 
 ([back to main page](../README.md))
 
@@ -62,7 +62,7 @@ Can be "transp.", "mavlink".
 
 #### Tx Snd RadioStat #### 
 Determines if a MAVLink RADIO_STATUS message is emitted by the Tx module, and what txbuf mechanism is used. Effective only when "Tx Ser Link Mode" = "mavlink". 
-Can be "off", "on", "on w txbuf".
+Can be "default", "w txbuf", "px4".
 
 #### Tx Buzzer #### 
 Enables the buzzer, and selects what data it reflects. 
@@ -107,7 +107,9 @@ Can be "transp.", "mavlink".
 
 #### Rx Snd RadioStat #### 
 Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and what txbuf mechanism is used. Effective only when "Rx Ser Link Mode" = "mavlink". 
-Can be "off", "on", "on w txbuf". A RADIO_LINK_FLOW_CONTROLis emitted if "Rx Snd RcChannel" is set to "rc channels".
+Can be "default", "w txbuf", "px4". 
+
+If "Rx Snd RcChannel" is set to "rc channels", then RADIO_LINK_FLOW_CONTROL messages are emitted instead of RADIO_STATUS.
 
 #### Rx Snd RcChannel #### 
 Determines if a MAVLink RC_CHANNELS_OVERRIDE or RADIO_RC_CHANNELS message is emitted by the receiver. Effective only when "Rx Ser Link Mode" = "mavlink". 
