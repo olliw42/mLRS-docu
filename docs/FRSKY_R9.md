@@ -38,6 +38,17 @@ The R9MX receiver is a good choice for mLRS. The transmit power may however be s
 
 The wiring is similar to the ExpressLRS docs found in the link below. Different from the ExpressLRS project the SBUS-out-pin is available.
 
+| Pin | Use
+| --- | ---
+| Pin 1 GND | Ground
+| Pin 2 VIN | Power 3.5-10V
+| Pin 5 SBUS OUT | RC Output
+| CH1 | Debug Tx
+| CH2 | Serial Rx
+| CH3 | Serial Tx
+| CH4 | Buzzer
+
+
 ### As Tx Module ###
 
 The R9MX receiver can also be used as mLRS Tx module. Due to hardware restrictions it is somewhat limited but can be a great choice for special applications. 
@@ -63,8 +74,9 @@ In these docs it is suggested to download and use the "ST-LINK Utility" software
 - STM32CubeProgrammer/STM32CubeIDE is quite nasty with which ST-Link programmer is used. It seems ST really wants their tools to only work well with "original" or legit ST-Link programmers. I especially had significant issues with getting the cheap and widely available 8$ STLinkV2 usb-stick-like clones to work with STM32CubeProgrammer/STM32CubeIDE, and they then never worked reliably or to my satisfaction.
 - It seems it can happen that ST-LINK Utility and STM32CubeProgrammer/STM32CubeIDE do not like each other.
 - STM32CubeProgrammer runs per default at a high SWD frequency, like 4000 kHz, on the 8$ STLinkV2 clones. Setting the frequency manually to 480 kHz and using short wires to the device makes it work more reliable.
+- STM32CubeProgrammer will likely require new firmware be installed on the ST-Link V2 or compatible device via the "Firmware upgrade" button" the first time it is used.
 
-So, if you use or want to use one of these 8$ STLinkV2 usb-stick-like clones, you probably want to install ST-LINK Utility and see how that works for you. You will then (likely) not be able to flash from STM32CubeIDE, but have to go with the ST-LINK Utility.
+So, if you use or want to use one of these 8$ STLinkV2 usb-stick-like clones and you have trouble with STM32Cube, you probably want to install ST-LINK Utility and see how that works for you. You will then (likely) not be able to flash from STM32CubeIDE, but have to go with the ST-LINK Utility.
 
 If anyone has deeper/better insight into the STM32CubeProgrammer/STM32CubeIDE vs ST-LINK Utility and cheap STLinkV2 programmer clones issues, please help :)
 
