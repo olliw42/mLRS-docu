@@ -44,8 +44,8 @@ The wiring is similar to the ExpressLRS docs found in the link below. Different 
 | Pin 2 VIN | Power 3.5-10V
 | Pin 5 SBUS OUT | RC Output
 | CH1 | Debug Tx
-| CH2 | Serial Rx
-| CH3 | Serial Tx
+| CH2 | Serial Tx
+| CH3 | Serial Rx
 | CH4 | Buzzer
 
 
