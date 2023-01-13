@@ -43,10 +43,10 @@ The wiring is similar to the ExpressLRS docs found in the link below. Different 
 | Pin 1 GND | Ground
 | Pin 2 VIN | Power 3.5-10V
 | Pin 5 SBUS OUT | RC Output
-| CH1 | Debug Tx
+| CH1 | Buzzer
 | CH2 | Serial Tx
 | CH3 | Serial Rx
-| CH4 | Buzzer
+| CH4 | Debug Tx
 
 
 ### As Tx Module ###
