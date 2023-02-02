@@ -2,7 +2,6 @@
 
 Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 
-
 ## Content ##
 
 ### General ###
@@ -21,3 +20,4 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - Using [SeeedStudio Wio-E5 Boards](docs/SEEEDSTUDIO_WIO_E5.md)
 
 ### Firmware/Build Notes ###
+- [STM32CubeIDE Outputs](docs/CUBEIDE_OUTPUTS.md)
