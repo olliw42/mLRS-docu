@@ -85,3 +85,7 @@ The external RF module needs to be set up for CRSF protocol with 400K baud rate.
 In EdgeTX/OpenTX go to MDL->TELEMETRY and select "Discover new sensors". You should see sensors appearing, mLRS currently supports 27 sensors.
 
 Install the Yaapu app exactly as described in its wiki. Note: You need to install the dev version, the stable release version will not work. You can check if all is good by running the "Yaapu Debug CRSF" script in SYS->TOOLS.
+
+## Demo
+
+[![mLRS: Yaapu Telemetry App and wireless Mavlink forwarding to MissionPlanner](https://img.youtube.com/vi/m1uDWcwcknM/0.jpg)](https://www.youtube.com/watch?v=m1uDWcwcknM "mLRS: Yaapu Telemetry App and wireless Mavlink forwarding to MissionPlanner")
