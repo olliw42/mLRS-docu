@@ -37,7 +37,7 @@ Configuration of a serial port for MAVLink v2:
 - SERIALx_OPTIONS = 0
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 
-Configuration of MAVLink Stream Rates:
+Configuration of MAVLink stream rates:
 
 - SRx_EXT_STATS = 1 (or 2 if you use 31 Hz or 50 Hz mode)
 - SRx_EXTRA1 = 4
@@ -71,13 +71,12 @@ These configurations are not strictly neccesary, but recommended for ArduPilot:
 - Rx Ser Baudrate = 57600
 - Rx Ser Link Mode = mavlink
 - Rx Snd RadioStat:
-    - mLRS version >= 0.3.13 = ardu_1
-    - mLRS version <  0.3.13 = w txbuf
+    - mLRS version >= v0.3.13 = ardu_1
+    - mLRS version <  v0.3.13 = w txbuf
 
 Notes:
 
 - It is strongly recommended to set Rx Ser Baudrate to 57600.
-
 
 ## Yaapu Telemetry App Setup for EdgeTX/OpenTX
 
