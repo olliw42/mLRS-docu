@@ -26,7 +26,7 @@ Notes:
 
 Notes: 
 - There are situations in which it can be useful to enable "Tx Snd RadioStat", but you should do this only if you know what you are doing. You really should not need it for this setup.
-- It is recommended to set Tx Ser Baudrate to 57600, as that will provide enough speed for all three operation modes (19 Hz, 31Hz, 50Hz).
+- The choice of Tx Ser Baudrate is uncritical and really determined by the user's need. It is recommended to set it to 57600 or higher, as this will provide enough speed for all operation modes (19 Hz, 31 Hz, 50 Hz).
 
 
 ## ArduPilot Setup
@@ -35,7 +35,7 @@ Configuration of a serial port for MAVLink v2:
 
 - SERIALx_BAUD = 57 
 - SERIALx_OPTIONS = 0
-- SERIALx_PROTOCOL = 2
+- SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 
 Configuration of MAVLink Stream Rates:
 
@@ -54,7 +54,7 @@ For my Matek H743 board the configuration is:
 
 - BRD_ALT_CONFIG = 1
 - RC_PROTOCOLS = 536 or 512
-- SERIAL7_BAUD = Irrelevant (baud rate is determined by ArduPilot)
+- SERIAL7_BAUD = irrelevant (baud rate is determined by ArduPilot)
 - SERIAL7_OPTIONS = 0
 - SERIAL7_PROTOCOL = 23
 
@@ -73,6 +73,10 @@ These configurations are not strictly neccesary, but recommended for ArduPilot:
 - Rx Snd RadioStat:
     - mLRS version >= 0.3.13 = ardu_1
     - mLRS version <  0.3.13 = w txbuf
+
+Notes:
+
+- It is strongly recommended to set Rx Ser Baudrate to 57600.
 
 
 ## Yaapu Telemetry App Setup for EdgeTX/OpenTX
