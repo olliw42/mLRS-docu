@@ -47,3 +47,15 @@ Reloads the current parameter values from the Tx and, if connected, the receiver
 #### stats; #### 
 Starts streaming some statistics. Terminate by sending any character.
 
+<br/>
+For some Tx modules further commands can be available:
+
+#### ptser; #### 
+Enters the serial passthrough mode (communication between CLI port and the Serial port).
+
+#### espboot; #### 
+Reboots a ESP32 wifi module and enters the serial passthrough mode. For flashing the ESP32 module through the CLI port.
+
+#### sepcli; #### 
+Set GPIO0 to low and enters the serial passthrough mode. For accessing the CLI of the ESP32 module.
+
