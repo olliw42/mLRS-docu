@@ -56,6 +56,6 @@ Enters the serial passthrough mode (communication between CLI port and the Seria
 #### espboot; #### 
 Reboots a ESP32 wifi module and enters the serial passthrough mode. For flashing the ESP32 module through the CLI port.
 
-#### sepcli; #### 
+#### espcli; #### 
 Set GPIO0 to low and enters the serial passthrough mode. For accessing the CLI of the ESP32 module.
 
