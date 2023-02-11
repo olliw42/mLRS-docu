@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module) is a highly attractive module for building mLRS equipment. SeeedStudio provides a number of boards which are based on this module, and which are quite interesting hardware for mLRS. However, these boards also provide some inconveniences since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
+The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module) is a highly attractive module for building mLRS equipment. SeeedStudio provides a number of boards which are based on this module, and which are quite interesting hardware for mLRS. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
 
 ## SeeedStudio Wio-E5 mini dev Board as Tx Module ##
@@ -16,10 +16,16 @@ Connections (name in respect to board print-ons):
 - serial: Tx2,Rx2
 - in: Rx1
 - com/cli: Tx,Rx and on-board USB plug
-- debug: D0
-- led green: A4 (solder a green LED with resistor > 300 Ohms to GND)
+- debug: A3
+- led green: SDA (solder a green LED with resistor > 300 Ohm to GND, you can use pad SCL as intermediate post)
 - led red: on-board
 - button: on-board (BOOT button)
+
+If you want to communicate with the radio via the JR bay (pin 5 in the JR bay), then you in addition need to do:
+
+- solder a resistor (1 kOhm) between pads DO and RX1
+- solder a Schottky diode (e.g. BAT42) between pads RX1 and TX1 (RX1 - |<| - TX1, |<| represents the diode)
+- use firmware with DEVICE_HAS_JRPIN5 enabled
 
 ### As Rx Module ###
 
