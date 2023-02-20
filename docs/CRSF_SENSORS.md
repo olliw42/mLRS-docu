@@ -34,7 +34,7 @@ Num | Datapoint   | Description                                                 
 24  | TRSP        | Transmitter RSSI percentage                                             | mLRS        |
 25  | TRSS*       | Transmitter RSSI                                                        | mLRS        |
 26  | TSNR        | Transmitter signal to noise ratio                                       | mLRS        |
-27  | VSpd        | Vertical speed (barometer)                                              | FC          |
+27  | VSpd        | Vertical speed                                                          | FC          |
 28  | Yaw         | FC yaw angle                                                            | FC          |
 
 \*RSSI values are displayed as positive values, e.g. -85dBm is displayed as 85dBm  
