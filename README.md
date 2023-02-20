@@ -12,6 +12,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 
 ### Setups ###
 - Setup for [CRSF Telemetry and Yaapu Telemetry App](docs/CRSF.md)
+    - [CRSF Sensors](docs/CRSF_SENSORS.md)
 - Setup for [MAVLink for OpenTx](docs/MAVLINK_FOR_OPENTX.md)
 - Basic setup for [SBus Radios](docs/BASIC_SETUP.md)
 
