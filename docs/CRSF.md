@@ -82,7 +82,7 @@ Notes:
 
 The external RF module needs to be set up for CRSF protocol with 400K baud rate. In EdgeTX/OpenTX, this is done in MDL->MODEL SETUP.
 
-In EdgeTX/OpenTX go to MDL->TELEMETRY and select "Discover new sensors". You should see sensors appearing; mLRS currently supports 28 sensors. ([CRSF Sensors](docs/CRSF_SENSORS.md))
+In EdgeTX/OpenTX go to MDL->TELEMETRY and select "Discover new sensors". You should see sensors appearing; mLRS currently provides 28 sensors. ([CRSF Sensors](docs/CRSF_SENSORS.md))
 
 Install the Yaapu app exactly as described in its wiki. Note: You need to install the dev version, the stable release version will not work. You need to enable the CRSF support: Start the "Yaapu Config" script in SYS->TOOLS, and set "enable CRSF support: yes" (then repower the radio). You can check if all is good by running the "Yaapu Debug CRSF" script in SYS->TOOLS.
 
