@@ -2,98 +2,51 @@
 
 ([back to main page](../README.md))
 
-This page describes how to set up a mLRS system for EdgeTX/OpenTX radios, so that you get the usual CRSF telemetry sensors and can use the Yaapu telemetry app.
+This page describes how to set up an mLRS system for EdgeTX/OpenTX radios, so you get CRSF telemetry sensors and can use the Yaapu telemetry app.
 
-Two things need to be done:
-1. The mLRS Tx module needs to be put into "CRSF mode"
-2. The flight controller needs to be set up to send a MAVLink stream with the desired MAVLink messages
+Three steps need to be completed:
+1. The transmitter needs to be setup for the CRSF protocol
+2. The mLRS Tx module needs to be put into "CRSF mode"
+3. The flight controller needs to be set up to send a MAVLink stream with the desired MAVLink messages
 
 Optional but recommended steps:
+- Install the mLRS Lua script on the transmitter to configure Tx and Rx parameters: [Lua Script](LUA.md)
 - Set the receiver into "mavlink mode" (described below)
-- Install the mLRS LUA script on the radio which allows you to change the Tx and Rx parameters: ([LUA Script](LUA.md))
+- Install the Yaapu app (described below)
 
 Notes:
 - Any radio which supports the CRSF protocol should work, this should include many brands besides EdgeTX/OpenTX radios.
 - An ArduPilot flight controller is assumed. PX4 and INAV needs to be tested and validated.
 
+## Transmitter Setup
+
+In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP and configure the external RF module for CRSF protocol with 400K baud rate. 
 
 ## mLRS Tx Module Setup
+
+Set the following parameters using the CLI or Lua script:
 
 - Tx Ch Source = crsf
 - Tx Ser Dest = serial or serial2 (not mbridge!)
 - Tx Ser Link Mode = mavlink
-- Tx Snd RadioStat = off (yes, off!)
-
-Notes: 
-- There are situations in which it can be useful to enable "Tx Snd RadioStat", but you should do this only if you know what you are doing. You really should not need it for this setup.
-- The choice of Tx Ser Baudrate is uncritical and really determined by the user's need. It is recommended to set it to 57600 or higher, as this will provide enough speed for all operation modes (19 Hz, 31 Hz, 50 Hz).
-
 
 ## ArduPilot Setup
 
-Configuration of a serial port for MAVLink v2:
-
-- SERIALx_BAUD:
-    - 57 for 31Hz, 50Hz
-    - 38 for 19Hz
-- SERIALx_OPTIONS = 4096 (ignore commands from GCS to change stream rates)
+- SERIALx_BAUD = 57 
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 
-Configuration of MAVLink stream rates:
-
-- SRx_ADSB = 0
-- SRx_EXT_STAT:
-    - 2 for 31Hz, 50Hz
-    - 1 for 19Hz
-- SRx_EXTRA1 = 4
-- SRx_EXTRA2 = 4
-- SRx_EXTRA3:
-    - 2 for 31Hz, 50Hz
-    - 1 for 19Hz
-- SRx_PARAMS = 50
-- SRx_POSITION = 2
-- SRx_RAW_CTRL = 0
-- SRx_RAW_SENS = 0 (for most of you this one is unimportant, keep it at 0 unless you really need it)
-- SRx_RC_CHAN = 0
-
-Configuration for CRSF receiver:
-
-Setting up ArduPilot for a CRSF receiver can be a bit tricky, as it depends on the flight controller board, and might need BRD_ALT_CONFIG to be set to a specific value. It is best to consult the ArduPilot wiki, or ask in the ArduPilot discussion channel.
-
-For my Matek H743 board the configuration is:
-
-- BRD_ALT_CONFIG = 1
-- RC_PROTOCOLS = 536 or 512
-- SERIAL7_BAUD = irrelevant (baud rate is determined by ArduPilot)
-- SERIAL7_OPTIONS = 0
-- SERIAL7_PROTOCOL = 23
-
-Notes:
-- There are more RC options available in the 'RC_OPTIONS' parameter. ([ArduPilot Docs for RC_OPTIONS](https://ardupilot.org/plane/docs/parameters.html#rc-options-rc-options)) 
-- RSSI_TYPE should be set to either 3 or 5. ([ArduPilot Docs for RSSI_TYPE](https://ardupilot.org/plane/docs/parameters.html#rssi-type-rssi-type)) 
-
+Note: Further ArduPilot specific parameters are detailed here: [ArduPilot Setup](docs/ARDUPILOT.md)
 
 ## mLRS Rx Module Setup
 
-These configurations are not strictly neccesary, but recommended for ArduPilot:
+Set the following parameters using the CLI or Lua script:
 
 - Rx Out Mode = crsf
-- Rx Ser Baudrate:
-    - 57600 for 31Hz, 50Hz
-    - 38400 for 19Hz
 - Rx Ser Link Mode = mavlink
-- Rx Snd RadioStat:
-    - mLRS version >= v0.3.13 = ardu_1
-    - mLRS version <  v0.3.13 = w txbuf
 
-Notes:
-
-- These baud rates are recommended as they enable MAVFTP to be used for parameter download
-- Rx Ser Baudrate must match the baudrate configured on the flight controller serial port
+Note: Rx Ser Baudrate must match the baudrate that the FC's MAVLink serial port is configured for.
 
 ## Yaapu Telemetry App Setup for EdgeTX/OpenTX
-
-The external RF module needs to be set up for CRSF protocol with 400K baud rate. In EdgeTX/OpenTX, this is done in MDL->MODEL SETUP.
 
 In EdgeTX/OpenTX go to MDL->TELEMETRY and select "Discover new sensors". You should see sensors appearing; mLRS currently provides 28 sensors. ([CRSF Sensors](docs/CRSF_SENSORS.md))
 
