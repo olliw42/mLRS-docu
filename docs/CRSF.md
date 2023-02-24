@@ -33,18 +33,28 @@ Notes:
 
 Configuration of a serial port for MAVLink v2:
 
-- SERIALx_BAUD = 57 
-- SERIALx_OPTIONS = 0
+- SERIALx_BAUD:
+    - 57 for 31Hz, 50Hz
+    - 38 for 19Hz
+- SERIALx_OPTIONS = 4096 (ignore commands from GCS to change stream rates)
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 
 Configuration of MAVLink stream rates:
 
-- SRx_EXT_STATS = 1 (or 2 if you use 31 Hz or 50 Hz mode)
+- SRx_ADSB = 0
+- SRx_EXT_STAT:
+    - 2 for 31Hz, 50Hz
+    - 1 for 19Hz
 - SRx_EXTRA1 = 4
 - SRx_EXTRA2 = 4
-- SRx_EXTRA3 = 1 (or 2 if you use 31 Hz or 50 Hz mode)
+- SRx_EXTRA3:
+    - 2 for 31Hz, 50Hz
+    - 1 for 19Hz
+- SRx_PARAMS = 50
 - SRx_POSITION = 2
+- SRx_RAW_CTRL = 0
 - SRx_RAW_SENS = 0 (for most of you this one is unimportant, keep it at 0 unless you really need it)
+- SRx_RC_CHAN = 0
 
 Configuration for CRSF receiver:
 
@@ -68,7 +78,9 @@ Notes:
 These configurations are not strictly neccesary, but recommended for ArduPilot:
 
 - Rx Out Mode = crsf
-- Rx Ser Baudrate = 57600
+- Rx Ser Baudrate:
+    - 57600 for 31Hz, 50Hz
+    - 38400 for 19Hz
 - Rx Ser Link Mode = mavlink
 - Rx Snd RadioStat:
     - mLRS version >= v0.3.13 = ardu_1
@@ -76,7 +88,8 @@ These configurations are not strictly neccesary, but recommended for ArduPilot:
 
 Notes:
 
-- It is strongly recommended to set Rx Ser Baudrate to 57600.
+- These baud rates are recommended as they enable MAVFTP to be used for parameter download
+- Rx Ser Baudrate must match the baudrate configured on the flight controller serial port
 
 ## Yaapu Telemetry App Setup for EdgeTX/OpenTX
 
