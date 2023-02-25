@@ -1,42 +1,10 @@
-# mLRS Documentation: ArduPilot Setup #
+# mLRS Documentation: ArduPilot Systems #
 
 ([back to main page](../README.md))
 
-([back to CRSF page](CRSF.md))
+Further ArduPilot information is detailed below:
 
-Further parameters can be configured to optimize peformance for ArduPilot and the RF mode (19Hz, 31Hz or 50Hz) selected.
-
-## mLRS Rx Module Setup
-
-- Rx Snd RadioStat= ardu_1
-
-## Serial Port Setup
-
-- SERIALx_BAUD:
-    - 57 for 31Hz, 50Hz
-    - 38 for 19Hz
-- SERIALx_OPTIONS = 4096 (ignore commands from GCS to change stream rates)
-
-Note: These baud rates enable MAVFTP parameter download
-
-## Stream Rates Setup
-
-- SRx_ADSB = 0
-- SRx_EXT_STAT:
-    - 2 for 31Hz, 50Hz
-    - 1 for 19Hz
-- SRx_EXTRA1 = 4
-- SRx_EXTRA2 = 4
-- SRx_EXTRA3:
-    - 2 for 31Hz, 50Hz
-    - 1 for 19Hz
-- SRx_PARAMS = 50
-- SRx_POSITION = 2
-- SRx_RAW_CTRL = 0
-- SRx_RAW_SENS = 0 (for most of you this one is unimportant, keep it at 0 unless you really need it)
-- SRx_RC_CHAN = 0
-
-## CRSF Receiver Setup
+## CRSF Receiver
 
 Setting up ArduPilot for a CRSF receiver can be a bit tricky, as it depends on the flight controller board, and might need BRD_ALT_CONFIG to be set to a specific value. It is best to consult the ArduPilot wiki, or ask in the ArduPilot discussion channel.
 
@@ -49,7 +17,24 @@ For my Matek H743 board the configuration is:
 - SERIAL7_OPTIONS = 0
 - SERIAL7_PROTOCOL = 23
 
-Notes:
+Notes & References:
 - [ArduPilot Docs for RC_PROTOCOLS](https://ardupilot.org/plane/docs/parameters.html#rc-protocols-rc-protocols-enabled)
 - [ArduPilot Docs for RSSI_TYPE](https://ardupilot.org/plane/docs/parameters.html#rssi-type-rssi-type)
 - There are more RC options available in the 'RC_OPTIONS' parameter. ([ArduPilot Docs for RC_OPTIONS](https://ardupilot.org/plane/docs/parameters.html#rc-options-rc-options)) 
+
+## Stream Rates
+
+When configuring the SRx parameters, the 'x' does not correspond to the serial port number  but to the number of serial ports set to MAVLink.
+
+Example with MAVLink on serial ports 0 and 3:
+
+- Serial 0: SR0_
+- Serial 3: SR1_
+
+To understand how stream rates affect the MAVLink data rate, you can use this [calculator](https://ardupilot.org/plane/docs/parameters.html#rc-options-rc-options)  (requires Python).
+
+## mLRS Rx Module
+
+- Rx Snd RadioStat:
+    - ardu_1: optimizes for ArduPilot usage
+    - brad: optimizes for PX4 usage

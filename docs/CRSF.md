@@ -29,22 +29,59 @@ Set the following parameters using the CLI or Lua script:
 - Tx Ch Source = crsf
 - Tx Ser Dest = serial or serial2 (not mbridge!)
 - Tx Ser Link Mode = mavlink
+- Tx Snd RadioStat = off (yes, off!)
+
+Note: The choice of Tx Ser Baudrate is not critical and really determined by the user's need. It is recommended to set it to 57600 or higher, as this will provide enough speed for all operation modes (19 Hz, 31 Hz, 50 Hz).
 
 ## ArduPilot Setup
 
-- SERIALx_BAUD = 57 
-- SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
+A basic setup is described in this section which should get one started, further ArduPilot information is available here: [ArduPilot Systems](docs/ARDUPILOT.md)
 
-Note: Further ArduPilot specific parameters are detailed here: [ArduPilot Setup](docs/ARDUPILOT.md)
+### MAVLink Serial Port
+
+- SERIALx_BAUD:
+    - 57 for 31Hz, 50Hz
+    - 38 for 19Hz
+- SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
+- SERIALx_OPTIONS = 4096 (ignore commands from GCS to change stream rates)
+
+Note: These baud rates enable MAVFTP parameter download
+
+### Stream Rates
+
+- SRx_ADSB = 0
+- SRx_EXT_STAT:
+    - 2 for 31Hz, 50Hz
+    - 1 for 19Hz
+- SRx_EXTRA1 = 4
+- SRx_EXTRA2 = 4
+- SRx_EXTRA3:
+    - 2 for 31Hz, 50Hz
+    - 1 for 19Hz
+- SRx_PARAMS = 50
+- SRx_POSITION = 2
+- SRx_RAW_CTRL = 0
+- SRx_RAW_SENS = 0 (for most of you this one is unimportant, keep it at 0 unless you really need it)
+- SRx_RC_CHAN = 0
+
+### CRSF Receiver
+
+- RC_PROTOCOLS = 536 or 512
+- RSSI_TYPE = 3 or 5
+- SERIALx_BAUD = irrelevant (baud rate is determined by ArduPilot)
+- SERIALx_OPTIONS = 0
+- SERIALx_PROTOCOL = 23
 
 ## mLRS Rx Module Setup
 
 Set the following parameters using the CLI or Lua script:
 
 - Rx Out Mode = crsf
+- Rx Ser Baudrate (must match the baudrate that the FC's MAVLink serial port is configured for):
+    - 57600 for 31Hz, 50Hz
+    - 38400 for 19Hz
 - Rx Ser Link Mode = mavlink
-
-Note: Rx Ser Baudrate must match the baudrate that the FC's MAVLink serial port is configured for.
+- Rx Snd RadioStat= ardu_1
 
 ## Yaapu Telemetry App Setup for EdgeTX/OpenTX
 
