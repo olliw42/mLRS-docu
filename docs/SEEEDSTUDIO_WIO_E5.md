@@ -34,7 +34,7 @@ Connections (name in respect to board print-ons):
 - serial: Tx2,Rx2
 - out: Tx1
 - debug: Tx, and on-board USB plug
-- led green: A4 (solder a green LED with resistor > 300 Ohms to GND)
+- led green: SDA (solder a green LED with resistor > 300 Ohm to GND, you can use pad SCL as intermediate post)
 - led red: on-board
 - button: on-board (BOOT button)
 
