@@ -17,6 +17,9 @@ Depending on the device, some parameters are not available for configuration or 
 #### h; or help; or ?; #### 
 Lists the available commands, with a very brief description
 
+#### v; #### 
+Prints the device name and firmware version for the Tx module and, if connected, also the receiver.
+
 #### pl; #### 
 Lists all parameters and their settings. Comment: The parameters of the receiver are listed only if a receiver is connected, else a warning messages is printed.
 
