@@ -52,7 +52,7 @@ Note: 'x' refers to the serial port of your flight controller
 
 - SRx_ADSB = 0
 - SRx_EXT_STAT:
-    - 2 for 3 1Hz, 50 Hz
+    - 2 for 31 Hz, 50 Hz
     - 1 for 19 Hz
 - SRx_EXTRA1 = 4
 - SRx_EXTRA2 = 4
@@ -75,7 +75,9 @@ Note: 'x' refers to the MAVLink stream number of the serial port
 - SERIALx_OPTIONS = 0
 - SERIALx_PROTOCOL = 23
 
-Note: 'x' refers to the serial port of your flight controller
+Notes:
+- 'x' refers to the serial port of your flight controller
+- If these settings do not work, more details are available on the [ArduPilot Systems](docs/ARDUPILOT.md) page
 
 ## mLRS Rx Module Setup
 

@@ -8,6 +8,12 @@ Further ArduPilot information is detailed below:
 
 Setting up ArduPilot for a CRSF receiver can be a bit tricky, as it depends on the flight controller board, and might need BRD_ALT_CONFIG to be set to a specific value. It is best to consult the ArduPilot wiki, or ask in the ArduPilot discussion channel.
 
+CRSF works best on serial ports that have DMA enabled.  This is only a concern on F4 and F7 flight controllers.  The serial ports that have DMA enabled can be found by using the MAVProxy command 'ftp get @SYS/uarts.txt -', an '*' will denote serial ports that have DMA enabled (example for Matek F405 VTOL):
+
+<img src="images/Serial_DMA.png">
+
+If you use a serial port without DMA, Mission Planner will show the message 'CRSF: running on non-DMA serial port' in the 'Messages' section.
+
 For my Matek H743 board the configuration is:
 
 - BRD_ALT_CONFIG = 1
@@ -18,6 +24,7 @@ For my Matek H743 board the configuration is:
 - SERIAL7_PROTOCOL = 23
 
 Notes & References:
+- [ArduPilot Docs for CRSF](https://ardupilot.org/copter/docs/common-tbs-rc.html)
 - [ArduPilot Docs for RC_PROTOCOLS](https://ardupilot.org/plane/docs/parameters.html#rc-protocols-rc-protocols-enabled)
 - [ArduPilot Docs for RSSI_TYPE](https://ardupilot.org/plane/docs/parameters.html#rssi-type-rssi-type)
 - There are more RC options available in the 'RC_OPTIONS' parameter. ([ArduPilot Docs for RC_OPTIONS](https://ardupilot.org/plane/docs/parameters.html#rc-options-rc-options)) 
