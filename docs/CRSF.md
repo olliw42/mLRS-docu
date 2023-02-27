@@ -36,7 +36,7 @@ Note: The choice of Tx Ser Baudrate is not critical and really determined by the
 
 ## ArduPilot Setup
 
-A basic setup is described in this section which should get one started, further ArduPilot information is available here: [ArduPilot Systems](docs/ARDUPILOT.md)
+A basic setup is described in this section which should get one started, further ArduPilot information is available here: [ArduPilot Systems](ARDUPILOT.md)
 
 ### MAVLink Serial Port
 
@@ -77,7 +77,7 @@ Note: 'x' refers to the MAVLink stream number of the serial port
 
 Note: 'x' refers to the serial port of your flight controller used for CRSF
 
-**If these settings do not work, more details are available on the [ArduPilot Systems](docs/ARDUPILOT.md) page**
+**If these settings do not work, more details are available on the [ArduPilot Systems](ARDUPILOT.md) page**
 
 ## mLRS Rx Module Setup
 
