@@ -75,8 +75,7 @@ Note: 'x' refers to the MAVLink stream number of the serial port
 - SERIALx_OPTIONS = 0
 - SERIALx_PROTOCOL = 23
 
-Notes:
-- 'x' refers to the serial port of your flight controller
+Note: 'x' refers to the serial port of your flight controller
 
 **If these settings do not work, more details are available on the [ArduPilot Systems](docs/ARDUPILOT.md) page**
 
