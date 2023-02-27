@@ -46,7 +46,7 @@ A basic setup is described in this section which should get one started, further
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 - SERIALx_OPTIONS = 4096 (ignore commands from GCS to change stream rates)
 
-Note: 'x' refers to the serial port of your flight controller
+Note: 'x' refers to the serial port of your flight controller used for MAVLink
 
 ### Stream Rates
 
@@ -75,7 +75,7 @@ Note: 'x' refers to the MAVLink stream number of the serial port
 - SERIALx_OPTIONS = 0
 - SERIALx_PROTOCOL = 23
 
-Note: 'x' refers to the serial port of your flight controller
+Note: 'x' refers to the serial port of your flight controller used for CRSF
 
 **If these settings do not work, more details are available on the [ArduPilot Systems](docs/ARDUPILOT.md) page**
 
