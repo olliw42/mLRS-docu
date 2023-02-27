@@ -77,7 +77,8 @@ Note: 'x' refers to the MAVLink stream number of the serial port
 
 Notes:
 - 'x' refers to the serial port of your flight controller
-- If these settings do not work, more details are available on the [ArduPilot Systems](docs/ARDUPILOT.md) page
+
+**If these settings do not work, more details are available on the [ArduPilot Systems](docs/ARDUPILOT.md) page**
 
 ## mLRS Rx Module Setup
 
