@@ -42,7 +42,7 @@ A basic setup is described in this section which should get one started, further
 
 - SERIALx_BAUD:
     - 57 for 31 Hz, 50 Hz
-    - 38 for 19 Hz
+    - 38 for 19 Hz (57 works well too, only parameter download is slower)
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 - SERIALx_OPTIONS = 4096 (ignore commands from GCS to change stream rates)
 
@@ -84,9 +84,9 @@ Note: 'x' refers to the serial port of your flight controller used for CRSF
 Set the following parameters using the CLI or Lua script:
 
 - Rx Out Mode = crsf
-- Rx Ser Baudrate (must match the baudrate that the FC's MAVLink serial port is configured for):
+- Rx Ser Baudrate (must match the baudrate that the flight controller's MAVLink serial port is configured for):
     - 57600 for 31 Hz, 50 Hz
-    - 38400 for 19 Hz
+    - 38400 for 19 Hz (or 57600, see SERIALx_BAUD)
 - Rx Ser Link Mode = mavlink
 - Rx Snd RadioStat= ardu_1
 
