@@ -1,4 +1,4 @@
-# mLRS Documentation: Parameters (v0.3.00) #
+# mLRS Documentation: Parameters (v0.3.18) #
 
 ([back to main page](../README.md))
 
@@ -6,13 +6,13 @@ Brief description of the parameters for configuring mLRS. The parameters fall in
 
 1. Parameters common to Tx and Rx. These need to be configured to be identical for Tx and Rx, in order for a connection to be possible. For an arbitrary receiver, this can be achieved by binding the receiver to the Tx module.
 
-2. Parameters for the Tx module (Tx parameters).
+2. Parameters only for the Tx module (Tx parameters).
 
-3. Parameters for the receiver (Rx parameters).
+3. Parameters only for the receiver (Rx parameters).
 
-The parameters are configured via the Tx module, by using the CLI or the mLRS configuration Lua script. If no receiver is connected, then the Rx parameters cannot be configured.
+All parameters are configured via the Tx module, by using the CLI or the mLRS configuration Lua script. If no receiver is connected, then the Rx parameters cannot be configured.
 
-Depending on the specific mLRs hardware, it may happen that not all parameters are available, as well as that not all options for a parameter are available.
+Depending on the specific mLRS hardware, it may happen that not all parameters are available, as well as that not all options for a parameter are available.
 
 ## Common Parameters ##
 
@@ -62,7 +62,7 @@ Can be "transp.", "mavlink".
 
 #### Tx Snd RadioStat #### 
 Determines if a MAVLink RADIO_STATUS message is emitted by the Tx module, and what txbuf mechanism is used. Effective only when "Tx Ser Link Mode" = "mavlink". 
-Can be "default", "w txbuf", "px4".
+Can be "off", "1 Hz".
 
 #### Tx Buzzer #### 
 Enables the buzzer, and selects what data it reflects. 
@@ -107,7 +107,7 @@ Can be "transp.", "mavlink".
 
 #### Rx Snd RadioStat #### 
 Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and what txbuf mechanism is used. Effective only when "Rx Ser Link Mode" = "mavlink". 
-Can be "default", "w txbuf", "px4". 
+Can be "ardu_1", "brad".
 
 If "Rx Snd RcChannel" is set to "rc channels", then RADIO_LINK_FLOW_CONTROL messages are emitted instead of RADIO_STATUS.
 
@@ -122,5 +122,3 @@ Can be "off", "LP".
 #### Rx FS Ch1 - Rx FS Ch16 #### 
 Sets the rc channel value upon a failsafe. Effective only when "Rx FailSafe Mode" = "by cnf". 
 Can be a value between -120% and +120%.
-
-
