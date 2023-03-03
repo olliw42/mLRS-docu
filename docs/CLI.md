@@ -4,9 +4,9 @@
 
 Besides the mLRS Lua configuration script, which however is not available for all radio transmitters, the CLI is the main method for configuring the mLRS transmitter and receiver modules.
 
-The CLI commands consist of one or more strings, each separated by a blank, and a terminating character. The terminating character can be '\r' (carriage return), '\n' (line feed), ',' or ';'. The CR/LF line feed handling depends very much on the terminal which is being used and its configuration. Hence, it is good practice to just always terminate the CLI commands with, e.g., a ';' (this will be done for the commands listed below). The CLI is case sensitive, except for parameter names. That is, the commands need to be entered lower case, but parameter names can be enterd with any letter case.
+The CLI commands consist of one or more strings, each separated by a blank, and a terminating character. The terminating character can be '\r' (carriage return), '\n' (line feed), ',' or ';'. The CR/LF line feed handling depends very much on the terminal which is being used and its configuration. Hence, it is good practice to just always terminate the CLI commands with, e.g., a ';' (this will be done for the commands listed below). The CLI is case sensitive, except for parameter names. That is, the commands need to be entered lower case, but parameter names can be entered with any letter case.
 
-The serial settings are: baudrate 115200 bps, 1 stop bit, no parity.
+The serial settings are: baudrate 115200 bps, 8 data bits, no parity, 1 stop bit (8N1).
 
 Depending on the device, some parameters are not available for configuration or cannot be changed. For instance, for a device which doesn't support a buzzer the parameter "Buzzer" is not available, and for a device which doesn't support diversity the parameter "Diversity" cannot be changed. Parameters which are not available are displayed with a value "-", and parameters which cannot be changed are displayed with the current selection but a comment "(unchangeable)" in addition.
 
@@ -21,10 +21,10 @@ Lists the available commands, with a very brief description
 Prints the device name and firmware version for the Tx module and, if connected, also the receiver.
 
 #### pl; #### 
-Lists all parameters and their settings. Comment: The parameters of the receiver are listed only if a receiver is connected, else a warning messages is printed.
+Lists all parameters and their settings. Comment: The parameters of the receiver are listed only if a receiver is connected, else a warning message is printed.
 
 #### pl c; #### 
-Lists the shared parameters, i.e., those parameters which are common for both the Tx module and the receiver, and their settings. Comment: If a receiver is not connected, a warning messages is printed.
+Lists the shared parameters, i.e., those parameters which are common for both the Tx module and the receiver, and their settings. Comment: If a receiver is not connected, a warning message is printed.
 
 #### pl tx; #### 
 Lists the parameters of the Tx module and their settings. 
@@ -48,9 +48,15 @@ Starts the binding. Comment: Only the Tx module is set into binding mode. The re
 Reloads the current parameter values from the Tx and, if connected, the receiver.
 
 #### stats; #### 
-Starts streaming some statistics. Terminate by sending any character.
+Starts streaming statistics. Terminate by sending any character. Format:
 
-<br/>
+<table>
+    <tr>
+        <td>Tx link quality</td><td>Rx valid frames link quality</td><td>Rx link quality</td><td>Rx last RSSI</td>
+        <td>Rx RSSI</td><td>Rx SNR</td><td>Uplink bytes per second</td><td>Downlink bytes per second</td>
+    </tr>
+</table>
+
 For some Tx modules further commands can be available:
 
 #### ptser; #### 
