@@ -52,8 +52,9 @@ Starts streaming statistics. Terminate by sending any character. Format:
 
 <table>
     <tr>
-        <td>Tx link quality</td><td>Rx valid frames link quality</td><td>Rx link quality</td><td>Rx last RSSI</td>
-        <td>Rx RSSI</td><td>Rx SNR</td><td>Uplink bytes per second</td><td>Downlink bytes per second</td>
+        <td>Tx LQ</td><td>Tx valid frames LQ</td><td>Rx LQ</td>
+        <td>Tx RSSI</td><td>Rx RSSI</td><td>Tx SNR</td>
+        <td>Tx bytes/sec transmitted</td><td>Tx bytes/sec received</td>
     </tr>
 </table>
 
