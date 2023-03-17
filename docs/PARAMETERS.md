@@ -1,4 +1,4 @@
-# mLRS Documentation: Parameters (v0.3.18) #
+# mLRS Documentation: Parameters (v0.3.19) #
 
 ([back to main page](../README.md))
 
@@ -106,8 +106,8 @@ Selects how the serial data stream is processed.
 Can be "transp.", "mavlink".
 
 #### Rx Snd RadioStat #### 
-Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and what txbuf mechanism is used. Effective only when "Rx Ser Link Mode" = "mavlink". 
-Can be "ardu_1", "brad".
+Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and which flow control algorithm is used. Effective only when "Rx Ser Link Mode" = "mavlink". 
+Can be "off", "ardu_1", "meth_b".
 
 If "Rx Snd RcChannel" is set to "rc channels", then RADIO_LINK_FLOW_CONTROL messages are emitted instead of RADIO_STATUS.
 
