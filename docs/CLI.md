@@ -69,3 +69,5 @@ Reboots a ESP32 wifi module and enters the serial passthrough mode. For flashing
 #### espcli; #### 
 Set GPIO0 to low and enters the serial passthrough mode. For accessing the CLI of the ESP32 module.
 
+#### systemboot; #### 
+Invokes the system bootloader.
