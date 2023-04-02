@@ -1,17 +1,17 @@
-# mLRS Documentation: EBYTE E77 MBL Series Boards #
+# mLRS Documentation: EBYTE E77 MBL Boards #
 
 ([back to main page](../README.md))
 
-EBYTE MBL Series Boards are an option for building mLRS equipment. These boards use the EBYTE E77 module and are available in both 868/915 MHz and 433 MHz/70 cm versions. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
+EBYTE E77 MBL Boards are an option for building mLRS equipment. These boards use the EBYTE E77 module and are available in both 868/915 MHz and 433 MHz/70 cm versions. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
-## EBYTE E77 MBL Series Boards ##
+## EBYTE E77 MBL Boards ##
 
-- [E77-400MBL-01 (Available on AliExpress)](https://www.cdebyte.com/products/E77-400MBL-01)
-- [E77-900MBL-01 (Available on AliExpress)](https://www.cdebyte.com/products/E77-900MBL-01)
+- [E77-400MBL-01](https://www.cdebyte.com/products/E77-400MBL-01)
+- [E77-900MBL-01](https://www.cdebyte.com/products/E77-900MBL-01)
 
 ### As Tx Module ###
 
-Connections (name in respect to board print-ons, otherwise please refer to graphics):
+Connections (name in respect to board print-ons, otherwise please refer to graphic):
 
 - serial: TxD,RxD and on-board USB plug
 - com/cli: TxD,RxD and on-board USB plug
@@ -22,13 +22,13 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 Notes:
 
 - To enable the cli, hold down button2 during boot
-- To communicate with the radio via the JR bay (pin 5 in the JR bay), you need to solder a Schottky diode (e.g. BAT42) between pads PB7 and PB6 (PB7 - |<| - PB6, |<| represents the diode)
+- To communicate with the radio via the JR bay (pin 5 in the JR bay), you need to solder a Schottky diode (e.g. BAT42) between pads PB7 and PB6 (see graphic)
 
 <img src="images/mLRS-EByte-E77-MBLKit-Tx.jpg" width="900px">
 
 ### As Rx Module ###
 
-Connections (name in respect to board print-ons, otherwise please refer to graphics):
+Connections (name in respect to board print-ons, otherwise please refer to graphic):
 
 - serial: TxD,RxD and on-board USB plug
 - out: PB6
