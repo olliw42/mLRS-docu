@@ -23,6 +23,7 @@ Notes:
 
 - To enable the cli, hold down button2 during boot
 - To communicate with the radio via the JR bay (pin 5 in the JR bay), you need to solder a Schottky diode (e.g. BAT42) between pads PB7 and PB6 (see graphic)
+- To enter system bootloader, hold down the BOOT button during power up
 
 <img src="images/mLRS-EByte-E77-MBLKit-Tx.jpg" width="900px">
 
@@ -35,5 +36,9 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 - debug: PA5
 - button1: BOOT
 - button2: BIND
+
+Notes:
+
+- To enter system bootloader, hold down the BOOT button during power up
 
 <img src="images/mLRS-EByte-E77-MBLKit-Rx.jpg" width="900px">
