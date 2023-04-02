@@ -23,9 +23,12 @@ Connections (name in respect to board print-ons):
 
 If you want to communicate with the radio via the JR bay (pin 5 in the JR bay), then you in addition need to do:
 
-- solder a resistor (1 kOhm) between pads DO and RX1
 - solder a Schottky diode (e.g. BAT42) between pads RX1 and TX1 (RX1 - |<| - TX1, |<| represents the diode)
-- use firmware with DEVICE_HAS_JRPIN5 enabled
+- use firmware with DEVICE_HAS_JRPIN5 enabled (this is the default)
+
+Example Wiring:
+
+<img src="images/E5_Mini_Tx_Wiring.png" width="600px">
 
 ### As Rx Module ###
 
