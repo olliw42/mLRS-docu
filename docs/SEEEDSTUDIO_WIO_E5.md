@@ -23,9 +23,12 @@ Connections (name in respect to board print-ons):
 
 If you want to communicate with the radio via the JR bay (pin 5 in the JR bay), then you in addition need to do:
 
-- solder a resistor (1 kOhm) between pads DO and RX1
 - solder a Schottky diode (e.g. BAT42) between pads RX1 and TX1 (RX1 - |<| - TX1, |<| represents the diode)
-- use firmware with DEVICE_HAS_JRPIN5 enabled
+- use firmware with DEVICE_HAS_JRPIN5 enabled (this is the default)
+
+Example Wiring using JR bay with CRSF:
+
+<img src="images/E5_Mini_Tx_Wiring.png" width="800px">
 
 ### As Rx Module ###
 
@@ -37,6 +40,10 @@ Connections (name in respect to board print-ons):
 - led green: SDA (solder a green LED with resistor > 300 Ohm to GND, you can use pad SCL as intermediate post)
 - led red: on-board
 - button: on-board (BOOT button)
+
+Example Wiring:
+
+<img src="images/E5_Mini_Rx_Wiring.png" width="800px">
 
 ## SeeedStudio Grove Wio-E5 Board as Rx Module ##
 
@@ -58,3 +65,7 @@ Connections (name in respect to board print-ons):
 - button: BOOT solder pad (solder a button between the BOOT pad and GND)
 
 Note: There is no convenient way to connect a green LED, and you thus won't get the information conveyed by it (like connection). It is possible to work around this but it would require some more sophisticated solder work.
+
+Example Wiring:
+
+<img src="images/E5_Grove_Rx_Wiring.png" width="800px">
