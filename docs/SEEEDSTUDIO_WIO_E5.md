@@ -41,6 +41,10 @@ Connections (name in respect to board print-ons):
 - led red: on-board
 - button: on-board (BOOT button)
 
+Example Wiring:
+
+<img src="images/E5_Mini_Rx_Wiring.png" width="800px">
+
 ## SeeedStudio Grove Wio-E5 Board as Rx Module ##
 
 https://wiki.seeedstudio.com/Grove_LoRa_E5_New_Version/
@@ -61,3 +65,7 @@ Connections (name in respect to board print-ons):
 - button: BOOT solder pad (solder a button between the BOOT pad and GND)
 
 Note: There is no convenient way to connect a green LED, and you thus won't get the information conveyed by it (like connection). It is possible to work around this but it would require some more sophisticated solder work.
+
+Example Wiring:
+
+<img src="images/E5_Grove_Rx_Wiring.png" width="800px">
