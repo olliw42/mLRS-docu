@@ -23,5 +23,5 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - Using [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
 
 ### Firmware/Build Notes ###
-- [Custom Targets](docs/CUSTOM_TARGETS.md)
+- [Custom Boards & Targets](docs/CUSTOM_BOARDS_TARGETS.md)
 - [STM32CubeIDE Outputs](docs/CUBEIDE_OUTPUTS.md)
