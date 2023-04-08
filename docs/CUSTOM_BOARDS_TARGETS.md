@@ -23,11 +23,11 @@ There are a number of ways of how to create a target for a custom board, for exa
 The suggested procedure is simple and makes it easier to update the code base by seperating out changes:
  
 1. Identify a target which is close to your new board. Example: The `rx-diy-board01-f103cb` target may be it.
-    1. Note: the only condition when picking a target is that you will need to choose a target which uses the same MCU as your custom board, in this example it is assumed that you're using the STM32F103CBXX on your custom board.
+    - Note: The only condition when picking a target is that you will need to choose a target which uses the same MCU as your custom board, in this example it is assumed that you are using the STM32F103CBXX on your custom board.
 2. Copy the existing target's hal file and rename it to what you want it to be. Example: Copy `/Common/hal/rx-hal-diy-board01-f103cb.h` to `/Common/hal/rx-hal-diy-customboard-f103cb.h`.
 3. In `/Common/hal/hal.h` go to the area where the existing target's hal file is included, comment out the include, and add a line which inlcudes your hal file. Example: Find the line with `#include "rx-hal-diy-board01-f103cb.h"`, replace it with `\\#include "rx-hal-diy-board01-f103cb.h"` and insert a line `#include "rx-hal-diy-customboard-f103cb.h"`.
 4. In `/Common/hal/device_conf.h` go to the area where the existing target is defined, comment out the define of the device name, and add your own define changing the device name to what you want it to be. Example: Find the line with `#ifdef RX_DIY_BOARD01_F103CB`, replace the subsequent line with `\\#define DEVICE_NAME "DIY DualSX F103CB"` and insert a line `#define DEVICE_NAME "My Own Great Board"`
-    1. Note: the device name can be 20 characters max.
+    - Note: The device name can be 20 characters max.
 5. Modify the target's device_conf entry and hal file to match the features of your custom board - further detailed below.
 
 ## Modifying a target
@@ -35,12 +35,12 @@ The suggested procedure is simple and makes it easier to update the code base by
 The codebase has two locations that defines the features and capabilites of a target:
 1. Device Conf
     1. Defines the device name, type (Tx/Rx), Sx chipset, frequencies
-    2. Location: mLRS/mLRS/Common/hal/device_conf.h
+    2. Location: `mLRS/mLRS/Common/hal/device_conf.h`
         
 2. Target Hal
     1. Defines the features, UART assignment and pin mapping
-    2. Location: mLRS/mLRS/Common/hal/TARGET.h
-    3. Available features are listed in hal.h: mLRS/mLRS/Common/hal/hal.h
+    2. Location: `mLRS/mLRS/Common/hal/MY-CUSTOM-TARGET.h`
+    3. Available features are listed in hal.h: `mLRS/mLRS/Common/hal/hal.h`
 
 ## Example - Enabling 433 MHz / 70 cm frequencies
 
@@ -54,8 +54,40 @@ Let's say that you are using the Wio E5 Grove as a receiver and want to use CRSF
 
 <img src="images/E5_Hal_19.png">
 
-Note: The full list of available features are listed in hal.h: mLRS/mLRS/Common/hal/hal.h
+Note: The full list of available features are listed in hal.h which is located at `mLRS/mLRS/Common/hal/hal.h`
 
 ## Example - Reassigning Pins
 
-## Example - Reassign UARTs
+Let's say you want to use a different pin for the button on the E28 G441 receiver.  In this case, you'll need to update line 153 in the hal which defines the button:
+
+<img src="images/E28_G441_Hal_153.png">
+
+Note:  All pin names needs to be prefixed with 'IO_'
+
+## Example - Reassigning UARTs
+
+Let's say that you want to use UART1 (PA9, PA10) for the serial connection and UART3 (PB10, PB11) for debug on the E28 Dual STM32F1 board.  In this case, you'll need to update line 34 to use UART1 and update line 50 to use UART3:
+
+<img src="images/E28_Dual_UART.png">
+
+Notes:
+
+The function of the UART is specified by the letter and is specific to both Tx and Rx:
+
+Tx / Rx | UART   | Function     |                                                   
+------- | ------ | ------------ |
+Tx      | UART   | JR Pin 5     |
+Tx      | UARTB  | Serial       |
+Tx      | UARTC  | COM / CLI    |
+Tx      | UARTD  | Serial 2     |
+Tx      | UARTE  | In           |
+Tx      | UARTF  | Debug        |
+Rx      | UART   | Out          |
+Rx      | UARTB  | Serial       |
+Rx      | UARTC  | Debug        |
+
+If you want to use alternative pins for the UART please refer to the table below:
+
+<img src="images/UART_PINS.png">
+
+For example, if you want to use pins PB6 and PB7 for UART1 on UARTB the correct syntax would be `UARTB_USE_UART1_REMAPPED`
