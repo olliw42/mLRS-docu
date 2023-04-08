@@ -18,7 +18,7 @@ Notes:
 - Any radio which supports the CRSF protocol should work, this should include many brands besides EdgeTX/OpenTX radios.
 - An ArduPilot flight controller is assumed. PX4 and INAV needs to be tested and validated.
 
-<img src="images/mLRS-docu-setup-crsf-telemetry-yaapu-app-01.jpg" width="600px">
+<img src="images/mLRS-docu-setup-crsf-telemetry-yaapu-app-01.jpg" width="800px">
 
 ## Radio Setup
 
