@@ -4,6 +4,33 @@
 
 The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module) is a highly attractive module for building mLRS equipment. SeeedStudio provides a number of boards which are based on this module, and which are quite interesting hardware for mLRS. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
+## Flashing the Modules ##
+
+Important - every time that you power a board you should ensure that there is an antenna connected otherwise you risk damaging the RF section.
+
+### Initial Flashing ###
+
+The first time that you flash the mLRS firmware to either the E5 Mini or E5 Grove you'll have to do the following:
+
+- Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
+- Connect your ST-Link to the 3V3, GND, SWD, and SWCLK pins on the board
+    - The SWD and SWCLK pins are labeled 'DIO' and 'CLK' respectively
+    - Some ST-Link boards provide power and some do not - ensure the E5 is powered
+- Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
+- From the menu on the left select the OB (Option Bytes) tile
+- From the Read Out Protection section, change to AA, select Apply
+    - This will erase the factory firmware
+- From the menu on the left select the Download tile
+- Select the correct firmware in the Download section, click Start Program
+- Power cycle the board, the red LED should blink which indicates that the board is disconnected
+
+### Subsequent Flashing ###
+
+Subsequent flashing can be done in two ways:
+1. Follow the initial flashing process
+    - There is no need to change the read out protection after the initial flash
+2. Boot into the system bootloader using the cli (or Lua)
+    - This enables programming over UART1 (PA9, PA10) or UART2 (PA2, PA3) with a USB<>UART adapter using the Serial connection option in STM32CubeProgrammer
 
 ## SeeedStudio Wio-E5 mini dev Board as Tx Module ##
 
