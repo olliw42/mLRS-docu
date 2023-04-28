@@ -1,4 +1,4 @@
-# mLRS Documentation: Parameters (v0.3.19) #
+# mLRS Documentation: Parameters (v0.3.24) #
 
 ([back to main page](../README.md))
 
@@ -54,15 +54,7 @@ Can be "serial", "mbridge", "serial2"
 
 #### Tx Ser Baudrate #### 
 Baudrate of the serial data stream. Effective only for "Tx Ser Dest" = "serial" or "serial2". 
-Can be "9600", "19200", "38400", "57600", "115200".
-
-#### Tx Ser Link Mode #### 
-Selects how the serial data stream is processed. 
-Can be "transp.", "mavlink".
-
-#### Tx Snd RadioStat #### 
-Determines if a MAVLink RADIO_STATUS message is emitted by the Tx module, and what txbuf mechanism is used. Effective only when "Tx Ser Link Mode" = "mavlink". 
-Can be "off", "1 Hz".
+Can be "9600", "19200", "38400", "57600", "115200", "230400".
 
 #### Tx Buzzer #### 
 Enables the buzzer, and selects what data it reflects. 
@@ -104,6 +96,8 @@ Can be "9600", "19200", "38400", "57600", "115200", "230400".
 #### Rx Ser Link Mode #### 
 Selects how the serial data stream is processed. 
 Can be "transp.", "mavlink".
+
+The setting is also applied to the Tx module.
 
 #### Rx Snd RadioStat #### 
 Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and which flow control algorithm is used. Effective only when "Rx Ser Link Mode" = "mavlink". 

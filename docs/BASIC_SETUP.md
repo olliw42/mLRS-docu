@@ -18,12 +18,7 @@ Note: An ArduPilot flight controller is assumed. For PX4 and iNav it needs to be
 - Tx Ch Source = sbus
 - Tx Ser Dest = serial or serial2 (not mbridge!)
 
-If the serial data stream is MAVLink then it is recommended to set these parameters:
-
-- Tx Ser Link Mode = mavlink
-- Tx Snd RadioStat = off (yes, off!)
-
-If the serial data stream is not MAVLink, then it is better to set "Tx Ser Link Mode" = "transp.".
+If the serial data stream is MAVLink then it is recommended to set the respective parameter in the receiver (see below).
 
 
 ## mLRS Rx Module Setup
@@ -34,10 +29,10 @@ If your flight controller supports CRSF, then it is recommended to choose it, i.
 
 Else set "Rx Out Mode" to "sbus" or "sbus inv".
 
-These configurations are not strictly neccesary, but recommended if the serial data stream is MAVLink:
+These configurations are not strictly neccesary, but highly recommended if the serial data stream is MAVLink:
 
 - Rx Ser Link Mode = mavlink
-- Rx Snd RadioStat = w txbuf
+- Rx Snd RadioStat = ardu_1
 
 
 ## ArduPilot Setup
