@@ -20,19 +20,19 @@ There are a number of ways of how to create a target for a custom board, for exa
 - A simple way would be to identify an existing board which is close to your custom board and modify the entries in this boards hal file.
 - A more advanced way would be to create a new target as you find them for the existing boards. This requires more work and additional skills.
 
-The suggested procedure is simple and makes it easier to update the code base by seperating out changes:
+The suggested procedure is simple and makes it easier to update the code base by separating out changes:
  
 1. Identify a target which is close to your new board. Example: The `rx-diy-board01-f103cb` target may be it.
     - Note: The only condition when picking a target is that you will need to choose a target which uses the same MCU as your custom board, in this example it is assumed that you are using the STM32F103CBXX on your custom board.
 2. Copy the existing target's hal file and rename it to what you want it to be. Example: Copy `/Common/hal/rx-hal-diy-board01-f103cb.h` to `/Common/hal/rx-hal-diy-customboard-f103cb.h`.
-3. In `/Common/hal/hal.h` go to the area where the existing target's hal file is included, comment out the include, and add a line which inlcudes your hal file. Example: Find the line with `#include "rx-hal-diy-board01-f103cb.h"`, replace it with `\\#include "rx-hal-diy-board01-f103cb.h"` and insert a line `#include "rx-hal-diy-customboard-f103cb.h"`.
+3. In `/Common/hal/hal.h` go to the area where the existing target's hal file is included, comment out the include, and add a line which includes your hal file. Example: Find the line with `#include "rx-hal-diy-board01-f103cb.h"`, replace it with `\\#include "rx-hal-diy-board01-f103cb.h"` and insert a line `#include "rx-hal-diy-customboard-f103cb.h"`.
 4. In `/Common/hal/device_conf.h` go to the area where the existing target is defined, comment out the define of the device name, and add your own define changing the device name to what you want it to be. Example: Find the line with `#ifdef RX_DIY_BOARD01_F103CB`, replace the subsequent line with `\\#define DEVICE_NAME "DIY DualSX F103CB"` and insert a line `#define DEVICE_NAME "My Own Great Board"`
     - Note: The device name can be 20 characters max.
 5. Modify the target's device_conf entry and hal file to match the features of your custom board - further detailed below.
 
 ## Modifying a target
 
-The codebase has two locations that defines the features and capabilites of a target:
+The codebase has two locations that defines the features and capabilities of a target:
 1. Device Conf
     1. Defines the device name, type (Tx/Rx), Sx chipset, frequencies
     2. Location: `mLRS/mLRS/Common/hal/device_conf.h`
@@ -44,7 +44,7 @@ The codebase has two locations that defines the features and capabilites of a ta
 
 ## Example - Enabling 433 MHz / 70 cm frequencies
 
-Let's say that you want to use the 433 MHz frequncy bands with the RX DIY E77 Target.  In this case, you'll need to modify the device_conf.h to include these frequencies before building the firmware (can be done by uncommenting lines 226 and 227):
+Let's say that you want to use the 433 MHz frequency bands with the RX DIY E77 Target.  In this case, you'll need to modify the device_conf.h to include these frequencies before building the firmware (can be done by uncommenting lines 226 and 227):
 
 <img src="images/E77_Device_Conf.png">
 
