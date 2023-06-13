@@ -5,9 +5,11 @@
 The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module) is a highly attractive module for building mLRS equipment. SeeedStudio provides a number of boards which are based on this module, and which are quite interesting hardware for mLRS. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
 
-## SeeedStudio Wio-E5 mini dev Board as Tx Module ##
+## SeeedStudio Wio-E5 mini dev Board ##
 
 https://wiki.seeedstudio.com/LoRa_E5_mini/
+
+This board is well suited for building a Tx mLRS module, and - if the somewhat larger weight and size is no concern - also for building a Rx module.
 
 ### As Tx Module ###
 
@@ -45,7 +47,7 @@ Example Wiring:
 
 <img src="images/E5_Mini_Rx_Wiring.png" width="800px">
 
-## SeeedStudio Grove Wio-E5 Board as Rx Module ##
+## SeeedStudio Grove Wio-E5 Board ##
 
 https://wiki.seeedstudio.com/Grove_LoRa_E5_New_Version/
 
