@@ -64,7 +64,7 @@ Note: 'x' refers to the serial port of your flight controller used for MAVLink
 - SRx_POSITION = 2
 - SRx_RAW_CTRL = 0
 - SRx_RAW_SENS = 0 
-- SRx_RC_CHAN = 0
+- SRx_RC_CHAN = 1
 
 Note: 'x' refers to the MAVLink stream number of the serial port 
 
