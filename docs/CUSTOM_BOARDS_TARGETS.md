@@ -20,7 +20,7 @@ There are a number of ways of how to create a target for a custom board, for exa
 - A simple way would be to identify an existing board which is close to your custom board and modify the entries in this boards hal file.
 - A more advanced way would be to create a new target as you find them for the existing boards. This requires more work and additional skills.
 
-The suggested procedure is simple and makes it easier to update the codebase by separating out changes:
+The suggested procedure is simple and makes it easier to update the code base by separating out changes:
  
 1. Identify a target which is close to your new board. Example: The `rx-diy-board01-f103cb` target may be it.
     - Note: The only condition when picking a target is that you will need to choose a target which uses the same MCU as your custom board, in this example it is assumed that you are using the STM32F103CBXX on your custom board.
