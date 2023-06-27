@@ -18,7 +18,7 @@ Notes:
 - Any radio which supports the CRSF protocol should work, this should include many brands besides EdgeTX/OpenTX radios.
 - An ArduPilot flight controller is assumed. PX4 and INAV needs to be tested and validated.
 
-<img src="images/mLRS-docu-setup-crsf-telemetry-yaapu-app-01.jpg" width="800px">
+<img src="images/mLRS-docu-setup-crsf-telemetry-yaapu-app-02.jpg" width="800px">
 
 ## Radio Setup
 
@@ -29,10 +29,9 @@ In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP and configure the external RF mod
 Set the following parameters using the CLI or Lua script:
 
 - Tx Ch Source = crsf
-- Tx Ser Baudrate = 57600
+- Tx Ser Baudrate = 115200
 - Tx Ser Dest = serial or serial2 (not mbridge!)
-- Tx Ser Link Mode = mavlink
-- Tx Snd RadioStat = off (yes, off!)
+- Tx Snd RadioStat = off
 
 Note: The choice of Tx Ser Baudrate is not critical and really determined by the user's need. It is recommended to set it to 57600 or higher, as this will provide enough speed for all operation modes (19 Hz, 31 Hz, 50 Hz).
 
@@ -65,7 +64,7 @@ Note: 'x' refers to the serial port of your flight controller used for MAVLink
 - SRx_POSITION = 2
 - SRx_RAW_CTRL = 0
 - SRx_RAW_SENS = 0 
-- SRx_RC_CHAN = 0
+- SRx_RC_CHAN = 1
 
 Note: 'x' refers to the MAVLink stream number of the serial port 
 
