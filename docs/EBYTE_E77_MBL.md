@@ -42,3 +42,35 @@ Notes:
 - To enter system bootloader, hold down button1 during boot
 
 <img src="images/mLRS-EByte-E77-MBLKit-Rx.jpg" width="900px">
+
+## Flashing the Modules ##
+
+**Important: Every time that you power a board you should ensure that there is an antenna connected otherwise you risk damaging the RF section.**
+
+### Initial Flashing ###
+
+The first time that you flash the mLRS firmware to an E77 MBL board you'll have to do the following:
+
+- Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
+- Connect your ST-Link to the 3V3, GND, SWD, and SWCLK pins on the board
+    - Refer to the diagrams above
+    - Some ST-Link boards provide power and some do not - ensure the E77 MBL board is powered
+- Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
+- From the menu on the left select the Download tile
+- Select the correct firmware in the Download section, click Start Program
+- Power cycle the board, the red LED should blink which indicates that the board is disconnected
+
+Notes:
+
+If you are unable to to flash due to readout protection, perform the following steps after connecting to the device:
+- From the menu on the left select the OB (Option Bytes) tile
+- From the Read Out Protection section, change to AA, select Apply
+    - This will erase the current firmware
+
+### Subsequent Flashing ###
+
+Subsequent flashing can be done in two ways:
+1. Follow the initial flashing process
+2. Boot into the system bootloader using the boot button, cli, lua or the OLED display
+    - This enables programming over the USB port which is connected to UART2 (PA2, PA3)
+    - Alternatively, use UART1 (PA9, PA10) with a USB-TTL adapter and the Serial connection option in STM32CubeProgrammer
