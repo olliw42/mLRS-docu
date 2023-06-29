@@ -38,7 +38,7 @@ Example with MAVLink on serial ports 0 and 3:
 - Serial 0: SR0_
 - Serial 3: SR1_
 
-To understand how stream rates affect the MAVLink data rate, you can use this [calculator](https://ardupilot.org/plane/docs/parameters.html#rc-options-rc-options)  (requires Python).
+To understand how stream rates affect the MAVLink data rate, you can use this [calculator](https://github.com/ArduPilot/pymavlink/blob/master/tools/mavtelemetry_datarates.py)  (requires Python).
 
 ## mLRS Rx Module
 
