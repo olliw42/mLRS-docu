@@ -62,7 +62,7 @@ The first time that you flash the mLRS firmware to an E77 MBL board you'll have 
 
 Notes:
 
-If you're unable to to flash due to readout protection, perform the following steps after connecting to the device
+If you are unable to to flash due to readout protection, perform the following steps after connecting to the device:
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
     - This will erase the current firmware
