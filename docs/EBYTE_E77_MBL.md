@@ -4,7 +4,7 @@
 
 EBYTE E77 MBL Boards are an option for building mLRS equipment. These boards use the EBYTE E77 module and are available in both 868/915 MHz and 433 MHz/70 cm versions. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
-**Important: If you are planning to use the SMA connector, ensure that a 0 ohm resistor is populated as multiple users have reported that it is not present by default.  Refer to the red square next to the SMA connector in the diagrams below for the location.**
+**Important: If you are planning to use the SMA connector for the antenna, ensure that a 0 ohm resistor is populated.  Multiple users have reported that it is not present by default.  Refer to the red square next to the SMA connector in the diagrams below for the location.**
 
 ## EBYTE E77 MBL Boards ##
 
