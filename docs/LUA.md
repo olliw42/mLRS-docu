@@ -2,13 +2,15 @@
 
 ([back to main page](../README.md))
 
-The mLRS configuration Lua script provides the most convenient approach to set the Tx and Rx module's configuration settings.
+The mLRS configuration lua script provides the most convenient approach to set the Tx and Rx module's configuration settings.
 
-It works on OpenTx and EdgeTx radios with 480x272 color screen.
+The lua script works on both OpenTx and EdgeTx radios.  There are two different versions of the lua script which depends on your radio's display:
+1. If your radio has a 480x272 color screen (e.g. Jumper T16, Radiomaster TX16S) then use the "mLRS.lua" file
+2. If your radio has a 128x64 black and white screen (e.g. Radiomaster Zorro) then use the "mLRS-bw.lua" file
 
-Two things need to be done:
+Two things need to be done to use the lua script:
 
-1. The lua script file "mLRS.lua" located in the "lua" folder should be copied to the SD card of the radio into the "SCRIPTS/TOOLS" folder. Follow the common tutorials for how to do this.
+1. The lua script "mLRS.lua" or "mLRS-bw.lua" located in the "lua" folder should be copied to the SD card of the radio into the "SCRIPTS/TOOLS" folder. Follow the common tutorials for how to do this.
 
 2. The CRSF or mBridge protocol should be selected for the external RF module. Follow the common tutorials for how to do this.
 
