@@ -6,9 +6,9 @@ The mLRS configuration Lua script provides the most convenient approach to set t
 
 The Lua script works on both OpenTx and EdgeTx radios.  There are two different versions of the Lua script which depends on your radio's display:
 1. If your radio has a 480x272 color screen (e.g. Jumper T16, Radiomaster TX16S) then use the "mLRS.lua" file
-2. If your radio has a 128x64 black and white screen (e.g. Radiomaster Zorro) then use the "mLRS-bw.lua" file
+2. If your radio has a black and white screen (e.g. Frsky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
 
-Note: The Lua script for radios with a 128x64 black and white screen is limited in functionality and only allows for the BindPhrase, Mode, TxPwr, RxPwr, and RxOutMode parameters to be set.
+Note: The Lua script for radios with a black and white screen is limited in functionality and only allows for the BindPhrase, Mode, TxPwr, RxPwr, and RxOutMode parameters to be set.
 
 Two things need to be done to use the Lua script:
 
