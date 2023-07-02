@@ -4,15 +4,19 @@
 
 The mLRS configuration Lua script provides the most convenient approach to set the Tx and Rx module's configuration settings.
 
-It works on OpenTx and EdgeTx radios with 480x272 color screen.
+The Lua script works on both OpenTx and EdgeTx radios.  There are two different versions of the Lua script which depends on your radio's display:
+1. If your radio has a 480x272 color screen (e.g. Jumper T16, Radiomaster TX16S) then use the "mLRS.lua" file
+2. If your radio has a black and white screen (e.g. Frsky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
 
-Two things need to be done:
+Note: The Lua script for radios with a black and white screen is limited in functionality and only allows for the BindPhrase, Mode, TxPwr, RxPwr, and RxOutMode parameters to be set.
 
-1. The lua script file "mLRS.lua" located in the "lua" folder should be copied to the SD card of the radio into the "SCRIPTS/TOOLS" folder. Follow the common tutorials for how to do this.
+Two things need to be done to use the Lua script:
+
+1. The Lua script "mLRS.lua" or "mLRS-bw.lua" located in the "lua" folder should be copied to the SD card of the radio into the "SCRIPTS/TOOLS" folder. Follow the common tutorials for how to do this.
 
 2. The CRSF or mBridge protocol should be selected for the external RF module. Follow the common tutorials for how to do this.
 
-You should then be able to run the lua script by going to SYS->TOOLS in the radio, and selecting the tool "mLRS Configurator".
+You should then be able to run the Lua script by going to SYS->TOOLS in the radio, and selecting the tool "mLRS Configurator".
 
 Note: For the script to work in the first place, the Tx module must have been set up for CRSF or mBrdige mode, by setting the parameter "Tx Ch Source" to  "crsf" or "mbridge" respectively. Since firmware version v0.2.13 "crsf" is the default setting, and the script thus should work with a fresh flash. Otherwise the CLI needs to be invoked and this parameter be set accordingly, as described in [CLI Commands](CLI.md)
 
