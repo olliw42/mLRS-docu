@@ -4,9 +4,22 @@
 
 EBYTE E77 MBL Boards are an option for building mLRS equipment. These boards use the EBYTE E77 module and are available in both 868/915 MHz and 433 MHz/70 cm versions. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
-Frequency Bands: 868 MHz/915 MHz or 433 MHz/70 cm (depending on module) <br>
-max. RF Output Power: 22 dBm (158 mW) <br>
-Weight: 9.35 grams without antenna
+<table>
+  <tbody>
+    <tr>
+      <td>Frequency Bands</td>
+      <td>868 MHz/915 MHz (E77-900MBL-01) or 433 MHz/70 cm (E77-400MBL-01)</td>
+    </tr>
+    <tr>
+      <td>max. RF Output Power</td>
+      <td>22 dBm (158 mW)</td>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td>9.35 grams without antenna</td>
+    </tr>
+  </tbody>
+</table>
 
 **Important: If you are planning to use the SMA connector for the antenna, ensure that a 0 Ohm resistor is populated. Multiple users have reported that it is not present on their modules. Refer to the red square next to the SMA connector in the diagrams below for the location.**
 

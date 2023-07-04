@@ -4,8 +4,18 @@
 
 The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module) is a highly attractive module for building mLRS equipment. SeeedStudio provides a number of boards which are based on this module, and which are quite interesting hardware for mLRS. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
-Frequency Bands: 868 MHz/915 MHz <br>
-max. RF Output Power: 22 dBm (158 mW)
+<table>
+  <tbody>
+    <tr>
+      <td>Frequency Bands</td>
+      <td>868 MHz/915 MHz</td>
+    </tr>
+    <tr>
+      <td>max. RF Output Power</td>
+      <td>22 dBm (158 mW)</td>
+    </tr>
+  </tbody>
+</table>
 
 ## SeeedStudio Wio-E5 mini dev Board ##
 

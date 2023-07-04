@@ -6,8 +6,18 @@ The Frsky R9M transmitter module and R9MX receiver are commercially available an
 
 Comment: mLRS also supports the R9MM receiver. However, flashing the R9MM with ST-Link is really tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads. You really should consider using the R9MX receiver instead.
 
-Frequency Bands: 868 MHz or 915 MHz (depending on the model) <br>
-max. RF Output Power: 30 dBm (1 W) for R9M, and 17 dBm (50 mW) for R9MM, R9MX
+<table>
+  <tbody>
+    <tr>
+      <td>Frequency Bands</td>
+      <td>868 MHz/915 MHz (depending on the model)</td>
+    </tr>
+    <tr>
+      <td>max. RF Output Power</td>
+      <td>30 dBm (1 W) for R9M, and 17 dBm (50 mW) for R9MM, R9MX</td>
+    </tr>
+  </tbody>
+</table>
 
 ## R9M Tx Module ##
 
