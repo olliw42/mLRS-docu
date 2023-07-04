@@ -16,12 +16,12 @@ The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC
     </tr>
       <tr>
       <td>Weight</td>
-      <td>E5 Mini: ~8 grams without antenna</td>
+      <td>Wio-E5 Mini: ~8 grams without antenna</td>
     </tr>
   </tbody>
 </table>
 
-## SeeedStudio Wio-E5 mini dev Board ##
+## SeeedStudio Wio-E5 Mini dev Board ##
 
 https://wiki.seeedstudio.com/LoRa_E5_mini/
 
