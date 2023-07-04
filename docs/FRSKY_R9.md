@@ -10,7 +10,7 @@ Comment: mLRS also supports the R9MM receiver. However, flashing the R9MM with S
   <tbody>
     <tr>
       <td>Frequency Bands</td>
-      <td>868 MHz/915 MHz (depending on the model)</td>
+      <td>868 MHz/915 MHz</td>
     </tr>
     <tr>
       <td>max. RF Output Power</td>
