@@ -14,7 +14,11 @@ The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC
       <td>max. RF Output Power</td>
       <td>22 dBm (158 mW)</td>
     </tr>
-      <tr>
+    <tr>
+      <td>supported Modes</td>
+      <td>31 Hz, 19 Hz</td>
+    </tr>
+    <tr>
       <td>Weight</td>
       <td>Wio-E5 Mini: ~8 grams without antenna</td>
     </tr>

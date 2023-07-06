@@ -14,6 +14,10 @@ The Frsky R9M transmitter module and R9MX receiver are commercially available an
       <td>max. RF Output Power</td>
       <td>30 dBm (1 W) for R9M, 17 dBm (50 mW) for R9MX, R9MM</td>
     </tr>
+    <tr>
+      <td>supported Modes</td>
+      <td>19 Hz</td>
+    </tr>
   </tbody>
 </table>
 

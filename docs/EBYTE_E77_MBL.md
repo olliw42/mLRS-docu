@@ -15,6 +15,10 @@ EBYTE E77 MBL Boards are an option for building mLRS equipment. These boards use
       <td>22 dBm (158 mW)</td>
     </tr>
     <tr>
+      <td>supported Modes</td>
+      <td>31 Hz, 19 Hz</td>
+    </tr>
+    <tr>
       <td>Weight</td>
       <td>9.35 grams without antenna</td>
     </tr>
