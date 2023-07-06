@@ -4,11 +4,9 @@
 
 mLRS can work with any radio which provides an SBus output, which should be really every radio. This page describes this most basic setup.
 
-In this setup, the radio only feeds the rc data to the mLRS Tx module (via SBus) but there is no communication between radio and mLRS Tx module with regards to the serial/MAVLink data stream. There is thus no thing such as telemetry in the radio. The serial/MAVLink data stream is available via a UART port on the mLRS Tx module, and it is up to you how to make use of it.
+In this setup, the radio only feeds the rc data to the mLRS Tx module (via SBus) but there is no communication between radio and mLRS Tx module with regards to the serial/MAVLink data stream. There is thus no such thing as telemetry in the radio. The serial/MAVLink data stream is available via a UART port on the mLRS Tx module, and it is up to you how to make use of it.
 
-For this basic setup, the mLRS Tx module needs to be put into "SBUS mode". Of course, in addition, the radio needs to be set up for SBus, but this proceeds exactly as described in common tutorials. Also, if a MAVLink serial stream is used, it is recommended to set the Tx module into "mavlink mode".
-
-In principle, there is no specific configuration of the mLRS receiver neccessary. It is however recommended to also set the receiver into "mavlink mode" if a MAVLink serial stream is used. It is also recommended to set it up for CRSF instead of SBus if possible.
+For this basic setup, the mLRS Tx module needs to be put into "SBUS mode". Of course, in addition, the radio needs to be set up for SBus, but this proceeds exactly as described in common tutorials. In principle, there is no specific configuration of the mLRS receiver neccessary. It is however recommended to set it up for CRSF instead of SBus if possible. If a MAVLink serial stream is used, then it is strongly recommended to also set the system into "mavlink mode".
 
 Note: An ArduPilot flight controller is assumed. For PX4 and iNav it needs to be tested and seen.
 
