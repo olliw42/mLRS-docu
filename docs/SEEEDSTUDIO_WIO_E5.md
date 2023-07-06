@@ -27,7 +27,8 @@ The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC
 
 ## SeeedStudio Wio-E5 Mini dev Board ##
 
-https://wiki.seeedstudio.com/LoRa_E5_mini/
+- [Product Page](https://wiki.seeedstudio.com/LoRa_E5_mini/)
+- [3D Model](https://www.thingiverse.com/thing:6108814)
 
 This board is well suited for building a Tx mLRS module, and - if the somewhat larger weight and size is no concern - also for building a Rx module.
 
@@ -69,7 +70,7 @@ Example Wiring:
 
 ## SeeedStudio Grove Wio-E5 Board ##
 
-https://wiki.seeedstudio.com/Grove_LoRa_E5_New_Version/
+- [Product Page](https://wiki.seeedstudio.com/Grove_LoRa_E5_New_Version/)
 
 ### As Tx Module ###
 
