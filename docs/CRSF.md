@@ -22,7 +22,7 @@ Notes:
 
 ## Radio Setup
 
-In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP and configure the external RF module for CRSF protocol with 400K baud rate. 
+In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP and configure the external RF module for CRSF protocol with 400K baud rate.
 
 ## mLRS Tx Module Setup
 
@@ -43,7 +43,7 @@ A basic setup is described in this section which should get one started, further
 
 - SERIALx_BAUD:
     - 57 for 31 Hz, 50 Hz
-    - 38 for 19 Hz (57 works well too, only parameter download is slower)
+    - 38 for 19 Hz (57 works very well too, only parameter download is slower)
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 - SERIALx_OPTIONS = 4096 (ignore commands from GCS to change stream rates)
 
@@ -51,22 +51,22 @@ Note: 'x' refers to the serial port of your flight controller used for MAVLink
 
 ### Stream Rates
 
-- SRx_ADSB = 0
-- SRx_EXT_STAT:
+- SRy_ADSB = 0
+- SRy_EXT_STAT:
     - 2 for 31 Hz, 50 Hz
     - 1 for 19 Hz
-- SRx_EXTRA1 = 4
-- SRx_EXTRA2 = 4
-- SRx_EXTRA3:
+- SRy_EXTRA1 = 4
+- SRy_EXTRA2 = 4
+- SRy_EXTRA3:
     - 2 for 31 Hz, 50 Hz
     - 1 for 19 Hz
-- SRx_PARAMS = 50
-- SRx_POSITION = 2
-- SRx_RAW_CTRL = 0
-- SRx_RAW_SENS = 0 
-- SRx_RC_CHAN = 1
+- SRy_PARAMS = 50
+- SRy_POSITION = 2
+- SRy_RAW_CTRL = 0
+- SRy_RAW_SENS = 0
+- SRy_RC_CHAN = 1
 
-Note: 'x' refers to the MAVLink stream number of the serial port 
+Note: 'y' refers to the MAVLink stream number of the serial port, which is usually different to 'x' in SERIALx
 
 ### CRSF Receiver
 
