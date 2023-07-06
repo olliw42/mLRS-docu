@@ -4,8 +4,6 @@
 
 The Frsky R9M transmitter module and R9MX receiver are commercially available and hence interesting hardware for mLRS. However, the R9 system also provides some hurdles in that flashing is currently a bit of a hack and in that the R9M hardware is not entirely fit for the purpose.
 
-Comment: mLRS also supports the R9MM receiver. However, flashing the R9MM with ST-Link is really tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads. You really should consider using the R9MX receiver instead.
-
 <table>
   <tbody>
     <tr>
@@ -14,10 +12,12 @@ Comment: mLRS also supports the R9MM receiver. However, flashing the R9MM with S
     </tr>
     <tr>
       <td>max. RF Output Power</td>
-      <td>30 dBm (1 W) for R9M, and 17 dBm (50 mW) for R9MM, R9MX</td>
+      <td>30 dBm (1 W) for R9M, 17 dBm (50 mW) for R9MX, R9MM</td>
     </tr>
   </tbody>
 </table>
+
+Comment: mLRS also supports the R9MM receiver. However, flashing the R9MM with ST-Link is really tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads. You really should consider using the R9MX receiver instead. Note: The R9MM has a different wiring diagram than the R9MX.
 
 ## R9M Tx Module ##
 
