@@ -11,11 +11,11 @@ EBYTE E77 MBL Boards are an option for building mLRS equipment. These boards use
       <td>868 MHz/915 MHz (E77-900MBL-01) or 433 MHz/70 cm (E77-400MBL-01)</td>
     </tr>
     <tr>
-      <td>max. RF Output Power</td>
+      <td>Max. RF Output Power</td>
       <td>22 dBm (158 mW)</td>
     </tr>
     <tr>
-      <td>supported Modes</td>
+      <td>Supported Modes</td>
       <td>31 Hz, 19 Hz</td>
     </tr>
     <tr>
