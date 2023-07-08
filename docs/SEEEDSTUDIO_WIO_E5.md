@@ -83,15 +83,15 @@ The first time that you flash the mLRS firmware to either the E5 Mini or E5 Grov
 - Connect your ST-Link to the 3V3, GND, SWD, and SWCLK pins on the board
     - The SWD and SWCLK pins are labeled 'DIO' and 'CLK' respectively
     - Some ST-Link boards provide power and some do not - ensure the E5 is powered
-    - While applying power also hold the boot button or ground out the boot pad for the Wio E5-Grove, this will ensure initial connection with STM32CubeProgrammer
+    - While applying power also hold the boot button on the E5-Mini or ground out the boot pad for the Wio E5-Grove, this will ensure initial connection with STM32CubeProgrammer
 - Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect 
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
     - This will erase the factory firmware
 - From the menu on the left select the Download tile
-- Before loading new firmware ensure you do a full chip erase, this will allow the modules to be bound initially without the need to use the other binding methods
 - Select the correct firmware in the Download section, click Start Program
 - Power cycle the board, the red LED should blink which indicates that the board is disconnected
+- After the initial flash, both boards should bind without needing to use the other binding methods.
 
 ### Subsequent Flashing ###
 
