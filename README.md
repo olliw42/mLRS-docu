@@ -15,6 +15,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
     - [CRSF Sensors](docs/CRSF_SENSORS.md)
 - Setup for [MAVLink for OpenTx](docs/MAVLINK_FOR_OPENTX.md)
 - Basic setup for [SBus Radios](docs/BASIC_SETUP.md)
+- Setup as [SiK Telemetry Replacement](docs/SETUP_SIK.md)
 - Configuration Options for [ArduPilot Systems](docs/ARDUPILOT.md)
 
 ### Hardware ###
