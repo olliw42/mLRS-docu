@@ -4,15 +4,14 @@
 
 This page describes how to set up a mLRS system for OpenTx radios running the MAVLink for OpenTx firmware.
 
-Four steps need to be completed:
+Five steps need to be completed:
 1. The OpenTx radio needs to be flashed with the MAVLink for OpenTx firmware.
 2. The radio needs to be configured. 
 3. The mLRS Tx module needs to be put into "mBridge mode".
-4. The flight controller needs to be set up for MAVLink on a serial port.
+4. The mLRS system needs to be put into "MAVLink mode".
+5. The flight controller needs to be set up for MAVLink on a serial port.
 
 Step 1. is beyond the scope of this article; please consult the project's discussion channels.
-
-In principle, there is no specific configuration of the mLRS receiver neccessary. It is however recommended to set the receiver into "MAVLink mode" and to use the CRSF protocol, as described below.
 
 Note: An ArduPilot flight controller is assumed. For PX4 it needs to be tested and seen. INAV won't work AFAIK, as INAV is not a proper MAVLink component.
 
