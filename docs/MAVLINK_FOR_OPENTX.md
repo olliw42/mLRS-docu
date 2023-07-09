@@ -14,8 +14,13 @@ Step 1. is beyond the scope of this article; please consult the project's discus
 
 In principle, there is no specific configuration of the mLRS receiver neccessary. It is however recommended to set the receiver into "mavlink mode" and to use the CRSF protocol, as described below.
 
-Note: An ArduPilot flight controller is assumed. For PX4 it needs to be tested and seen. iNAV won't work AFAIK, as iNAV is not a proper MAVLink component.
+Note: An ArduPilot flight controller is assumed. For PX4 it needs to be tested and seen. INAV won't work AFAIK, as INAV is not a proper MAVLink component.
 
+## OpenTx Radio Setup
+
+- MDL->MODEL SETUP->External RF->Mode = mBridge
+
+For more details on other possible configurations, please consult the MAVLink for OpenTx project discussion channels.
 
 ## mLRS Tx Module Setup
 
@@ -25,39 +30,19 @@ Note: An ArduPilot flight controller is assumed. For PX4 it needs to be tested a
 
 Note: There are situations in which it can be usefull to enable "Tx Snd RadioStat", but you should do this only if you know what you are doing.
 
+## mLRS Receiver Setup
 
-## ArduPilot Setup
+The configuration of the mLRS receiver can follow exactly the description in [CRSF Telemetry and Yaapu Telemetry App: mLRS Rx Module Setup](CRSF.md#mlrs-rx-module-setup).
 
-Configuration of a serial for MAVLink v2
-
-- SERIALx_BAUD = 57 
-- SERIALx_OPTIONS = 0
-- SERIALx_PROTOCOL = 2
-
-Some further configurations are needed depending on the setup of the mLRS receiver.
-
-
-## OpenTx Radio Setup
-
-- MDL->MODEL SETUP->External RF->Mode = mBridge
-
-For more details on other possible configurations, please consult the MAVLink for OpenTx project discussion channels.
-
-
-## mLRS Rx Module Setup
-
-These configurations are not strictly neccesary, but strongly recommended.
-
-- Rx Ser Link Mode = mavlink
-- Rx Snd RadioStat = ardu_1
-
-It is also recommended to use the CRSF protocol instead of e.g. SBus if possible, i.e., set
-
-- Rx Out Mode = crsf
-
-To avoid needing a separate signal wire for rc data, it is possible to send the rc data via a MAVLink message to the flight controller. In this case set
+It is possible to avoid the separate signal wire for the RC data, by sending the RC data via a MAVLink message to the flight controller. For this set
 
 - Rx Snd RcChannel = rc override
 
-Note: It is recommended to use the CRSF protocol for rc data since you get benefits like better link statistics that aren't available when sending rc data via MAVLink.
+Note: It is recommended to use the CRSF protocol for the RC data, since you get benefits like better link statistics that are not available when sending the RC data via MAVLink.
+
+## ArduPilot Setup
+
+The configuration of the ArduPilot flight controller can follow exactly the description in [CRSF Telemetry and Yaapu Telemetry App: ArduPilot Setup](CRSF.md#ardupilot-setup).
+
+
 
