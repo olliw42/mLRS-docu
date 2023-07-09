@@ -4,7 +4,7 @@
 
 mLRS can work with any radio which provides an SBus output, which should be really every radio. This page describes a basic setup using a radio which provides an SBus output.
 
-In this setup, the radio only sends RC data to the mLRS Tx module using the SBus protocol. As SBus is a unidirectional protocol, there is no communication from the mLRS Tx module to the radio. This means that it is not possible to have telemetry on the radio. The serial/MAVLink data stream is available via the serial/UART port on the mLRS Tx module, and it is up to you how to make use of it. When using SBus, the only options for configuration are the CLI or the OLED display (if available). It is not possible to use the Lua when using SBus.
+In this setup, the radio only sends RC data to the mLRS Tx module using the SBus protocol. As SBus is a unidirectional protocol, there is no communication from the mLRS Tx module to the radio. This means that it is not possible to have telemetry on the radio. The serial/MAVLink data stream is available via the serial/UART port on the mLRS Tx module, and it is up to you how to make use of it. When using SBus, the only options for configuration are the CLI or the OLED display (if available). It is not possible to use the Lua script when using SBus.
 
 For this basic setup, the mLRS Tx module needs to be put into "SBus mode". In addition, the radio needs to be set up for SBus, but this proceeds exactly as described in common tutorials. In principle, there is no specific configuration of the mLRS receiver neccessary. It is however recommended to set it up for CRSF instead of SBus if possible. If a MAVLink serial stream is used, then it is strongly recommended to also set the system into "MAVLink mode".
 
