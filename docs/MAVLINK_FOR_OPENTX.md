@@ -33,7 +33,7 @@ Note: There are situations in which it can be useful to enable "Tx Snd RadioStat
 
 The configuration of the mLRS receiver can follow exactly the description in [CRSF Telemetry and Yaapu Telemetry App: mLRS Rx Module Setup](CRSF.md#mlrs-rx-module-setup).
 
-It is possible to avoid the separate signal wire for the RC data, by sending the RC data via a MAVLink message to the flight controller. For this set
+It is possible to avoid the separate signal wire for the RC data, by sending the RC data via a MAVLink message to the flight controller. For this set:
 
 - Rx Snd RcChannel = rc override
 
