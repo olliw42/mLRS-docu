@@ -31,6 +31,6 @@ If your flight controller does not support CRSF but only SBus, then the paramnet
 
 The configuration of the ArduPilot flight controller can follow exactly the description in [CRSF Telemetry and Yaapu Telemetry App: ArduPilot Setup](CRSF.md#ardupilot-setup), if CRSF can be used.
 
-If your flight controller does not support CRSF but only SBus, then please consult the ArduPilot documentation. The SERIALx (serial port) and SRy (stream rates) parameters should hiowever be configures as described in [CRSF Telemetry and Yaapu Telemetry App: mLRS Rx Module Setup](CRSF.md#mlrs-rx-module-setup).
+If your flight controller does not support CRSF but only SBus, then please consult the ArduPilot documentation. The SERIALx (serial port) and SRy (stream rates) parameters should however be configured as described in [CRSF Telemetry and Yaapu Telemetry App: ArduPilot Setup](CRSF.md#ardupilot-setup).
 
 Note: Setting up ArduPilot for a SBus or CRSF receiver can be a bit tricky by times, and there can be more than one way to achieve it. It is best to consult the ArduPilot wiki, or ask in the ArduPilot discussion channel.
