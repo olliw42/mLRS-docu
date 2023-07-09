@@ -4,7 +4,7 @@
 
 This page describes how to use mLRS as a bi-directional MAVLink telemetry link similar to a SiK telemetry unit. This setup doesn't require a radio and will only transmit and receive MAVLink data.
 
-<img src="images/mLRS-docu-setup-sik-telemetry-01.jpg" width="800px">
+<img src="images/mLRS-docu-setup-sik-telemetry-02.jpg" width="800px">
 
 ## Setup
 
