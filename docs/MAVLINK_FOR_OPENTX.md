@@ -6,13 +6,13 @@ This page describes how to set up a mLRS system for OpenTx radios running the MA
 
 Four steps need to be completed:
 1. The OpenTx radio needs to be flashed with the MAVLink for OpenTx firmware.
-2. The mLRS Tx module needs to be put into "mBridge mode".
-3. The flight controller needs to be set up for MAVLink on a serial port.
-4. The radio needs to be configured. 
+2. The radio needs to be configured. 
+3. The mLRS Tx module needs to be put into "mBridge mode".
+4. The flight controller needs to be set up for MAVLink on a serial port.
 
 Step 1. is beyond the scope of this article; please consult the project's discussion channels.
 
-In principle, there is no specific configuration of the mLRS receiver neccessary. It is however recommended to set the receiver into "mavlink mode" and to use the CRSF protocol, as described below.
+In principle, there is no specific configuration of the mLRS receiver neccessary. It is however recommended to set the receiver into "MAVLink mode" and to use the CRSF protocol, as described below.
 
 Note: An ArduPilot flight controller is assumed. For PX4 it needs to be tested and seen. INAV won't work AFAIK, as INAV is not a proper MAVLink component.
 
@@ -28,7 +28,7 @@ For more details on other possible configurations, please consult the MAVLink fo
 - Tx Ser Dest = mbridge
 - Tx Snd RadioStat = off
 
-Note: There are situations in which it can be usefull to enable "Tx Snd RadioStat", but you should do this only if you know what you are doing.
+Note: There are situations in which it can be useful to enable "Tx Snd RadioStat", but you should do this only if you know what you are doing.
 
 ## mLRS Receiver Setup
 
@@ -42,7 +42,26 @@ Note: It is recommended to use the CRSF protocol for the RC data, since you get 
 
 ## ArduPilot Setup
 
-The configuration of the ArduPilot flight controller can follow exactly the description in [CRSF Telemetry and Yaapu Telemetry App: ArduPilot Setup](CRSF.md#ardupilot-setup).
+### MAVLink Serial Port
 
+- SERIALx_BAUD:
+    - 57 for 31 Hz, 50 Hz
+    - 38 for 19 Hz (57 works very well too, only parameter download is slower)
+- SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
+- SERIALx_OPTIONS = 0
+
+Note: 'x' refers to the serial port of your flight controller used for MAVLink
+
+### Stream Rates
+
+In contrast to the other setups, the SRy parameters for the stream rates do not need to be configured here (i.e., can be left at zero). The MAVLink for OpenTx firmware requests the required streams itself.
+
+Only if the settings by the MAVLink for OpenTx firmware should be overruled, the SRy parameters can be configured as described in [CRSF Telemetry and Yaapu Telemetry App: ArduPilot Setup](CRSF.md#ardupilot-setup).
+
+Note: While the MAVLink for OpenTx radio is a full-fledged GCS in MAVLink terminology, it is not recognized by ArduPilot as its GCS, since the MY_GCS parameter is set by default to MissionPlanner/QGC. Accordingly, setting e.g. SERIALx_OPTIONS = 4096 has no effect.
+
+### CRSF Receiver
+
+The configuration of the receiver settings in the ArduPilot flight controller can follow exactly the description in [CRSF Telemetry and Yaapu Telemetry App: ArduPilot Setup](CRSF.md#ardupilot-setup).
 
 
