@@ -8,7 +8,7 @@ mLRS provides the following telemetry sensors when using CRSF:
 
 Num | Datapoint   | Description                                                             | Data Source |
 --- | ----------- | ----------------------------------------------------------------------- | ----------- |
-1   | 1RSS*       | Receiver RSSI                                                           | mLRS        |
+1   | 1RSS        | Receiver RSSI                                                           | mLRS        |
 2   | 2RSS        | Not supported                                                           |             |
 3   | Alt         | Altitude                                                                | FC          |
 4   | ANT         | Active receiver antenna                                                 | mLRS        |
@@ -29,13 +29,12 @@ Num | Datapoint   | Description                                                 
 19  | Sats        | GPS satellites acquired                                                 | FC          |
 20  | TFPS        | Transmitter update rate (20, 30, 50)                                    | mLRS        |
 21  | TPWR        | Transmitter power (mW)                                                  | mLRS        |
-22  | TPw2**      | Transmitter power (CRSF power level)                                    | mLRS        |
+22  | TPw2*       | Transmitter power (CRSF power level)                                    | mLRS        |
 23  | TQly        | Tramsmitter link quality                                                | mLRS        |
 24  | TRSP        | Transmitter RSSI percentage                                             | mLRS        |
-25  | TRSS*       | Transmitter RSSI                                                        | mLRS        |
+25  | TRSS        | Transmitter RSSI                                                        | mLRS        |
 26  | TSNR        | Transmitter signal to noise ratio                                       | mLRS        |
 27  | VSpd        | Vertical speed                                                          | FC          |
 28  | Yaw         | FC yaw angle                                                            | FC          |
 
-\*RSSI values are displayed as positive values, e.g. -85dBm is displayed as 85dBm  
-\**Shows up as a 2nd 'TPWR' on EdgeTX
+\*Shows up as a 2nd 'TPWR' on EdgeTX
