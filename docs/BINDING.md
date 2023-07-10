@@ -13,7 +13,7 @@ The sequence doesn't matter, i.e., one also can first press the bind button on t
 
 When in binding mode, the green and red LEDs will blink alternatively with ca 2.5 Hz.
 
-When a receiver is connected to a Tx module, the common parameters (as well as all other parameters) can be changed and be made active by issuing a Save command either via the CLI or the mLRS configuration Lua script (or the OLED display if available).
+When a receiver is connected to a Tx module, the common parameters (as well as all other parameters) can be changed and stored permanently by issuing a save command either via the CLI (pstore; command) or the mLRS configuration Lua script (Save button), or the OLED display if available (STORE option).
 
 The following video shows the various LED blink pattern: 
 
