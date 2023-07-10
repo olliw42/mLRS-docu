@@ -6,11 +6,15 @@ For a Tx module and a receiver to be able to connect to each other, some paramet
 
 The binding procedure is as follows:
 
-1. On the Tx side you have three options: (i) press the bind button (for ca. 4 seconds) on the Tx module, (ii) initiate the binding via a CLI command, or (iii) initiate the binding via the mLRS configuration Lua script.
+1. On the Tx side you have three options: (i) press the bind button (for ca. 4 seconds) on the Tx module, (ii) initiate the binding via a CLI command, or (iii) initiate the binding via the mLRS configuration Lua script. If available, the binding can also be initiated via the OLED display.
 2. Press the bind button (for ca 4 seconds) on the receiver.
 
 The sequence doesn't matter, i.e., one also can first press the bind button on the receiver and then set the Tx module into binding mode.
 
 When in binding mode, the green and red LEDs will blink alternatively with ca 2.5 Hz.
 
-When a receiver is connected to a Tx module, the common parameters (as well as all other parameters) can be changed and be made active by issuing a Save either via the CLI or the mLRS configuration Lua script.
+When a receiver is connected to a Tx module, the common parameters (as well as all other parameters) can be changed and be made active by issuing a Save command either via the CLI or the mLRS configuration Lua script (or the OLED display if available).
+
+The following video shows the various LED blink pattern: 
+
+[![mLRS: LED Blink Patterns](https://img.youtube.com/vi/M_49QP8oxBk/0.jpg)](https://www.youtube.com/watch?v=M_49QP8oxBk "mLRS: LED Blink Patterns")
