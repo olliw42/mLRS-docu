@@ -4,21 +4,23 @@
 
 Brief description of the parameters for configuring mLRS. The parameters fall into three categories: 
 
-1. Parameters common to Tx and Rx. These need to be configured to be identical for Tx and Rx, in order for a connection to be possible. For an arbitrary receiver, this can be achieved by binding the receiver to the Tx module.
+1. Parameters common to the Tx module and receiver. These need to be configured to be identical for both, in order for a connection to be possible. For an arbitrary receiver, this can be achieved by binding the receiver to the Tx module.
 
 2. Parameters only for the Tx module (Tx parameters).
 
 3. Parameters only for the receiver (Rx parameters).
 
-All parameters are configured via the Tx module, by using the CLI or the mLRS configuration Lua script. If no receiver is connected, then the Rx parameters cannot be configured.
+All parameters are configured via the Tx module, by using the CLI or the mLRS configuration Lua script (or the OLED if available). If no receiver is connected, then the Rx parameters cannot be configured.
 
-Depending on the specific mLRS hardware, it may happen that not all parameters are available, as well as that not all options for a parameter are available.
+Depending on the specific mLRS hardware, it may happen that some parameters are not available, as well as that for a parameter some options are not available.
 
 ## Common Parameters ##
 
 #### Bind Phrase ####
 String of 6 characters. 
-The characters can be 'a'-'z', '0'-'9', '_', '#', '-', '.', 
+The characters can be 'a'-'z', '0'-'9', '_', '#', '-', '.'. 
+
+For 2.4 GHz systems the last (6th) character of the bind phrase determines excluded frequencies. The exclude setting can be "\e-" (no frequencies excluded), "\e1" (wlan band #1 excluded), "\e6" (wlan band #6 excluded), "\e11" (wlan band #11 excluded), or "\e13" (wlan band #13 excluded), and it is determined from the last character as follows: 'a' = "\e-", 'b' = "\e1", 'c' = "\e6", 'd' = "\e11", 'e' = "\e13", and with 'f' the cycle continues, and so forth.
 
 #### Mode ####
 Operation mode. 
@@ -87,7 +89,11 @@ Can be "sbus", "crsf", "sbus inv".
 
 #### Rx Out Rssi Ch #### 
 Determines if and on which channel the RSSI value is send out. 
-Can be "off", "5" - "12".
+Can be "off", "5" - "16".
+
+#### Rx Out Lq Ch #### 
+Determines if and on which channel the LQ value is send out. 
+Can be "off", "5" - "16".
 
 #### Rx FailSafe Mode #### 
 Determines the behavior upon a failsafe. 
