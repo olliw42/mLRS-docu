@@ -71,6 +71,7 @@ Example Wiring:
 ## SeeedStudio Grove Wio-E5 Board ##
 
 - [Product Page](https://wiki.seeedstudio.com/Grove_LoRa_E5_New_Version/)
+- [Printable Cases](https://www.printables.com/model/535202-wio-e5-grove-case)
 
 ### As Tx Module ###
 
