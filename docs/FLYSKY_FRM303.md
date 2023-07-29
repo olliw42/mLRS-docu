@@ -33,7 +33,7 @@ The FlySky FRM303 transmitter module is a nearly perfect option for building mLR
 
 The description is for the default firmware version ('USB' version, indicated by a '-usb' label in the firmware file name).
 
-The FRM303 provides two connectors, a 5-pin JST-GH connector at the bottom edge and a USB-C connector at top edge, and a 5-way button. Their usage is as follows:
+The FRM303 provides two connectors, a 5-pin JST-GH connector at the bottom edge and a USB-C connector at top edge. In addition there is a 5-way button. Their usage is as follows:
 
 JST-GH connector (from left to right when viewd from top):
 
@@ -49,12 +49,11 @@ USB-C connector:
 
 5-way button:
 
-- bind button (to enter bind mode, hold down the button for ca 4 seconds)
+- bind button (to enter bind mode, hold the button in the down direction for ca 4 seconds)
 
 Notes:
 
-- For this 5-way button, 'hold down' means to move it to the bottom, not to press it down
-- To enter the system bootloader for flashing, hold down the button during power up (or use the CLI, Lua script, or OLED if available)
+- To enter the system bootloader for flashing, hold the button in the down direction during power up (or use the CLI, Lua script, or OLED if available)
 
 ## As Receiver ##
 
@@ -72,11 +71,11 @@ USB-C connector:
 
 5-way button:
 
-- bind button (to enter bind mode, hold down the button for ca 5 seconds)
+- bind button (to enter bind mode, hold the button in the down direction for ca 4 seconds)
 
 Notes:
 
-- To enter the system bootloader for flashing, hold down the button during power up
+- To enter the system bootloader for flashing, hold the button in the down direction during power up
 - The flight controller may not provide enough power for the FRM303 to run properly, choose a proper power source
 
 ## Flashing ##
