@@ -54,7 +54,7 @@ USB-C connector:
 Notes:
 
 - For this 5-way button, 'hold down' means to move it to the bottom, not to press it down
-- To enter the system bootloader for flashing, hold down the button during power up (or use the CLI, LUA script, or OLED if available)
+- To enter the system bootloader for flashing, hold down the button during power up (or use the CLI, Lua script, or OLED if available)
 
 ## As Receiver ##
 
@@ -105,8 +105,8 @@ Note: If you are unable to to flash due to readout protection, perform the follo
 
 Subsequent flashing can be done in two ways:
 1. Follow the initial flashing process using the ST-Link programmer
-2. Boot into the system bootloader using the boot button, CLI, LUA script or the OLED display if available
-    - This enables programming over the USB-C port using teh DFU method
+2. Boot into the system bootloader using the boot button, CLI, Lua script or the OLED display if available
+    - This enables programming over the USB-C port using the DFU method
     - Launch STM32CubeProgrammer and select USB as the connection method, click connect 
     - Proceed as usual
    
