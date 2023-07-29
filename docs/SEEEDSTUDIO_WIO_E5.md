@@ -105,7 +105,7 @@ The first time that you flash the mLRS firmware to either the Wio-E5 Mini or Wio
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
 - Connect your ST-Link programmer to the 3V3, GND, SWD, and SWCLK pins on the board
     - The SWD and SWCLK pins are labeled 'DIO' and 'CLK' respectively
-    - Some ST-Link programmer provide power and some do not - ensure the Wio-E5 is powered
+    - Some ST-Link programmers provide power and some do not - ensure the Wio-E5 is powered
 - Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
@@ -120,5 +120,5 @@ Subsequent flashing can be done in two ways:
 1. Follow the initial flashing process using the ST-Link programmer
     - There is no need to change the read out protection after the initial flash
     - If a full erase is desired, go to the Erase & Programming page and click 'Full chip erase'
-2. Boot into the system bootloader using the CLI, LUA script or the OLED display
-    - This enables programming over UART1 (PA9, PA10)(pins 'D9' and 'MOSI') or UART2 (PA2, PA3)(pins 'Tx2' and 'Rx2') with a USB-TTL adapter using the Serial connection option in STM32CubeProgrammer. The on-board USB connector cannot be used.
+2. Boot into the system bootloader using the CLI, Lua script or the OLED display
+    - This enables programming over UART1 (pins PA9, PA10, labeled 'D9' and 'MOSI') or UART2 (pins PA2, PA3, labeled 'Tx2' and 'Rx2') with a USB-TTL adapter using the Serial connection option in STM32CubeProgrammer. The on-board USB connector cannot be used.
