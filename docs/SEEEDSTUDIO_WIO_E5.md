@@ -30,7 +30,7 @@ The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC
 - [Product Page](https://wiki.seeedstudio.com/LoRa_E5_mini/)
 - [3D Model](https://www.thingiverse.com/thing:6108814)
 
-This board is well suited for building a Tx mLRS module, and - if the somewhat larger weight and size is no concern - also for building a Rx module.
+This board is well suited for building a Tx mLRS module, and - if the somewhat larger weight and size is no concern - also for building a receiver.
 
 ### As Tx Module ###
 
@@ -53,7 +53,7 @@ Example Wiring using JR bay with CRSF:
 
 <img src="images/E5_Mini_Tx_Wiring.png" width="800px">
 
-### As Rx Module ###
+### As Receiver ###
 
 Connections (name in respect to board print-ons):
 
@@ -77,7 +77,7 @@ Example Wiring:
 
 not recommended
 
-### As Rx Module ###
+### As Receiver ###
 
 Connections (name in respect to board print-ons):
 
@@ -100,12 +100,12 @@ Example Wiring:
 
 ### Initial Flashing ###
 
-The first time that you flash the mLRS firmware to either the E5 Mini or E5 Grove you'll have to do the following:
+The first time that you flash the mLRS firmware to either the Wio-E5 Mini or Wio-E5 Grove you'll have to do the following:
 
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
-- Connect your ST-Link to the 3V3, GND, SWD, and SWCLK pins on the board
+- Connect your ST-Link programmer to the 3V3, GND, SWD, and SWCLK pins on the board
     - The SWD and SWCLK pins are labeled 'DIO' and 'CLK' respectively
-    - Some ST-Link boards provide power and some do not - ensure the E5 is powered
+    - Some ST-Link programmers provide power and some do not - ensure the Wio-E5 is powered
 - Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
@@ -117,7 +117,8 @@ The first time that you flash the mLRS firmware to either the E5 Mini or E5 Grov
 ### Subsequent Flashing ###
 
 Subsequent flashing can be done in two ways:
-1. Follow the initial flashing process
+1. Follow the initial flashing process using the ST-Link programmer
     - There is no need to change the read out protection after the initial flash
-2. Boot into the system bootloader using the cli, lua or the OLED display
-    - This enables programming over UART1 (PA9, PA10) or UART2 (PA2, PA3) with a USB-TTL adapter using the Serial connection option in STM32CubeProgrammer
+    - If a full erase is desired, go to the Erase & Programming page and click 'Full chip erase'
+2. Boot into the system bootloader using the CLI, Lua script or the OLED display
+    - This enables programming over UART1 (pins PA9, PA10, labeled 'D9' and 'MOSI') or UART2 (pins PA2, PA3, labeled 'Tx2' and 'Rx2') with a USB-TTL adapter using the Serial connection option in STM32CubeProgrammer. The on-board USB connector cannot be used.
