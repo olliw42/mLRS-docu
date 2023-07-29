@@ -35,7 +35,7 @@ The description is for the default firmware version ('USB' version, indicated by
 
 The FRM303 provides two connectors, a 5-pin JST-GH connector at the bottom edge and a USB-C connector at top edge. In addition there is a 5-way button. Their usage is as follows:
 
-JST-GH connector (from left to right when viewd from top):
+JST-GH connector (from left to right when viewed from top):
 
 - serial Rx
 - serial Tx
@@ -57,7 +57,7 @@ Notes:
 
 ## As Receiver ##
 
-JST-GH connector (from left to right when viewd from top):
+JST-GH connector (from left to right when viewed from top):
 
 - serial Rx
 - serial Tx
