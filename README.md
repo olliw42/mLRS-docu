@@ -19,6 +19,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - Configuration Options for [ArduPilot Systems](docs/ARDUPILOT.md)
 
 ### Hardware ###
+- Using [FlySky FRM303 Module](docs/FLYSKY_FRM303.md)
 - Using [Frsky R9 Devices](docs/FRSKY_R9.md)
 - Using [SeeedStudio Wio-E5 Boards](docs/SEEEDSTUDIO_WIO_E5.md)
 - Using [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
