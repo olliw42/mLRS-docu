@@ -106,6 +106,7 @@ The first time that you flash the mLRS firmware to either the Wio-E5 Mini or Wio
 - Connect your ST-Link programmer to the 3V3, GND, SWD, and SWCLK pins on the board
     - The SWD and SWCLK pins are labeled 'DIO' and 'CLK' respectively
     - Some ST-Link programmers provide power and some do not - ensure the Wio-E5 is powered
+- Hold down the boot button and then press the reset button, boot button can then be released.
 - Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
