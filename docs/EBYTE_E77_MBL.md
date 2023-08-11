@@ -44,11 +44,12 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 
 Notes:
 
-- To communicate with the radio via the JR bay (pin 5 in the JR bay), you need to solder a Schottky diode (e.g. BAT42) between pads PB7 and PB6 (see graphic)
 - To enable the cli, hold down button2 during boot
 - To enter system bootloader, hold down button1 during boot
 
 <img src="images/mLRS-EByte-E77-MBLKit-Tx.jpg" width="900px">
+
+*The Schottky diode between the PB6 and PB7 pins is not needed with the default firmware. If you are having communication issues between the radio and the Tx module then you can install the Schottky diode and use the 'sdiode' firmware ('sdiode' will be included in the file name, e.g. tx-E77-MBLKit-wle5cc-400-**sdiode**-vX.X.XX.hex).  
 
 ### As Rx Module ###
 
