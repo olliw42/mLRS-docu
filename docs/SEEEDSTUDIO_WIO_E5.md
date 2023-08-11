@@ -44,14 +44,11 @@ Connections (name in respect to board print-ons):
 - led red: on-board
 - bind button: BOOT button, hold for 4 seconds to initiate bind mode
 
-If you want to communicate with the radio via the JR bay (pin 5 in the JR bay), then you in addition need to do:
-
-- solder a Schottky diode (e.g. BAT42) between pads RX1 and TX1 (RX1 - |<| - TX1, |<| represents the diode)
-- use firmware with DEVICE_HAS_JRPIN5 enabled (this is the default)
-
 Example Wiring using JR bay with CRSF:
 
-<img src="images/E5_Mini_Tx_Wiring.png" width="800px">
+<img src="images/E5_Mini_Tx_Wiring.png" width="600px">
+
+*The Schottky diode between the TX1 and RX1 pins is not needed with the default firmware. If you are having communication issues between the radio and the Tx module then you can install the Schottky diode and use the 'sdiode' firmware ('sdiode' will be included in the file name, e.g. tx-Wio-E5-Mini-wle5jc-**sdiode**-vX.X.XX.hex).  
 
 ### As Receiver ###
 
@@ -106,6 +103,7 @@ The first time that you flash the mLRS firmware to either the Wio-E5 Mini or Wio
 - Connect your ST-Link programmer to the 3V3, GND, SWD, and SWCLK pins on the board
     - The SWD and SWCLK pins are labeled 'DIO' and 'CLK' respectively
     - Some ST-Link programmers provide power and some do not - ensure the Wio-E5 is powered
+- Hold down the boot button and then press the reset button, boot button can then be released.
 - Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
