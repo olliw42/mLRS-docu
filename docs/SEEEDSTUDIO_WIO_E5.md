@@ -44,14 +44,11 @@ Connections (name in respect to board print-ons):
 - led red: on-board
 - bind button: BOOT button, hold for 4 seconds to initiate bind mode
 
-If you want to communicate with the radio via the JR bay (pin 5 in the JR bay), then you in addition need to do:
-
-- solder a Schottky diode (e.g. BAT42) between pads RX1 and TX1 (RX1 - |<| - TX1, |<| represents the diode)
-- use firmware with DEVICE_HAS_JRPIN5 enabled (this is the default)
-
 Example Wiring using JR bay with CRSF:
 
-<img src="images/E5_Mini_Tx_Wiring.png" width="800px">
+<img src="images/E5_Mini_Tx_Wiring.png" width="600px">
+
+*The default firmware (labeled tx-Wio-E5-Mini-wle5jc-vX.X.XX.hex) has half-duplex implemented which means that you **will not** need a Schottky diode between the Tx and Rx pins.  You will only need a connection between the pad labeled RX1 and pin 5 of the JR bay.  If you are having communication issues between the radio and the module then you can install the Schottky diode and use the alternative firmware (labeled tx-Wio-E5-Mini-wle5jc-sdiode-vX.X.XX.hex) to see if that resolves the issues.  
 
 ### As Receiver ###
 
