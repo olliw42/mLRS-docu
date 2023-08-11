@@ -48,7 +48,7 @@ Example Wiring using JR bay with CRSF:
 
 <img src="images/E5_Mini_Tx_Wiring.png" width="600px">
 
-*The Schottky diode between the TX1 and RX1 pins is not normally needed and this configuration uses the default firmware (labeled tx-Wio-E5-Mini-wle5jc-vX.X.XX.hex).  If you are having communication issues between the radio and the module then you can install the Schottky diode and use the sdiode firmware (labeled tx-Wio-E5-Mini-wle5jc-sdiode-vX.X.XX.hex).  
+*The Schottky diode between the TX1 and RX1 pins is not needed with the default firmware. If you are having communication issues between the radio and the Tx module then you can install the Schottky diode and use the 'sdiode' firmware ('sdiode' will be included in the file name, e.g. tx-Wio-E5-Mini-wle5jc-**sdiode**-vX.X.XX.hex).  
 
 ### As Receiver ###
 
