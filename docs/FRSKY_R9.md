@@ -21,11 +21,11 @@ The Frsky R9M transmitter module and R9MM and R9MX receivers are commercially av
   </tbody>
 </table>
 
-Note that R9 uses a slightly older LORA chip family, which doesn't support the 31 Hz mode. It also happens to be incompatible with the newer LORA chips when the specific spreading factor used by the mLRS 19 Hz mode is selected.  Unfortunately, this means that R9 hardware can't connect with the other mLRS boards which support 868/915 MHz.
+Note that R9 hardware uses a slightly older LORA chip family, which doesn't support the 31 Hz mode. It also happens to be incompatible with the newer LORA chips when the specific spreading factor used by the mLRS 19 Hz mode is selected.  Unfortunately, this means that R9 hardware can't connect with the other mLRS boards which support 868/915 MHz.
 
 ## R9M Tx Module ##
 
-The R9M module is somewhat limited with respect to serial ports. It provides access to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
+The R9M transmitter module is somewhat limited with respect to serial ports. It provides access to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
 
 1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.
 
@@ -43,15 +43,15 @@ There are several DIY approaches for building an inverter dongle. A common appro
 
 ### ESP32 WiFi Bridge ###
 
-The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a WiFi Bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl.  This approach can also eliminate the need for a separate inverter circuit.  Two of these boards, the M5Stamp Pico Mate and the M5Stack M5Stamp C3U Mate allow pin layouts which are especially convenient to connect directly to the serial pins on the back of the R9M Tx module.  The [M5Stack M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port rather than requiring a separate programmer.  The 2.4 GHz WiFi bridge works especially well with 900 MHz radios like the R9M since the separate frequency range minimizes interference.
+The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a WiFi Bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl.  This approach can also eliminate the need for a separate inverter dongle.  Two of these boards, the M5Stamp Pico Mate and the M5Stack M5Stamp C3U Mate allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module.  The [M5Stack M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port rather than requiring a separate programmer.  The 2.4 GHz WiFi bridge works especially well with 900 MHz systems like the R9 since the separate frequency range minimizes interference.
 
-To install the the sketch on the M5Stamp C3U, use the Arduino IDE.  Open the mlrs-wifi-bridge.ino sketch from the mLRS esp folder, edit the mlrs-wifi-bridge.ino file and uncomment just the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, connect the M5Stamp C3U module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
+To install the the sketch on the M5Stamp C3U, use the Arduino IDE.  Open the mlrs-wifi-bridge.ino sketch from the mLRS esp/mlrs-wifi-bridge folder, edit the mlrs-wifi-bridge.ino file to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, connect the M5Stamp C3U module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
 
 __Be sure to unplug the M5Stamp C3U from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
 
 <img src="images/M5Stamp_C3U_installed.jpg" width="360px">
 
-Connecting the M5Stamp C3U to the R9M is easy:  Remove the screw and the plastic cover.  Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position.  This position serves a key to avoid plugging in the board incorrectly.  Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above.  Then, you can connect your GCS computer or mobile device to the mLRS_AP WiFi access point and connect the GCS via UDP on port 14550.
+Connecting the M5Stamp C3U to the R9M is easy:  Remove the screw and the plastic cover.  Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position.  This position serves as a key to avoid plugging in the board incorrectly.  Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above.  Then, you can connect your GCS computer or mobile device to the mLRS_AP WiFi access point and connect the GCS via UDP on port 14550.
 
 <img src="images/M5Stamp_C3U_header.jpg" width="360px">
 
@@ -103,9 +103,9 @@ If you want to use ELRS bootloader and install via the Frsky bootloader and Open
 
 ### Acknowledgments ###
 
-ExpressLRS is a pioneering project in many ways.  Their open source code has been a valuable example during mLRS development. They also figured out a convenient and easy way to flash the R9 hardware, which is now also available for mLRS.  With gratitude, here we are utilizing the ExpressLRS bootloader images and scripts and, in many cases, their excellent documentation.
+We wish to express our thanks to the folks of the ExpressLRS project, who have worked out the easy way to flash the R9 hardware, which is now also available for mLRS. With gratitude, here we are utilizing the ExpressLRS bootloader images and scripts and, in several cases, also their excellent documentation.
 
-### Flashing the R9M with ELRS bootloader ###
+### Flash the R9M with ELRS bootloader ###
 
 You can flash the ELRS bootloader and mLRS using your radio with OpenTX 2.3.12 or newer or EdgeTX 2.4.0 or newer.  This method is especially recommended for new users.
 
@@ -144,7 +144,7 @@ If you have already flashed via ST-Link, you can continue to flash updates via S
 
 4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-r9m\_use\_elrs_bootloader-v*.elrs file.  Choose "Flash external ELRS".
 
-### Flashing R9 receivers with ELRS bootloader ###
+### Flash R9 receivers with ELRS bootloader ###
 
 #### Flash the ELRS bootloader ####
 
