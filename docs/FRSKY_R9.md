@@ -170,7 +170,7 @@ After flashing the ELRS bootloader, you can connect the serial port as described
 
 8. After you have connected the receiver serial port to your flight controller and installed it in your build, you can use Ardupilot's [serial passthrough](https://ardupilot.org/copter/docs/common-serial-passthrough.html) feature for future mLRS firmware updates without uninstalling the receiver from your build.  The baud rate for the FC serial port used should be configured for 420,000 in Ardupilot.  The receiver should be powered up (battery connected) after the UARTupload.py script reports "attempting to reboot into bootloader" as in step 6.  This is most easily accomplished by wiring the receiver to a regulated power output on your flight controller or ESC which is active only when the battery is connected, but not powered when the flight controller is connected to USB without the battery.  If this can't easily be arranged, you will have to hold down the receiver button when connecting the flight controller USB port.
 
-### Flashing via ST-Link ###
+### Flash/Update via ST-Link ###
 
 Note: Flashing any Frsky R9 board with the ST-Link is a non-reversible operation, i.e., it is not possible to revert back to the original Frsky firmware. It is possible to switch to ExpressLRS however.
 
