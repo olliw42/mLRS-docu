@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The Frsky R9M transmitter module and R9MX receiver are commercially available and hence interesting hardware for mLRS. However, the R9 system also provides some hurdles in that flashing is currently a bit of a hack and in that the R9M hardware is not entirely fit for the purpose.
+The Frsky R9M transmitter module and R9MX receiver are commercially available and hence can be a relatively easy way to get started with mLRS. However, the R9M hardware does have some limitations, including a relatively low output power on the receivers which will limit the maximum range somewhat.
 
 <table>
   <tbody>
@@ -21,31 +21,45 @@ The Frsky R9M transmitter module and R9MX receiver are commercially available an
   </tbody>
 </table>
 
-Comment: mLRS also supports the R9MM receiver. However, flashing the R9MM with ST-Link is really tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads. You really should consider using the R9MX receiver instead. Note: The R9MM has a different wiring diagram than the R9MX.
-
 ## R9M Tx Module ##
 
-The R9M module is unfortunately limited with respect to serial ports. It provides acess to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
+The R9M module is somewhat limited with respect to serial ports. It provides access to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
 
-1. One needs to use a "Frsky inverter" dongle. You either can buy one or build it yourself.
+1. One needs to use a "Frsky inverter" dongle. You either can buy one or build it yourself.  Alternatively, if you will use the Lua script for configuration, and wish to use the serial port to connect via MAVLink wirelessly to a Ground Control Station, you can use the one of the supported esp32 boards with the mlrs-wifi-bridge sketch.
 
-2. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to repower the module to make any change effective.
+2. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.
+
+3. If you have the older 2018 "ACCST" version of the R9M, you will want to perform the Inverter Mod to allow reliable communication with the radio at higher bit rates.  This is nicely documented in the [ExpressLRS documentation](https://www.expresslrs.org/hardware/inverter-mod/).
 
 ### DIY Inverter Dongle ###
 
-There are several DIY apporaches for building the inverter dongle. A common approach is based on the MAX3232 RS232 chip; an excellent build tutorial is provided here [Some soldering required](https://discuss.ardupilot.org/t/some-soldering-required/27613). Be aware however that many fake chips are available, and the original scheme suggested in this blog may not work. One in fact may have to add an extra diode and resistor.
+There are several DIY approaches for building an inverter dongle. A common approach is based on the MAX3232 RS232 chip; an excellent build tutorial is provided here [Some soldering required](https://discuss.ardupilot.org/t/some-soldering-required/27613). Be aware however that many fake chips are available, and the original scheme suggested in this blog may not work. One, in fact, may have to add an extra diode and resistor.
 
 <img src="images/frsky-max3232-inverter-scheme.jpg" width="360px">
 
+### ESP32 WiFi Bridge ###
+
+The mLRS git repository includes source code in the esp folder which allows several supported ESP32 development boards to be used as a WiFi Bridge to connect the serial port to a GCS such as Mission Planner, QGroundControl, APM Planner 2.0, or MAVProxy.  This approach can also eliminate the need for a separate inverter circuit.  Two of these boards, the M5Stamp Pico Mate and the M5Stack M5Stamp C3U Mate allow pin layouts which are especially convenient to connect directly to the serial pins on the back of the R9M Tx module.  The [M5Stack M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it's flash can be programmed via it's included USB port rather than requiring a separate programmer.  The 2.4GHz WiFi bridge works especially well with 900MHz radios like the R9M since the separate frequency range minimizes interference.
+
+To install the the sketch on the M5Stamp C3U, use the Arduino IDE;  Open the mlrs-wifi-bridge sketch, edit the mlrs-wifi-bridge.ino file and uncomment just the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, Connect the M5Stamp C3U module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
+
+Be sure to unplug the M5Stamp C3U from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M.
+
+<img src="images/M5Stamp_C3U_installed.jpg" width="360px">
+
+Connecting the M5Stamp C3U to the R9M is easy:  Remove the screw and the plastic cover.  Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position.  This position serves a key to avoid plugging in the board incorrectly.  Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above.  Then, you can connect your GCS computer or mobile device to the mLRS_AP WiFi access point and connect the GCS via UDP on port 14550.
+
+<img src="images/M5Stamp_C3U_header.jpg" width="360px">
+
 ### Cooling ###
 
-With mLRS the R9M module will require active cooling when running at power levels above 500 mW, but cooling might be advisable also at lower powers, at 500 mW or even 250 mW.
+With mLRS the R9M module will require active cooling when running at power levels above 500 mW, but cooling might be advisable also at lower powers, at 500 mW or even 250 mW.  Note, however, that there is little point running the transmitter at high power levels if you are using one of the low power Frsky receivers.
 
 A description for installing a fan along with documentation for 3D printed case covers with fan mount can be found here https://www.expresslrs.org/2.0/hardware/fan-mod/. Note: The PB9 mechanism described there to control the fan is available with mLRS too.
 
 ### As Receiver ###
 
-The R9M module can also be flashed with firmware which allows it to be used as mLRS receiver. This yields a receiver working at high transmit power. For details please consult the rcgrouops thread. 
+The R9M module can also be flashed with firmware which allows it to be used as mLRS receiver. This yields a receiver working at high transmit power. For details please consult the rcgroups thread. 
 
 
 ## R9MX Receiver ##
@@ -70,18 +84,84 @@ The wiring is similar to the ExpressLRS docs found in the link below. Different 
 The R9MX receiver can also be used as mLRS Tx module. Due to hardware restrictions it is somewhat limited but can be a great choice for special applications. 
 
 The module can be configured via CLI only. The CLI shares the same port used for serial/Mavlink communication. Switching between CLI and serial port is done via the bind button:
-- Powering up the R9MX without holding down the bind button will boot in "Serial" mode. To enter CLI mode, press the bind button while powering up. The device then runs in CLI mode, and the Rx and Tx can be configured as usual via CLI commands.
+- Powering up the R9MX without holding down the bind button will boot in "Serial" mode. To enter CLI mode, press the bind button while powering up or shortly after powering up if using the ELRS bootloader. The device then runs in CLI mode, and the Rx and Tx can be configured as usual via CLI commands.
 
-The wiring is similar to Rx and ExpressLRS, with the exception that the "Inverted SPort" pin (orginal naming) is available as input port.
+The wiring is similar to Rx and ExpressLRS, with the exception that the "Inverted SPort" pin (original naming) is available as input port.
 
+
+## R9MM Rx Module ##
+
+The R9MM receiver is also supported. However, flashing the R9MM with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9MX receiver instead.
+
+If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM is the smallest and lightest receiver available.  Note: The R9MM has a different [wiring diagram](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver) than the R9MX.
 
 ## Flashing ##
 
-ExpressLRS has figured out a convenient and easy way for flashing, which is unfortunately not available for mLRS (someone needs to figure it out). For flashing mLRS only the grass-route DIY procedure using a ST-Link programmer is currently possible.
+ExpressLRS has figured out a convenient and easy way for flashing, which is now also available for mLRS by using the ExpressLRS bootloader images.  Flashing via ST-Link is also still an option.
 
-Note: Fashing mLRS with the ST-Link is a non-reversible operation, i.e., it is not possible to revert back to the original Frsky firmware. It is possible to switch to ExpressLRS however.
+### Flashing the R9M via the ELRS bootloader ###
 
-In principle, the procedure goes exactly as already described in the ExpressLRS docs:
+You can flash the ELRS bootloader and mLRS using your radio with OpenTX 2.3.12 or newer or EdgeTX 2.4.0 or newer.  This method is especially recommended for new users.
+
+The ExpressLRS documentation provides ELRS specific instructions [here](https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stock_bl) which you might want to reference if the instructions here are not clear.  Of course, you should ignore the references to the ELRS configurator and build mLRS as instructed elsewhere.
+
+#### First time bootloader install ####
+These steps only need to be performed once.  If you experience a "No Sync" error, check that you have selected CRSF external mode and not mBridge.
+
+If you have never previously flashed this module via ST-Link, you can install the ELRS bootloader using and alongside the stock bootloader which also preserves the ability to return to the stock Frsky firmware.
+
+1. Download the [r9m\_elrs\_bl.frk](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_elrs_bl.frk?raw=true) file from the ExpressLRS git repository and copy it to the FIRMWARE folder on your radio's SD card.
+
+2. Install the R9M module in your radio.  Enter the System Menu and navigate using the page buttons to the SD card page.
+
+3. Scroll to the FIRMWARE folder and select the r9m\_elrs\_bl.frk file.  Choose "Flash external module".
+
+4. Follow the instructions in the next section to flash mLRS.
+
+If you have already flashed via ST-Link, you can continue to flash updates via ST-Link the way you always have, or you can follow these steps to switch to flashing from the radio.  To do this, you will flash the ELRS bootloader by using ST-Link one last time:
+
+1. Download the [r9m\_bootloader.bin](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_bootloader.bin?raw=true) file from the ExpressLRS git repository.
+2. Flash it to the beginning of the flash (0x8000000) using ST-Link and STM32CubeProgrammer.
+
+3. Follow the instructions below to flash mLRS.
+
+#### Flash/Update mLRS firmware on R9M via ELRS bootloader ####
+
+1. Build using run\_make\_firmwares3.py or download the latest mLRS firmware.
+
+2. Copy the latest tx-R9M-f103c8-elrs-bl-r9m\_use\_elrs_bootloader-v*.elrs file to FIRMWARE folder on your radio's SD card.
+
+3. Enter the System Menu and navigate using the page buttons to the SD card page.
+
+4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-r9m\_use\_elrs_bootloader-v*.elrs file.  Choose "Flash external ELRS".
+
+### Flash/Update mLRS firmware on R9MM or R9MX receivers using the ELRS bootloader ###
+
+Wiring the receiver to the JR Bay on the back of your radio and flashing the ELRS bootloader is documented [here](https://www.expresslrs.org/quick-start/receivers/r9/).  The procedure is similar to flashing the R9M as described above in the First time bootloader install section.  Use the appropriate .frk file indicated in the ELRS instructions for the receiver you are flashing.  Flashing the ELRS bootloader from the .frk file only needs to be done once.
+
+After flashing the ELRS bootloader, you can connect the serial port as described in the link above and use the ELRS UARTupload.py script to flash/update mLRS with latest mLRS firmware .elrs file.  There are, of course, separate .elrs image files for each receiver:
+
+1. Build the .elrs file using run\_make\_firmwares3.py or download the latest mLRS firmware release.
+
+2. Download or git clone the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository.  Since you only need the src/python folder, if you have subversion installed, you could use the svn github interface to get just what you need.  From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/trunk/src/python"
+
+3. Connect a TTL USB serial adapter to your computer and install a driver if it's not recognized.  If you don't have a TTL USB serial adapter, you should be able to use your flight controller.  See step 8
+
+4. Wire the serial adapter to your receiver as instructed [here](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver).  But, don't connect the VCC wire yet.
+
+5. Use the command window to run the UARTupload.py script like: "python UARTupload.py image\_file\_path" where image\_file\_path is the path to the appropriate .elrs file you obtained in step 1.
+
+6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 volt output of your serial adapter or a 5 volt power supply.  You should see the script report sync and begin the firmware download.  If it fails, try again, the timing can be a bit tight.  The first time you flash the .elrs file, you may not need to delay connecting the VCC wire.  If you have trouble getting the timing correct, you can hold down the button when powering up the receiver and the ELRC bootloader will keep running and not start the application code.
+
+7. When the UARTupload.py script reports the flash was successful, you can leave the receiver powered by the serial adapter and try to establish a connection from your TX.  The LED will switch from rapid red to 1Hz green on both the RX and TX when the connection is established.
+
+8. After you have connected the receiver serial port to your flight controller and installed it in your build, you can use Ardupilot's [serial passthrough](https://ardupilot.org/copter/docs/common-serial-passthrough.html) feature for future mLRS firmware updates without uninstalling the receiver from your build.  The baud rate for the FC serial port used should be configured for 420,000 in Ardupilot.  The receiver should be powered up (battery connected) after the UARTupload.py script reports "attempting to reboot into bootloader" as in step 6.  This is most easily accomplished by wiring the receiver to a regulated power output on your flight controller or ESC which is active only when the battery is connected, but not powered when the flight controller is connected to USB without the battery.  If this can't easilly be arranged, you will have to hold down the receiver button when connecting the flight controller USB port.
+
+### Flashing via ST-Link ###
+
+Note: Fashing any Frsky R9 board with the ST-Link is a non-reversible operation, i.e., it is not possible to revert back to the original Frsky firmware. It is possible to switch to ExpressLRS however.
+
+The ST-Link connection is made as described in the ExpressLRS docs:
 - R9M module: https://www.expresslrs.org/1.0/quick-start/tx-r9m/#flashing-using-stlink
 - R9MX receiver: https://www.expresslrs.org/1.0/quick-start/rx-stlink/
 
