@@ -31,7 +31,7 @@ The R9M transmitter module is somewhat limited with respect to serial ports. It 
 
 2. One needs to somehow (un)invert the serial signals for most uses. You can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
 
-3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle and just use the one of the supported ESP32 boards with the mlrs-wifi-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
+3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle when you use one of the supported ESP32 boards with the mlrs-wifi-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
 
 4. If you have the older 2018, "ACCST" version of the R9M, you will want to perform the Inverter Mod to allow reliable communication with the radio at higher bit rates.  This is nicely documented in the [ExpressLRS documentation](https://www.expresslrs.org/hardware/inverter-mod/).  Note that the newer 2019, "ACCESS" version of the R9M does not need this modification.
 
@@ -45,13 +45,13 @@ There are several DIY approaches for building an inverter dongle. A common appro
 
 The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a WiFi Bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl.  This approach can also eliminate the need for a separate inverter dongle.  Two of these boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate from M5Stack allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module.  The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port rather than requiring a separate programmer.  The 2.4 GHz WiFi bridge works especially well with 900 MHz systems like the R9 since the separate frequency range minimizes interference.
 
-To install the the sketch on the M5Stamp C3U Mate, use the Arduino IDE.  Open the mlrs-wifi-bridge.ino sketch from the mLRS esp/mlrs-wifi-bridge folder, edit the mlrs-wifi-bridge.ino file to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, connect the M5Stamp C3U Mate module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
+To install the sketch on the M5Stamp C3U Mate, use the Arduino IDE.  Open the mlrs-wifi-bridge.ino sketch from the mLRS esp/mlrs-wifi-bridge folder, edit the mlrs-wifi-bridge.ino file to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, connect the M5Stamp C3U Mate module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
 
 __Be sure to unplug the M5Stamp C3U Mate from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
 
 <img src="images/M5Stamp_C3U_installed.jpg" width="360px">
 
-Connecting the M5Stamp C3U to the R9M is easy:  Remove the screw and the plastic cover.  Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position.  This position serves as a key to avoid plugging in the board incorrectly.  Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above.  Then, you can connect your GCS computer or mobile device to the "mLRS_AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
+Connecting the M5Stamp C3U Mate to the R9M is easy:  Remove the screw and the plastic cover.  Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position.  This position serves as a key to avoid plugging in the board incorrectly.  Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above.  Then, you can connect your GCS computer or mobile device to the "mLRS AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
 
 <img src="images/M5Stamp_C3U_header.jpg" width="360px">
 
@@ -178,16 +178,4 @@ The ST-Link connection is made as described in the ExpressLRS docs:
 - R9M module: https://www.expresslrs.org/1.0/quick-start/tx-r9m/#flashing-using-stlink
 - R9MX receiver: https://www.expresslrs.org/1.0/quick-start/rx-stlink/
 
-In these docs it is suggested to download and use the "ST-LINK Utility" software. This software is pretty outdated (NRND = not recommended for new designs), and the new recommended tool is "STM32CubeProgrammer". However, there might be catches:
-- ST-LINK Utility appears to not work with newer ST-Link programmers.
-- STM32CubeProgrammer/STM32CubeIDE is quite nasty with which ST-Link programmer is used. It seems ST really wants their tools to only work well with "original" or legit ST-Link programmers. I especially had significant issues with getting the cheap and widely available 8$ STLinkV2 usb-stick-like clones to work with STM32CubeProgrammer/STM32CubeIDE, and they then never worked reliably or to my satisfaction.
-- It seems it can happen that ST-LINK Utility and STM32CubeProgrammer/STM32CubeIDE do not like each other.
-- STM32CubeProgrammer runs per default at a high SWD frequency, like 4000 kHz, on the 8$ STLinkV2 clones. Setting the frequency manually to 480 kHz and using short wires to the device makes it work more reliable.
-- STM32CubeProgrammer will likely require new firmware be installed on the ST-Link V2 or compatible device via the "Firmware upgrade" button" the first time it is used.
-
-So, if you use or want to use one of these 8$ STLinkV2 usb-stick-like clones and you have trouble with STM32Cube, you probably want to install ST-LINK Utility and see how that works for you. You will then (likely) not be able to flash from STM32CubeIDE, but have to go with the ST-LINK Utility.
-
-If anyone has deeper/better insight into the STM32CubeProgrammer/STM32CubeIDE vs ST-LINK Utility and cheap STLinkV2 programmer clones issues, please help :)
-
-If you wonder what STLink programmer I (olliw42) am using: Every NUCLEO board comes also with a STLink programmer... and these board are relatively cheap too, about 15Eur.
-
+In these docs it is suggested to download and use the "ST-LINK Utility" software. This software is pretty outdated (NRND = not recommended for new designs), and the new recommended tool is "STM32CubeProgrammer".
