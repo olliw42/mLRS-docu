@@ -21,7 +21,7 @@ The Frsky R9M transmitter module and R9MM and R9MX receivers are commercially av
   </tbody>
 </table>
 
-Note that R9 hardware uses a slightly older LORA chip family, which doesn't support the 31 Hz mode. It also happens to be incompatible with the newer LORA chips when the specific spreading factor used by the mLRS 19 Hz mode is selected.  Unfortunately, this means that R9 hardware can't connect with the other mLRS boards which support 868/915 MHz.
+Note that R9 hardware can't connect with the other mLRS boards which support 868/915 MHz. This is because it uses the SX127x LoRa chipset, which happens to be incompatible with the newer SX126x LoRa chipset when the SF6 spreading factor used by the mLRS 19 Hz mode is selected.  The older chipset also doesn't support SF5 which is required for the mLRS 31 Hz mode.
 
 ## R9M Tx Module ##
 
@@ -29,9 +29,9 @@ The R9M transmitter module is somewhat limited with respect to serial ports. It 
 
 1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.
 
-2. One needs to use a "Frsky inverter" dongle to connect a standard serial adapter. You either can buy one or build it yourself.
+2. One needs to somehow (un)invert the serial signals for most uses. You can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
 
-3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle and use the one of the supported ESP32 boards with the mlrs-wifi-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
+3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle and just use the one of the supported ESP32 boards with the mlrs-wifi-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
 
 4. If you have the older 2018, "ACCST" version of the R9M, you will want to perform the Inverter Mod to allow reliable communication with the radio at higher bit rates.  This is nicely documented in the [ExpressLRS documentation](https://www.expresslrs.org/hardware/inverter-mod/).  Note that the newer 2019, "ACCESS" version of the R9M does not need this modification.
 
@@ -43,15 +43,15 @@ There are several DIY approaches for building an inverter dongle. A common appro
 
 ### ESP32 WiFi Bridge ###
 
-The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a WiFi Bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl.  This approach can also eliminate the need for a separate inverter dongle.  Two of these boards, the M5Stamp Pico Mate and the M5Stack M5Stamp C3U Mate allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module.  The [M5Stack M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port rather than requiring a separate programmer.  The 2.4 GHz WiFi bridge works especially well with 900 MHz systems like the R9 since the separate frequency range minimizes interference.
+The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a WiFi Bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl.  This approach can also eliminate the need for a separate inverter dongle.  Two of these boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate from M5Stack allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module.  The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port rather than requiring a separate programmer.  The 2.4 GHz WiFi bridge works especially well with 900 MHz systems like the R9 since the separate frequency range minimizes interference.
 
-To install the the sketch on the M5Stamp C3U, use the Arduino IDE.  Open the mlrs-wifi-bridge.ino sketch from the mLRS esp/mlrs-wifi-bridge folder, edit the mlrs-wifi-bridge.ino file to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, connect the M5Stamp C3U module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
+To install the the sketch on the M5Stamp C3U Mate, use the Arduino IDE.  Open the mlrs-wifi-bridge.ino sketch from the mLRS esp/mlrs-wifi-bridge folder, edit the mlrs-wifi-bridge.ino file to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, connect the M5Stamp C3U Mate module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
 
-__Be sure to unplug the M5Stamp C3U from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
+__Be sure to unplug the M5Stamp C3U Mate from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
 
 <img src="images/M5Stamp_C3U_installed.jpg" width="360px">
 
-Connecting the M5Stamp C3U to the R9M is easy:  Remove the screw and the plastic cover.  Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position.  This position serves as a key to avoid plugging in the board incorrectly.  Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above.  Then, you can connect your GCS computer or mobile device to the mLRS_AP WiFi access point and connect the GCS via UDP on port 14550.
+Connecting the M5Stamp C3U to the R9M is easy:  Remove the screw and the plastic cover.  Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position.  This position serves as a key to avoid plugging in the board incorrectly.  Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above.  Then, you can connect your GCS computer or mobile device to the "mLRS_AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
 
 <img src="images/M5Stamp_C3U_header.jpg" width="360px">
 
