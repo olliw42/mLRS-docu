@@ -64,7 +64,7 @@ Can be "off", "1 Hz".
 
 #### Tx Buzzer #### 
 Enables the buzzer, and selects what data it reflects. 
-Can be "off", "LP", "rxLQ".
+Can be "off", "LP", "rxLQ", where LP stands for Lost Packet and rxLQ for receiver Link Quality.
 
 #### Tx Cli LineEnd ####
 Determines the line termination character(s) used by the CLI. 
@@ -121,7 +121,7 @@ Can be "off", "rc override", "rc channels".
 
 #### Rx Buzzer #### 
 Enables the buzzer, and selects what data it reflects. 
-Can be "off", "LP".
+Can be "off", "LP", where LP stands for Lost Packet.
 
 #### Rx FS Ch1 - Rx FS Ch16 #### 
 Sets the rc channel value upon a failsafe. Effective only when "Rx FailSafe Mode" = "by cnf". 
