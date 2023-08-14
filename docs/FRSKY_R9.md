@@ -37,7 +37,7 @@ The R9M transmitter module is somewhat limited with respect to serial ports. It 
 
 ### DIY Inverter Dongle ###
 
-There are several DIY approaches for building an inverter dongle. A common approach is based on the MAX3232 RS232 chip; an excellent build tutorial is provided here [Some soldering required](https://discuss.ardupilot.org/t/some-soldering-required/27613). Be aware however that many fake chips are available, and the original scheme suggested in this blog may not work. One, in fact, may have to add an extra diode and resistor.
+There are several DIY approaches for building an inverter dongle. A common approach is based on the MAX3232 RS232 chip; an excellent build tutorial is provided here [Some soldering required](https://discuss.ardupilot.org/t/some-soldering-required/27613). Be aware however that many fake chips are available, and the original scheme suggested in this blog may not work. One, in fact, may have to two extra diodes and a resistor.
 
 <img src="images/frsky-max3232-inverter-scheme.jpg" width="360px">
 
@@ -70,7 +70,9 @@ The R9M module can also be flashed with firmware which allows it to be used as m
 
 The R9MX receiver is a good choice for mLRS. The transmit power may however be somewhat low for applications aiming for largest range.
 
-The wiring is similar to the ExpressLRS docs found in the link below. Different from the ExpressLRS project the SBUS-out-pin is available.
+The thru-hole pads for Serial Wire Debug make it easy to connect ST-Link via a connector or micro-hook clips.
+
+<img src="images/Frsky_R9MX_wiring.jpg" width="360px">
 
 | Pin | Use
 | --- | ---
@@ -81,7 +83,6 @@ The wiring is similar to the ExpressLRS docs found in the link below. Different 
 | CH2 | Serial Tx
 | CH3 | Serial Rx
 | CH4 | Debug Tx
-
 
 ### As Tx Module ###
 
@@ -101,6 +102,8 @@ If you want to use ELRS bootloader and install via the Frsky bootloader and Open
 
 ## Flashing ##
 
+The mLRS firmware must, of course, be flashed on both the Tx module and the receiver before it can be used.
+
 ### Acknowledgments ###
 
 We wish to express our thanks to the folks of the ExpressLRS project, who have worked out the easy way to flash the R9 hardware, which is now also available for mLRS. With gratitude, here we are utilizing the ExpressLRS bootloader images and scripts and, in several cases, also their excellent documentation.
@@ -117,32 +120,36 @@ The ExpressLRS documentation provides ELRS specific instructions [here](https://
 
 These steps only need to be performed once.  If you experience a "No Sync" error, check that you have selected CRSF external mode and not mBridge.
 
-If you have never previously flashed this module via ST-Link, you can install the ELRS bootloader using and alongside the stock bootloader which also preserves the ability to return to the stock Frsky firmware.
+If you have never previously flashed this module via ST-Link, you can use the stock Frsky bootloader to flash the ELRS bootloader alongside the stock bootloader.  This method will preserve the ability to return to the stock Frsky firmware.
 
 1. Download the [r9m\_elrs\_bl.frk](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_elrs_bl.frk?raw=true) file from the ExpressLRS git repository and copy it to the FIRMWARE folder on your radio's SD card.
 
-2. Install the R9M module in your radio.  Enter the System Menu and navigate using the page buttons to the SD card page.
+2. Install the R9M module in your radio and power it on.
 
-3. Scroll to the FIRMWARE folder and select the r9m\_elrs\_bl.frk file.  Choose "Flash external module".
+3. Enter the System Menu and navigate using the page buttons to the SD card page.
 
-4. Follow the instructions in the next section to flash mLRS.
+4. Scroll to the FIRMWARE folder and select the r9m\_elrs\_bl.frk file.  Choose "Flash external module".
+
+5. Follow the instructions in the next section to flash mLRS.
 
 If you have already flashed via ST-Link, you can continue to flash updates via ST-Link the way you always have, or you can follow these steps to switch to flashing from the radio.  To do this, you will flash the ELRS bootloader by using ST-Link one last time:
 
 1. Download the [r9m\_bootloader.bin](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_bootloader.bin?raw=true) file from the ExpressLRS git repository.
 2. Flash it to the beginning of the flash (0x8000000) using ST-Link and STM32CubeProgrammer.
 
-3. Follow the instructions below to flash mLRS.
+3. Follow the instructions in the next section to flash mLRS.
 
 #### Flash/Update the mLRS firmware ####
 
-1. Build using run\_make\_firmwares3.py or download the latest mLRS firmware.
+Once the ELRS bootloader is installed, the following precedure can be followed to install the mLRS firmware.
 
-2. Copy the latest tx-R9M-f103c8-elrs-bl-r9m\_use\_elrs_bootloader-v*.elrs file to FIRMWARE folder on your radio's SD card.
+1. Download the latest mLRS firmware or build with MLRS\_FEATURE\_ELRS\_BOOTLOADER defined.
+
+2. Copy the latest tx-R9M-f103c8-elrs-bl-r9m-v*.elrs file to FIRMWARE folder on your radio's SD card.
 
 3. Enter the System Menu and navigate using the page buttons to the SD card page.
 
-4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-r9m\_use\_elrs_bootloader-v*.elrs file.  Choose "Flash external ELRS".
+4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-r9m-v*.elrs file.  Choose "Flash external ELRS".
 
 ### Flash R9 receivers with ELRS bootloader ###
 
@@ -154,7 +161,7 @@ Wiring the receiver to the JR Bay on the back of your radio and flashing the ELR
 
 After flashing the ELRS bootloader, you can connect the serial port as described in the link above and use the ELRS UARTupload.py script to flash/update mLRS with latest mLRS firmware .elrs file.  There are, of course, separate .elrs image files for each receiver:
 
-1. Build the .elrs file using run\_make\_firmwares3.py or download the latest mLRS firmware release.
+1. Download the latest mLRS firmware or build with MLRS\_FEATURE\_ELRS\_BOOTLOADER defined.
 
 2. Download or git clone the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository.  Since you only need the src/python folder, if you have subversion installed, you could use the svn github interface to get just what you need.  From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/trunk/src/python"
 
