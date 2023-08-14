@@ -145,11 +145,11 @@ Once the ELRS bootloader is installed, the following precedure can be followed t
 
 1. Download the latest mLRS firmware or build with MLRS\_FEATURE\_ELRS\_BOOTLOADER defined.
 
-2. Copy the latest tx-R9M-f103c8-elrs-bl-r9m-v*.elrs file to FIRMWARE folder on your radio's SD card.
+2. Copy the latest tx-R9M-f103c8-elrs-bl-v*.elrs file to FIRMWARE folder on your radio's SD card.  Note the "elrs-bl" in the file name.
 
 3. Enter the System Menu and navigate using the page buttons to the SD card page.
 
-4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-r9m-v*.elrs file.  Choose "Flash external ELRS".
+4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-v*.elrs file.  Choose "Flash external ELRS".
 
 ### Flash R9 receivers with ELRS bootloader ###
 
