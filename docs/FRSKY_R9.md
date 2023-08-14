@@ -33,7 +33,11 @@ The R9M transmitter module is somewhat limited with respect to serial ports. It 
 
 3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle when you use one of the supported ESP32 boards with the mlrs-wifi-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
 
-4. If you have the older 2018, "ACCST" version of the R9M, you will want to perform the Inverter Mod to allow reliable communication with the radio at higher bit rates.  This is nicely documented in the [ExpressLRS documentation](https://www.expresslrs.org/hardware/inverter-mod/).  Note that the newer 2019, "ACCESS" version of the R9M does not need this modification.
+### R9M Tx Module versions ###
+
+Frsky updated the R9 system a year after introducing it, so there are two versions of the Tx Module.  Both versions can run the same mLRS firmware, but the newer version included some small hardware improvements.
+
+If you have the older 2018, "ACCST" version of the R9M, you will want to perform the Inverter Mod to allow reliable communication with the radio at higher bit rates.  This is nicely documented in the [ExpressLRS documentation](https://www.expresslrs.org/hardware/inverter-mod/).  The newer 2019, "ACCESS" version of the R9M does not need this modification.
 
 ### DIY Inverter Dongle ###
 
