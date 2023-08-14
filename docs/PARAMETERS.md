@@ -63,8 +63,9 @@ Determines if a MAVLink RADIO_STATUS message is emitted by the Tx module. Effect
 Can be "off", "1 Hz".
 
 #### Tx Buzzer #### 
-Enables the buzzer, and selects what data it reflects. 
-Can be "off", "LP", "rxLQ".
+Enables the buzzer, and selects what data it reflects. Can be "off", "LP", "rxLQ".
+
+LP stands for Lost Packet, and here the buzzer emits a short beep for any lost packet. rxLQ stands for receiver Link Quality, and here the buzzer beeps every second, with the beep length reflecting LQ (longer beep equals lower LQ).
 
 #### Tx Cli LineEnd ####
 Determines the line termination character(s) used by the CLI. 
@@ -120,8 +121,9 @@ Determines if a MAVLink RC_CHANNELS_OVERRIDE or RADIO_RC_CHANNELS message is emi
 Can be "off", "rc override", "rc channels".
 
 #### Rx Buzzer #### 
-Enables the buzzer, and selects what data it reflects. 
-Can be "off", "LP".
+Enables the buzzer, and selects what data it reflects. Can be "off" or "LP".
+
+LP stands for Lost Packet, and here the buzzer emits a short beep for any lost packet.
 
 #### Rx FS Ch1 - Rx FS Ch16 #### 
 Sets the rc channel value upon a failsafe. Effective only when "Rx FailSafe Mode" = "by cnf". 
