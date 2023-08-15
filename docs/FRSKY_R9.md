@@ -25,6 +25,21 @@ Note that R9 hardware can't connect with the other mLRS boards which support 868
 
 ## R9M Tx Module ##
 
+Connections:
+
+4-Pin Header:
+- Inverted serial Rx
+- Inverted serial Tx
+- 5 Volts
+- GND
+
+JR Bay connector:
+- Rx, not used 
+- Tx, not used
+- Vin
+- GND
+- Pin 5 (S.Port) - CRSF
+
 The R9M transmitter module is somewhat limited with respect to serial ports. It provides access to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
 
 1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.
@@ -67,9 +82,7 @@ A description for installing a fan along with documentation for 3D printed case 
 
 ### As Receiver ###
 
-The R9M module can also be flashed with firmware which allows it to be used as mLRS receiver. This yields a receiver working at high transmit power for longer range applications. 
-
-Connections are as follows:
+Connections:
 
 4-Pin Header:
 - Inverted serial Rx
@@ -85,7 +98,6 @@ JR Bay connector:
 - Vin
 - GND
 - Pin 5 (S.Port) - Out (SBUS only)
-
 
 ## R9MX Receiver ##
 
