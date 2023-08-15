@@ -25,6 +25,14 @@ Note that R9 hardware can't connect with the other mLRS boards which support 868
 
 ## R9M Tx Module ##
 
+The R9M transmitter module is somewhat limited with respect to serial ports. It provides access to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
+
+1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.
+
+2. One needs to somehow (un)invert the serial signals for most uses. You can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
+
+3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle when you use one of the supported ESP32 boards with the mlrs-wifi-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
+
 Connections:
 
 4-Pin Header:
@@ -39,14 +47,6 @@ JR Bay connector:
 - Vin
 - GND
 - Pin 5 (S.Port) - CRSF
-
-The R9M transmitter module is somewhat limited with respect to serial ports. It provides access to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
-
-1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.
-
-2. One needs to somehow (un)invert the serial signals for most uses. You can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
-
-3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle when you use one of the supported ESP32 boards with the mlrs-wifi-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
 
 ### R9M Tx Module versions ###
 
