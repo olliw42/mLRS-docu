@@ -67,7 +67,24 @@ A description for installing a fan along with documentation for 3D printed case 
 
 ### As Receiver ###
 
-The R9M module can also be flashed with firmware which allows it to be used as mLRS receiver. This yields a receiver working at high transmit power for longer range applications. For details please search the rcgroups thread and ask on rcgroups or discord if you have questions.
+The R9M module can also be flashed with firmware which allows it to be used as mLRS receiver. This yields a receiver working at high transmit power for longer range applications. 
+
+Connections are as follows:
+
+4-Pin Header:
+- Inverted serial Rx
+- Inverted serial Tx
+- 5 Volts
+- GND
+
+Note: As the serial connections are inverted, these will have to be accounted for when connecting to the flight controller.  One solution is to use an inverter cable as mentioned above.  Alternatively, F7 and H7 based flight controllers have built-in inverters which can be enabled with the SERIALx_OPTIONS parameter.
+
+JR Bay connector:
+- Rx, not used 
+- Tx, not used
+- Vin
+- GND
+- Pin 5 (S.Port) - Out (SBUS only)
 
 
 ## R9MX Receiver ##
