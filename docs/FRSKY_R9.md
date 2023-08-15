@@ -77,7 +77,7 @@ Connections are as follows:
 - 5 Volts
 - GND
 
-Note: As the serial connections are inverted, these will have to be accounted for when connecting to the flight controller.  One solution is to use an inverter cable as mentioned above.  Alternatively, F7 and H7 based flight controllers have built-in inverters which can be enabled with the SERIALx_OPTIONS parameter.
+Note: As the serial connections are inverted, these will have to be accounted for when connecting to the flight controller.  One solution is to use an inverter cable as mentioned above.  Alternatively, ArduPilot F7 and H7 based flight controllers have built-in inverters which can be enabled using with the SERIALx_OPTIONS parameter.
 
 JR Bay connector:
 - Rx, not used 
