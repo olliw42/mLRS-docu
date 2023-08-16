@@ -107,17 +107,21 @@ Subsequent flashing can be done in two ways:
 
 ### OLED Display Addition ###
 
-The transmitter side FRM303 can be optionally equipped with a 0.96" 128x64 pixel monochrome SSD1306-based OLED screen with I2C bus and +3.3V supply. Current parameters can be observed and the settings can be of the TX as well as connected RX side mLRS module can be altered via 5-way joystick and OLED screen.
+The FRM303 Tx module can be optionally equipped with a 0.96" monochrome OLED screen (128x64 pixel, SSD1306 display controller, needs I2C bus and +3.3V power supply). With the OLED, among other functions, the current link statistics data can be observed, the parameter settings of the Tx module, as well as those of a connected receiver can be altered. User interface navigation is via the 5-way joystick. The OLED can replace the CLI and the mLRS Lua script.
 
 <img src="images/FRM303-OLED-mod_finished.jpg" width="400px">
 
-To activate OLED screen on FRM303, you need to use a pre-compiled firmware with \*oled\* in the binary filename, or when building own custom firmware, be sure to define `MLRS_FEATURE_OLED`.
+To activate OLED screen, the `OLED` firmware version (indicated by a `-oled` label in the firmware file name) needs to be flashed into the Tx module.
 
-You can find two STL files to 3D print a mount and a housing for the OLED display under `docs/files/FRM303*.stl`
+The OLED mod exploits the fact that the FRM303 module has four M2.5 threads on the front side, where the top two holes provide easy access to the interior of the housing and the bottom two holes almost perfectly match the distance of the mounting holes of a typical 0.96" OLED display (the OLED mounting holes need also to be slightly enlarged to fit the M2.5 screws).
+
+<a href="images/FRM303-OLED-mod_wo_case.jpg"><img src="images/FRM303-OLED-mod_wo_case.jpg" height="400px"></a> 
+
+Optionally, you can also build a housing for the OLED screen. You can find two STL files to 3D print a mount and a housing for the OLED display under `docs/files/FRM303*.stl`. The result will look like the picture below:
 
 <img src="images/FRM303-OLED-mod_parts.jpg" width="400px">
 
-The following pictures illustrate the assembly process in a couple of steps (click on the picture to open a bigger version):
+Here the steps to illustrate the assembly process (click on the picture to open a bigger version):
 
 <a href="images/FRM303-OLED-mod_step1.jpg"><img src="images/FRM303-OLED-mod_step1.jpg" height="100px"></a> 
 <a href="images/FRM303-OLED-mod_step2.jpg"><img src="images/FRM303-OLED-mod_step2.jpg" height="100px"></a> 
