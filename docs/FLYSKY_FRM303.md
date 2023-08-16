@@ -133,7 +133,6 @@ Here the steps to illustrate the assembly process (click on the picture to open 
 <a href="images/FRM303-OLED-mod_step6.jpg"><img src="images/FRM303-OLED-mod_step6.jpg" height="100px"></a> 
 <a href="images/FRM303-OLED-mod_step7.jpg"><img src="images/FRM303-OLED-mod_step7.jpg" height="100px"></a>
 
-Please do note that a std. 0.96" OLED mounting holes need to be slightly enlarged to match the M2.5 screw holed of the FRM303 case.
 
 ### mLRS-WiFi-bridge Addition ###
 
