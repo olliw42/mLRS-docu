@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The FlySky FRM303 transmitter module is a nearly perfect option for building mLRS equipment in the 2.4 GHz frequency range. Its main drawback is its price. It also has a small MCU which limits the available mLRS features. However, no hardware tweaking is required (although mods, like the OLED mod and mLRS-WiFi-bridge, are possible. See bottom of the page for more about optional modifications).
+The FlySky FRM303 transmitter module is a nearly perfect option for building mLRS equipment in the 2.4 GHz frequency range. Its main drawback is its price. It also has a small MCU which limits the available mLRS features. However, no hardware tweaking is required. Although mods, like the OLED mod and mLRS-WiFi-bridge addition, are possible. See bottom of the page for more about optional modifications.
 
 <table>
   <tbody>
