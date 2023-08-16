@@ -109,9 +109,13 @@ Subsequent flashing can be done in two ways:
 
 The FRM303 Tx module can be optionally equipped with a 0.96" monochrome OLED screen (128x64 pixel, SSD1306 display controller, needs I2C bus and +3.3V power supply). With the OLED, among other functions, the current link statistics data can be observed, the parameter settings of the Tx module, as well as those of a connected receiver can be altered. User interface navigation is via the 5-way joystick. The OLED can replace the CLI and the mLRS Lua script.
 
-To activate OLED screen, the `OLED` firmware version (indicated by a `-oled` label in the firmware file name) needs to be flashed into the Tx module.
+<img src="images/FRM303-OLED-mod_finished.jpg" height="400px">
 
-The OLED mod exploits the fact that the FRM303 module has four M2.5 threads on the front side, where the top two holes provide easy access to the interior of the housing and the bottom two holes almost perfectly match the distance of the mounting holes of a typical 0.96" OLED display (the OLED mounting holes need also to be slightly enlarged to fit the M2.5 screws). The following pictures illustrate a most simple application (click on the picture to open a bigger version):
+To activate OLED screen, the "OLED" firmware version (indicated by a '-oled' label in the firmware file name) needs to be flashed into the Tx module.
+
+The OLED mod exploits the fact that the FRM303 module has four M2.5 threads on the front side, where the top two holes provide easy access to the interior of the housing and the bottom two holes almost perfectly match the distance of the mounting holes of a typical 0.96" OLED display (the OLED mounting holes need also to be slightly enlarged to fit the M2.5 screws).
+
+The following pictures illustrate a most simple application (click on the picture to open a bigger version):
 
 <a href="images/FRM303-OLED-mod_step1.jpg"><img src="images/FRM303-OLED-mod_step1.jpg" height="150px"></a> 
 <a href="images/FRM303-OLED-mod_step5.jpg"><img src="images/FRM303-OLED-mod_step5.jpg" height="150px"></a> 
@@ -119,21 +123,20 @@ The OLED mod exploits the fact that the FRM303 module has four M2.5 threads on t
 <a href="images/FRM303-OLED-mod_step7.jpg"><img src="images/FRM303-OLED-mod_step7.jpg" height="150px"></a>
 <a href="images/FRM303-OLED-mod_wo_case.jpg"><img src="images/FRM303-OLED-mod_wo_case.jpg" height="150px"></a> 
 
-Optionally, you can also build a housing for the OLED screen. You can find two STL files to 3D print a mount and a housing for the OLED display under `docs/files/FRM303*.stl`.
+Optionally, you can also build a housing for the OLED screen. You can find two STL files to 3D print a mount and a housing for the OLED display under [docs/files/FRM303*.stl)(https://github.com/olliw42/mLRS-docu/tree/master/docs/images)
 
 Here the additional steps illustrated (click on the picture to open a bigger version):  
 <a href="images/FRM303-OLED-mod_parts.jpg"><img src="images/FRM303-OLED-mod_parts.jpg" height="150px"></a> 
 <a href="images/FRM303-OLED-mod_step2.jpg"><img src="images/FRM303-OLED-mod_step2.jpg" height="150px"></a> 
 <a href="images/FRM303-OLED-mod_step3.jpg"><img src="images/FRM303-OLED-mod_step3.jpg" height="150px"></a> 
 <a href="images/FRM303-OLED-mod_step4.jpg"><img src="images/FRM303-OLED-mod_step4.jpg" height="150px"></a> 
-<a href="images/FRM303-OLED-mod_finished.jpg"><img src="images/FRM303-OLED-mod_finished.jpg" height="150px"></a>
 
 
 ### mLRS-WiFi-bridge Addition ###
 
-With mLRS-WiFi-bridge mod, you will be able to stream serial data (e.g. MAVLink) wirelessly from the FRM303 to a WiFi capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
+With mLRS-WiFi-bridge mod, you will be able to stream the serial MAVLink data from the FRM303 to a WiFi capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
 
-Flysky FRM303 micro-JR bay adapter is spacious enough to hold [M5Stack ATOM Lite ESP32 module](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with [Adafruit MPM3610 5V voltage regulator](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
+Flysky FRM303 micro-JR bay adapter is spacious enough to hold an ESP32 module, such as the [M5Stack ATOM Lite](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with a 5V regulator, such as the [Adafruit MPM3610 5V](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
 
 <img src="images/FRM303_mlrs-wifi-bridge_assembled.jpg" width="400px">
 
