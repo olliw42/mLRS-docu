@@ -103,7 +103,7 @@ Subsequent flashing can be done in two ways:
     - Proceed as usual
 
 
-## Optional modifications ##
+## Optional Modifications ##
 
 ### OLED Display Addition ###
 
