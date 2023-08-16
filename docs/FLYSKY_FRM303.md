@@ -111,27 +111,22 @@ The FRM303 Tx module can be optionally equipped with a 0.96" monochrome OLED scr
 
 To activate OLED screen, the `OLED` firmware version (indicated by a `-oled` label in the firmware file name) needs to be flashed into the Tx module.
 
-The OLED mod exploits the fact that the FRM303 module has four M2.5 threads on the front side, where the top two holes provide easy access to the interior of the housing and the bottom two holes almost perfectly match the distance of the mounting holes of a typical 0.96" OLED display (the OLED mounting holes need also to be slightly enlarged to fit the M2.5 screws).
+The OLED mod exploits the fact that the FRM303 module has four M2.5 threads on the front side, where the top two holes provide easy access to the interior of the housing and the bottom two holes almost perfectly match the distance of the mounting holes of a typical 0.96" OLED display (the OLED mounting holes need also to be slightly enlarged to fit the M2.5 screws). The following pictures illustrate a most simple application (click on the picture to open a bigger version):
 
-<a href="images/FRM303-OLED-mod_wo_case.jpg"><img src="images/FRM303-OLED-mod_wo_case.jpg" height="400px"></a> 
+<a href="images/FRM303-OLED-mod_step1.jpg"><img src="images/FRM303-OLED-mod_step1.jpg" height="150px"></a> 
+<a href="images/FRM303-OLED-mod_step5.jpg"><img src="images/FRM303-OLED-mod_step5.jpg" height="150px"></a> 
+<a href="images/FRM303-OLED-mod_step6.jpg"><img src="images/FRM303-OLED-mod_step6.jpg" height="150px"></a> 
+<a href="images/FRM303-OLED-mod_step7.jpg"><img src="images/FRM303-OLED-mod_step7.jpg" height="150px"></a>
+<a href="images/FRM303-OLED-mod_wo_case.jpg"><img src="images/FRM303-OLED-mod_wo_case.jpg" height="150px"></a> 
 
 Optionally, you can also build a housing for the OLED screen. You can find two STL files to 3D print a mount and a housing for the OLED display under `docs/files/FRM303*.stl`.
 
-<img src="images/FRM303-OLED-mod_parts.jpg" width="400px">
-
-The result will look like the picture below:
-
-<img src="images/FRM303-OLED-mod_finished.jpg" width="400px">
-
-Here the steps to illustrate the assembly process (click on the picture to open a bigger version):
-
-<a href="images/FRM303-OLED-mod_step1.jpg"><img src="images/FRM303-OLED-mod_step1.jpg" height="100px"></a> 
-<a href="images/FRM303-OLED-mod_step2.jpg"><img src="images/FRM303-OLED-mod_step2.jpg" height="100px"></a> 
-<a href="images/FRM303-OLED-mod_step3.jpg"><img src="images/FRM303-OLED-mod_step3.jpg" height="100px"></a> 
-<a href="images/FRM303-OLED-mod_step4.jpg"><img src="images/FRM303-OLED-mod_step4.jpg" height="100px"></a> 
-<a href="images/FRM303-OLED-mod_step5.jpg"><img src="images/FRM303-OLED-mod_step5.jpg" height="100px"></a> 
-<a href="images/FRM303-OLED-mod_step6.jpg"><img src="images/FRM303-OLED-mod_step6.jpg" height="100px"></a> 
-<a href="images/FRM303-OLED-mod_step7.jpg"><img src="images/FRM303-OLED-mod_step7.jpg" height="100px"></a>
+Here the additional steps illustrated (click on the picture to open a bigger version):  
+<a href="images/FRM303-OLED-mod_parts.jpg"><img src="images/FRM303-OLED-mod_parts.jpg" height="150px"></a> 
+<a href="images/FRM303-OLED-mod_step2.jpg"><img src="images/FRM303-OLED-mod_step2.jpg" height="150px"></a> 
+<a href="images/FRM303-OLED-mod_step3.jpg"><img src="images/FRM303-OLED-mod_step3.jpg" height="150px"></a> 
+<a href="images/FRM303-OLED-mod_step4.jpg"><img src="images/FRM303-OLED-mod_step4.jpg" height="150px"></a> 
+<a href="images/FRM303-OLED-mod_finished.jpg.jpg"><img src="images/FRM303-OLED-mod_finished.jpg" height="150px"></a>
 
 
 ### mLRS-WiFi-bridge Addition ###
