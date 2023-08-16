@@ -105,9 +105,9 @@ Subsequent flashing can be done in two ways:
 
 ## Optional modifications ##
 
-### OLED display addition ###
+### OLED Display Addition ###
 
-The transmitter side FRM303 can be optionally equipped with a 0.96" 128x64 pixel monochrome OLED screen with I2C bus and +3.3V supply. Current parameters can be observed and the settings can be of the TX as well as connected RX side mLRS module can be altered via 5-way joystick and OLED screen.
+The transmitter side FRM303 can be optionally equipped with a 0.96" 128x64 pixel monochrome SSD1306-based OLED screen with I2C bus and +3.3V supply. Current parameters can be observed and the settings can be of the TX as well as connected RX side mLRS module can be altered via 5-way joystick and OLED screen.
 
 <img src="images/FRM303-OLED-mod_finished.jpg" width="400px">
 
@@ -129,7 +129,7 @@ The following pictures illustrate the assembly process in a couple of steps (cli
 
 Please do note that a std. 0.96" OLED mounting holes need to be slightly enlarged to match the M2.5 screw holed of the FRM303 case.
 
-### mLRS-WiFi-bridge addition ###
+### mLRS-WiFi-bridge Addition ###
 
 With mLRS-WiFi-bridge mod, you will be able to stream serial data (e.g. MAVLink) wirelessly from the FRM303 to a WiFi capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
 
