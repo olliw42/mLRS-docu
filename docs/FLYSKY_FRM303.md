@@ -12,7 +12,7 @@ The FlySky FRM303 transmitter module is a nearly perfect option for building mLR
     </tr>
     <tr>
       <td>Max. RF Output Power</td>
-      <td>30 dBm (1 W). The hardware should be capable of 33 dBm (2 W) but current mLRS firmware does not provide this option.</td>
+      <td>+30 dBm (1 W). The hardware should be capable of +33 dBm (2 W) but current mLRS firmware does not provide this option.</td>
     </tr>
     <tr>
       <td>Supported Modes</td>
@@ -35,13 +35,10 @@ The description is for the default firmware version ('USB' version, indicated by
 
 The FRM303 provides two connectors, a 5-pin JST-GH connector at the bottom edge and a USB-C connector at top edge. In addition there is a 5-way button. Their usage is as follows:
 
-JST-GH connector (from left to right when viewed from top):
 
-- serial Rx
-- serial Tx
-- VCC
-- GND
-- in port
+JST-GH connector:
+
+<img src="images/FRM303_mlrs_tx.png" width="350px">
 
 USB-C connector:
 
@@ -57,13 +54,9 @@ Notes:
 
 ## As Receiver ##
 
-JST-GH connector (from left to right when viewed from top):
+JST-GH connector:
 
-- serial Rx
-- serial Tx
-- VCC
-- GND
-- out port
+<img src="images/FRM303_mlrs_rx.png" width="350px">
 
 USB-C connector:
 
