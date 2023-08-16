@@ -1,4 +1,4 @@
-# mLRS Documentation: FlySky FRM303 Transmitter Module #
+# mLRS Documentation: FlySky FRM303 RF Module #
 
 ([back to main page](../README.md))
 
