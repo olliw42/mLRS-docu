@@ -111,7 +111,7 @@ The transmitter side FRM303 can be optionally equipped with a 0.96" 128x64 pixel
 
 <img src="images/FRM303-OLED-mod_finished.jpg" width="400px">
 
-To activate OLED screen on FRM303, a custom firmware build is required that defines `MLRS_FEATURE_OLED`.
+To activate OLED screen on FRM303, you need to use a pre-compiled firmware with \*oled\* in the binary filename, or when building own custom firmware, be sure to define `MLRS_FEATURE_OLED`.
 
 You can find two STL files to 3D print a mount and a housing for the OLED display under `docs/files/FRM303*.stl`
 
@@ -133,7 +133,7 @@ Please do note that a std. 0.96" OLED mounting holes need to be slightly enlarge
 
 With mLRS-WiFi-bridge mod, you will be able to stream serial data (e.g. MAVLink) wirelessly from the FRM303 to a WiFi capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
 
-Flysky FRM303 micro-JR bay adapter is spacious enough to withhold [M5Stack ATOM Lite ESP32 module](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with [Adafruit MPM3610 5V voltage regulator](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
+Flysky FRM303 micro-JR bay adapter is spacious enough to hold [M5Stack ATOM Lite ESP32 module](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with [Adafruit MPM3610 5V voltage regulator](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
 
 <img src="images/FRM303_mlrs-wifi-bridge_assembled.jpg" width="400px">
 
