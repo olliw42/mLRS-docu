@@ -126,7 +126,7 @@ Here the additional steps illustrated (click on the picture to open a bigger ver
 <a href="images/FRM303-OLED-mod_step2.jpg"><img src="images/FRM303-OLED-mod_step2.jpg" height="150px"></a> 
 <a href="images/FRM303-OLED-mod_step3.jpg"><img src="images/FRM303-OLED-mod_step3.jpg" height="150px"></a> 
 <a href="images/FRM303-OLED-mod_step4.jpg"><img src="images/FRM303-OLED-mod_step4.jpg" height="150px"></a> 
-<a href="images/FRM303-OLED-mod_finished.jpg.jpg"><img src="images/FRM303-OLED-mod_finished.jpg" height="150px"></a>
+<a href="images/FRM303-OLED-mod_finished.jpg"><img src="images/FRM303-OLED-mod_finished.jpg" height="150px"></a>
 
 
 ### mLRS-WiFi-bridge Addition ###
