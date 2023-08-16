@@ -134,7 +134,7 @@ Here the additional steps illustrated (click on the picture to open a bigger ver
 
 ### mLRS-WiFi-bridge Addition ###
 
-With mLRS-WiFi-bridge mod, you will be able to stream the serial MAVLink data from the FRM303 to a WiFi capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
+With [mLRS-WiFi-bridge](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wifi-bridge) mod, you will be able to stream the serial MAVLink data from the FRM303 to a WiFi capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
 
 Flysky FRM303 micro-JR bay adapter is spacious enough to hold an ESP32 module, such as the [M5Stack ATOM Lite](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with a 5V regulator, such as the [Adafruit MPM3610 5V](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
 
