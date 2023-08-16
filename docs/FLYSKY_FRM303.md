@@ -123,7 +123,7 @@ The following pictures illustrate a most simple application (click on the pictur
 <a href="images/FRM303-OLED-mod_step7.jpg"><img src="images/FRM303-OLED-mod_step7.jpg" height="150px"></a>
 <a href="images/FRM303-OLED-mod_wo_case.jpg"><img src="images/FRM303-OLED-mod_wo_case.jpg" height="150px"></a> 
 
-Optionally, you can also build a housing for the OLED screen. You can find two STL files to 3D print a mount and a housing for the OLED display under [docs/files/FRM303*.stl)(https://github.com/olliw42/mLRS-docu/tree/master/docs/images)
+Optionally, you can also build a housing for the OLED screen. You can find two STL files to 3D print a mount and a housing for the OLED display under [docs/files/FRM303*.stl](https://github.com/olliw42/mLRS-docu/tree/master/docs/images)
 
 Here the additional steps illustrated (click on the picture to open a bigger version):  
 <a href="images/FRM303-OLED-mod_parts.jpg"><img src="images/FRM303-OLED-mod_parts.jpg" height="150px"></a> 
