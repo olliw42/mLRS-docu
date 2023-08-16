@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The FlySky FRM303 transmitter module is a nearly perfect option for building mLRS equipment in the 2.4 GHz frequency range. Its main drawback is its price. It also has a small MCU which limits the available mLRS features. However, no hardware tweaking is required (although mods like the OLED mod are possible).
+The FlySky FRM303 transmitter module is a nearly perfect option for building mLRS equipment in the 2.4 GHz frequency range. Its main drawback is its price. It also has a small MCU which limits the available mLRS features. However, no hardware tweaking is required (although mods, like the OLED mod and mLRS-WiFi-bridge, are possible. See bottom of the page for more about optional modifications).
 
 <table>
   <tbody>
@@ -108,4 +108,49 @@ Subsequent flashing can be done in two ways:
     - This enables programming over the USB-C port using the DFU method
     - Launch STM32CubeProgrammer and select USB as the connection method, click connect 
     - Proceed as usual
-   
+
+
+## Optional modifications ##
+
+### OLED display addition ###
+
+The transmitter side FRM303 can be optionally equipped with a 0.96" 128x64 pixel monochrome OLED screen with I2C bus and +3.3V supply. Current parameters can be observed and the settings can be of the TX as well as connected RX side mLRS module can be altered via 5-way joystick and OLED screen.
+
+<img src="images/FRM303-OLED-mod_finished.jpg" width="400px">
+
+To activate OLED screen on FRM303, a custom firmware build is required that defines `MLRS_FEATURE_OLED`.
+
+You can find two STL files to 3D print a mount and a housing for the OLED display under `docs/files/FRM303*.stl`
+
+<img src="images/FRM303-OLED-mod_parts.jpg" width="400px">
+
+The following pictures illustrate the assembly process in a couple of steps (click on the picture to open a bigger version):
+
+<a href="images/FRM303-OLED-mod_step1.jpg"><img src="images/FRM303-OLED-mod_step1.jpg" height="100px"></a> 
+<a href="images/FRM303-OLED-mod_step2.jpg"><img src="images/FRM303-OLED-mod_step2.jpg" height="100px"></a> 
+<a href="images/FRM303-OLED-mod_step3.jpg"><img src="images/FRM303-OLED-mod_step3.jpg" height="100px"></a> 
+<a href="images/FRM303-OLED-mod_step4.jpg"><img src="images/FRM303-OLED-mod_step4.jpg" height="100px"></a> 
+<a href="images/FRM303-OLED-mod_step5.jpg"><img src="images/FRM303-OLED-mod_step5.jpg" height="100px"></a> 
+<a href="images/FRM303-OLED-mod_step6.jpg"><img src="images/FRM303-OLED-mod_step6.jpg" height="100px"></a> 
+<a href="images/FRM303-OLED-mod_step7.jpg"><img src="images/FRM303-OLED-mod_step7.jpg" height="100px"></a>
+
+Please do note that a std. 0.96" OLED mounting holes need to be slightly enlarged to match the M2.5 screw holed of the FRM303 case.
+
+### mLRS-WiFi-bridge addition ###
+
+With mLRS-WiFi-bridge mod, you will be able to stream serial data (e.g. MAVLink) wirelessly from the FRM303 to a WiFi capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
+
+Flysky FRM303 micro-JR bay adapter is spacious enough to withhold [M5Stack ATOM Lite ESP32 module](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with [Adafruit MPM3610 5V voltage regulator](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
+
+<img src="images/FRM303_mlrs-wifi-bridge_assembled.jpg" width="400px">
+
+Wiring diagram:
+
+<img src="images/FRM303_mlrs-wifi-bridge_wiring.png">
+
+Following couple of pictures show the assembly process into the Flysky FRM303 micro-JR bay adapter (click on the picture to open a bigger version):
+
+<a href="images/FRM303_mlrs-wifi-bridge_step1.jpg"><img src="images/FRM303_mlrs-wifi-bridge_step1.jpg" height="100px"></a> 
+<a href="images/FRM303_mlrs-wifi-bridge_step2.jpg"><img src="images/FRM303_mlrs-wifi-bridge_step2.jpg" height="100px"></a> 
+<a href="images/FRM303_mlrs-wifi-bridge_step3.jpg"><img src="images/FRM303_mlrs-wifi-bridge_step3.jpg" height="100px"></a> 
+<a href="images/FRM303_mlrs-wifi-bridge_step4.jpg"><img src="images/FRM303_mlrs-wifi-bridge_step4.jpg" height="100px"></a>
