@@ -41,13 +41,6 @@ Connections:
 - 5 Volts
 - GND
 
-JR Bay connector:
-- Rx, not used 
-- Tx, not used
-- Vin
-- GND
-- Pin 5 (S.Port) - CRSF
-
 ### R9M Tx Module versions ###
 
 Frsky updated the R9 system a year after introducing it, so there are two versions of the Tx Module.  Both versions can run the same mLRS firmware, but the newer version included some small hardware improvements.
@@ -82,6 +75,8 @@ A description for installing a fan along with documentation for 3D printed case 
 
 ### As Receiver ###
 
+The R9M module can also be used as an mLRS receiver, this yields a receiver with high transmit power for long range applications.
+
 Connections:
 
 4-Pin Header:
@@ -90,7 +85,7 @@ Connections:
 - 5 Volts
 - GND
 
-Note: As the serial connections are inverted, these will have to be accounted for when connecting to the flight controller.  One solution is to use an inverter cable as mentioned above.  Alternatively, ArduPilot F7 and H7 based flight controllers have built-in inverters which can be enabled using with the SERIALx_OPTIONS parameter.
+Note: As the serial connection is inverted, this will have to be accounted for when connecting to the flight controller.  One solution is to use an inverter cable as mentioned above.  Alternatively, ArduPilot F7 and H7 based flight controllers have built-in inverters which can be enabled using with the SERIALx_OPTIONS parameter.
 
 JR Bay connector:
 - Rx, not used 
