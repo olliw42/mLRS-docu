@@ -123,7 +123,7 @@ The following pictures illustrate a most simple application (click on the pictur
 <a href="images/FRM303-OLED-mod_step7.jpg"><img src="images/FRM303-OLED-mod_step7.jpg" height="150px"></a>
 <a href="images/FRM303-OLED-mod_wo_case.jpg"><img src="images/FRM303-OLED-mod_wo_case.jpg" height="150px"></a> 
 
-Optionally, you can also build a housing for the OLED screen. You can find two STL files to 3D print a mount and a cap for the OLED display under [docs/files/FRM303*.stl](./files). During testing we found that various OLED displays have slightly different position of the visible area. To better match various OLED manufacturers and their wide tolerances, we have prepared 3 options to choose from. Pick a file most suitable to your OLED display visible area location. The following overlay-composition of the 3 options depicts their difference in the opening area of the display:
+Optionally, you can also build a housing for the OLED screen. You can find STL files to 3D print a mount and a cap for the OLED display under [docs/files/FRM303*.stl](./files). During testing it was found that various OLED displays have slightly different position of the visible area. To better match various OLED manufacturers and their tolerances, there are 3 options to choose from. Pick a file most suitable to your OLED display visible area location. The following overlay-composition of the 3 options depicts their difference in the opening area of the display:
 
 <img src="images/FRM303_OLED_cap.png" width="300">
 
