@@ -199,7 +199,7 @@ In these docs it is suggested to download and use the "ST-LINK Utility" software
 
 ### Update via System Bootloader ###
 
-When the R9MX or R9MM receivers have been flashed with the non-"elrs-bl" firmware version via ST-Link, then they can be upgraded also by invoking the STM32 system bootloader, as follows:
+When the R9MX or R9MM receivers have been flashed with the non-"elrs-bl" firmware version via ST-Link, they can be upgraded by invoking the STM32 system bootloader, which can be done as follows:
 
 - Download and install STM32CubeProgrammer
 - Connect the R9MX/R9MM via the serial Rx/Tx pins to a USB-TTL adpater
