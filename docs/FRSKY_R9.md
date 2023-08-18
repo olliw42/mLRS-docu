@@ -53,11 +53,11 @@ To install the sketch on the M5Stamp C3U Mate, use the Arduino IDE.  Open the ml
 
 __Be sure to unplug the M5Stamp C3U Mate from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
 
-<img src="images/M5Stamp_C3U_installed.jpg" width="360px">
+<img src="images/Frsky_R9M_M5Stamp_C3U_installed.jpg" width="360px">
 
 Connecting the M5Stamp C3U Mate to the R9M is easy:  Remove the screw and the plastic cover.  Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position.  This position serves as a key to avoid plugging in the board incorrectly.  Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above.  Then, you can connect your GCS computer or mobile device to the "mLRS AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
 
-<img src="images/M5Stamp_C3U_header.jpg" width="360px">
+<img src="images/Frsky_R9M_M5Stamp_C3U_header.jpg" width="360px">
 
 ### Cooling ###
 
@@ -76,17 +76,21 @@ The R9MX receiver is a good choice for mLRS. The transmit power may however be s
 
 The thru-hole pads for Serial Wire Debug make it easy to connect ST-Link via a connector or micro-hook clips.
 
-<img src="images/Frsky_R9MX_wiring.jpg" width="360px">
+<img src="images/Frsky_R9MX_wiring-02.jpg" width="720px">
 
 | Pin | Use
 | --- | ---
 | Pin 1 GND | Ground
 | Pin 2 VIN | Power 3.5-10V
-| Pin 5 SBUS OUT | RC Output
+| Pin 5 SBUS OUT | Out (CRSF, SBus, inv. SBus supported)
 | CH1 | Buzzer
 | CH2 | Serial Tx
 | CH3 | Serial Rx
 | CH4 | Debug Tx
+
+Button:
+- press for ca 4 sec to enter bind mode
+- press during power up to enter system bootloader for firmware upgrade
 
 ### As Tx Module ###
 
@@ -106,7 +110,7 @@ If you want to use ELRS bootloader and install via the Frsky bootloader and Open
 
 ## Flashing ##
 
-The mLRS firmware must, of course, be flashed on both the Tx module and the receiver before it can be used.
+The mLRS firmware must, of course, be flashed on both the Tx module and the receiver before it can be used. For flashing, as well as upgrading, several methods are available (via ExpressLRS bootloader, via system bootloader, via STLink/SWD), which are described in the following. 
 
 ### Acknowledgments ###
 
@@ -189,4 +193,18 @@ The ST-Link connection is made as described in the ExpressLRS docs:
 - R9M module: https://www.expresslrs.org/1.0/quick-start/tx-r9m/#flashing-using-stlink
 - R9MX receiver: https://www.expresslrs.org/1.0/quick-start/rx-stlink/
 
+Use the non-"elrs-bl" firmware versions, which can be identified by the ".hex" extension and that the label "elrs-bl" is not contained in the firmware file name. 
+
 In these docs it is suggested to download and use the "ST-LINK Utility" software. This software is pretty outdated (NRND = not recommended for new designs), and the new recommended tool is "STM32CubeProgrammer".
+
+### Update via System Bootloader ###
+
+When the R9MX or R9MM receivers have been flashed with the non-"elrs-bl" firmware version via ST-Link, they can be upgraded by invoking the STM32 system bootloader, which can be done as follows:
+
+- Download and install STM32CubeProgrammer
+- Connect the R9MX/R9MM via the serial Rx/Tx pins to a USB-TTL adpater
+- Power up the R9MX/R9MM while keeping the button pressed; this boots the receiver into the system bootloader
+- Launch STM32CubeProgrammer and select the Serial connection option as the connection method, click connect
+- From the menu on the left select the Download tile
+- Select the correct firmware in the Download section, click Start Program
+- Power cycle the board
