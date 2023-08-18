@@ -33,6 +33,14 @@ The R9M transmitter module is somewhat limited with respect to serial ports. It 
 
 3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle when you use one of the supported ESP32 boards with the mlrs-wifi-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
 
+Connections:
+
+4-Pin Header:
+- Inverted serial Rx
+- Inverted serial Tx
+- 5 Volts
+- GND
+
 ### R9M Tx Module versions ###
 
 Frsky updated the R9 system a year after introducing it, so there are two versions of the Tx Module.  Both versions can run the same mLRS firmware, but the newer version included some small hardware improvements.
@@ -67,8 +75,24 @@ A description for installing a fan along with documentation for 3D printed case 
 
 ### As Receiver ###
 
-The R9M module can also be flashed with firmware which allows it to be used as mLRS receiver. This yields a receiver working at high transmit power for longer range applications. For details please search the rcgroups thread and ask on rcgroups or discord if you have questions.
+The R9M module can also be used as an mLRS receiver, this yields a receiver with high transmit power for long range applications.
 
+Connections:
+
+4-Pin Header:
+- Inverted serial Rx
+- Inverted serial Tx
+- 5 Volts
+- GND
+
+Note: As the serial connection is inverted, this will have to be accounted for when connecting to the flight controller.  One solution is to use an inverter cable as mentioned above.  Alternatively, ArduPilot F7 and H7 based flight controllers have built-in inverters which can be enabled using with the SERIALx_OPTIONS parameter.
+
+JR Bay connector:
+- Rx, not used 
+- Tx, not used
+- Vin
+- GND
+- Pin 5 (S.Port) - Out (SBUS only)
 
 ## R9MX Receiver ##
 
