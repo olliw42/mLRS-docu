@@ -140,15 +140,15 @@ With [mLRS-Wireless-Bridge](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-w
 
 Flysky FRM303 micro-JR bay adapter is spacious enough to hold an ESP32 module, such as the [M5Stack ATOM Lite](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with a 5V regulator, such as the [Adafruit MPM3610 5V](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
 
-<img src="images/FRM303_mlrs-wifi-bridge_assembled.jpg" width="400px">
+<img src="images/FRM303_mlrs-wireless-bridge_assembled.jpg" width="400px">
 
 Wiring diagram:
 
-<img src="images/FRM303_mlrs-wifi-bridge_wiring.png">
+<img src="images/FRM303_mlrs-wireless-bridge_wiring.png">
 
 Following couple of pictures show the assembly process into the Flysky FRM303 micro-JR bay adapter (click on the picture to open a bigger version):
 
-<a href="images/FRM303_mlrs-wifi-bridge_step1.jpg"><img src="images/FRM303_mlrs-wifi-bridge_step1.jpg" height="100px"></a> 
-<a href="images/FRM303_mlrs-wifi-bridge_step2.jpg"><img src="images/FRM303_mlrs-wifi-bridge_step2.jpg" height="100px"></a> 
-<a href="images/FRM303_mlrs-wifi-bridge_step3.jpg"><img src="images/FRM303_mlrs-wifi-bridge_step3.jpg" height="100px"></a> 
-<a href="images/FRM303_mlrs-wifi-bridge_step4.jpg"><img src="images/FRM303_mlrs-wifi-bridge_step4.jpg" height="100px"></a>
+<a href="images/FRM303_mlrs-wireless-bridge_step1.jpg"><img src="images/FRM303_mlrs-wireless-bridge_step1.jpg" height="100px"></a> 
+<a href="images/FRM303_mlrs-wireless-bridge_step2.jpg"><img src="images/FRM303_mlrs-wireless-bridge_step2.jpg" height="100px"></a> 
+<a href="images/FRM303_mlrs-wireless-bridge_step3.jpg"><img src="images/FRM303_mlrs-wireless-bridge_step3.jpg" height="100px"></a> 
+<a href="images/FRM303_mlrs-wireless-bridge_step4.jpg"><img src="images/FRM303_mlrs-wireless-bridge_step4.jpg" height="100px"></a>
