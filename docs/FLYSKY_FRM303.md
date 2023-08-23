@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The FlySky FRM303 transmitter module is a nearly perfect option for building mLRS equipment in the 2.4 GHz frequency range. Its main drawback is its price. It also has a small MCU which limits the available mLRS features. However, no hardware tweaking is required. Although mods, like the OLED mod and mLRS-WiFi-bridge addition, are possible. See bottom of the page for more about optional modifications.
+The FlySky FRM303 transmitter module is a nearly perfect option for building mLRS equipment in the 2.4 GHz frequency range. Its main drawback is its price. It also has a small MCU which limits the available mLRS features. However, no hardware tweaking is required. Although mods, like the OLED mod and mLRS-Wireless-Bridge addition, are possible. See bottom of the page for more about optional modifications.
 
 <table>
   <tbody>
@@ -134,9 +134,9 @@ Here the additional steps illustrated (click on the picture to open a bigger ver
 <a href="images/FRM303-OLED-mod_step4.jpg"><img src="images/FRM303-OLED-mod_step4.jpg" height="150px"></a> 
 
 
-### mLRS-WiFi-bridge Addition ###
+### mLRS-Wireless-Bridge Addition ###
 
-With [mLRS-WiFi-bridge](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wifi-bridge) mod, you will be able to stream the serial MAVLink data from the FRM303 to a WiFi capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
+With [mLRS-Wireless-Bridge](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge) mod, you will be able to stream the serial MAVLink data from the FRM303 to a WiFi or Bluetooth capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
 
 Flysky FRM303 micro-JR bay adapter is spacious enough to hold an ESP32 module, such as the [M5Stack ATOM Lite](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with a 5V regulator, such as the [Adafruit MPM3610 5V](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
 
