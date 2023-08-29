@@ -4,16 +4,22 @@
 
 For a Tx module and a receiver to be able to connect to each other, some parameters (the common parameters) need to be set to equal values in both the Tx module and the receiver. For an arbitrary receiver this can be achieved by binding.
 
-The binding procedure is as follows:
+Both the Tx module and the receiver will need to be put into bind mode, there are multiple ways to do this:
 
-1. On the Tx side you have three options: (i) press the bind button (for ca. 4 seconds) on the Tx module, (ii) initiate the binding via a CLI command, or (iii) initiate the binding via the mLRS configuration Lua script. If available, the binding can also be initiated via the OLED display.
-2. Press the bind button (for ca. 4 seconds) on the receiver.
+- For the Tx module you have four options: 
+    1. Press the bind button (for ca. 4 seconds) on the Tx module.
+    2. Enter bind mode via the 'bind' CLI command.
+    3. Enter bind mode via the mLRS Lua script.
+    4. If available, enter bind mode via the OLED display.
+- For the receiver you have two options:
+    1. Press the bind button (for ca. 4 seconds) on the receiver.
+    2. Power cycle the receiver quickly 3 times (wait for the LEDs to blink 3 times), the receiver will then enter bind mode on the 4th power up.
 
-The sequence doesn't matter, i.e., one also can first press the bind button on the receiver and then set the Tx module into binding mode.
+The sequence doesn't matter, i.e., one can first put the receiver into bind mode and then set the Tx module into bind mode or vice-versa.
 
-When in binding mode, the green and red LEDs will blink alternatively with ca 2.5 Hz.
+When in bind mode, the green and red LEDs will blink alternatively with ca 2.5 Hz.
 
-When a receiver is connected to a Tx module, the common parameters as well as all other parameters can be changed and stored permanently by issuing a save command either via the CLI (pstore; command) or the mLRS configuration Lua script (Save button), or the OLED display if available (STORE option).
+When a receiver is bound and connected to a Tx module, the common parameters as well as all other parameters can be changed and stored permanently by issuing a save command either via the CLI (pstore; command), the mLRS Lua script (Save button), or the OLED display if available (STORE option).
 
 Note: When flashing mLRS to new hardware or after performing a factory reset (e.g. by a full chip erase) the Tx module and receiver should usually connect immediately as they will be bound already (i.e. both have the default bind phrase of 'mlrs.0', default mode and default frequency band).
 
