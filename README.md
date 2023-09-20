@@ -9,6 +9,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [Configuration Parameters](docs/PARAMETERS.md)
 - [mLRS Configuration Lua Script](docs/LUA.md)
 - [CLI Commands](docs/CLI.md)
+- [Configuration ID](docs/CONFIGID.md)
 
 ### Setups ###
 - Setup for [CRSF Telemetry and Yaapu Telemetry App](docs/CRSF.md)
