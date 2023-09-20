@@ -24,7 +24,7 @@ For 2.4 GHz systems the last (6th) character of the bind phrase determines exclu
 
 #### Mode ####
 Operation mode. 
-Can be "50 Hz", "31 Hz", "19 Hz".
+Can be "50 Hz", "31 Hz", "19 Hz", "FLRC".
 
 #### RF Band ####
 Frequency band. May not be selectable.
@@ -36,11 +36,11 @@ Transmission power in Watts.
 
 #### Tx Diversity #### 
 Diversity mode. 
-Can be "enabled", "antenna1", "antenna2". 
+Can be "enabled", "antenna1", "antenna2", "r:en, t:ant1", "r:en, t:ant2".
 
 #### Tx Ch Source #### 
 Selects the source from which the rc data should be read. 
-Can be "none", "mbridge", "in", "crsf".
+Can be "none", "mbridge", "in", "crsf", "elrs rx".
 
 #### Tx Ch Order #### 
 Channel order of the rc data provided to the Tx module. 
@@ -78,7 +78,7 @@ Transmission power in Watts.
 
 #### Rx Diversity #### 
 Diversity mode. 
-Can be "enabled", "antenna1", "antenna2". 
+Can be "enabled", "antenna1", "antenna2", "r:en, t:ant1", "r:en, t:ant2".
 
 #### Rx Ch Order #### 
 Channel order of the rc data emitted by the receiver. 
