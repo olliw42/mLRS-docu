@@ -31,7 +31,7 @@ The R9M transmitter module is somewhat limited with respect to serial ports. It 
 
 2. One needs to somehow (un)invert the serial signals for most uses. You can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
 
-3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle when you use one of the supported ESP32 boards with the mlrs-wifi-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
+3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle when you use one of the supported ESP32 boards with the mlrs-wireless-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station.  The ESP32 can directly use the inverted serial signals.
 
 Connections:
 
@@ -53,11 +53,11 @@ There are several DIY approaches for building an inverter dongle. A common appro
 
 <img src="images/frsky-max3232-inverter-scheme.jpg" width="360px">
 
-### ESP32 WiFi Bridge ###
+### ESP32 Wireless Bridge ###
 
-The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a WiFi Bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl.  This approach can also eliminate the need for a separate inverter dongle.  Two of these boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate from M5Stack allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module.  The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port rather than requiring a separate programmer.  The 2.4 GHz WiFi bridge works especially well with 900 MHz systems like the R9 since the separate frequency range minimizes interference.
+The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a wireless bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl.  This approach can also eliminate the need for a separate inverter dongle.  Two of these boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate from M5Stack allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module.  The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port rather than requiring a separate programmer.  The 2.4 GHz wireless bridge works especially well with 900 MHz systems like the R9 since the separate frequency range minimizes interference.
 
-To install the sketch on the M5Stamp C3U Mate, use the Arduino IDE.  Open the mlrs-wifi-bridge.ino sketch from the mLRS esp/mlrs-wifi-bridge folder, edit the mlrs-wifi-bridge.ino file to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, connect the M5Stamp C3U Mate module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
+To install the sketch on the M5Stamp C3U Mate, use the Arduino IDE.  Open the mlrs-wireless-bridge.ino sketch from the mLRS esp/mlrs-wireless-bridge folder, edit the mlrs-wireless-bridge.ino file to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, connect the M5Stamp C3U Mate module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
 
 __Be sure to unplug the M5Stamp C3U Mate from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
 
