@@ -40,7 +40,7 @@ Can be "enabled", "antenna1", "antenna2", "r:en, t:ant1", "r:en, t:ant2".
 
 #### Tx Ch Source #### 
 Selects the source from which the rc data should be read. 
-Can be "none", "mbridge", "in", "crsf", "elrs rx".
+Can be "none", "crsf" "mbridge", "in".
 
 #### Tx Ch Order #### 
 Channel order of the rc data provided to the Tx module. 
