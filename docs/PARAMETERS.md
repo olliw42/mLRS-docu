@@ -38,9 +38,11 @@ Transmission power in Watts.
 Diversity mode. 
 Can be "enabled", "antenna1", "antenna2", "r:en, t:ant1", "r:en, t:ant2".
 
+The last two options allow for having receive diversity while choosing to transmit on a specific antenna.
+
 #### Tx Ch Source #### 
 Selects the source from which the rc data should be read. 
-Can be "none", "crsf" "mbridge", "in".
+Can be "none", "crsf", "in", "mbridge".
 
 #### Tx Ch Order #### 
 Channel order of the rc data provided to the Tx module. 
@@ -79,6 +81,8 @@ Transmission power in Watts.
 #### Rx Diversity #### 
 Diversity mode. 
 Can be "enabled", "antenna1", "antenna2", "r:en, t:ant1", "r:en, t:ant2".
+
+The last two options allow for having receive diversity while choosing to transmit on a specific antenna.
 
 #### Rx Ch Order #### 
 Channel order of the rc data emitted by the receiver. 
