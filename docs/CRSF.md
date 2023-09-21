@@ -42,6 +42,7 @@ A basic setup is described in this section which should get one started, further
 ### MAVLink Serial Port
 
 - SERIALx_BAUD:
+    - 230 for FLRC
     - 57 for 31 Hz, 50 Hz
     - 38 for 19 Hz (57 works very well too, only parameter download is slower)
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
@@ -86,6 +87,7 @@ Set the following parameters using the CLI or Lua script:
 
 - Rx Out Mode = crsf
 - Rx Ser Baudrate (must match the baudrate that the flight controller's MAVLink serial port is configured for):
+    - 230400 for FLRC
     - 57600 for 31 Hz, 50 Hz
     - 38400 for 19 Hz (or 57600, see SERIALx_BAUD)
 - Rx Ser Link Mode = mavlink
