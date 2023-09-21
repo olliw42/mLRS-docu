@@ -12,7 +12,7 @@ Notes:
 
 Within EdgeTx/OpenTx, navigate to the MDL->MODEL SETUP page and then select the 'External RF' Section:
 
-<img src="images/configIDModelSetup.bmp" width="360px">
+<img src="images/configIDmodelSetup.bmp" width="360px">
 
 Change the receiver number to the slot you want to use:
 
