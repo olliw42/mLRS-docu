@@ -12,7 +12,7 @@ The FlySky FRM303 transmitter module is a nearly perfect option for building mLR
     </tr>
     <tr>
       <td>Max. RF Output Power</td>
-      <td>+30 dBm (1 W). The hardware should be capable of +33 dBm (2 W) but current mLRS firmware does not provide this option.</td>
+      <td>+30 dBm (1 W). The hardware is capable of +33 dBm (2 W) but current mLRS firmware does not provide this option.  When using >= +30 dBn power output it is recommended to power the module through the external XT30 connector.</td>
     </tr>
     <tr>
       <td>Supported Modes</td>
@@ -21,6 +21,10 @@ The FlySky FRM303 transmitter module is a nearly perfect option for building mLR
     <tr>
       <td>Weight</td>
       <td>65 grams without antenna</td>
+    </tr>
+    <tr>
+      <td>Limitations</td>
+      <td>The FRM303 does not support FLRC or MAVLinkX.</td>
     </tr>
   </tbody>
 </table>
