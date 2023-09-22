@@ -10,7 +10,6 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [mLRS Configuration Lua Script](docs/LUA.md)
 - [CLI Commands](docs/CLI.md)
 - [Configuration ID](docs/CONFIGID.md)
-- [Experimental: Relay](docs/RELAY.md)
 
 ### Setups ###
 - Setup for [CRSF Telemetry and Yaapu Telemetry App](docs/CRSF.md)
@@ -19,6 +18,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - Basic setup for [SBus Radios](docs/BASIC_SETUP.md)
 - Setup as [SiK Telemetry Replacement](docs/SETUP_SIK.md)
 - Configuration Options for [ArduPilot Systems](docs/ARDUPILOT.md)
+- [Experimental: Relay](docs/RELAY.md)
 
 ### Hardware ###
 - Using [FlySky FRM303 Module](docs/FLYSKY_FRM303.md)
