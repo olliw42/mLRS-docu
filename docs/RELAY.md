@@ -24,7 +24,7 @@ Assuming you've already completed the setup following the [CRSF page](../docs/CR
 
 Further, certain settings will need to be configured properly in order for the relay functionality to work, these are:
 
-- Rx Ch Order of the secondary pair needs to match Tx Ch Order of the primary pair
+- Rx Ch Order and Tx Ch Order of the secondary pair need to match
 - The Rx Ser Baudrate of the secondary Rx has to match the Tx Ser Baudrate of the primary Tx
 - Rx Ser Link Mode has to be the same for both pairs - either MAVLink or MAVLinkX
 
