@@ -10,7 +10,10 @@ mLRS allows for a relay setup in which a main Tx, Rx pair is used with a seconda
 For a relay setup is recommended to:
 - Use a lower frequency which is better suited for long range for the main Tx, Rx pair
 - Use different frequencies for the main and secondary Tx, Rx pairs to avoid interference
+    - If using the same frequency, then different bind phrases need to be used for the pairs
 - Use a faster mode for the secondary Tx, Rx pair
+
+Note: Not all receiver hardware will be able to function as a secondary Rx in a relay setup. For example, STM32F1 based hardware is currently not supported.
 
 ## Configuring the Main Tx, Rx pair
 
