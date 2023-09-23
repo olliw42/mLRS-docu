@@ -22,6 +22,10 @@ The FlySky FRM303 transmitter module is a nearly perfect option for building mLR
       <td>Weight</td>
       <td>65 grams without antenna</td>
     </tr>
+    <tr>
+      <td>Limitations</td>
+      <td>The FRM303 does not support FLRC or MAVLinkX.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -103,10 +107,6 @@ Subsequent flashing can be done in two ways:
     - This enables programming over the USB-C port using the DFU method
     - Launch STM32CubeProgrammer and select USB as the connection method, click connect 
     - Proceed as usual
-
-### Limitations ###
-
-The FRM303 does not support FLRC or MAVLinkX.
 
 ## Optional Modifications ##
 
