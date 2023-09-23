@@ -12,7 +12,7 @@ The FlySky FRM303 transmitter module is a nearly perfect option for building mLR
     </tr>
     <tr>
       <td>Max. RF Output Power</td>
-      <td>+30 dBm (1 W). The hardware is capable of +33 dBm (2 W) but current mLRS firmware does not provide this option.  When using >= +30 dBn power output it is recommended to power the module through the external XT30 connector.</td>
+      <td>+30 dBm (1 W). The hardware is capable of +33 dBm (2 W) but current mLRS firmware does not provide this option.</td>
     </tr>
     <tr>
       <td>Supported Modes</td>
@@ -21,10 +21,6 @@ The FlySky FRM303 transmitter module is a nearly perfect option for building mLR
     <tr>
       <td>Weight</td>
       <td>65 grams without antenna</td>
-    </tr>
-    <tr>
-      <td>Limitations</td>
-      <td>The FRM303 does not support FLRC or MAVLinkX.</td>
     </tr>
   </tbody>
 </table>
@@ -55,6 +51,7 @@ USB-C connector:
 Notes:
 
 - To enter the system bootloader for flashing, hold the button in the down direction during power up (or use the CLI, Lua script, or OLED if available)
+- When using >= +30 dBn power output it is recommended to power the module through the external XT30 connector.
 
 ## As Receiver ##
 
@@ -74,6 +71,7 @@ Notes:
 
 - To enter the system bootloader for flashing, hold the button in the down direction during power up
 - The flight controller may not provide enough power for the FRM303 to run properly, choose a proper power source
+- When using >= +30 dBn power output it is recommended to power the module through the external XT30 connector.
 
 ## Flashing ##
 
@@ -106,6 +104,9 @@ Subsequent flashing can be done in two ways:
     - Launch STM32CubeProgrammer and select USB as the connection method, click connect 
     - Proceed as usual
 
+### Limitations ###
+
+The FRM303 does not support FLRC or MAVLinkX.
 
 ## Optional Modifications ##
 
