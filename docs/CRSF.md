@@ -57,11 +57,6 @@ Note: 'x' refers to the serial port of your flight controller used for MAVLink
 <html>
 <head>
     <title>HTML Table</title>
-    <style>
-    table {
-        text-align: center;
-    }
-    </style>
 </head>
 <body>
     <table border="1">
