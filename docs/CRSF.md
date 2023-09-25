@@ -30,12 +30,12 @@ Set the following parameters using the CLI or Lua script:
 
 - Tx Ch Source = crsf
 - Tx Ser Baudrate:
-    - 115200 for 19, 31, 50 Hz
+    - 115200 for 19 Hz, 31 Hz, 50 Hz
     - 230400 for FLRC
 - Tx Ser Dest = serial or serial2 (not mbridge!)
 - Tx Snd RadioStat = off
 
-Note: Tx Ser Baudrate needs to greater than or equal to Rx Ser Baudrate in order to provide enough capacity for the serial link.
+Note: Tx Ser Baudrate needs to be greater than or equal to Rx Ser Baudrate in order to provide enough capacity for the serial link.
 
 ## ArduPilot Setup
 
