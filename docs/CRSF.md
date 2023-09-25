@@ -54,12 +54,8 @@ Note: 'x' refers to the serial port of your flight controller used for MAVLink
 
 ### Stream Rates
 
-<html>
-<head>
-    <title>HTML Table</title>
-</head>
-<body>
-    <table border="1">
+<table>
+  <tbody>
         <tr>
             <th></th>
             <th><strong>50 Hz</strong></th>
@@ -137,9 +133,8 @@ Note: 'x' refers to the serial port of your flight controller used for MAVLink
             <td>1</td>
             <td>2</td>
         </tr>
-    </table>
-</body>
-</html>
+  </tbody>
+</table>
 
 Note: 'y' refers to the MAVLink stream number of the serial port, which is usually different to 'x' in SERIALx
 
