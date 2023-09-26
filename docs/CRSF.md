@@ -35,7 +35,7 @@ Set the following parameters using the CLI or Lua script:
 - Tx Ser Dest = serial or serial2 (not mbridge!)
 - Tx Snd RadioStat = off
 
-Note: Tx Ser Baudrate needs to be greater than or equal to Rx Ser Baudrate in order to provide enough capacity for the serial link.
+Note: Tx Ser Baudrate should be larger than the link data rate in order to provide enough capacity (e.g. in the 50 Hz mode the link data rate is 4100 Bytes/sec and the baudrate should thus be larger than 41000), but otherwise the choice is not critical and largely determined by the user's need. The default value is 115200, which is appropriate for all LoRa modes (50 Hz, 31 Hz, 19 Hz).
 
 ## ArduPilot Setup
 
