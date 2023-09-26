@@ -46,6 +46,7 @@ Note: It is recommended to use the CRSF protocol for the RC data, since you get 
 - SERIALx_BAUD:
     - 57 for 31 Hz, 50 Hz
     - 38 for 19 Hz (57 works very well too, only parameter download is slower)
+    - 230 for FLRC
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 - SERIALx_OPTIONS = 0
 
