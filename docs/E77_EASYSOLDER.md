@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The E77 Easy Solder Boards are designed to be an allow one with minimal soldering skills to build their own mLRS hardware.  All of the parts except for the E77 module are through-hole parts to aid in assembly.  These boards also offer diversity when paired with an additional E22 module.
+The E77 Easy Solder Boards are designed to be an allow one with minimal soldering skills to build their own mLRS hardware. All of the parts except for the E77 module are through-hole parts to aid in assembly.  These boards are flexible in that they can be used as a Tx module, Rx module or a SiK replacement. Additionally, these boards support diversity when paired with an additional E22 module.
 
 <table>
   <tbody>
