@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The E77 Easy Solder Boards are designed to be an allow one with minimal soldering skills to build their own mLRS hardware. All of the parts except for the E77 module are through-hole parts to aid in assembly.  These boards are flexible in that they can be used as a Tx module, Rx module or a SiK replacement. Additionally, these boards support diversity when paired with an additional E22 module.
+The E77 Easy Solder Boards are designed to allow one with minimal soldering skills to build their own mLRS hardware. All of the parts except for the E77 module are through-hole parts to aid in assembly.  These boards are flexible in that they can be used as a Tx module, receiver or a SiK replacement. Additionally, these boards support diversity when paired with an additional E22 module.
 
 <table>
   <tbody>
@@ -27,24 +27,24 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 
 - serial: Tx, Rx
 - com/cli: Tx, Rx
+- JRPin5/in: S
+- button: bind / cli
 - debug: STx
-- JR pin 5: S
-- button: cli / BIND
 
 Notes:
 
-- To enable the cli, hold down the button during boot
+- To enable the cli, hold down the bind button during boot
 
 <img src="images/E77_Tx_Wiring.png" width="720">
 
-### As Rx Module ###
+### As Receiver ###
 
 Connections (name in respect to board print-ons, otherwise please refer to graphic):
 
 - serial: Tx, Rx
 - out: S
+- button: bind
 - debug: STx
-- button: BIND
 
 <img src="images/E77_Rx_Wiring.png" width="720">
 
