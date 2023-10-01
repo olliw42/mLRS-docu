@@ -38,6 +38,7 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 
 - serial: TxD,RxD and on-board USB plug
 - com/cli: TxD,RxD and on-board USB plug
+- JRPin5/in: PB7
 - button1: boot
 - button2: bind / cli
 - debug: PA5
