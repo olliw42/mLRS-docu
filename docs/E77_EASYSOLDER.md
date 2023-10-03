@@ -67,3 +67,46 @@ If you are unable to to flash due to readout protection, perform the following s
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
     - This will erase the current firmware
+
+## Building ##
+
+As mentioned in the introduction, with the exception of the E77 and E22 modules the board uses only through-hole parts, which makes soldering as simple as possible. Moreover, standard parts are mostly used, which should help with sourcing. Only the two 1.8 mm LEDs are somewhat special and less common, but can be substituted with standard 3 mm LEDs if necessary. 
+
+### PCB ###
+
+The electronic scheme and board design files, as well as Gerber files for ordering PCBs, can be found [here](https://github.com/olliw42/mLRS-hardware/tree/master/olliw-stm32-based/rx-tx-E77-E22-dual-easysolder).
+
+### BOM ###
+
+<table>
+  <tbody>
+    <tr>
+      <td>R1,R2</td><td>330, 1/4 W</td>
+    </tr><tr>
+      <td>C1,C2,C3,C5*</td><td>10u, RM3</td>
+    </tr><tr>
+      <td>C4,C6*</td><td>100n, RM2</td>
+    </tr><tr>
+      <td>IC1</td><td>LD1117AV33, TO220, low drop fixed voltage regulator 3.3 V, 1 A</td> 
+    </tr><tr>
+      <td>IC2</td><td>Ebyte E77-900M22S</td>
+    </tr><tr>
+      <td>IC3*</td><td>Ebyte E22-900M22S</td>
+    </tr><tr>
+      <td>LED1</td><td>red LED 1.8 mm</td>
+    </tr><tr>
+      <td>LED2</td><td>green LED 1.8 mm</td>
+    </tr><tr>
+      <td>SW1</td><td>button 6 x 3.5 mm</td>
+    </tr><tr>
+      <td>D1**</td><td>BAT42, Schottky diode (Tx modules only)</td>
+    </tr>
+  </tbody>
+</table>
+
+\* The parts C5, C6 and IC3 are only required, and only need to be populated, when diversity is desired.<br>
+\*\* For Tx modules the Schottky diode D1 is normally not needed, and should normally not be populated. For receivers it never must be populated. 
+
+For convenience, a Mouser list is available [here](https://eu.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=b60c19cf3a&_gl=1*nmaj37*_ga*OTEyNjU5NzcwLjE2NzU2MzU2MjQ.*_ga_15W4STQT4T*MTY5NjI2NzIzMS4xMS4wLjE2OTYyNjcyMzIuNTkuMC4w). The Ebyte modules can be purchased on Aliexpress.
+
+ 
