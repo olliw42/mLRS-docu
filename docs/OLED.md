@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-mLRS allows for a 0.96", 128x64, SSD1306 OLED display to be connected to a Tx module using I2C.  When paired with a 5-way joystick (4 directions + select) this allows for one to update parameters and display link statistics.  The OLED is particularly useful on radios that do not have a 480 x 272 color LCD that cannot utilize the color Lua script.
+mLRS allows for a 0.96", 128x64, SSD1306 OLED display to be connected to a Tx module using I2C.  When paired with a 5-way joystick (4 directions + select) this allows for one to update parameters and display link statistics.  The OLED is particularly useful on radios that do not have a 480 x 272 color LCD and cannot utilize the color Lua script.
 
 ## Hardware Configuration
 
