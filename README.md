@@ -29,6 +29,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 
 ### Optional Hardware ###
 - [Wireless Bridge](docs/WIRELESS_BRIDGE.md)
+- [OLED Display](docs/OLED.md)
 
 ### Firmware/Build Notes ###
 - [Custom Boards & Targets](docs/CUSTOM_BOARDS_TARGETS.md)
