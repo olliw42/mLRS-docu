@@ -27,6 +27,8 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - Using [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
 - Using [E77 Easy Solder Boards](docs/E77_EASYSOLDER.md)
 
+### Optional Hardware ###
+- [Wireless Bridge](docs/WIRELESS_BRIDGE.md)
 
 ### Firmware/Build Notes ###
 - [Custom Boards & Targets](docs/CUSTOM_BOARDS_TARGETS.md)
