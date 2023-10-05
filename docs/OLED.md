@@ -68,6 +68,12 @@ From the main screen, you can navigate through the setting and action screens us
         <th>Actions</th>
     </tr>
     <tr>
+        <td>Config ID</td>
+        <td>Config ID</td>
+        <td>Config ID</td>
+        <td>Config ID</td>
+    </tr>
+    <tr>
         <td>Bind Phrase</td>
         <td>Power</td>
         <td>Power</td>
