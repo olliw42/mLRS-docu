@@ -130,21 +130,21 @@ From the main screen, you can navigate through the setting and action screens us
     </tr>
         <tr>
         <td></td>
-        <td>Cli LineEnd</td>
+        <td></td>
         <td>Out Rssi Ch</td>
         <td></td>
     </tr>
      </tr>
         <tr>
         <td></td>
-        <td>Cli LineEnd</td>
+        <td></td>
         <td>Out LQ Ch</td>
         <td></td>
     </tr>
         </tr>
         <tr>
         <td></td>
-        <td>Cli LineEnd</td>
+        <td></td>
         <td>FS Ch1-16</td>
         <td></td>
     </tr>
