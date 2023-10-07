@@ -17,7 +17,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [SiK Telemetry Replacement](docs/SETUP_SIK.md)
 - [SBus Radios](docs/BASIC_SETUP.md)
 - [MAVLink for OpenTx](docs/MAVLINK_FOR_OPENTX.md)
-- Configuration Options for [ArduPilot Systems](docs/ARDUPILOT.md)
+- [Configuration Options for ArduPilot Systems](docs/ARDUPILOT.md)
 - [Experimental: Relay](docs/RELAY.md)
 
 ### Hardware ###
