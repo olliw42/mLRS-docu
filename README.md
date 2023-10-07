@@ -12,20 +12,20 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [Configuration ID](docs/CONFIGID.md)
 
 ### Setups ###
-- Setup for [CRSF Telemetry and Yaapu Telemetry App](docs/CRSF.md)
+- [CRSF Telemetry and Yaapu Telemetry App](docs/CRSF.md)
     - [CRSF Sensors](docs/CRSF_SENSORS.md)
-- Setup as [SiK Telemetry Replacement](docs/SETUP_SIK.md)
-- Basic setup for [SBus Radios](docs/BASIC_SETUP.md)
-- Setup for [MAVLink for OpenTx](docs/MAVLINK_FOR_OPENTX.md)
+- [SiK Telemetry Replacement](docs/SETUP_SIK.md)
+- [SBus Radios](docs/BASIC_SETUP.md)
+- [MAVLink for OpenTx](docs/MAVLINK_FOR_OPENTX.md)
 - Configuration Options for [ArduPilot Systems](docs/ARDUPILOT.md)
 - [Experimental: Relay](docs/RELAY.md)
 
 ### Hardware ###
-- Using [FlySky FRM303 Module](docs/FLYSKY_FRM303.md)
-- Using [Frsky R9 Devices](docs/FRSKY_R9.md)
-- Using [SeeedStudio Wio-E5 Boards](docs/SEEEDSTUDIO_WIO_E5.md)
-- Using [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
-- Using [E77 Easy Solder Boards](docs/E77_EASYSOLDER.md)
+- [FlySky FRM303 Module](docs/FLYSKY_FRM303.md)
+- [Frsky R9 Devices](docs/FRSKY_R9.md)
+- [SeeedStudio Wio-E5 Boards](docs/SEEEDSTUDIO_WIO_E5.md)
+- [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
+- [E77 Easy Solder Boards](docs/E77_EASYSOLDER.md)
 
 ### Optional Hardware ###
 - [Wireless Bridge](docs/WIRELESS_BRIDGE.md)
