@@ -27,9 +27,11 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
 - [E77 Easy Solder Boards](docs/E77_EASYSOLDER.md)
 
-### Optional Hardware ###
+### Advanced Options ###
 - [Wireless Bridge](docs/WIRELESS_BRIDGE.md)
 - [OLED Display](docs/OLED.md)
+- [FHSS Shaping](docs/FHSS_SHAPING.md)
+- [MavlinkX](docs/MAVLINKX.md)
 
 ### Firmware/Build Notes ###
 - [Custom Boards & Targets](docs/CUSTOM_BOARDS_TARGETS.md)
