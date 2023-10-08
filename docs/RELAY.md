@@ -7,7 +7,7 @@
 mLRS allows for a relay setup in which a main Tx, Rx pair is used with a secondary Tx, Rx pair to offer flexibility when locating the main Tx module. The relay setup will forward the RC channels from the radio to the flight controller while also sending the link statistics and CRSF sensors of the main Tx, Rx pair back to the radio. A relay setup is beneficial by allowing you to place the main Tx module on your antenna tracker while still being able to control the vehicle from the radio.
 
 For a relay setup is recommended to:
-- Use a lower RF frequency which is better suited for long range for the main Tx, Rx pair
+- Use a RF band with a lower frequency which will be better suited for long range for the main Tx, Rx pair
 - Use different RF bands for the main and secondary Tx, Rx pairs to avoid interference
     - If using the same RF band, then different bind phrases need to be used for the pairs
 - Use a faster mode for the secondary Tx, Rx pair
