@@ -28,7 +28,7 @@ The WiFi channel which is excluded is determined by the last (6th) character of 
 
 The feature is available only for wide RF bands, such as the 2.4 GHz and 915 MHz FCC bands.
 
-The "bind phrase" mechanism minimizes interference between different mLRS systems operating in the same RF band. However, the possibility of mutual interference is not strictly ruled out since the set of frequencies generated from different bind phrases can overlap. The "ortho" mechanism modifies the set of frequencies generated from a bind phrase into three further sets which are guaranteed to be strictly different (orthogonal). This allows for up to three mLRS systems to say stay out of each others way.
+The "bind phrase" mechanism minimizes interference between different mLRS systems operating in the same RF band. However, the possibility of mutual interference is not strictly ruled out since the set of frequencies generated from different bind phrases can overlap. The "ortho" mechanism modifies the set of frequencies generated from a bind phrase into three further sets which are guaranteed to be strictly different (orthogonal). This allows for up to three mLRS systems to stay out of each others way.
 
 The "ortho" setting can be:
 - "off": normal behavior
