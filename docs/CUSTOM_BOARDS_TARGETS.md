@@ -32,7 +32,7 @@ The simple way:
 
 The advanced way:
 
-Detailed [here](https://github.com/olliw42/mLRS/blob/main/mLRS/CREATE_TARGET_INSTRUCTIONS.md)
+- Detailed [here](https://github.com/olliw42/mLRS/blob/main/mLRS/CREATE_TARGET_INSTRUCTIONS.md).
 
 ## Creating a Debug target
 
