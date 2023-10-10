@@ -2,14 +2,20 @@
 
 ([back to main page](../README.md))
 
-MavlinkX is a technology which weeds out deficiencies of the original MAVLink protocol and makes the over-the-air MAVLink communication significantly more robust, reducing packet losses to the minimum. Furthermore, it can provide per-message compression of the MAVLink data stream.
+MavlinkX is a technology to improve upon the original MAVLink protocol. It introduces robust framing and parsing which reduces packet losses to the minimum, and adds per-message compression. Both of these features allow to more efficiently use the link capacity.
 
-A major deficiancy of the MAVLink protocol is that, in the presence of data loss, it is prone to miss MAVLink packets which are actually valid, i.e., which are correctly and fully recieved and thus provide valid data, but are missed in the parsing of the stream (for a deeper discussion of such topics see [here](https://github.com/mavlink/mavlink/issues/1347)).
+MavlinkX is enabled by setting the "Rx Ser Link Mode" parameter in the receiver to "mavlinkx".
 
-Loosing valid packets for "no reason" is obviously highly undesirable, especially given that the bandwidth of long-range links is generally constraint and should be used in the best possible manner. MavlinkX overcomes this issue by reframing the MAVLink messages and using parsing strategies which enables the parser to recover any valid packet from the lossy data stream.
+### Packet Recovery
 
-Moreover, MavlinkX provides compression of the MAVLink data stream. Given the nature of the MAVLink data, the average compression rate cannot be huge (simple theoretical best-case estimates suggest ca 20%), but for low-bandwith links this can be sufficient to be significant.
+A major deficiency of the MAVLink protocol is that in the presence of data loss, it is prone to miss MAVLink packets which are actually valid. The packets are correctly and fully received and could provide valid data, but are missed in the parsing of the stream (for a deeper discussion of such topics see [here](https://github.com/mavlink/mavlink/issues/1347)).
 
-Example: In the 19 Hz mode, the data rate of the telemetry stream might be typically 1150 bytes/s. With MavlinkX enabled, it would typically allow to send 1300 bytes/sec. This correspond to ca 4 additional ATTITUDE MAVLink messages per sec, and the rate for ATTITUDE messages could be increased from e.g. 2 Hz to 5 Hz, which would yield a substantially smoother HUD display.
+Missing valid packets for no reason is highly undesirable, especially given that the bandwidth of long-range links is constrained and needs to be utilized in the most efficient manner. MavlinkX overcomes this issue by reframing the MAVLink messages and using parsing strategies which enables the parser to recover any valid packet from the lossy data stream.
 
-MavlinkX is enabled by setting the "Rx Ser Link Mode" parameter in the receiver to "mavlinkx". Note: The compression is enabled only in the 19 Hz mode. 
+### Compression
+
+MavlinkX can also provide compression of the MAVLink data stream. Given the nature of MAVLink data, the average compression rate will range from 10 to 20%, which can be very beneficial for low-bandwidth links.
+
+Example: In 19 Hz mode, the data rate of the telemetry stream might be ~ 1150 bytes/s. Enabling MavlinkX would increase the data rate to ~ 1300 bytes/s. This increase would enable an additional ~ 4 ATTITUDE messages per second. Therefore, one could change the stream rate for ATTITUDE messages to 5 Hz from 2 Hz and would have a substantially smoother HUD display.
+
+Note: Compression is enabled only in the 19 Hz mode.
