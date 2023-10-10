@@ -20,8 +20,8 @@ There are a number of ways of how to create a target for a custom board, for exa
 - A simple way would be to identify an existing board which is close to your custom board and modify the entries in this boards hal file.
 - A more advanced way would be to create a new target as you find them for the existing boards. This requires more work and additional skills.
 
-The suggested procedure is simple and makes it easier to update the code base by separating out changes:
- 
+The simple way:
+
 1. Identify a target which is close to your new board. Example: The `rx-diy-board01-f103cb` target may be it.
     - Note: The only condition when picking a target is that you will need to choose a target which uses the same MCU as your custom board, in this example it is assumed that you are using the STM32F103CBXX on your custom board.
 2. Copy the existing target's hal file and rename it to what you want it to be. Example: Copy `/Common/hal/rx-hal-diy-board01-f103cb.h` to `/Common/hal/rx-hal-diy-customboard-f103cb.h`.
@@ -29,6 +29,18 @@ The suggested procedure is simple and makes it easier to update the code base by
 4. In `/Common/hal/device_conf.h` go to the area where the existing target is defined, comment out the define of the device name, and add your own define changing the device name to what you want it to be. Example: Find the line with `#ifdef RX_DIY_BOARD01_F103CB`, replace the subsequent line with `\\#define DEVICE_NAME "DIY DualSX F103CB"` and insert a line `#define DEVICE_NAME "My Own Great Board"`
     - Note: The device name can be 20 characters max.
 5. Modify the target's device_conf entry and hal file to match the features of your custom board - further detailed below.
+
+The advanced way:
+
+- Detailed [here](https://github.com/olliw42/mLRS/blob/main/mLRS/CREATE_TARGET_INSTRUCTIONS.md).
+
+## Creating a Debug target
+
+After creating a target using the 'advanced way' for a 'Release' target, a 'Debug' target can be created by following these steps:
+
+- At step 10, select 'Debug' instead of 'Release'
+- Follow steps 12, 13 and 16 exactly
+- If the target uses USB, follow step A1.2 exactly
 
 ## Modifying a target
 
