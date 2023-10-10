@@ -34,12 +34,13 @@ The advanced way:
 
 Detailed [here](https://github.com/olliw42/mLRS/blob/main/mLRS/CREATE_TARGET_INSTRUCTIONS.md)
 
-## Enabling Debug for a target
+## Creating a Debug target
 
-Follow the 'advanced way' for creating a new target as linked above, with the following exception:
+After creating a target using the 'advanced way' for a 'Release' target, a 'Debug' target can be created by following these steps:
 
-In Section III, step 10:
-= 10. hammer icon -> down arrow: select Debug
+- At step 10, select 'Debug' instead of 'Release'
+- Follow steps 12, 13 and 16 exactly
+- If the target uses USB, follow step A1.2 exactly
 
 ## Modifying a target
 
