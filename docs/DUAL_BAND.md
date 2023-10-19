@@ -12,7 +12,7 @@ In contrast to full diversity however, in the dual-band setup the modules are ea
 
 ## Configuration
 
-Configuration is equal to a single band 868/915 MHz (or 433 MHz/70 cm) system.
+Configuration is the same as a single band 868/915 MHz (or 433 MHz/70 cm) system.
 
 ## Demo Video
 
