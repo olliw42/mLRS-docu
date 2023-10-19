@@ -8,7 +8,7 @@ mLRS allows for a dual-band setup, where the Tx module and receiver both transmi
 
 This operation mode is very simlar to a full-diversity setup, except that the hardware of course needs to provide two RF chains operating in the two different RF bands. An example is given by the dual-band version of the easy-to-solder boards, which can be eqipped with E77 modules working at 868/915 MHz and E28 modules working at 2.4 GHz. See [here]( https://github.com/olliw42/mLRS-hardware/tree/master/olliw-stm32-based/rx-tx-E77-E28-dualband-easysolder). Like full diversity, dual band also uses FHSS, and receiving depends on which packet in which band is best according to a full-diversity principle.
 
-In contrast to full diversity however, in the dual-band setup the modules are each transmitting simultaneously in the two RF bands. Therefore no packets are missed when one frequency band is blocked. 
+In contrast to a full-diversity setup, the dual-band setup transmits simultaneously on both RF bands. This means that even if one RF band is blocked, packets will not be missed.
 
 ## Configuration
 
