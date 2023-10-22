@@ -84,7 +84,7 @@ Notes:
 The first time that you flash the mLRS firmware to a FRM303 module you'll have to do the following:
 
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
-- Connect your ST-Link programmer to the 3V3, GND, SWD, and SWCLK pins on the board
+- Connect your ST-Link programmer to the 3V3, GND, SWD, and SWCLK pins on the board (image below)
     - You need to remove the bottom part of the case to gain access to these pins
     - Some ST-Link programmer boards provide power and some do not - ensure the FRM303 is powered
 - Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
@@ -98,6 +98,8 @@ Note: If you are unable to to flash due to readout protection, perform the follo
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
     - This will erase the current firmware
+
+<img src="images/FRM303_STLink_Wiring.png" width="800px">
 
 ### Subsequent Flashing ###
 
