@@ -100,10 +100,11 @@ Example Wiring:
 The first time that you flash the mLRS firmware to either the Wio-E5 Mini or Wio-E5 Grove you'll have to do the following:
 
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
-- Connect your ST-Link programmer to the 3V3, GND, SWD, and SWCLK pins on the board
+- Connect your ST-Link programmer to the 3V3, GND, SWD, and SWCLK pins on the board (images below)
     - The SWD and SWCLK pins are labeled 'DIO' and 'CLK' respectively
     - Some ST-Link programmers provide power and some do not - ensure the Wio-E5 is powered
-- Hold down the boot button and then press the reset button, boot button can then be released.
+- Hold down the boot button and then press the reset button, boot button can then be released
+    - For Wio-E5 Grove you'll need to connect the boot pad to ground while powering up
 - Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
@@ -111,6 +112,11 @@ The first time that you flash the mLRS firmware to either the Wio-E5 Mini or Wio
 - From the menu on the left select the Download tile
 - Select the correct firmware in the Download section, click Start Program
 - Power cycle the board, the red LED should blink which indicates that the board is disconnected
+
+<p float="left">
+  <img src="images/E5_Mini_STLink_Wiring.png" width="400" />
+  <img src="images/E5_Grove_STLink_Wiring.png" width="474" /> 
+</p>
 
 ### Subsequent Flashing ###
 

@@ -53,7 +53,7 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 **Important: Every time that you power a board you should ensure that there is an antenna connected otherwise you risk damaging the RF section.**
 
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
-- Connect your ST-Link to the 3V3, GND, SWD, and SWCLK pins on the board
+- Connect your ST-Link to the 3V3, GND, SWD, and SWCLK pins on the board (image below)
     - Refer to the diagrams above
     - Some ST-Link boards provide power and some do not - ensure the board is powered
 - Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
@@ -67,6 +67,8 @@ If you are unable to to flash due to readout protection, perform the following s
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
     - This will erase the current firmware
+
+<img src="images/E77_STLink_Wiring.png" width="600">
 
 ## Building ##
 
