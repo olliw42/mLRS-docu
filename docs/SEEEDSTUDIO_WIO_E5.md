@@ -115,7 +115,7 @@ The first time that you flash the mLRS firmware to either the Wio-E5 Mini or Wio
 
 <p float="left">
   <img src="images/E5_Mini_STLink_Wiring.png" width="400" />
-  <img src="images/E5_Grove_STLink_Wiring.png" width="485" /> 
+  <img src="images/E5_Grove_STLink_Wiring.png" width="474" /> 
 </p>
 
 ### Subsequent Flashing ###
