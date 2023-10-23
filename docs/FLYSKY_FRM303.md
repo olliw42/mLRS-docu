@@ -99,7 +99,7 @@ Note: If you are unable to to flash due to readout protection, perform the follo
 - From the Read Out Protection section, change to AA, select Apply
     - This will erase the current firmware
 
-<img src="images/FRM303_STLink_Wiring.png" width="800px">
+<img src="images/FRM303_STLink_Wiring.png" width="600px">
 
 ### Subsequent Flashing ###
 
