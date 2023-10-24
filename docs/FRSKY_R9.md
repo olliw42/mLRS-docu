@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The Frsky R9M and R9M Lite Pro transmitter modules and R9MX and R9MM receivers are commercially available and hence can be a relatively easy way to get started with mLRS. However, the R9 hardware does have some limitations as detailed below which may affect some applications.
+The Frsky R9M, R9M Lite Pro transmitter modules and R9MX, R9MM receivers can be a relatively easy way to get started with mLRS as they are commercially available. However, the R9 hardware does have some limitations as detailed below which may affect some applications.
 
 <table>
   <tbody>
@@ -98,7 +98,7 @@ JR Bay connector:
 
 The R9M Lite Pro transmitter module could be used as mLRS Tx module but it is not well suited for this. It can however be a great option as mLRS receiver, providing 1 W transmit power and hence excellent range in combination with a R9M Tx module.
 
-The R9M Lite Pro has no button; for binding the power cycle method is available (see [here](BINDING.md)). It also does not provide the CLI, and configuration hence must be done via the Lua script (see [here](LUA.md)).
+The R9M Lite Pro has no button therefore the power cycle method has to be used for binding (see [here](BINDING.md)).
 
 Connections:
 
