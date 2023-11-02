@@ -153,7 +153,7 @@ The R9MM receiver is also supported. However, flashing the R9MM with ST-Link is 
 
 If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM is the smallest and lightest receiver available.
 
-<img src="images/Frsky_R9MM_wiring-01.jpg" width="720px">
+<img src="images/Frsky_R9MM_wiring_01.jpg" width="720px">
 
 Button:
 - press for ca 4 sec to enter bind mode
