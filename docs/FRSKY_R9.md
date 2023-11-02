@@ -151,7 +151,13 @@ The wiring is similar to when used as a receiver, with the exception that the "I
 
 The R9MM receiver is also supported. However, flashing the R9MM with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9MX receiver instead.
 
-If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM is the smallest and lightest receiver available.  Note: The R9MM has a different [wiring diagram](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver) than the R9MX.
+If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM is the smallest and lightest receiver available.
+
+<img src="images/Frsky_R9MM_wiring-01.jpg" width="720px">
+
+Button:
+- press for ca 4 sec to enter bind mode
+- press during power up to enter system bootloader for firmware upgrade
 
 ## Flashing ##
 
