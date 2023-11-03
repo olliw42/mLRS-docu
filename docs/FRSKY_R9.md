@@ -166,7 +166,7 @@ If you want to use ELRS bootloader and install via the Frsky bootloader and Open
 | --- | ---
 | Pin 2 VIN | Power 3.5 - 10 V
 | Pin 3 GND | Ground
-| Pin 5 SBUS OUT | Out ((SBus only))
+| Pin 5 SBUS OUT | Out (SBus only)
 | CH1 | Buzzer
 | CH2 | not used
 | CH3 | Serial Tx
