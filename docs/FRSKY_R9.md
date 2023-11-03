@@ -116,11 +116,8 @@ The R9M Lite Pro has no button therefore the power cycle method has to be used f
 | Pin 1 | Out (CRSF, SBus, inv. SBus supported)
 | Pin 2 GND | Ground
 | Pin 3 VBAT | Power 2S
-| Pin 4 | not used
 | Pin 5 | Serial Rx
 | Pin 6 | Serial Tx
-| Pin 7 | not used
-| Pin 8 | not used
 
 ### R9M Lite Pro Versions ###
 
