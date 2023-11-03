@@ -35,11 +35,14 @@ The R9M transmitter module is a great option given its 1 W transmit power but is
 
 Connections:
 
-4-Pin Header:
-- Inverted serial Rx
-- Inverted serial Tx
-- 5 Volts
-- GND
+4-Pin Header (from top to bottom):
+
+| Pin | Use
+| --- | ---
+| Pin 1 | Inverted serial Rx
+| Pin 2 | Inverted serial Tx
+| Pin 3 VCC | 5 V
+| Pin 4 GND | Ground
 
 ### R9M Versions ###
 
@@ -79,20 +82,26 @@ The R9M module can also be used as an mLRS receiver, this yields a receiver with
 
 Connections:
 
-4-Pin Header:
-- Inverted serial Rx
-- Inverted serial Tx
-- 5 Volts
-- GND
+4-Pin Header (from top to bottom):
+
+| Pin | Use
+| --- | ---
+| Pin 1 | Inverted serial Rx
+| Pin 2 | Inverted serial Tx
+| Pin 3 VCC | 5 V
+| Pin 4 GND | Ground
 
 Note: As the serial connection is inverted, this will have to be accounted for when connecting to the flight controller. One solution is to use an inverter cable as mentioned above. Alternatively, ArduPilot F7 and H7 based flight controllers have built-in inverters which can be enabled using with the SERIALx_OPTIONS parameter.
 
 JR Bay connector:
-- Rx, not used 
-- Tx, not used
-- Vin
-- GND
-- Pin 5 (S.Port) - Out (SBus only)
+
+| Pin | Use
+| --- | ---
+| Pin 1 | not used
+| Pin 2 | not used
+| Pin 3 VBAT | Power 2S
+| Pin 4 GND | Ground
+| Pin 5 SPort | Out (SBus only)
 
 ## R9M Lite Pro as Receiver ##
 
@@ -100,17 +109,15 @@ The R9M Lite Pro transmitter module could be used as mLRS Tx module but it is no
 
 The R9M Lite Pro has no button therefore the power cycle method has to be used for binding (see [here](BINDING.md)).
 
-Connections:
+<img src="images/Frsky_R9MLitePro_wiring_01.jpg" width="480px">
 
-8-Pin Header (bottom view, from left to right):
-- Out (CRSF, SBus, inv. SBus supported)
-- GND
-- VBAT (2S)
-- not used
-- Serial Rx
-- Serial Tx
-- not used
-- not used
+| Pin | Use
+| --- | ---
+| Pin 1 | Out (CRSF, SBus, inv. SBus supported)
+| Pin 2 GND | Ground
+| Pin 3 VBAT | Power 2S
+| Pin 5 | Serial Rx
+| Pin 6 | Serial Tx
 
 ### R9M Lite Pro Versions ###
 
@@ -151,7 +158,23 @@ The wiring is similar to when used as a receiver, with the exception that the "I
 
 The R9MM receiver is also supported. However, flashing the R9MM with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9MX receiver instead.
 
-If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM is the smallest and lightest receiver available.  Note: The R9MM has a different [wiring diagram](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver) than the R9MX.
+If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM is the smallest and lightest receiver available.
+
+<img src="images/Frsky_R9MM_wiring_01.jpg" width="720px">
+
+| Pin | Use
+| --- | ---
+| Pin 2 VIN | Power 3.5 - 10 V
+| Pin 3 GND | Ground
+| Pin 5 SBUS OUT | Out (SBus only)
+| CH1 | Buzzer
+| CH2 | not used
+| CH3 | Serial Tx
+| CH4 | Serial Rx
+
+Button:
+- press for ca 4 sec to enter bind mode
+- press during power up to enter system bootloader for firmware upgrade
 
 ## Flashing ##
 
