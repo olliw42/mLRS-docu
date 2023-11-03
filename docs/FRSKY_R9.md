@@ -82,17 +82,20 @@ Connections:
 4-Pin Header:
 - Inverted serial Rx
 - Inverted serial Tx
-- 5 Volts
+- 5 V
 - GND
 
 Note: As the serial connection is inverted, this will have to be accounted for when connecting to the flight controller. One solution is to use an inverter cable as mentioned above. Alternatively, ArduPilot F7 and H7 based flight controllers have built-in inverters which can be enabled using with the SERIALx_OPTIONS parameter.
 
 JR Bay connector:
-- Rx, not used 
-- Tx, not used
-- Vin
-- GND
-- Pin 5 (S.Port) - Out (SBus only)
+
+| Pin | Use
+| --- | ---
+| Pin 1 | not used
+| Pin 2 | not used
+| Pin 3 VBAT | Power 2S
+| Pin 4 GND | Ground
+| Pin 5 SPort | Out (SBus only)
 
 ## R9M Lite Pro as Receiver ##
 
@@ -154,6 +157,16 @@ The R9MM receiver is also supported. However, flashing the R9MM with ST-Link is 
 If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM is the smallest and lightest receiver available.
 
 <img src="images/Frsky_R9MM_wiring_01.jpg" width="720px">
+
+| Pin | Use
+| --- | ---
+| Pin 2 VIN | Power 3.5 - 10 V
+| Pin 3 GND | Ground
+| Pin 5 SBUS OUT | Out ((SBus only))
+| CH1 | Buzzer
+| CH2 | not used
+| CH3 | Serial Tx
+| CH4 | Serial Rx
 
 Button:
 - press for ca 4 sec to enter bind mode
