@@ -260,7 +260,7 @@ After flashing the ELRS bootloader, you can connect the serial port as described
 
 Note: Flashing any Frsky R9 board with the ST-Link is a non-reversible operation, i.e., it is not possible to revert back to the original Frsky firmware. It is possible to switch to ExpressLRS however.
 
-The ST-Link connection is made as described in the ExpressLRS docs:
+The ST-Link connection is made as follows:
 - R9M module: https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stlink
 - R9MX receiver: https://www.expresslrs.org/quick-start/receivers/r9/#via-stlink
 - R9M Lite Pro module:
@@ -269,7 +269,7 @@ The ST-Link connection is made as described in the ExpressLRS docs:
 
 Use the non-"elrs-bl" firmware versions, which can be identified by the ".hex" extension and that the label "elrs-bl" is not contained in the firmware file name. 
 
-In these docs it is suggested to download and use the "ST-LINK Utility" software. This software is pretty outdated (NRND = not recommended for new designs), and the new recommended tool is "STM32CubeProgrammer".
+Note: In the ExpressLRS docs it is suggested to download and use the "ST-LINK Utility" software. This software is pretty outdated (NRND = not recommended for new designs). Please use the new and recommended tool "STM32CubeProgrammer".
 
 ### Update via System Bootloader ###
 
