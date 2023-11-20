@@ -154,11 +154,11 @@ The module can be configured via CLI only. The CLI shares the same port used for
 
 The wiring is similar to when used as a receiver, with the exception that the "Inverted SPort" pin (original naming) is available as input port.
 
-## R9MM Receiver ##
+## R9MM/Mini Receiver ##
 
-The R9MM receiver is also supported. However, flashing the R9MM with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9MX receiver instead.
+The R9MM/Mini receiver is supported, however, flashing with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9MX receiver instead.
 
-If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM is the smallest and lightest receiver available.
+If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM/Mini is the smallest and lightest receiver available.
 
 <img src="images/Frsky_R9MM_wiring_01.jpg" width="720px">
 
