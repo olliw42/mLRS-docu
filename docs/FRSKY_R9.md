@@ -129,7 +129,7 @@ The R9 MX receiver is a good choice for mLRS. The transmit power may however be 
 
 The thru-hole pads for Serial Wire Debug make it easy to connect ST-Link via a connector or micro-hook clips.
 
-<img src="images/Frsky_R9 MX_wiring-02.jpg" width="720px">
+<img src="images/Frsky_R9MX_wiring-02.jpg" width="720px">
 
 | Pin | Use
 | --- | ---
