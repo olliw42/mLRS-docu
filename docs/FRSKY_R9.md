@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9MM receivers can be a relatively easy way to get started with mLRS as they are commercially available. However, the R9 hardware does have some limitations as detailed below which may affect some applications.
+The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receivers can be a relatively easy way to get started with mLRS as they are commercially available. However, the R9 hardware does have some limitations as detailed below which may affect some applications.
 
 <table>
   <tbody>
@@ -12,7 +12,7 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9MM receivers can be
     </tr>
     <tr>
       <td>Max. RF Output Power</td>
-      <td>30 dBm (1 W) for R9M, R9M Lite Pro, 17 dBm (50 mW) for R9 MX, R9MM</td>
+      <td>30 dBm (1 W) for R9M, R9M Lite Pro, 17 dBm (50 mW) for R9 MX, R9 MM, R9 Mini</td>
     </tr>
     <tr>
       <td>Supported Modes</td>
@@ -277,7 +277,7 @@ When the R9 MX / R9 MM / R9 Mini receivers have been flashed with the non-"elrs-
 
 - Download and install STM32CubeProgrammer
 - Connect the R9 MX / R9 MM / R9 Mini via the serial Rx/Tx pins to a USB-TTL adpater
-- Power up the R9 MX / R9MM / R9 Mini while keeping the button pressed; this boots the receiver into the system bootloader
+- Power up the R9 MX / R9 MM / R9 Mini while keeping the button pressed; this boots the receiver into the system bootloader
 - Launch STM32CubeProgrammer and select the Serial connection option as the connection method, click connect
 - From the menu on the left select the Download tile
 - Select the correct firmware in the Download section, click Start Program
