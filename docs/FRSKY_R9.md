@@ -1,8 +1,8 @@
-# mLRS Documentation: Frsky R9M, R9M Lite Pro, R9MX #
+# mLRS Documentation: Frsky R9M, R9M Lite Pro, R9 MX #
 
 ([back to main page](../README.md))
 
-The Frsky R9M, R9M Lite Pro transmitter modules and R9MX, R9MM receivers can be a relatively easy way to get started with mLRS as they are commercially available. However, the R9 hardware does have some limitations as detailed below which may affect some applications.
+The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receivers can be a relatively easy way to get started with mLRS as they are commercially available. However, the R9 hardware does have some limitations as detailed below which may affect some applications.
 
 <table>
   <tbody>
@@ -12,7 +12,7 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9MX, R9MM receivers can be 
     </tr>
     <tr>
       <td>Max. RF Output Power</td>
-      <td>30 dBm (1 W) for R9M, R9M Lite Pro, 17 dBm (50 mW) for R9MX, R9MM</td>
+      <td>30 dBm (1 W) for R9M, R9M Lite Pro, 17 dBm (50 mW) for R9 MX, R9 MM, R9 Mini</td>
     </tr>
     <tr>
       <td>Supported Modes</td>
@@ -123,9 +123,9 @@ The R9M Lite Pro has no button therefore the power cycle method has to be used f
 
 The hardware of the R9M Lite Pro appears to have been modified over time. mLRS works with version v1.5 2021/7/8. Unfortunately it appears to not be easily possible to determine the hardware version from vendor descriptions or from the device's case. It is likely that the mLRS code will work fine also with older hardware versions, but this has not been tested.
 
-## R9MX Receiver ##
+## R9 MX Receiver ##
 
-The R9MX receiver is a good choice for mLRS. The transmit power may however be somewhat low for applications aiming for largest range.
+The R9 MX receiver is a good choice for mLRS. The transmit power may however be somewhat low for applications aiming for largest range.
 
 The thru-hole pads for Serial Wire Debug make it easy to connect ST-Link via a connector or micro-hook clips.
 
@@ -147,18 +147,18 @@ Button:
 
 ### As Tx Module ###
 
-The R9MX receiver can also be used as mLRS Tx module. Due to hardware restrictions it is somewhat limited but can be a great choice for special applications.
+The R9 MX receiver can also be used as mLRS Tx module. Due to hardware restrictions it is somewhat limited but can be a great choice for special applications.
 
 The module can be configured via CLI only. The CLI shares the same port used for serial/Mavlink communication. Switching between CLI and serial port is done via the bind button:
-- Powering up the R9MX without holding down the bind button will boot in "Serial" mode. To enter CLI mode, press the bind button while powering up or shortly after powering up if using the ELRS bootloader. The device then runs in CLI mode, and can be configured as usual via CLI commands.
+- Powering up the R9 MX without holding down the bind button will boot in "Serial" mode. To enter CLI mode, press the bind button while powering up or shortly after powering up if using the ELRS bootloader. The device then runs in CLI mode, and can be configured as usual via CLI commands.
 
 The wiring is similar to when used as a receiver, with the exception that the "Inverted SPort" pin (original naming) is available as input port.
 
-## R9MM Receiver ##
+## R9 MM / R9 Mini Receiver ##
 
-The R9MM receiver is also supported. However, flashing the R9MM with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9MX receiver instead.
+The R9 MM / R9 Mini receiver is supported, however, flashing with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9 MX receiver instead.
 
-If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9MM is the smallest and lightest receiver available.
+If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9 MM/ R9 Mini is the smallest and lightest receiver available.
 
 <img src="images/Frsky_R9MM_wiring_01.jpg" width="720px">
 
@@ -262,7 +262,7 @@ Note: Flashing any Frsky R9 board with the ST-Link is a non-reversible operation
 
 The ST-Link connection is made as follows:
 - R9M module: https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stlink
-- R9MX receiver: https://www.expresslrs.org/quick-start/receivers/r9/#via-stlink
+- R9 MX receiver: https://www.expresslrs.org/quick-start/receivers/r9/#via-stlink
 - R9M Lite Pro module:
 
 <img src="images/Frsky_R9M_Lite_Pro_STLlink_wiring_v01.jpg" width="720px">
@@ -273,11 +273,11 @@ Note: In the ExpressLRS docs it is suggested to download and use the "ST-LINK Ut
 
 ### Update via System Bootloader ###
 
-When the R9MX or R9MM receivers have been flashed with the non-"elrs-bl" firmware version via ST-Link, they can be upgraded by invoking the STM32 system bootloader, which can be done as follows:
+When the R9 MX / R9 MM / R9 Mini receivers have been flashed with the non-"elrs-bl" firmware version via ST-Link, they can be upgraded by invoking the STM32 system bootloader, which can be done as follows:
 
 - Download and install STM32CubeProgrammer
-- Connect the R9MX/R9MM via the serial Rx/Tx pins to a USB-TTL adpater
-- Power up the R9MX/R9MM while keeping the button pressed; this boots the receiver into the system bootloader
+- Connect the R9 MX / R9 MM / R9 Mini via the serial Rx/Tx pins to a USB-TTL adpater
+- Power up the R9 MX / R9 MM / R9 Mini while keeping the button pressed; this boots the receiver into the system bootloader
 - Launch STM32CubeProgrammer and select the Serial connection option as the connection method, click connect
 - From the menu on the left select the Download tile
 - Select the correct firmware in the Download section, click Start Program
