@@ -250,7 +250,7 @@ After flashing the ELRS bootloader, you can connect the serial port as described
 
 5. Use the command window to run the UARTupload.py script like: "python UARTupload.py image\_file\_path" where image\_file\_path is the path to the appropriate .elrs file you obtained in step 1.
 
-6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 volt output of your serial adapter or a 5 volt power supply.  You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire.  If you have trouble getting the timing correct, you can hold down the button when powering up the receiver and the ELRC bootloader will keep running and not start the application code.
+6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 volt output of your serial adapter or a 5 volt power supply.  You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire.  If you have trouble getting the timing correct, you can hold down the button when powering up the receiver and the ELRS bootloader will keep running and not start the application code.
 
 7. When the UARTupload.py script reports the flash was successful, you can leave the receiver powered by the serial adapter and try to establish a connection from your TX. The LED will switch from rapid red to 1Hz green on both the RX and TX when the connection is established.
 
