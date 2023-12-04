@@ -7,7 +7,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 ### General ###
 - [Binding](docs/BINDING.md)
 - [Configuration Parameters](docs/PARAMETERS.md)
-- [mLRS Configuration Lua Script](docs/LUA.md)
+- [mLRS Lua Script](docs/LUA.md)
 - [CLI Commands](docs/CLI.md)
 - [Configuration ID](docs/CONFIGID.md)
 

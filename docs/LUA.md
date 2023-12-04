@@ -1,23 +1,35 @@
-# mLRS Documentation: mLRS Configuration Lua Script #
+# mLRS Documentation: mLRS Lua Script #
 
 ([back to main page](../README.md))
 
-The mLRS configuration Lua script provides the most convenient approach to set the Tx and Rx module's configuration settings.
+The mLRS Lua script provides the most convenient way to change the Tx and Rx module's settings.
 
-The Lua script works on both OpenTx and EdgeTx radios.  There are two different versions of the Lua script which depends on your radio's display:
+The Lua script works on both OpenTx and EdgeTx radios but there are two different versions depending on the display of your radio:
 1. If your radio has a 480x272 color screen (e.g. Jumper T16, Radiomaster TX16S) then use the "mLRS.lua" file
 2. If your radio has a black and white screen (e.g. Frsky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
 
-Note: The Lua script for radios with a black and white screen is limited in functionality and only allows for the BindPhrase, Mode, TxPwr, RxPwr, and RxOutMode parameters to be set.
+## Setup
 
-Two things need to be done to use the Lua script:
+Three things need to be done in order to use the Lua script:
 
-1. The Lua script "mLRS.lua" or "mLRS-bw.lua" located in the "lua" folder should be copied to the SD card of the radio into the "SCRIPTS/TOOLS" folder. Follow the common tutorials for how to do this.
+1. The Tx module must be configured for CRSF or mBridge mode, by setting the parameter "Tx Ch Source" to "crsf" or "mbridge" respectively. Since firmware version v0.2.13 "crsf" is the default setting, so this will be already completed after an initial flash. If not, the CLI needs to be used to set this parameter accordingly, as described in [CLI Commands](CLI.md).
 
-2. The CRSF or mBridge protocol should be selected for the external RF module. Follow the common tutorials for how to do this.
+2. In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP and configure the external RF module for CRSF or mBridge protocol with 400K baud rate.
 
-You should then be able to run the Lua script by going to SYS->TOOLS in the radio, and selecting the tool "mLRS Configurator".
+    - Note: mLRS only officially supports 400K baud rate.
 
-Note: For the script to work in the first place, the Tx module must have been set up for CRSF or mBrdige mode, by setting the parameter "Tx Ch Source" to  "crsf" or "mbridge" respectively. Since firmware version v0.2.13 "crsf" is the default setting, and the script thus should work with a fresh flash. Otherwise the CLI needs to be invoked and this parameter be set accordingly, as described in [CLI Commands](CLI.md)
+3. The Lua script "mLRS.lua" or "mLRS-bw.lua" located in the "lua" folder of the repository needs to be copied to the "SCRIPTS/TOOLS" folder of the radio's SD card. One can follow the common tutorials for how to do this.
 
-Depending on the device, some parameters are not available for configuration or cannot be changed. For instance, for a device which doesn't support a buzzer the parameter "Buzzer" is not available, and for a device which doesn't support diversity the parameter "Diversity" cannot be changed. Parameters which are not available are not displayed on the screen (i.e. the list of shown parameters can vary depending on the device), and parameters which cannot be changed are displayed with the current selection but are greyed out and cannot be edited.
+You should then be able to run the Lua script by going to SYS->TOOLS on the radio, and selecting "mLRS Configurator".
+
+## Color Lua Script Notes
+
+Parameters which are not available are not displayed on the screen (i.e. the list of shown parameters can vary depending on the device). For instance, on a device which doesn't support a buzzer the parameter "Buzzer" will not be displayed. Parameters which cannot be changed are displayed with the current selection but are greyed out and cannot be edited. For instance, on a device which doesn't support diversity the parameter "Diversity" cannot be changed.
+
+## BW Lua Script Notes
+
+The Lua script for radios with a black and white screen is limited in functionality and only allows for 5 parameters to be configured.  By default, these are BindPhrase, Mode, TxPwr, RxPwr, and RxOutMode.
+
+If one wants to be able to change a different parameter, the 'custom param list' section in the Lua script can be updated to reference a different parameter.  The parameter numbers are zero-based and can be determined from the 'Setup parameter list' section located in [setup_list.h](https://github.com/olliw42/mLRS/blob/main/mLRS/Common/setup_list.h).
+
+For example, if one wanted to replace Mode with RF Band then 'param_idx_list[1] = 1' needs to be updated to 'param_idx_list[1] = 2'
