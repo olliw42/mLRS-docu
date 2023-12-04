@@ -24,7 +24,7 @@ You should then be able to run the Lua script by going to SYS->TOOLS on the radi
 
 ## Color Lua Script Notes
 
-Parameters which are not available are not displayed on the screen (i.e. the list of shown parameters can vary depending on the device). For instance, on a device which doesn't support a buzzer the parameter "Buzzer" will not be displayed. Parameters which cannot be changed are displayed with the current selection but are greyed out and cannot be edited. For instance, a device which doesn't support diversity the parameter "Diversity" cannot be changed.
+Parameters which are not available are not displayed on the screen (i.e. the list of shown parameters can vary depending on the device). For instance, on a device which doesn't support a buzzer the parameter "Buzzer" will not be displayed. Parameters which cannot be changed are displayed with the current selection but are greyed out and cannot be edited. For instance, on a device which doesn't support diversity the parameter "Diversity" cannot be changed.
 
 ## BW Lua Script Notes
 
