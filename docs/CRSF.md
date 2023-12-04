@@ -24,6 +24,8 @@ Notes:
 
 In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP and configure the external RF module for CRSF protocol with 400K baud rate.
 
+Note: mLRS only officially supports 400K baud rate.
+
 ## mLRS Tx Module Setup
 
 Set the following parameters using the CLI or Lua script:
