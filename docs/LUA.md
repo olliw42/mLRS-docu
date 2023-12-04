@@ -22,10 +22,14 @@ Three things need to be done in order to use the Lua script:
 
 You should then be able to run the Lua script by going to SYS->TOOLS on the radio, and selecting "mLRS Configurator".
 
-## BW Lua Limitations
+## Color Lua Script Notes
+
+Parameters which are not available are not displayed on the screen (i.e. the list of shown parameters can vary depending on the device). For instance, on a device which doesn't support a buzzer the parameter "Buzzer" will not be displayed. Parameters which cannot be changed are displayed with the current selection but are greyed out and cannot be edited. For instance, a device which doesn't support diversity the parameter "Diversity" cannot be changed.
+
+## BW Lua Script Notes
 
 The Lua script for radios with a black and white screen is limited in functionality and only allows for 5 parameters to be configured.  By default, these are BindPhrase, Mode, TxPwr, RxPwr, and RxOutMode.
 
-If one wants to be able to change a different parameter, the 'custom param list' section in the Lua can be updated to reference a different parameter.  The parameter numbers are zero-based and can be determined from the 'Setup parameter list' section located in [setup_list.h](https://github.com/olliw42/mLRS/blob/main/mLRS/Common/setup_list.h).
+If one wants to be able to change a different parameter, the 'custom param list' section in the Lua script can be updated to reference a different parameter.  The parameter numbers are zero-based and can be determined from the 'Setup parameter list' section located in [setup_list.h](https://github.com/olliw42/mLRS/blob/main/mLRS/Common/setup_list.h).
 
 For example, if one wanted to replace Mode with RF Band then 'param_idx_list[1] = 1' needs to be updated to 'param_idx_list[1] = 2'
