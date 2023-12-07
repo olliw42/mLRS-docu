@@ -29,6 +29,21 @@ Notes & References:
 - [ArduPilot Docs for RSSI_TYPE](https://ardupilot.org/plane/docs/parameters.html#rssi-type-rssi-type)
 - There are more RC options available in the 'RC_OPTIONS' parameter. ([ArduPilot Docs for RC_OPTIONS](https://ardupilot.org/plane/docs/parameters.html#rc-options-rc-options)) 
 
+## RSSI
+
+RSSI in ArduPilot is reported as a percentage and therefore scaled between 0 and 100%.  To generate this percentage, ArduPilot takes the RSSI dBm that it gets from the receiver and apply the following formula: 
+- 1 - ((RSSI dBM - 50) / 70)
+
+Given that the receive sensitivity limit will vary by RF mode it is often useful to know the exact RSSI dBm.  This allows one to understand exactly how much margin there is in the link budget.  The table below converts the RSSI percentage back to RSSI dBm:  
+
+| RSSI dBm | RSSI % | Notes            |
+|----------|--------|------------------|
+| 90       | 43     |                  |
+| 100      | 29     |                  |
+| 105      | 21     | 50 Hz Mode Limit |
+| 108      | 17     | 31 Hz Mode Limit |
+| 112      | 11     | 19 Hz Mode Limit |
+
 ## Stream Rates
 
 When configuring the SRx parameters, the 'x' does not correspond to the serial port number  but to the number of serial ports set to MAVLink.
