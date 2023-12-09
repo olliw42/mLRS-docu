@@ -31,18 +31,33 @@ Notes & References:
 
 ## RSSI
 
-RSSI in ArduPilot is reported as a percentage and therefore scaled between 0 and 100%.  To generate this percentage, ArduPilot takes the RSSI dBm that it gets from the receiver and apply the following formula: 
-- 1 - ((RSSI dBM - 50) / 70)
+There are three RSSI metrics that are available to be displayed in Mission Planner when using mLRS:
 
-Given that the receive sensitivity limit will vary by RF mode it is often useful to know the exact RSSI dBm.  This allows one to understand exactly how much margin there is in the link budget.  The table below converts the RSSI percentage back to RSSI dBm:  
+1. rxrssi - the RSSI of the receiver, reported as a percentage.
+    - This is provided by the receiver, the RSSI_TYPE parameter determines the method:
+        - RSSI_TYPE = 3 (ReceiverProtocol): mLRS will send the RSSI dBm in the CRSF stream and ArduPilot will apply scaling using the following formula: rxrssi = 1 - ((Rx RSSI dBM - 50) / 70)
+            - Note: When using RSSI_TYPE = 3, it is possible to replace the RSSI with Link Quality using the RC_OPTIONS bitmask.
+        - RSSI_TYPE = 5 (TelemetryRadioRSSI): mLRS will provide the RSSI % in the MAVLink stream using the same formula listed above via the RADIO_STATUS message.
+    - The rxrssi value is then sent back to the ground station via the RC_CHANNELS message.
+2. rssi - the RSSI of the Tx module, reported as an unsigned 8-bit value.
+    - This is provided by the Tx module when the parameter 'Tx Snd RadioStat' is set to 1 Hz via the RADIO_STATUS message.
+    - mLRS will use the following formula: rssi = (1 - ((Tx RSSI dBM - 50) / 70)) * 255
+3. remrssi - the RSSI of the receiver, reported as an unsigned 8-bit value.
+    - This is provided by the Tx module when the parameter 'Tx Snd RadioStat' is set to 1 Hz via the RADIO_STATUS message.  
+    - mLRS will use the following formula: remrssi = (1 - ((Rx RSSI dBM - 50) / 70)) * 255
+    Note: In theory, this should match the rxrssi value however due to scaling and timing this is not guaranteed.
 
-| RSSI dBm | RSSI % | Notes            |
-|----------|--------|------------------|
-| 90       | 43     |                  |
-| 100      | 29     |                  |
-| 105      | 21     | 50 Hz Mode Limit |
-| 108      | 17     | 31 Hz Mode Limit |
-| 112      | 11     | 19 Hz Mode Limit |
+### RSSI dBm
+
+Given that the receive sensitivity limit will vary by RF mode it is often useful to know the exact RSSI dBm as opposed to RSSI as a percentage or an unsigned 8-bit value.  This allows one to understand exactly how much margin there is in the link budget.  The table below provides conversions to RSSI dBm:  
+
+| RSSI dBm | RSSI % | RSSI uint8_t | Notes            |
+|----------|--------|--------------|------------------| 
+| 90       | 43     | 77           |                  |
+| 100      | 29     | 73           |                  |
+| 105      | 21     | 55           | 50 Hz Mode Limit |
+| 108      | 17     | 44           | 31 Hz Mode Limit |
+| 112      | 11     | 29           | 19 Hz Mode Limit |
 
 ## Stream Rates
 
