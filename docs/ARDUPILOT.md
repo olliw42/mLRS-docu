@@ -45,11 +45,11 @@ There are three RSSI metrics that are available to be displayed in Mission Plann
 3. remrssi - the RSSI of the receiver, reported as an unsigned 8-bit value.
     - This is provided by the Tx module when the parameter 'Tx Snd RadioStat' is set to 1 Hz via the RADIO_STATUS message.  
     - mLRS will use the following formula: remrssi = (1 - ((Rx RSSI dBM - 50) / 70)) * 255
-    Note: In theory, this should match the rxrssi value however due to scaling and timing this is not guaranteed.
+        - Note: In theory, this should match the rxrssi value however due to scaling and timing this is not guaranteed.
 
 ### RSSI dBm
 
-Given that the receive sensitivity limit will vary by RF mode it is often useful to know the exact RSSI dBm as opposed to RSSI as a percentage or an unsigned 8-bit value.  This allows one to understand exactly how much margin there is in the link budget.  The table below provides conversions to RSSI dBm:  
+Given that the receive sensitivity limit will vary by RF mode it is often useful to know the exact RSSI dBm as opposed to RSSI as a percentage or an unsigned 8-bit value.  The RSSI dBm allows one to understand exactly how much margin there is in the link budget.  The table below provides conversions to RSSI dBm:  
 
 | RSSI dBm | RSSI % | RSSI uint8_t | Notes            |
 |----------|--------|--------------|------------------| 
