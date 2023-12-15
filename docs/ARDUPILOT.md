@@ -33,17 +33,19 @@ Notes & References:
 
 There are three RSSI metrics that are available to be displayed in Mission Planner when using mLRS:
 
-1. rxrssi - the RSSI of the receiver, reported as a percentage.
+1. rxrssi - the RSSI of the receiver, displayed as a number between 0 and 100 in Mission Planner.
     - This is provided by the receiver, the RSSI_TYPE parameter determines the method:
-        - RSSI_TYPE = 3 (ReceiverProtocol): mLRS will send the RSSI dBm in the CRSF stream and ArduPilot will apply scaling using the following formula: rxrssi = 1 - ((Rx RSSI dBM - 50) / 70)
-            - Note: When using RSSI_TYPE = 3, it is possible to replace the RSSI with Link Quality using the RC_OPTIONS bitmask.
+        - RSSI_TYPE = 3 (ReceiverProtocol): mLRS will send the RSSI dBm in the CRSF stream and ArduPilot will apply scaling using the following formula: rxrssi = 1 - ((Rx RSSI dBM - 50) / 70) * 255
+            - Notes: 
+                - While rxrssi is converted to an unsigned 8-bit value, this will then be further converted to a float between 0 and 1 which is displayed as 0 to 100 in Mission Planner.
+                - When using RSSI_TYPE = 3, it is possible to replace the RSSI with Link Quality using the RC_OPTIONS bitmask.
         - RSSI_TYPE = 5 (TelemetryRadioRSSI): mLRS will provide the RSSI % in the MAVLink stream using the same formula listed above via the RADIO_STATUS message.
     - The rxrssi value is then sent back to the ground station via the RC_CHANNELS message.
-2. rssi - the RSSI of the Tx module, reported as an unsigned 8-bit value.
-    - This is provided by the Tx module when the parameter 'Tx Snd RadioStat' is set to 1 Hz via the RADIO_STATUS message.
+2. rssi - the RSSI of the Tx module, reported as an unsigned 8-bit value in Mission Planner.
+    - This is provided by the Tx module when the parameter 'Tx Snd RadioStat' is set to '1 Hz' via the RADIO_STATUS message.
     - mLRS will use the following formula: rssi = (1 - ((Tx RSSI dBM - 50) / 70)) * 255
-3. remrssi - the RSSI of the receiver, reported as an unsigned 8-bit value.
-    - This is provided by the Tx module when the parameter 'Tx Snd RadioStat' is set to 1 Hz via the RADIO_STATUS message.  
+3. remrssi - the RSSI of the receiver, reported as an unsigned 8-bit value in Mission Planner.
+    - This is provided by the Tx module when the parameter 'Tx Snd RadioStat' is set to '1 Hz' via the RADIO_STATUS message.  
     - mLRS will use the following formula: remrssi = (1 - ((Rx RSSI dBM - 50) / 70)) * 255
         - Note: In theory, this should match the rxrssi value however due to scaling and timing this is not guaranteed.
 
