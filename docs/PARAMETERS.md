@@ -20,7 +20,7 @@ Depending on the specific mLRS hardware, it may happen that some parameters are 
 String of 6 characters. 
 The characters can be 'a'-'z', '0'-'9', '_', '#', '-', '.'. 
 
-For 2.4 GHz systems the last (6th) character of the bind phrase determines excluded frequencies. The exclude setting can be "\e-", "\e1", "\e6", "\e11", or "\e13". For details see ([FHSS_SHAPING](FHSS_SHAPING.md)).
+For 2.4 GHz systems the last (6th) character of the bind phrase determines excluded frequencies. The exclude setting can be "\e-", "\e1", "\e6", "\e11", or "\e13". For details see [FHSS_SHAPING](FHSS_SHAPING.md).
 
 #### Mode ####
 Operation mode. May not be selectable.
@@ -30,7 +30,7 @@ Can be "50 Hz", "31 Hz", "19 Hz", "FLRC", "FSK".
 Frequency band. May not be selectable.
 
 #### RF Ortho ####
-Allows to constrain the used frequencies in the FHSS sequence, see ([FHSS_SHAPING](FHSS_SHAPING.md)). May not be available.
+Allows to constrain the used frequencies in the FHSS sequence, see [FHSS_SHAPING](FHSS_SHAPING.md). May not be available.
 Can be "off", "1/3", "2/3", "3/3".
 
 ## Tx Parameters ##
@@ -116,7 +116,7 @@ Can be "9600", "19200", "38400", "57600", "115200", "230400".
 Selects how the serial data stream is processed. 
 Can be "transp.", "mavlink", "mavlinkX".
 
-The setting is also applied to the Tx module. For MAVLinkX see ([here]MAVLINKX.md)).
+The setting is also applied to the Tx module. For MAVLinkX see [here](MAVLINKX.md).
 
 #### Rx Snd RadioStat #### 
 Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and which flow control algorithm is used. Effective only when "Rx Ser Link Mode" = "mavlink" or "mavlinkX". 
