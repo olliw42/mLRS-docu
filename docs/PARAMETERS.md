@@ -30,7 +30,7 @@ Can be "50 Hz", "31 Hz", "19 Hz", "FLRC", "FSK".
 Frequency band. May not be selectable.
 
 #### RF Ortho ####
-Allows to constrain the used frequencies in the FHSS sequence, see [FHSS_SHAPING](FHSS_SHAPING.md). May not be available.
+For 2.4 GHz and 915 MHz FCC RF bands allows one to constrain the used frequencies in the FHSS sequence, see [FHSS_SHAPING](FHSS_SHAPING.md).
 Can be "off", "1/3", "2/3", "3/3".
 
 ## Tx Parameters ##
