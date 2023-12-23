@@ -1,4 +1,4 @@
-# mLRS Documentation: Parameters (v1.0.00) #
+# mLRS Documentation: Parameters (v1.1.00) #
 
 ([back to main page](../README.md))
 
@@ -12,7 +12,7 @@ Brief description of the parameters for configuring mLRS. The parameters fall in
 
 All parameters are configured via the Tx module, by using the CLI or the mLRS configuration Lua script (or the OLED if available). If no receiver is connected, then the Rx parameters cannot be configured.
 
-Depending on the specific mLRS hardware, it may happen that some parameters are not available, as well as that for a parameter some options are not available.
+Depending on the specific mLRS hardware, it may happen that some parameters are not available or that for a parameter some options are not available.
 
 ## Common Parameters ##
 
@@ -20,14 +20,18 @@ Depending on the specific mLRS hardware, it may happen that some parameters are 
 String of 6 characters. 
 The characters can be 'a'-'z', '0'-'9', '_', '#', '-', '.'. 
 
-For 2.4 GHz systems the last (6th) character of the bind phrase determines excluded frequencies. The exclude setting can be "\e-" (no frequencies excluded), "\e1" (wlan band #1 excluded), "\e6" (wlan band #6 excluded), "\e11" (wlan band #11 excluded), or "\e13" (wlan band #13 excluded), and it is determined from the last character as follows: 'a' = "\e-", 'b' = "\e1", 'c' = "\e6", 'd' = "\e11", 'e' = "\e13", and with 'f' the cycle continues, and so forth.
+For 2.4 GHz systems the last (6th) character of the bind phrase determines excluded frequencies. The exclude setting can be "\e-", "\e1", "\e6", "\e11", or "\e13". For details see [FHSS_SHAPING](FHSS_SHAPING.md).
 
 #### Mode ####
-Operation mode. 
-Can be "50 Hz", "31 Hz", "19 Hz", "FLRC".
+Operation mode. May not be selectable.
+Can be "50 Hz", "31 Hz", "19 Hz", "FLRC", "FSK".
 
 #### RF Band ####
 Frequency band. May not be selectable.
+
+#### RF Ortho ####
+For 2.4 GHz and 915 MHz FCC RF bands allows one to constrain the used frequencies in the FHSS sequence, see [FHSS_SHAPING](FHSS_SHAPING.md).
+Can be "off", "1/3", "2/3", "3/3".
 
 ## Tx Parameters ##
 
@@ -54,14 +58,14 @@ Can be "sbus", "sbus inv".
 
 #### Tx Ser Dest #### 
 Selects the destination/source of the serial data stream. 
-Can be "serial", "mbridge", "serial2"
+Can be "serial", "serial2", "mbridge". 
 
 #### Tx Ser Baudrate #### 
 Baudrate of the serial data stream. Effective only for "Tx Ser Dest" = "serial" or "serial2". 
 Can be "9600", "19200", "38400", "57600", "115200", "230400".
 
 #### Tx Snd RadioStat #### 
-Determines if a MAVLink RADIO_STATUS message is emitted by the Tx module. Effective only when in the receiver "Rx Ser Link Mode" = "mavlink" is set. 
+Determines if a MAVLink RADIO_STATUS message is emitted by the Tx module. Effective only when in the receiver "Rx Ser Link Mode" = "mavlink" or "mavlinkX" is set. 
 Can be "off", "1 Hz".
 
 #### Tx Buzzer #### 
@@ -110,18 +114,18 @@ Can be "9600", "19200", "38400", "57600", "115200", "230400".
 
 #### Rx Ser Link Mode #### 
 Selects how the serial data stream is processed. 
-Can be "transp.", "mavlink".
+Can be "transp.", "mavlink", "mavlinkX".
 
-The setting is also applied to the Tx module.
+The setting is also applied to the Tx module. For MAVLinkX see [here](MAVLINKX.md).
 
 #### Rx Snd RadioStat #### 
-Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and which flow control algorithm is used. Effective only when "Rx Ser Link Mode" = "mavlink". 
+Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and which flow control algorithm is used. Effective only when "Rx Ser Link Mode" = "mavlink" or "mavlinkX". 
 Can be "off", "ardu_1", "meth_b".
 
 If "Rx Snd RcChannel" is set to "rc channels", then RADIO_LINK_FLOW_CONTROL messages are emitted instead of RADIO_STATUS.
 
 #### Rx Snd RcChannel #### 
-Determines if a MAVLink RC_CHANNELS_OVERRIDE or RADIO_RC_CHANNELS message is emitted by the receiver. Effective only when "Rx Ser Link Mode" = "mavlink". 
+Determines if a MAVLink RC_CHANNELS_OVERRIDE or RADIO_RC_CHANNELS message is emitted by the receiver. Effective only when "Rx Ser Link Mode" = "mavlink" or "mavlinkX". 
 Can be "off", "rc override", "rc channels".
 
 #### Rx Buzzer #### 
