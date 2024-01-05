@@ -8,6 +8,8 @@ The Lua script works on both OpenTx and EdgeTx radios but there are two differen
 1. If your radio has a 480x272 color screen (e.g. Jumper T16, Radiomaster TX16S) then use the "mLRS.lua" file
 2. If your radio has a black and white screen (e.g. Frsky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
 
+Note: The mLRS script requires EdgeTx version 2.9.x or later.
+
 ## Setup
 
 Three things need to be done in order to use the Lua script:
