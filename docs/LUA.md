@@ -24,6 +24,15 @@ Three things need to be done in order to use the Lua script:
 
 You should then be able to run the Lua script by going to SYS->TOOLS on the radio, and selecting "mLRS Configurator".
 
+## Usage
+
+Parameters are changed by:
+- Highlighting a parameter
+- Pressing the enter button
+- Scrolling through the available settings
+- Pressing the enter button on the setting
+- Selecting 'Save' to store
+
 ## Color Lua Script Notes
 
 Parameters which are not available are not displayed on the screen (i.e. the list of shown parameters can vary depending on the device). For instance, on a device which doesn't support a buzzer the parameter "Buzzer" will not be displayed. Parameters which cannot be changed are displayed with the current selection but are greyed out and cannot be edited. For instance, on a device which doesn't support diversity the parameter "Diversity" cannot be changed.
