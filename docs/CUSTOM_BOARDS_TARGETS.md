@@ -78,7 +78,7 @@ Note:  All pin names needs to be prefixed with 'IO_'
 
 ## Example - Reassigning UARTs
 
-Let's say that you want to use UART1 (PA9, PA10) for the serial connection and UART3 (PB10, PB11) for debug on the E28 Dual STM32F1 board.  In this case, you'll need to update line 34 to use UART1 and update line 50 to use UART3:
+Let's say that on the E28 Dual STM32F1 receiver board you want to use UART1 (PA9, PA10) for the serial connection, UART3 (PB10, PB11) for out and UART2 (PA2, PA3) for debug.  You'll need to update lines 54, 62 and 70, screenshot below:
 
 <img src="images/E28_Dual_UART.png">
 
@@ -98,8 +98,8 @@ Rx      | UART   | Out          |
 Rx      | UARTB  | Serial       |
 Rx      | UARTC  | Debug        |
 
-If you want to use alternative pins for the UART please refer to the table below:
+UART pin assignment is handled by the Tx and Rx pin names in the define.  These need to match the pins that you want to use.  There are certain restrictions on which pins can be used for each UART, refer to the datasheet for a comprehensive list. The table below contains common options which should work for most MCUs.
 
-<img src="images/UART_PINS.png">
+<img src="images/UART_PINS.png" width="600px">
 
-For example, if you want to use pins PB6 and PB7 for UART1 on UARTB the correct syntax would be `UARTB_USE_UART1_REMAPPED`
+For example, if you want to use pins PB3 and PB4 for UART2 on UARTB the correct syntax would be `UARTB_USE_UART2_PB3PB4`
