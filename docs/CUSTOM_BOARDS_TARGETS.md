@@ -100,6 +100,13 @@ Rx      | UARTC  | Debug        |
 
 UART pin assignment is handled by the Tx and Rx pin names in the define.  These need to match the pins that you want to use.  There are certain restrictions on which pins can be used for each UART, refer to the datasheet for a comprehensive list. The table below contains common options which should work for most MCUs.
 
-<img src="images/UART_PINS.png" width="600px">
+UART    |            |             |           |             |
+------- | ---------- | ----------- | --------- | ----------- |
+UART1   | PA9, PA10  | PB6, PB7    | PC4, PC5  |             |
+UART2   | PA2, PA3   | PD5, PD6    | PB3, PB4  | PA14, PA16  |
+UART3   | PB10, PB11 | PC10, PC11  |           |             |
+UART4   | PC10, PC11 |             |           |             |
+UART5   | PC12, PD2  |             |           |             |
+LUART1  | PA2, PA3   | PC1, PC10   |           |             |
 
 For example, if you want to use pins PB3 and PB4 for UART2 on UARTB the correct syntax would be `UARTB_USE_UART2_PB3PB4`
