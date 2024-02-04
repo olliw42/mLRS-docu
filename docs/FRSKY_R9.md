@@ -27,11 +27,16 @@ Note that R9 hardware cannot connect with other mLRS boards which support 868/91
 
 The R9M transmitter module is a great option given its 1 W transmit power but is somewhat limited with respect to serial ports. It provides access to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
 
-1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.
+1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.  Refer to the photos below:
 
-2. One needs to somehow (un)invert the serial signals for most uses. You can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
+- CLI, dip switch 1 down:  
+<img src="images/Frsky_R9M_Dip1_Down.png" width="360px">
+- Serial, dip switch 1 up:  
+<img src="images/Frsky_R9M_Dip1_Up.png" width="360px">
 
-3. If you use the mLRS Lua configuration script for configuration and thus don't need the CLI for configuration, you can avoid the inverter dongle when you use one of the supported ESP32 boards with the mlrs-wireless-bridge sketch to connect via MAVLink wirelessly to a Ground Control Station. The ESP32 can directly use the inverted serial signals.
+2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink wirelessly.  Additionally, the CLI can be accessed when using the mlrs-wireless-bridge sketch in Bluetooth mode.
+
+3. Alternatively, you can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
 
 Connections:
 
@@ -240,17 +245,19 @@ Wiring the receiver to the JR Bay on the back of your radio and flashing the ELR
 
 After flashing the ELRS bootloader, you can connect the serial port as described in the link above and use the ELRS UARTupload.py script to flash/update mLRS with latest mLRS firmware .elrs file. There are, of course, separate .elrs image files for each receiver:
 
+*Note: Python3 is a prerequisite to use the ELRS UARTUpload.py script.*
+
 1. Download the latest mLRS firmware or build with MLRS\_FEATURE\_ELRS\_BOOTLOADER defined.
 
 2. Download or git clone the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository. Since you only need the src/python folder, if you have subversion installed, you could use the svn github interface to get just what you need. From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/trunk/src/python"
 
-3. Connect a TTL USB serial adapter to your computer and install a driver if it's not recognized. If you don't have a TTL USB serial adapter, you should be able to use your flight controller. See step 8.
+3. Connect a TTL USB serial adapter to your computer and install a driver if it's not recognized.  If you're having trouble flashing or don't have a TTL USB serial adapter, you should be able to use your flight controller - see step 8.
 
 4. Wire the serial adapter to your receiver as instructed [here](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver). But, don't connect the VCC wire yet.
 
 5. Use the command window to run the UARTupload.py script like: "python UARTupload.py image\_file\_path" where image\_file\_path is the path to the appropriate .elrs file you obtained in step 1.
 
-6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 volt output of your serial adapter or a 5 volt power supply.  You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire.  If you have trouble getting the timing correct, you can hold down the button when powering up the receiver and the ELRS bootloader will keep running and not start the application code.
+6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 volt output of your serial adapter or a 5 volt power supply.  You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire.  If you have trouble getting the timing correct, you can hold down the button when powering up the receiver and the ELRS bootloader will keep running and not start the application code.  The red and green LEDs will blink alternately while the receiver is in the ELRS bootloader.
 
 7. When the UARTupload.py script reports the flash was successful, you can leave the receiver powered by the serial adapter and try to establish a connection from your TX. The LED will switch from rapid red to 1Hz green on both the RX and TX when the connection is established.
 
