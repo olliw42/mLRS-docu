@@ -27,12 +27,9 @@ Note that R9 hardware cannot connect with other mLRS boards which support 868/91
 
 The R9M transmitter module is a great option given its 1 W transmit power but is somewhat limited with respect to serial ports. It provides access to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
 
-1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.  Refer to the photos below:
+1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.  Refer to the photo below:
 
-- CLI, dip switch 1 down:  
-<img src="images/Frsky_R9M_Dip1_Down.png" width="360px">
-- Serial, dip switch 1 up:  
-<img src="images/Frsky_R9M_Dip1_Up.png" width="360px">
+<img src="images/Frsky_R9M_Dip.png" width="720px">
 
 2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink.  Additionally, the CLI can be accessed when using the mlrs-wireless-bridge sketch in Bluetooth mode.
 
