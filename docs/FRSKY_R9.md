@@ -31,7 +31,7 @@ The R9M transmitter module is a great option given its 1 W transmit power but is
 
 <img src="images/Frsky_R9M_Dip.png" width="720px">
 
-2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink. Additionally, the CLI can be accessed with common terminal programs when using the mlrs-wireless-bridge sketch in Bluetooth. 
+2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink. Additionally, the CLI can be accessed with common terminal programs when using the mlrs-wireless-bridge sketch in Bluetooth Classic mode.  For ESP32 modules that do not support Bluetooth Classic (C3, C6 and S3 variants) one can use telnet or a TCP terminal program with TCP mode.
 
 3. Alternatively, you can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
 
