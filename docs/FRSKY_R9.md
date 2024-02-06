@@ -242,13 +242,14 @@ Wiring the receiver to the JR Bay on the back of your radio and flashing the ELR
 
 After flashing the ELRS bootloader, you can connect the serial port as described in the link above and use the ELRS UARTupload.py script to flash/update mLRS with latest mLRS firmware .elrs file. There are, of course, separate .elrs image files for each receiver:
 
-*Note: Python3 is a prerequisite to use the ELRS UARTUpload.py script.*
+Note: Python3 is a prerequisite to use the ELRS UARTUpload.py script.
 
 1. Download the latest mLRS firmware or build with MLRS\_FEATURE\_ELRS\_BOOTLOADER defined.
 
 2. Download or git clone the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository. Since you only need the src/python folder, if you have subversion installed, you could use the svn github interface to get just what you need. From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/trunk/src/python"
 
-3. Connect a TTL USB serial adapter to your computer and install a driver if it's not recognized.  If you're having trouble flashing or don't have a TTL USB serial adapter, you should be able to use your flight controller - see step 8.
+3. Connect a TTL USB serial adapter to your computer and install a driver if it's not recognized.  
+- Note: If you're having trouble flashing or don't have a TTL USB serial adapter, you should be able to use your flight controller instead - see step 8.
 
 4. Wire the serial adapter to your receiver as instructed [here](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver). But, don't connect the VCC wire yet.
 
