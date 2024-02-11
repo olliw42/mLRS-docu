@@ -31,7 +31,7 @@ The R9M transmitter module is a great option given its 1 W transmit power but is
 
 <img src="images/Frsky_R9M_Dip.png" width="720px">
 
-2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink. Additionally, the CLI can be accessed with common terminal programs when using the mlrs-wireless-bridge sketch in Bluetooth Classic mode.  For ESP32 modules that do not support Bluetooth Classic (C3, C6 and S3 variants) one can use telnet or a TCP terminal program with TCP mode.  If you use telnet, you will probably need to enable crmod mode which you can do by using the escape sequence, usually control-], and issue the "toggle crmod" command.
+2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink. Additionally, the CLI can be accessed with common terminal programs when using the mlrs-wireless-bridge sketch in Bluetooth Classic mode.  For ESP32 modules that do not support Bluetooth Classic (C3, C6 and S3 variants) one can configure the sketch for TCP and use telnet on Linux or Windows or another TCP terminal App on Mobile devices.  You may need to map received CR characters to CR+LF.  If you use telnet, you can do this by typing the escape sequence which is shown when you start telnet and then type "toggle crmod".
 
 3. Alternatively, you can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
 
@@ -60,23 +60,21 @@ There are several DIY approaches for building an inverter dongle. A common appro
 
 ### ESP32 Wireless Bridge ###
 
-The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a wireless bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl. This approach can also eliminate the need for a separate inverter dongle.  Two of these boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate from M5Stack allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module. The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port rather than requiring a separate programmer, but it doesn't support the Bluetooth Serial Port Profile.  The M5Stamp Pico Mate is the best choice if you might want to use Bluetooth serial.  Both of these 2.4 GHz wireless bridge options work especially well with 900 MHz systems like the R9 since the separate frequency range minimizes interference.
+The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a wireless bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl. This approach can also eliminate the need for a separate inverter dongle.  Two of these boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate from M5Stack allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module.  The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port and does not require a separate programmer. However, it does not support Bluetooth Classic. If you want to use Bluetooth to connect to your GCS, then the [M5Stamp Pico Mate](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) is the recommended choice. Both of these modules use the 2.4 GHz band for the wireless bridge and will work well with 868/915 MHz systems like the R9 as the separate frequency range minimizes interference.
+
+<img src="images/Frsky_R9M_M5Stamp_C3U_installed.jpg" width="360px">
+
+Connecting the M5Stamp C3U Mate or Pico Mate to the R9M is easy: Remove the M5Stamp module's screw and plastic cover. Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position. This position serves as a key to avoid plugging in the board incorrectly. Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above. Then, you can connect your GCS computer or mobile device to the "mLRS AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
+
+<img src="images/Frsky_R9M_M5Stamp_headers.png" width="720px">
 
 To install the sketch on the M5Stamp C3U Mate, use the Arduino IDE. Open the mlrs-wireless-bridge.ino sketch from the mLRS esp/mlrs-wireless-bridge folder, edit the mlrs-wireless-bridge.ino file to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define, select the ESP32C3 Dev board in the IDE, connect the M5Stamp C3U Mate module USB connector to your computer while holding down the center button, and upload the sketch via the IDE.
 
 __Be sure to unplug the M5Stamp C3U Mate from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
 
-<img src="images/Frsky_R9M_M5Stamp_C3U_installed.jpg" width="360px">
-
-Connecting the M5Stamp C3U or Pico Mate to the R9M is easy: Remove the screw and the plastic cover. Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position. This position serves as a key to avoid plugging in the board incorrectly. Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above. Then, you can connect your GCS computer or mobile device to the "mLRS AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
-
-<img src="images/Frsky_R9M_M5Stamp_C3U_header.jpg" width="360px">
-
-If you use the M5Stamp Pico Mate, you can select the Bluetooth protocol when you edit the mlrs-wireless-bridge.ino file and then you can connect your GCS via Bluetooth SPP.  The Bluetooth option can be very convenient, especially in cases where WiFi might be used for an Internet connection on your GCS computer or device.
+If you use the M5Stamp Pico Mate, you can select the Bluetooth protocol when you edit the mlrs-wireless-bridge.ino file and then you can connect your GCS via Bluetooth.  The Bluetooth option can be very convenient, especially in cases where WiFi might be used for an Internet connection on your GCS computer or device.
 
 Programming the Pico Mate is fairly easy using a USB TTL serial adapter which supports the DTR and RTS pins.  The adapter which comes with the [M5Stamp Pico DIY Kit](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) may be the most convenient and the kit includes the Pico Mate module.  You can solder the 6 pin female header connector to the appropriate pins on the module and plug the kit's serial adapter directly (recommended).  Or, if you prefer to leave off the programming connector, it is possible to insert the serial adapter pins into the appropriate thru-holes on the module and hold it in place with some pressure at an angle so as to to ensure continuous contact with all 6 pins during the programming process.
-
-<img src="images/Frsky_R9M_M5Stamp_Pico_header.jpg" width="360px">
 
 ### Cooling ###
 
