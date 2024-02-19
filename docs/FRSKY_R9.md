@@ -21,7 +21,7 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
   </tbody>
 </table>
 
-Note that R9 hardware cannot connect with other mLRS boards which support 868/915 MHz. This is because it uses the SX127x LoRa chipset, which is incompatible with the newer SX126x LoRa chipset of the other boards when the SF6 spreading factor used by the mLRS 19 Hz mode is selected. The older SX127x chipset also does not support SF5 which is required for the mLRS 31 Hz mode.
+Note that R9 hardware cannot connect with mLRS boards which support 868/915 MHz and use the SX126x LoRa chipset. This is because R9 hardware uses the SX127x LoRa chipset, which is incompatible with the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
 
 ## R9M Tx Module ##
 
@@ -184,7 +184,7 @@ Button:
 
 ## Flashing ##
 
-The mLRS firmware must, of course, be flashed on both the Tx module and the receiver before they can be used. For flashing, as well as upgrading, several methods are available: via ExpressLRS bootloader, via ST-Link/SWD, or via system bootloader. The methods are each described in the following. 
+The mLRS firmware must be flashed on both the Tx module and the receiver before they can be used. For flashing, as well as upgrading, several methods are available: via ExpressLRS bootloader, via ST-Link/SWD, or via system bootloader. The methods are each described in the following. 
 
 Note: The R9M Lite Pro can only be flashed/upgraded using the ST-Link method.
 
@@ -202,7 +202,7 @@ The ExpressLRS documentation provides ELRS specific instructions [here](https://
 
 #### Flash the ELRS Bootloader ####
 
-These steps only need to be performed once. If you experience a "No Sync" error, check that you have selected CRSF external mode in the radio.
+These steps only need to be performed once. If you experience a "No Sync" error, check that you have selected CRSF (with 400k baud) external mode in the radio.
 
 If you have never previously flashed the R9M module via ST-Link, you can use the stock Frsky bootloader to flash the ELRS bootloader alongside the stock bootloader. This method will preserve the ability to return to the stock Frsky firmware.
 
