@@ -21,7 +21,7 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
   </tbody>
 </table>
 
-Note that R9 hardware cannot connect with other mLRS boards which support 868/915 MHz. This is because it uses the SX127x LoRa chipset, which is incompatible with the newer SX126x LoRa chipset of the other boards when the SF6 spreading factor  used by the mLRS 19 Hz mode is selected. The older SX127x chipset also does not support SF5 which is required for the mLRS 31 Hz mode.
+Note that R9 hardware cannot connect with other mLRS boards which support 868/915 MHz. This is because it uses the SX127x LoRa chipset, which is incompatible with the newer SX126x LoRa chipset of the other boards when the SF6 spreading factor used by the mLRS 19 Hz mode is selected. The older SX127x chipset also does not support SF5 which is required for the mLRS 31 Hz mode.
 
 ## R9M Tx Module ##
 
@@ -162,9 +162,9 @@ The wiring is similar to when used as a receiver, with the exception that the "I
 
 ## R9 MM / R9 Mini Receiver ##
 
-The R9 MM / R9 Mini receiver is supported, however, flashing with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9 MX receiver instead.
+The R9 MM and R9 Mini receivers are supported, however, flashing with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9 MX receiver instead.
 
-If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9 MM/ R9 Mini is the smallest and lightest receiver available.
+If you want to use ELRS bootloader and install via the Frsky bootloader and OpenTX or EdgeTX, the R9 MM / R9 Mini is the smallest and lightest receiver available.
 
 <img src="images/Frsky_R9MM_wiring_01.jpg" width="720px">
 
@@ -174,7 +174,7 @@ If you want to use ELRS bootloader and install via the Frsky bootloader and Open
 | Pin 3 GND | Ground
 | Pin 5 SBUS OUT | Out (SBus only)
 | CH1 | Buzzer
-| CH2 | not used
+| CH2 | Debug Tx
 | CH3 | Serial Tx
 | CH4 | Serial Rx
 
@@ -184,27 +184,27 @@ Button:
 
 ## Flashing ##
 
-The mLRS firmware must, of course, be flashed on both the Tx module and the receiver before it can be used. For flashing, as well as upgrading, several methods are available (via ExpressLRS bootloader, via system bootloader, via STLink/SWD), which are described in the following. 
+The mLRS firmware must, of course, be flashed on both the Tx module and the receiver before they can be used. For flashing, as well as upgrading, several methods are available: via ExpressLRS bootloader, via ST-Link/SWD, or via system bootloader. The methods are each described in the following. 
 
-Note: The R9M Lite Pro can only be flashed/upgraded using the STLink method.
+Note: The R9M Lite Pro can only be flashed/upgraded using the ST-Link method.
 
 ### Acknowledgments ###
 
 We wish to express our thanks to the folks of the ExpressLRS project, who have worked out the easy way to flash the R9 hardware, which is now also available for mLRS. With gratitude, here we are utilizing the ExpressLRS bootloader images and scripts and, in some cases, also their excellent documentation.
 
-### Flash the R9M with ELRS bootloader ###
+### Flash the R9M Module with ELRS Bootloader ###
 
-You can flash the ELRS bootloader and mLRS using your radio with OpenTX 2.3.12 or newer or EdgeTX 2.4.0 or newer. This method is especially recommended for new users.
+You can flash the ELRS bootloader and the mLRS firmware to the R9M module using your radio with OpenTX 2.3.12 or newer or EdgeTX 2.4.0 or newer. This method is especially recommended for new users.
 
 Of course, flashing via ST-Link is also still an option.
 
 The ExpressLRS documentation provides ELRS specific instructions [here](https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stock_bl) which you might want to reference if the instructions here are not clear. Of course, you should ignore the references to the ELRS configurator and build mLRS as instructed elsewhere.
 
-#### Flash the ELRS bootloader ####
+#### Flash the ELRS Bootloader ####
 
-These steps only need to be performed once. If you experience a "No Sync" error, check that you have selected CRSF external mode and not mBridge.
+These steps only need to be performed once. If you experience a "No Sync" error, check that you have selected CRSF external mode in the radio.
 
-If you have never previously flashed this module via ST-Link, you can use the stock Frsky bootloader to flash the ELRS bootloader alongside the stock bootloader. This method will preserve the ability to return to the stock Frsky firmware.
+If you have never previously flashed the R9M module via ST-Link, you can use the stock Frsky bootloader to flash the ELRS bootloader alongside the stock bootloader. This method will preserve the ability to return to the stock Frsky firmware.
 
 1. Download the [r9m\_elrs\_bl.frk](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_elrs_bl.frk?raw=true) file from the ExpressLRS git repository and copy it to the FIRMWARE folder on your radio's SD card.
 
@@ -212,9 +212,9 @@ If you have never previously flashed this module via ST-Link, you can use the st
 
 3. Enter the System Menu and navigate using the page buttons to the SD card page.
 
-4. Scroll to the FIRMWARE folder and select the r9m\_elrs\_bl.frk file.  Choose "Flash external module".
+4. Scroll to the FIRMWARE folder and select the r9m\_elrs\_bl.frk file. Choose "Flash external module".
 
-5. Follow the instructions in the next section to flash mLRS.
+5. Follow the instructions in the next section to flash the mLRS firmware.
 
 If you have already flashed via ST-Link, you can continue to flash updates via ST-Link the way you always have, or you can follow these steps to switch to flashing from the radio. To do this, you will flash the ELRS bootloader by using ST-Link one last time:
 
@@ -222,9 +222,9 @@ If you have already flashed via ST-Link, you can continue to flash updates via S
 
 2. Flash it to the beginning of the flash (0x8000000) using ST-Link and STM32CubeProgrammer.
 
-3. Follow the instructions in the next section to flash mLRS.
+3. Follow the instructions in the next section to flash the mLRS firmware.
 
-#### Flash/Update the mLRS firmware ####
+#### Flash/Update the mLRS Firmware ####
 
 Once the ELRS bootloader is installed, the following precedure can be followed to install the mLRS firmware.
 
@@ -236,38 +236,38 @@ Once the ELRS bootloader is installed, the following precedure can be followed t
 
 4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-v*.elrs file. Choose "Flash external ELRS".
 
-### Flash R9 receivers with ELRS bootloader ###
+### Flash R9 Receivers with ELRS Bootloader ###
 
-#### Flash the ELRS bootloader ####
+#### Flash the ELRS Bootloader ####
 
-Wiring the receiver to the JR Bay on the back of your radio and flashing the ELRS bootloader is documented [here](https://www.expresslrs.org/quick-start/receivers/r9/). The procedure is similar to flashing the R9M as described above in the First time bootloader install section. Use the appropriate .frk file indicated in the ELRS instructions for the receiver you are flashing. Flashing the ELRS bootloader from the .frk file only needs to be done once.
+Wiring the receiver to the JR Bay on the back of your radio and flashing the ELRS bootloader is documented [here](https://www.expresslrs.org/quick-start/receivers/r9/). The procedure is similar to flashing the R9M module as described above in the bootloader install section. Use the appropriate .frk file indicated in the ELRS instructions for the receiver you are flashing. Flashing the ELRS bootloader from the .frk file only needs to be done once.
 
-#### Flash/Update the mLRS firmware ####
+#### Flash/Update the mLRS Firmware ####
 
-After flashing the ELRS bootloader, you can connect the serial port as described in the link above and use the ELRS UARTupload.py script to flash/update mLRS with latest mLRS firmware .elrs file. There are, of course, separate .elrs image files for each receiver:
+After flashing the ELRS bootloader, you can connect the receiver's serial port as described in the link above and use the ELRS UARTupload.py script to flash/update with latest mLRS firmware .elrs file. There are, of course, separate .elrs image files for each receiver.
 
 Note: Python3 is a prerequisite to use the ELRS UARTUpload.py script.
 
 1. Download the latest mLRS firmware or build with MLRS\_FEATURE\_ELRS\_BOOTLOADER defined.
 
-2. Download or git clone the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository. Since you only need the src/python folder, if you have subversion installed, you could use the svn github interface to get just what you need. From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/trunk/src/python"
+2. Download or git clone the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository. If you have subversion installed: Since you only need the src/python folder, you could use the svn github interface to get just what you need. From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/trunk/src/python"
 
-3. Connect a TTL USB serial adapter to your computer and install a driver if it's not recognized.  
-- Note: If you're having trouble flashing or don't have a TTL USB serial adapter, you should be able to use your flight controller instead - see step 8.
+3. Connect a USB-TTL serial adapter to your computer and install a driver if it is not recognized.  
+- Note: If you are having trouble flashing or don't have a USB-TTL serial adapter, you should be able to use your flight controller instead - see step 8.
 
-4. Wire the serial adapter to your receiver as instructed [here](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver). But, don't connect the VCC wire yet.
+4. Wire the USB-TTL serial adapter to your receiver as instructed [here](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver). But, don't connect the VCC wire yet.
 
 5. Use the command window to run the UARTupload.py script like: "python UARTupload.py image\_file\_path" where image\_file\_path is the path to the appropriate .elrs file you obtained in step 1.
 
-6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 volt output of your serial adapter or a 5 volt power supply.  You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire.  If you have trouble getting the timing correct, you can hold down the button when powering up the receiver to enter the ELRS bootloader. To confirm that you're in the bootloader you should see the red and green LEDs blink alternately on the receiver.
+6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 Volt output of your USB-TTL serial adapter or a 5 Volt power supply. You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire. If you have trouble getting the timing correct, you can hold down the button when powering up the receiver to enter the ELRS bootloader. To confirm that you are in the bootloader you should see the red and green LEDs blink alternately on the receiver.
 
-7. When the UARTupload.py script reports the flash was successful, you can leave the receiver powered by the serial adapter and try to establish a connection from your TX. The LED will switch from rapid red to 1Hz green on both the RX and TX when the connection is established.
+7. When the UARTupload.py script reports the flash was successful, you can leave the receiver powered by the USB-TTL serial adapter and try to establish a connection from your Tx module. The LED will switch from rapid red to 1 Hz green on both the receiver and Tx module when the connection is established.
 
-8. After you have connected the receiver serial port to your flight controller and installed it in your build, you can use Ardupilot's [serial passthrough](https://ardupilot.org/copter/docs/common-serial-passthrough.html) feature for future mLRS firmware updates without uninstalling the receiver from your build. The baud rate for the FC serial port used should be configured for 420,000 in Ardupilot. The receiver should be powered up (battery connected) after the UARTupload.py script reports "attempting to reboot into bootloader" as in step 6. This is most easily accomplished by wiring the receiver to a regulated power output on your flight controller or ESC which is active only when the battery is connected, but not powered when the flight controller is connected to USB without the battery. If this can't easily be arranged, you will have to hold down the receiver button when connecting the flight controller USB port.
+8. After you have connected the receiver serial port to your flight controller and installed it in your build, you can use ArduPilot's [serial passthrough](https://ardupilot.org/copter/docs/common-serial-passthrough.html) feature for future mLRS firmware updates without uninstalling the receiver from your build. The baud rate for the FC serial port used should be configured for 420,000 in ArduPilot. The receiver should be powered up (battery connected) after the UARTupload.py script reports "attempting to reboot into bootloader" as in step 6. This is most easily accomplished by wiring the receiver to a regulated power output on your flight controller or ESC which is active only when the battery is connected, but not powered when the flight controller is connected to USB without the battery. If this cannot easily be arranged, you will have to hold down the receiver button when connecting the flight controller USB port.
 
 ### Flash/Update via ST-Link ###
 
-Note: Flashing any Frsky R9 board with the ST-Link is a non-reversible operation, i.e., it is not possible to revert back to the original Frsky firmware. It is possible to switch to ExpressLRS however.
+Note: Flashing any Frsky R9 board with ST-Link is a non-reversible operation, i.e., it is not possible to revert back to the original Frsky firmware. It is possible to switch to ExpressLRS however.
 
 The ST-Link connection is made as follows:
 - R9M module: https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stlink
@@ -284,10 +284,10 @@ Note: In the ExpressLRS docs it is suggested to download and use the "ST-LINK Ut
 
 When the R9 MX / R9 MM / R9 Mini receivers have been flashed with the non-"elrs-bl" firmware version via ST-Link, they can be upgraded by invoking the STM32 system bootloader, which can be done as follows:
 
-- Download and install STM32CubeProgrammer
-- Connect the R9 MX / R9 MM / R9 Mini via the serial Rx/Tx pins to a USB-TTL adpater
-- Power up the R9 MX / R9 MM / R9 Mini while keeping the button pressed; this boots the receiver into the system bootloader
-- Launch STM32CubeProgrammer and select the Serial connection option as the connection method, click connect
-- From the menu on the left select the Download tile
-- Select the correct firmware in the Download section, click Start Program
-- Power cycle the board
+- Download and install STM32CubeProgrammer.
+- Connect the R9 MX / R9 MM / R9 Mini via the serial Rx/Tx pins to a USB-TTL adpater.
+- Power up the R9 MX / R9 MM / R9 Mini while keeping the button pressed; this boots the receiver into the system bootloader.
+- Launch STM32CubeProgrammer and select the Serial connection option as the connection method, click connect.
+- From the menu on the left select the Download tile.
+- Select the correct firmware in the Download section, click Start Program.
+- Power cycle the board.
