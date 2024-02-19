@@ -244,7 +244,7 @@ Wiring the receiver to the JR Bay on the back of your radio and flashing the ELR
 
 #### Flash/Update the mLRS Firmware ####
 
-After flashing the ELRS bootloader, you can connect the receiver's serial port as described in the link above and use the ELRS UARTupload.py script to flash/update with latest mLRS firmware .elrs file. There are, of course, separate .elrs image files for each receiver.
+After flashing the ELRS bootloader, you can connect the receiver's serial port as described in the link above and use the ELRS UARTupload.py script to flash/update the latest mLRS firmware .elrs file. There are, of course, separate .elrs image files for each receiver.
 
 Note: Python3 is a prerequisite to use the ELRS UARTUpload.py script.
 
