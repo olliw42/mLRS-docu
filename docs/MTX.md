@@ -25,7 +25,7 @@ For more details on other possible configurations, please consult the mTX projec
 
 - Tx Ch Source = mbridge
 
-Note: The parameter "Tx Ser Dest" can be set to serial, serial2 or mbridge. If serial or serial2 is selected, then a MAVLink router is enabled which routes the messages between serial or serial2, the mTX radio, and the mLRS link. This allows you to connect a GCS to serial or serial2. If mbridge is selected, then the MAVLink router is not enabled and the MAVLink communication happens only between the mTX radio and the mLRS link.
+The parameter "Tx Ser Dest" can be set to serial, serial2 or mbridge. If serial or serial2 is selected, then a MAVLink router is enabled which routes the messages between serial or serial2, the mTX radio, and the mLRS link. This allows you to connect a GCS to serial or serial2. If mbridge is selected, then the MAVLink router is not enabled and the MAVLink communication happens only between the mTX radio and the mLRS link.
 
 Note: The parameter "Tx Snd RadioStat" should normally be set to off. There are situations in which it can be useful to enable "Tx Snd RadioStat", but you should do this only if you know what you are doing.
 
@@ -61,7 +61,7 @@ In contrast to other setups, the SRy parameters for the stream rates do not need
 
 Only if the settings by the mTX firmware should be overruled, the SRy parameters can be configured as described in [CRSF Telemetry and Yaapu Telemetry App: ArduPilot Setup](CRSF.md#ardupilot-setup).
 
-Note: While a mTX radio is a full-fledged GCS in MAVLink terminology, it is not recognized by ArduPilot as its GCS, since the MY_GCS parameter is set by default to MissionPlanner/QGC. Accordingly, setting e.g. SERIALx_OPTIONS = 4096 has no effect.
+Note: While the mTX radio is a full-fledged GCS in MAVLink terminology, it is not recognized by ArduPilot as its GCS, since the MY_GCS parameter is set by default to MissionPlanner/QGC. Accordingly, setting e.g. SERIALx_OPTIONS = 4096 has no effect on the stream for as long as no GCS is connected to serial/serial2 (or if Tx Ser Dest = mbridge is selected). If to set or not to set it in case of when a GCS is used, one may want to experiment with and choose what gives the best behavior.
 
 ### CRSF Receiver
 
