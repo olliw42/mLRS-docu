@@ -5,7 +5,7 @@
 This page describes how to set up a mLRS system for OpenTx radios running the mTX (formerly MAVLink for OpenTx) firmware.
 
 Five steps need to be completed:
-1. The OpenTx radio needs to be flashed with the mTx firmware.
+1. The OpenTx radio needs to be flashed with the mTX firmware.
 2. The radio needs to be configured. 
 3. The mLRS Tx module needs to be put into "mBridge mode".
 4. The mLRS system needs to be put into "MAVLink mode".
@@ -13,7 +13,7 @@ Five steps need to be completed:
 
 Step 1. is beyond the scope of this article; please consult the project's discussion channels.
 
-Note: An ArduPilot flight controller is assumed. For PX4 it needs to be tested and seen. INAV won't work AFAIK, as INAV is not a proper MAVLink component.
+Note: An ArduPilot flight controller is assumed. For PX4 it needs to be tested and seen. INAV will not work AFAIK, as INAV is not a proper MAVLink component.
 
 ## OpenTx/mTX Radio Setup
 
@@ -40,16 +40,16 @@ It is possible to avoid the separate signal wire for the RC data, by sending the
 
 - Rx Snd RcChannel = rc override
 
-Note: It is recommended to use the CRSF protocol for the RC data, since you get benefits like better link statistics that are not available when sending the RC data via MAVLink.
+Note: It is recommended to use the CRSF protocol for the RC data, since you get benefits like lower latency and better link statistics that are not available when sending the RC data via MAVLink.
 
 ## ArduPilot Setup
 
 ### MAVLink Serial Port
 
 - SERIALx_BAUD:
-    - 57 for 31 Hz, 50 Hz
-    - 38 for 19 Hz (57 works very well too, only parameter download is slower)
-    - 230 for FLRC
+    - 57 for 31 Hz and 50 Hz modes
+    - 38 for 19 Hz mode (57 works very well too, only parameter download is slower)
+    - 230 for FLRC mode
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 - SERIALx_OPTIONS = 0
 
