@@ -25,9 +25,9 @@ For more details on other possible configurations, please consult the mTX projec
 
 - Tx Ch Source = mbridge
 
-Note: The parameter "Tx Snd RadioStat" should normally be set to off. There are situations in which it can be useful to enable "Tx Snd RadioStat", but you should do this only if you know what you are doing.
+Note: The parameter "Tx Ser Dest" can be set to serial, serial2 or mbridge. If serial or serial2 is selected, then a MAVLink router is enabled which routes the messages between serial or serial2, the mTX radio, and the mLRS link. This allows you to connect a GCS to serial or serial2. If mbridge is selected, then the MAVLink router is not enabled and the MAVLink communication happens only between the mTX radio and the mLRS link.
 
-Note: The parameter "Tx Ser Dest" can be set to serial, serial2 or mbridge. If serial or serial2 is selected, then a MAVLink router is enabled which routes the messages between serial or serial2, the mTX radio, and the mLRS link. This allows you to e.g. in addition connect a GCS to serial or serial2. If mbridge is selected, then a MAVLink router is not invoked and the MAVLink communication happens only between the mTX radio and the mLRS link.   
+Note: The parameter "Tx Snd RadioStat" should normally be set to off. There are situations in which it can be useful to enable "Tx Snd RadioStat", but you should do this only if you know what you are doing.
 
 ## mLRS Receiver Setup
 
