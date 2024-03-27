@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-In principle, any ELRS receiver which uses the ESP8285 chipset is supported. This page does not list all of them, but just some which are considered particularly usefull for being used as mLRS receiver, e.g., because their transmit power is >= 100 mW. 
+In principle, any ELRS receiver which uses the ESP8285 chipset is supported. This page does not list all of them, but just some which are considered particularly useful for being used as mLRS receiver, e.g., because their transmit power is >= 100 mW. 
 
 ELRS receivers using a EPS32 chipset or ELRS transmitter modules are currently not (yet) supported.
 
