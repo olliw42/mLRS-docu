@@ -125,4 +125,4 @@ Subsequent flashing can be done in two ways:
     - There is no need to change the read out protection after the initial flash
     - If a full erase is desired, go to the Erase & Programming page and click 'Full chip erase'
 2. Boot into the system bootloader using the CLI, Lua script or the OLED display
-    - This enables programming over UART1 (pins PA9, PA10, labeled 'D9' and 'MOSI') or UART2 (pins PA2, PA3, labeled 'Tx2' and 'Rx2') with a USB-TTL adapter using the Serial connection option in STM32CubeProgrammer. The on-board USB connector cannot be used.
+    - This enables programming over UART1 (pins PA9 | Tx, PA10 | Rx, labeled 'D9' and 'MOSI' respectively) or UART2 (pins PA2 | Tx, PA3 | Rx, labeled 'Tx2' and 'Rx2' respectively) with a USB-TTL adapter at 115200 baud using the serial connection option in STM32CubeProgrammer. Unfortunately, the on-board USB connector cannot be used for flashing.
