@@ -41,6 +41,7 @@ Connections (name in respect to board print-ons):
 - com/cli: Tx,Rx and on-board USB plug
 - debug: A3
 - led green: SDA (solder a green LED with resistor > 300 Ohm to GND, you can use pad SCL as intermediate post)
+  - Note: The green LED is optional.  It can be enabled by removing #define DEVICE_HAS_SINGLE_LED in the hal.
 - led red: on-board
 - bind button: BOOT button, hold for 4 seconds to initiate bind mode
 
@@ -58,6 +59,7 @@ Connections (name in respect to board print-ons):
 - out: Tx1
 - debug: Tx, and on-board USB plug
 - led green: SDA (solder a green LED with resistor > 300 Ohm to GND, you can use pad SCL as intermediate post)
+  - Note: The green LED is optional.  It can be enabled by removing #define DEVICE_HAS_SINGLE_LED in the hal.
 - led red: on-board
 - bind button: BOOT button, hold for 4 seconds to initiate bind mode
 
@@ -72,7 +74,7 @@ Example Wiring:
 
 ### As Tx Module ###
 
-not recommended
+Not recommended.
 
 ### As Receiver ###
 
@@ -84,8 +86,6 @@ Connections (name in respect to board print-ons):
 - led green: none
 - led red: on-board (solder jumper on the bottom of the board needs to be closed)
 - bind button: BOOT solder pad (solder a button between the BOOT pad and GND or a wire between the two to ground out the BOOT pad, hold for 4 seconds to initiate bind mode)
-
-Note: There is no convenient way to connect a green LED, and you thus won't get the information conveyed by it (like connection). It is possible to work around this but it would require some more sophisticated solder work.
 
 Example Wiring:
 
