@@ -50,5 +50,5 @@ For ESP devices, the project uses the Arduino framework with Espressif cores.
     - For receivers with a single (non-RGB) LED you can confirm the receiver is in bootloader mode if the LED is solid.
 - To upload the firmware, click the right arrow icon in the bottom bar.
     - ***Note***: When you hover over it should say 'PlatformIO: Upload'
-- Once the firmware has been written sucessfully, power cycle the receiver, the LED should blink to indicate that it is looking for a connection.
+- Once the firmware has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
     - ***Note***: Binding can be done by holding down the button for four seconds.
