@@ -42,7 +42,7 @@ The following receivers are recommended as they support >= 100 mW transmit power
 
 ## Connections ##
 
-ELRS receivers have a standardized pinout will need to be connected to the FC as follows:
+All ELRS receivers have a standardized pinout and will need to be connected to the FC as follows:
 
 <img src="images/ELRS_fc_wiring.png" width="600px">
 
