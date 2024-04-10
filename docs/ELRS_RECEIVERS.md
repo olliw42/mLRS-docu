@@ -15,9 +15,9 @@ To determine if your receiver hardware is supported, go to [ELRS Targets](https:
 
 Note: ELRS receivers that use an ESP32 MCU are under active development.
 
-## Recommended ELRS Receivers ##
+## Selected ELRS Receivers ##
 
-The following receivers are recommended as they support >= 100 mW transmit power and have been validated by the mLRS team.
+The following receivers are good choices. They support >= 100 mW, are affordable, and have been validated by the mLRS team.
 
 <table>
   <tbody>
@@ -27,7 +27,7 @@ The following receivers are recommended as they support >= 100 mW transmit power
       <td>Transmit Power</td>
     </tr>
     <tr>
-      <td>BayckRC 915M Nano Pro</td>
+      <td>Bayck 915M Nano Pro</td>
       <td>868/915 MHz</td>
       <td>27 dBm (500 mw)</td>
     </tr>
@@ -56,8 +56,8 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
     - Rx to Tx
 - When powering on the receiver you will need to have the bind button pushed down to enter into bootloader mode.
     - For receivers with a single (non-RGB) LED you can confirm the receiver is in bootloader mode if the LED is solid.
-- Open a supported browser (Chrome, Edge, Opera) and navigate [here](https://esp.huhn.me/).
+- Open a supported browser (Chrome, Edge, Opera, not Firefox) and navigate [here](https://esp.huhn.me/).
 - Click connect and select the serial port of your USB<>UART.
 - Upload the .bin file for your receiver and click program.
 - Once the firmware has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
-    - ***Note***: Binding can be done by holding down the button for four seconds.
+    - Note: Binding can be done by holding down the button for four seconds.
