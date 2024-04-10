@@ -10,7 +10,6 @@ As of April 2024, ELRS receivers with an ESP8285 MCU are experimentally supporte
 - Generic 900 PA
 - Generic 2400
 - Generic 2400 PA
-- Generic 2400 PA-D
 
 To determine if your receiver hardware is supported, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and find the layout file of your hardware.
 
