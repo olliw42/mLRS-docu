@@ -40,7 +40,7 @@ Connections (name in respect to board print-ons):
 - in: Rx1
 - com/cli: Tx,Rx and on-board USB plug
 - debug: A3
-- led green: SDA (solder a green LED with resistor > 300 Ohm to GND, you can use pad SCL as intermediate post)
+- led green: none (see note below)
 - led red: on-board
 - bind button: BOOT button, hold for 4 seconds to initiate bind mode
 
@@ -48,7 +48,9 @@ Example Wiring using JR bay with CRSF:
 
 <img src="images/E5_Mini_Tx_Wiring.png" width="600px">
 
-*The Schottky diode between the TX1 and RX1 pins is not needed with the default firmware. If you are having communication issues between the radio and the Tx module then you can install the Schottky diode and use the 'sdiode' firmware ('sdiode' will be included in the file name, e.g. tx-Wio-E5-Mini-wle5jc-**sdiode**-vX.X.XX.hex).  
+*The Schottky diode between the TX1 and RX1 pins is not needed with the default firmware. If you are having communication issues between the radio and the Tx module then you can install the Schottky diode and use the 'sdiode' firmware ('sdiode' will be included in the file name, e.g. tx-Wio-E5-Mini-wle5jc-**sdiode**-vX.X.XX.hex).
+
+**The green LED and resistor is optional. It can be enabled with a custom firmware build by removing #define DEVICE_HAS_SINGLE_LED in the hal.  
 
 ### As Receiver ###
 
@@ -57,13 +59,15 @@ Connections (name in respect to board print-ons):
 - serial: Tx2,Rx2
 - out: Tx1
 - debug: Tx, and on-board USB plug
-- led green: SDA (solder a green LED with resistor > 300 Ohm to GND, you can use pad SCL as intermediate post)
+- led green: none (see note below)
 - led red: on-board
 - bind button: BOOT button, hold for 4 seconds to initiate bind mode
 
 Example Wiring:
 
 <img src="images/E5_Mini_Rx_Wiring.png" width="800px">
+
+*The green LED and resistor is optional. It can be enabled with a custom firmware build by removing #define DEVICE_HAS_SINGLE_LED in the hal.
 
 ## SeeedStudio Grove Wio-E5 Board ##
 
@@ -72,7 +76,7 @@ Example Wiring:
 
 ### As Tx Module ###
 
-not recommended
+Not recommended.
 
 ### As Receiver ###
 
@@ -84,8 +88,6 @@ Connections (name in respect to board print-ons):
 - led green: none
 - led red: on-board (solder jumper on the bottom of the board needs to be closed)
 - bind button: BOOT solder pad (solder a button between the BOOT pad and GND or a wire between the two to ground out the BOOT pad, hold for 4 seconds to initiate bind mode)
-
-Note: There is no convenient way to connect a green LED, and you thus won't get the information conveyed by it (like connection). It is possible to work around this but it would require some more sophisticated solder work.
 
 Example Wiring:
 
