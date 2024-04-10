@@ -20,12 +20,16 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [Configuration Options for ArduPilot Systems](docs/ARDUPILOT.md)
 - [Experimental: Relay](docs/RELAY.md)
 
-### Hardware ###
+### STM32 Hardware ###
 - [FlySky FRM303 Module](docs/FLYSKY_FRM303.md)
 - [Frsky R9 Devices](docs/FRSKY_R9.md)
 - [SeeedStudio Wio-E5 Boards](docs/SEEEDSTUDIO_WIO_E5.md)
 - [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
 - [E77 Easy Solder Boards](docs/E77_EASYSOLDER.md)
+
+### ESP Hardware ###
+- [ELRS Receivers](docs/ELRS_RECEIVERS.md)
+- [ESP Development](docs/ESP_DEVELOPMENT.md)
 
 ### Advanced Options ###
 - [Wireless Bridge](docs/WIRELESS_BRIDGE.md)
