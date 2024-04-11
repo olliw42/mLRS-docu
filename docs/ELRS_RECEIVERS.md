@@ -15,7 +15,7 @@ To determine if your receiver hardware is supported, go to [ELRS Targets](https:
 
 Note: ELRS receivers that use an ESP32 MCU are under active development.
 
-Note that 900 MHz ELRS receivers cannot connect with mLRS boards which support 868/915 MHz and use the SX126x LoRa chipset. This is because the 900 MHz ELRS gear uses the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
+Note that 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules using the SX126x LoRa chipset. This is because the 868/915 MHz ELRS receivers use the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
 
 ## Selected ELRS Receivers ##
 
