@@ -6,16 +6,35 @@
 
 As of April 2024, ELRS receivers with an ESP8285 MCU are supported by mLRS. The following targets are supported:
 
-- Generic 900
-- Generic 900 PA
-- Generic 2400
-- Generic 2400 PA
+<table>
+  <tbody>
+    <tr>
+      <td>Target</td>
+      <td>Transmit Power</td>
+    </tr>
+    <tr>
+      <td>Generic 900</td>
+      <td>17 dBm (50 mw)</td>
+    </tr>
+    <tr>
+      <td>Generic 900 PA</td>
+      <td>27 dBm (500 mw)</td>
+    </tr>
+    <tr>
+      <td>Generic 2400</td>
+      <td>12.5 dBm (18 mw)</td>
+    </tr>
+      <td>Generic 2400 PA</td>
+      <td>20 dBm (100 mw)</td>
+    </tr>
+  </tbody>
+</table>
 
 To determine if your receiver hardware is supported, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and find the layout file of your hardware.
 
-Note: ELRS receivers that use an ESP32 MCU are under active development.
-
-Note that 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules using the SX126x LoRa chipset. This is because the 868/915 MHz ELRS receivers use the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
+Notes:
+- ELRS receivers that use an ESP32 MCU are under active development.
+- 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules using the SX126x LoRa chipset. This is because the 868/915 MHz ELRS receivers use the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
 
 ## Selected ELRS Receivers ##
 
@@ -51,6 +70,9 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
 
 ## Flashing ##
 
+- Download the firmware for your receiver.
+    - The latest pre-release is found [here](https://github.com/olliw42/mLRS/tree/main/firmware/pre-release-esp).
+    - The latest official release is found [here](https://github.com/olliw42/mLRS/releases).
 - To prepare your receiver for flashing, you will need to connect it to a USB<>UART, follow the normal connections:
     - 5V to 5V
     - GND to GND
