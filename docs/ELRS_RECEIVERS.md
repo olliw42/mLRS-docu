@@ -70,7 +70,9 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
 
 ## Flashing ##
 
-- Download the firmware for your receiver [here](https://github.com/olliw42/mLRS/tree/main/firmware/pre-release-esp).
+- Download the firmware for your receiver.
+    - The latest pre-release is found [here](https://github.com/olliw42/mLRS/tree/main/firmware/pre-release-esp).
+    - The latest official release is found [here](https://github.com/olliw42/mLRS/releases).
 - To prepare your receiver for flashing, you will need to connect it to a USB<>UART, follow the normal connections:
     - 5V to 5V
     - GND to GND
