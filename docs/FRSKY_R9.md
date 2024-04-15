@@ -258,7 +258,7 @@ Note: Python3 is a prerequisite to use the ELRS UARTUpload.py script.
 4. Wire the USB-TTL serial adapter to your receiver as instructed [here](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver). But, don't connect the VCC wire yet.
 
 5. Move the .elrs firmware file to the src/python folder downloaded in step 2. Open a command line processor and navigate to the src/python folder. Then execute the command 'python UARTupload.py XYZ.elrs' where XYZ is the .elrs firmware file for your hardware.
-- Note: If the upload fails by connecting to the wrong port, you can specify the appropriate port after the firmware filename, e.g. 'python UARTupload.py XYZ.elrs COM11'
+- Note: If the upload fails by connecting to the wrong port, you can specify the appropriate port after the firmware filename, e.g. 'python UARTupload.py XYZ.elrs COM11'.
 
 6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 Volt output of your USB-TTL serial adapter or a 5 Volt power supply. You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire. If you have trouble getting the timing correct, you can hold down the button when powering up the receiver to enter the ELRS bootloader. To confirm that you are in the bootloader you should see the red and green LEDs blink alternately on the receiver.
 
