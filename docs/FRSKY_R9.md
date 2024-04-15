@@ -253,11 +253,12 @@ Note: Python3 is a prerequisite to use the ELRS UARTUpload.py script.
 2. Download or git clone the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository. If you have subversion installed: Since you only need the src/python folder, you could use the svn github interface to get just what you need. From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/tree/master/src/python"
 
 3. Connect a USB-TTL serial adapter to your computer and install a driver if it is not recognized.  
-- Note: If you are having trouble flashing or don't have a USB-TTL serial adapter, you should be able to use your flight controller instead - see step 8.
+- Note: If you are having trouble flashing and are using a CP210X adapter, please try a different USB-TTL adapter. If you continue to have problems or don't have a USB-TTL serial adapter, you should be able to use your flight controller instead - see step 8.
 
 4. Wire the USB-TTL serial adapter to your receiver as instructed [here](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver). But, don't connect the VCC wire yet.
 
-5. Use the command window to run the UARTupload.py script like: "python UARTupload.py image\_file\_path" where image\_file\_path is the path to the appropriate .elrs file you obtained in step 1.
+5. Move the .elrs firmware file to the src/python folder downloaded in step 2. Open a command line processor and navigate to the src/python folder. Then execute the command 'python UARTupload.py XYZ.elrs' where XYZ is the .elrs firmware file for your hardware.
+- Note: If the upload fails by connecting to the wrong port, you can specify the appropriate port after the firmware filename, e.g. 'python UARTupload.py XYZ.elrs COM11'.
 
 6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 Volt output of your USB-TTL serial adapter or a 5 Volt power supply. You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire. If you have trouble getting the timing correct, you can hold down the button when powering up the receiver to enter the ELRS bootloader. To confirm that you are in the bootloader you should see the red and green LEDs blink alternately on the receiver.
 
