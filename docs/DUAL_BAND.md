@@ -4,11 +4,13 @@
 
 mLRS allows for a dual-band setup, where the Tx module and receiver both transmit and receive in the 2.4 GHz and 868/915 MHz (or 433 MHz/70 cm) bands simultaneously.
 
-This operation mode is very simlar to a full-diversity setup, except that the hardware of course needs to provide two RF stages operating in the two different RF bands. An example is given by the dual-band version of the easy-to-solder boards, which can be eqipped with E77 modules working at 868/915 MHz and E28 modules working at 2.4 GHz. See [here]( https://github.com/olliw42/mLRS-hardware/tree/master/olliw-stm32-based/rx-tx-E77-E28-dualband-easysolder). The "normal" easy-to-solder boards can be eqipped with E77 modules working at 868/915 MHz and E22 modules working at 433 MHz, allowing to build a dual-band setup working in the 868/915 MHz and 433 MHz bands. This is possible also for a number of other DIY options which use a E22 module as second RF stage.
+Operation is similar to a full-diversity setup, except that the hardware uses two RF stages operating in the two different RF bands. Two examples are provided:
+- To use 868/915 MHz and 2.4 GHz simultaneously there is a dual-band version of the E77 Easy-Solder board, which has an E77 module working at 868/915 MHz and an E28 module working at 2.4 GHz. More details can be found [here](https://github.com/olliw42/mLRS-hardware/tree/master/olliw-stm32-based/rx-tx-E77-E28-dualband-easysolder).
+- To use 868/915 MHz and 433 MHz simultaneously one can use the "normal" E77 Easy-Solder board, when equipped with an E77 module working at 868/915 MHz and an E22 module working at 433 MHz.
 
-Similar to a full-diversity setup, dual band uses FHSS and the receiver will choose the packet on the best band. 
+Same as a full-diversity setup, dual band uses FHSS and the receiver will select the packet on the best band.
 
-In contrast to a full-diversity setup, however, the dual-band setup transmits simultaneously on both RF bands. This means that even if one RF band is blocked, packets will not be missed.
+In contrast to a full-diversity setup, however, the dual-band setup transmits simultaneously on both RF bands. This means that even if there is strong interference on one RF band then packets will continue to be received on the other band.
 
 ## Configuration
 
