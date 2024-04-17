@@ -6,7 +6,7 @@ mLRS allows for a dual-band setup, where the Tx module and receiver both transmi
 
 Operation is similar to a full-diversity setup, except that the hardware uses two RF stages operating in the two different RF bands. Two examples are provided:
 - To use 868/915 MHz and 2.4 GHz simultaneously there is a dual-band version of the E77 Easy-Solder board, which has an E77 module working at 868/915 MHz and an E28 module working at 2.4 GHz. More details can be found [here](https://github.com/olliw42/mLRS-hardware/tree/master/olliw-stm32-based/rx-tx-E77-E28-dualband-easysolder).
-- To use 868/915 MHz and 433 MHz simultaneously one can use the "normal" E77 Easy-Solder board, when equipped with an E77 module working at 868/915 MHz and an E22 module working at 433 MHz.
+- To use 868/915 MHz and 433 MHz simultaneously one can use the "normal" E77 Easy-Solder board equipped with an E77 module working at 868/915 MHz and an E22 module working at 433 MHz.
 
 Same as a full-diversity setup, dual band uses FHSS and the receiver will select the packet on the best band.
 
