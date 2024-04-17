@@ -17,6 +17,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [SiK Telemetry Replacement](docs/SETUP_SIK.md)
 - [SBus Radios](docs/BASIC_SETUP.md)
 - [mTX (formerly MAVLink for OpenTx)](docs/MTX.md)
+- [Dual Band](docs/DUAL_BAND.md)
 - [Configuration Options for ArduPilot Systems](docs/ARDUPILOT.md)
 - [Experimental: Relay](docs/RELAY.md)
 
@@ -36,7 +37,6 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [OLED Display](docs/OLED.md)
 - [FHSS Shaping](docs/FHSS_SHAPING.md)
 - [MavlinkX](docs/MAVLINKX.md)
-- [Experimental: Dual Band](docs/DUAL_BAND.md)
 
 ### Firmware/Build Notes ###
 - [Custom Boards & Targets](docs/CUSTOM_BOARDS_TARGETS.md)
