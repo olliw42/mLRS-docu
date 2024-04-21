@@ -48,16 +48,25 @@ The following receivers are good choices. They support &#8805; 100 mW, are affor
       <td>Product Name</td>
       <td>Frequency Band</td>
       <td>Transmit Power</td>
+      <td>Notes</td>
     </tr>
     <tr>
       <td>Bayck 915M Nano Pro</td>
       <td>868/915 MHz</td>
       <td>27 dBm (500 mw)</td>
+      <td></td>
     </tr>
     <tr>
       <td>BetaFPV SuperD 2.4G</td>
       <td>2.4 GHz</td>
       <td>20 dBm (100 mw)</td>
+      <td>True Diversity, TCXO, DC-DC Converter</td>
+    </tr>
+      <tr>
+      <td>RadioMaster RP4TD 2.4G</td>
+      <td>2.4 GHz</td>
+      <td>20 dBm (100 mw)</td>
+      <td>True Diversity, TCXO</td>
     </tr>
     <tr>
       <td>SpeedyBee Nano 2.4G</td>
