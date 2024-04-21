@@ -86,8 +86,8 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
 
 ## Flashing ##
 
-- Download the firmWare for your receiver.
-    - The latest pre-release is found [here](https://github.com/olliw42/mLRS/tree/main/firmWare/pre-release-esp).
+- Download the firmware for your receiver.
+    - The latest pre-release is found [here](https://github.com/olliw42/mLRS/tree/main/firmware/pre-release-esp).
     - The latest official release is found [here](https://github.com/olliw42/mLRS/releases).
 - To prepare your receiver for flashing, you will need to connect it to a USB<>UART, follow the normal connections:
     - 5V to 5V
@@ -99,5 +99,5 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
 - Open a supported browser (Chrome, Edge, Opera, not Firefox) and navigate [here](https://esp.huhn.me/).
 - Click connect and select the serial port of your USB<>UART.
 - Upload the .bin file for your receiver and click program.
-- Once the firmWare has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
+- Once the firmware has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
     - Note: Binding can be done by holding down the button for four seconds.
