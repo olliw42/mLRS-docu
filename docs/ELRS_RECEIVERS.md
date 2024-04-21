@@ -14,22 +14,22 @@ As of April 2024, the following ELRS receiver targets are supported:
     </tr>
     <tr>
       <td>Generic 900</td>
-      <td>17 dBm (50 mw)</td>
+      <td>17 dBm (50 mW)</td>
     </tr>
     <tr>
       <td>Generic 900 PA</td>
-      <td>27 dBm (500 mw)</td>
+      <td>27 dBm (500 mW)</td>
     </tr>
     <tr>
       <td>Generic 2400</td>
-      <td>12.5 dBm (18 mw)</td>
+      <td>12.5 dBm (18 mW)</td>
     </tr>
       <td>Generic 2400 PA</td>
-      <td>20 dBm (100 mw)</td>
+      <td>20 dBm (100 mW)</td>
     </tr>
       </tr>
       <td>Generic 2400 True Diversity PA</td>
-      <td>20 dBm (100 mw)</td>
+      <td>20 dBm (100 mW)</td>
     </tr>
   </tbody>
 </table>
@@ -53,25 +53,25 @@ The following receivers are good choices. They support &#8805; 100 mW, are affor
     <tr>
       <td>Bayck 915M Nano Pro</td>
       <td>868/915 MHz</td>
-      <td>27 dBm (500 mw)</td>
+      <td>27 dBm (500 mW)</td>
       <td></td>
     </tr>
     <tr>
       <td>BetaFPV SuperD 2.4G</td>
       <td>2.4 GHz</td>
-      <td>20 dBm (100 mw)</td>
+      <td>20 dBm (100 mW)</td>
       <td>True Diversity, TCXO, DC-DC Converter</td>
     </tr>
       <tr>
       <td>RadioMaster RP4TD 2.4G</td>
       <td>2.4 GHz</td>
-      <td>20 dBm (100 mw)</td>
+      <td>20 dBm (100 mW)</td>
       <td>True Diversity, TCXO</td>
     </tr>
     <tr>
       <td>SpeedyBee Nano 2.4G</td>
       <td>2.4 GHz</td>
-      <td>20 dBm (100 mw)</td>
+      <td>20 dBm (100 mW)</td>
     </tr>
   </tbody>
 </table>
@@ -86,8 +86,8 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
 
 ## Flashing ##
 
-- Download the firmware for your receiver.
-    - The latest pre-release is found [here](https://github.com/olliw42/mLRS/tree/main/firmware/pre-release-esp).
+- Download the firmWare for your receiver.
+    - The latest pre-release is found [here](https://github.com/olliw42/mLRS/tree/main/firmWare/pre-release-esp).
     - The latest official release is found [here](https://github.com/olliw42/mLRS/releases).
 - To prepare your receiver for flashing, you will need to connect it to a USB<>UART, follow the normal connections:
     - 5V to 5V
@@ -99,5 +99,5 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
 - Open a supported browser (Chrome, Edge, Opera, not Firefox) and navigate [here](https://esp.huhn.me/).
 - Click connect and select the serial port of your USB<>UART.
 - Upload the .bin file for your receiver and click program.
-- Once the firmware has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
+- Once the firmWare has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
     - Note: Binding can be done by holding down the button for four seconds.
