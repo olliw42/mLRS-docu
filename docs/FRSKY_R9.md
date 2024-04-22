@@ -62,9 +62,7 @@ There are several DIY approaches for building an inverter dongle. A common appro
 
 ### Invert RX/TX on FTDI Serial Adapter ###
 
-NB. This may not work on all versions of this chip. Many have non-genuine chips. 
-
-Using the FT_prog tool it is simple to reconfigure these common serial adapters so that the RX and TX use inverted logic. THe tool can be downloaded [here](https://ftdichip.com/utilities/#ft_prog). Instructions on using the tool can be [found on GitHub](https://github.com/kaack/elrs-joystick-control?tab=readme-ov-file#configuring-the-ftdi-adapter). 
+This may not work on all versions of this adapter, many have non-genuine chips. Using the FT_prog tool it is simple to reconfigure these common serial adapters so that the RX and TX use inverted logic. THe tool can be downloaded [here](https://ftdichip.com/utilities/#ft_prog). Instructions on using the tool can be [found on GitHub](https://github.com/kaack/elrs-joystick-control?tab=readme-ov-file#configuring-the-ftdi-adapter). 
 
 #### DO NOT CONNECT THE 5V PIN! Only connect Gnd, RX, TX. ####
 
