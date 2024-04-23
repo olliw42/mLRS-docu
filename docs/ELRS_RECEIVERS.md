@@ -4,37 +4,45 @@
 
 ## Supported ELRS Receivers ##
 
-As of April 2024, ELRS receivers with an ESP8285 MCU are supported by mLRS. The following targets are supported:
+The following ELRS receiver targets are supported:
 
 <table>
   <tbody>
     <tr>
       <td>Target</td>
       <td>Transmit Power</td>
+      <td>Notes</td>
     </tr>
     <tr>
       <td>Generic 900</td>
-      <td>17 dBm (50 mw)</td>
+      <td>17 dBm (50 mW)</td>
+      <td></td>
     </tr>
     <tr>
       <td>Generic 900 PA</td>
-      <td>27 dBm (500 mw)</td>
+      <td>27 dBm (500 mW)</td>
+      <td>PA + LNA</td>
     </tr>
     <tr>
       <td>Generic 2400</td>
-      <td>12.5 dBm (18 mw)</td>
+      <td>12.5 dBm (18 mW)</td>
+      <td></td>
     </tr>
       <td>Generic 2400 PA</td>
-      <td>20 dBm (100 mw)</td>
+      <td>20 dBm (100 mW)</td>
+      <td>PA + LNA</td>
+    </tr>
+      </tr>
+      <td>Generic 2400 TD PA</td>
+      <td>20 dBm (100 mW)</td>
+      <td>True Diversity, PA + LNA</td>
     </tr>
   </tbody>
 </table>
 
 To determine if your receiver hardware is supported, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and find the layout file of your hardware.
 
-Notes:
-- ELRS receivers that use an ESP32 MCU are under active development.
-- 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules using the SX126x LoRa chipset. This is because the 868/915 MHz ELRS receivers use the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
+Note: 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules using the SX126x LoRa chipset. This is because the 868/915 MHz ELRS receivers use the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the spreading factor which is used for the mLRS 31 Hz mode.
 
 ## Selected ELRS Receivers ##
 
@@ -46,16 +54,31 @@ The following receivers are good choices. They support &#8805; 100 mW, are affor
       <td>Product Name</td>
       <td>Frequency Band</td>
       <td>Transmit Power</td>
+      <td>Notes</td>
     </tr>
     <tr>
       <td>Bayck 915M Nano Pro</td>
       <td>868/915 MHz</td>
-      <td>27 dBm (500 mw)</td>
+      <td>27 dBm (500 mW)</td>
+      <td>PA + LNA</td>
+    </tr>
+    <tr>
+      <td>BetaFPV SuperD 2.4G</td>
+      <td>2.4 GHz</td>
+      <td>20 dBm (100 mW)</td>
+      <td>True Diversity, PA + LNA, TCXO</td>
+    </tr>
+      <tr>
+      <td>RadioMaster RP4TD 2.4G</td>
+      <td>2.4 GHz</td>
+      <td>20 dBm (100 mW)</td>
+      <td>True Diversity, PA + LNA, TCXO</td>
     </tr>
     <tr>
       <td>SpeedyBee Nano 2.4G</td>
       <td>2.4 GHz</td>
-      <td>20 dBm (100 mw)</td>
+      <td>20 dBm (100 mW)</td>
+      <td>PA + LNA</td>
     </tr>
   </tbody>
 </table>
