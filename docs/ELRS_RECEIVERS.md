@@ -60,7 +60,7 @@ The following receivers are good choices. They support &#8805; 100 mW, are affor
       <td>Bayck 915M Nano Pro</td>
       <td>868/915 MHz</td>
       <td>27 dBm (500 mW)</td>
-      <td></td>
+      <td>PA + LNA</td>
     </tr>
     <tr>
       <td>BetaFPV SuperD 2.4G</td>
@@ -78,6 +78,8 @@ The following receivers are good choices. They support &#8805; 100 mW, are affor
       <td>SpeedyBee Nano 2.4G</td>
       <td>2.4 GHz</td>
       <td>20 dBm (100 mW)</td>
+      <td>PA + LNA</td>
+      
     </tr>
   </tbody>
 </table>
