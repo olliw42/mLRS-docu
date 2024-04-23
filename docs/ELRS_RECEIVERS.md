@@ -79,7 +79,6 @@ The following receivers are good choices. They support &#8805; 100 mW, are affor
       <td>2.4 GHz</td>
       <td>20 dBm (100 mW)</td>
       <td>PA + LNA</td>
-      
     </tr>
   </tbody>
 </table>
