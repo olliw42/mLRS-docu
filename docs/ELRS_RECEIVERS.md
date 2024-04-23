@@ -4,32 +4,38 @@
 
 ## Supported ELRS Receivers ##
 
-As of April 2024, the following ELRS receiver targets are supported:
+The following ELRS receiver targets are supported:
 
 <table>
   <tbody>
     <tr>
       <td>Target</td>
       <td>Transmit Power</td>
+      <td>Notes</td>
     </tr>
     <tr>
       <td>Generic 900</td>
       <td>17 dBm (50 mW)</td>
+      <td></td>
     </tr>
     <tr>
       <td>Generic 900 PA</td>
       <td>27 dBm (500 mW)</td>
+      <td>PA + LNA</td>
     </tr>
     <tr>
       <td>Generic 2400</td>
       <td>12.5 dBm (18 mW)</td>
+      <td></td>
     </tr>
       <td>Generic 2400 PA</td>
       <td>20 dBm (100 mW)</td>
+      <td>PA + LNA</td>
     </tr>
       </tr>
-      <td>Generic 2400 True Diversity PA</td>
+      <td>Generic 2400 TD PA</td>
       <td>20 dBm (100 mW)</td>
+      <td>True Diversity, PA + LNA</td>
     </tr>
   </tbody>
 </table>
@@ -60,7 +66,7 @@ The following receivers are good choices. They support &#8805; 100 mW, are affor
       <td>BetaFPV SuperD 2.4G</td>
       <td>2.4 GHz</td>
       <td>20 dBm (100 mW)</td>
-      <td>True Diversity, TCXO, DC-DC Converter</td>
+      <td>True Diversity, TCXO</td>
     </tr>
       <tr>
       <td>RadioMaster RP4TD 2.4G</td>
