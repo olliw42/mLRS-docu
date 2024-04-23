@@ -33,7 +33,9 @@ The R9M transmitter module is a great option given its 1 W transmit power but is
 
 2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink. Additionally, the CLI can be accessed with common terminal programs when using the mlrs-wireless-bridge sketch in Bluetooth Classic mode.  For ESP32 modules that do not support Bluetooth Classic (C3, C6 and S3 variants) one can configure the sketch for TCP and use telnet on Linux or Windows or another TCP terminal App on Mobile devices.  You may need to map received CR characters to CR+LF.  If you use telnet, you can do this by typing the escape sequence which is shown when you start telnet and then type "toggle crmod".
 
-3. Alternatively, you can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
+3. Another option is to use a software tool to reconfigure FTDI based serial adapters, to have inverted RX/TX.
+
+4. Alternatively, you can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
 
 Connections:
 
@@ -57,6 +59,14 @@ If you have the older 2018, "ACCST" version of the R9M, you will want to perform
 There are several DIY approaches for building an inverter dongle. A common approach is based on the MAX3232 RS232 chip; an excellent build tutorial is provided here [Some soldering required](https://discuss.ardupilot.org/t/some-soldering-required/27613). Be aware however that many fake chips are available, and the original scheme suggested in this blog may not work. One, in fact, may have to add two extra diodes and a resistor.
 
 <img src="images/frsky-max3232-inverter-scheme.jpg" width="360px">
+
+### Invert RX/TX on FTDI Serial Adapter ###
+
+This may not work on all versions of this adapter, many have non-genuine chips. Using the FT_prog tool it is simple to reconfigure these common serial adapters so that the RX and TX use inverted logic. THe tool can be downloaded [here](https://ftdichip.com/utilities/#ft_prog). Instructions on using the tool can be [found on GitHub](https://github.com/kaack/elrs-joystick-control?tab=readme-ov-file#configuring-the-ftdi-adapter). 
+
+#### DO NOT CONNECT THE 5V PIN! Only connect Gnd, RX, TX. ####
+
+<img src="images/Frsky_R9M_inverted_ftdi.png" width="360px">
 
 ### ESP32 Wireless Bridge ###
 
