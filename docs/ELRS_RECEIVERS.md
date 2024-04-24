@@ -6,39 +6,13 @@
 
 The following ELRS receiver targets are supported:
 
-<table>
-  <tbody>
-    <tr>
-      <td>Target</td>
-      <td>Transmit Power</td>
-      <td>Notes</td>
-    </tr>
-    <tr>
-      <td>Generic 900</td>
-      <td>17 dBm (50 mW)</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Generic 900 PA</td>
-      <td>27 dBm (500 mW)</td>
-      <td>PA + LNA</td>
-    </tr>
-    <tr>
-      <td>Generic 2400</td>
-      <td>12.5 dBm (18 mW)</td>
-      <td></td>
-    </tr>
-      <td>Generic 2400 PA</td>
-      <td>20 dBm (100 mW)</td>
-      <td>PA + LNA</td>
-    </tr>
-      </tr>
-      <td>Generic 2400 TD PA</td>
-      <td>20 dBm (100 mW)</td>
-      <td>True Diversity, PA + LNA</td>
-    </tr>
-  </tbody>
-</table>
+| Target | Transmit Power | Notes |
+| --- | --- | --- |
+| Generic 900 | 17 dBm (50 mW) | |
+| Generic 900 PA | 27 dBm (500 mW) | PA + LNA |
+| Generic 2400 | 12.5 dBm (18 mW) | |
+| Generic 2400 PA | 20 dBm (100 mW) | PA + LNA |
+| Generic 2400 TD PA | 20 dBm (100 mW) | True Diversity, PA + LNA |
 
 To determine if your receiver hardware is supported, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and find the layout file of your hardware.
 
@@ -48,40 +22,12 @@ Note: 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules
 
 The following receivers are good choices. They support &#8805; 100 mW, are affordable, and have been validated by the mLRS team.
 
-<table>
-  <tbody>
-    <tr>
-      <td>Product Name</td>
-      <td>Frequency Band</td>
-      <td>Transmit Power</td>
-      <td>Notes</td>
-    </tr>
-    <tr>
-      <td>Bayck 915M Nano Pro</td>
-      <td>868/915 MHz</td>
-      <td>27 dBm (500 mW)</td>
-      <td>PA + LNA</td>
-    </tr>
-    <tr>
-      <td>BetaFPV SuperD 2.4G</td>
-      <td>2.4 GHz</td>
-      <td>20 dBm (100 mW)</td>
-      <td>True Diversity, PA + LNA, TCXO</td>
-    </tr>
-      <tr>
-      <td>RadioMaster RP4TD 2.4G</td>
-      <td>2.4 GHz</td>
-      <td>20 dBm (100 mW)</td>
-      <td>True Diversity, PA + LNA, TCXO</td>
-    </tr>
-    <tr>
-      <td>SpeedyBee Nano 2.4G</td>
-      <td>2.4 GHz</td>
-      <td>20 dBm (100 mW)</td>
-      <td>PA + LNA</td>
-    </tr>
-  </tbody>
-</table>
+| Product Name | Frequency Band | Transmit Power | Notes |
+| --- | --- | --- | --- |
+| Bayck 915M Nano Pro | 868/915 MHz | 27 dBm (500 mW) | PA + LNA |
+| BetaFPV SuperD 2.4G | 2.4 GHz | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO |
+| RadioMaster RP4TD 2.4G | 2.4 GHz | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO |
+| SpeedyBee Nano 2.4G | 2.4 GHz | 20 dBm (100 mW) | PA + LNA |
 
 ## Connections ##
 
