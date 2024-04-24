@@ -4,6 +4,20 @@
 
 Further ArduPilot information is detailed below:
 
+## RC Channel Choices
+
+mLRS supports several ways to send RC channel data from the mLRS receiver to the ArduPilot flight controller.
+
+The traditional way is to send RC channel data on a dedicated signal wire using an RC protocol such as CRSF or SBUS. In this case the mLRS receiver will utilize two serial ports on the flight controller and will need to be connected with 5 wires: GND, 5V, OUT, TX, and RX. The OUT wire is for the RC channel data and the TX, RX wires are for the serial MAVLink data. The mLRS receiver parameter "Rx Out Mode" should be set to the desired RC protocol, e.g. "crsf", and the "Rx Snd RcChannel" parameter to "off" (note that a mLRS receiver might not support all RC protocols due to hardware restrictions). On the flight controller, the serial port connected to the OUT wire needs to be configured to SERIALx_PROTOCOL = 23 (RCin) and the serial port connected to the TX, RX wires needs to be configured to SERIALx_PROTOCOL = 2 (MAVLink V2).
+
+Alternatively, the RC channel data can be sent via MAVLink to the flight controller. In that case only 4 wires need to be connected between the receiver and flight controller: GND, 5V, TX, RX. The mLRS receiver parameter "Rx Ser Link Mode" needs to be set to "mavlink" or "mavlinkX" and the parameter "Rx Snd RcChannel" should be set to based on the ArduPilot version of the flight controller:
+- For ArduPilot >= 4.6.0 the "Rx Snd RcChannel" parameter should be set to "rc_channels". The serial port connected to the TX, RX wires needs to be configured to SERIALx_PROTOCOL = 2 (MAVLink V2) and the RC_PROTOCOLS bitmask needs to have "MavRadio" enabled.
+- For ArduPilot <= V4.5.x, the parameter "Rx Snd RcChannel" should be set to "rc_override". The serial port connected to the TX, RX wires needs to be configured to SERIALx_PROTOCOL = 2 (MAVLink V2) and the RC_PROTOCOLS bitmask should have all protocols disabled.  Keep in mind, that this method should be considered legacy and should not be used if "rc_channels" is possible.
+
+Note: When only using 4 wires, the "Rx Out Mode" parameter is irrelevant.
+
+Each approach has pros and cons, which shall not be discussed here.
+
 ## CRSF Receiver
 
 Setting up ArduPilot for a CRSF receiver can be a bit tricky, as it depends on the flight controller board, and might need BRD_ALT_CONFIG to be set to a specific value. It is best to consult the ArduPilot wiki, or ask in the ArduPilot discussion channel.
