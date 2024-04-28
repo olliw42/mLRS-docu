@@ -24,7 +24,7 @@ Let's assume that the project should be located in the folder `C:/Me/Documents/G
     - `git clone https://github.com/olliw42/mLRS.git mlrs`
 - Move into the mLRS directory using the following command:
     - `cd mlrs`
-- Run the python setup script by entering the below command. This does three steps: initializes submodules (git submodule --init --recursive), copies ST HAL and LL drivers to the STM32 targets (not needed for ESP targets), and generates the MAVLink library files. 
+- Run the python setup script by entering the below command. This does three steps: initializes submodules (git submodule --init --recursive), copies ST drivers (not needed for ESP targets), and generates the MAVLink library files.
     - `python run_setup.py`
     - Note: Ensure that the first and third steps are executed completely.
 
