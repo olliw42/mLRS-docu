@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-For ESP devices, the project uses the Arduino framework with Espressif cores.
+For ESP targets, the project uses PlatformIO with Visual Studio Code, and the Arduino framework with Espressif cores.
 
 ## Software: Installation Bits and Bops
 
@@ -13,17 +13,20 @@ For ESP devices, the project uses the Arduino framework with Espressif cores.
 3. Install Python 3 and make sure that it is added to your environment/path variable.
 4. Install Git and make sure that it is added to your environment/path variable.
 
-### Clone and Setup ###
+Let's assume that the project should be located in the folder `C:/Me/Documents/Github/mlrs`.
 
-- Open a command line processor, navigate to a known directory for example:
-    - `C:/Me/Documents/Github/`
+### Clone and Setup the Porject Files ###
+
+- Open a command line processor and navigate to this directory:
+    - `cd C:/Me/Documents/Github/`
+    - Note: not C:/Me/Documents/Github/mlrs!
 - Clone the repository to your local machine using the following command:
-    - `git clone https://github.com/olliw42/mLRS.git`
+    - `git clone https://github.com/olliw42/mLRS.git mlrs`
 - Move into the mLRS directory using the following command:
-    - `cd mLRS`
-- Run the python script:
+    - `cd mlrs`
+- Run the python setup script by entering the below command. This does three steps: initializes submodules (git submodule --init --recursive), copies ST drivers (not needed for ESP targets), and generates the MAVLink library files.
     - `python run_setup.py`
-    - Note: Ensure that all three steps are executed completely.
+    - Note: Ensure that the first and third steps are executed completely.
 
 ### Open the Project ###
 
