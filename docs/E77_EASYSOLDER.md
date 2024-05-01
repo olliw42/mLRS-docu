@@ -21,7 +21,7 @@ The E77 Easy Solder Boards are designed to allow one with minimal soldering skil
   </tbody>
 </table>
 
-Note: EByte has silently changed the hardware of the E77 module around the beginning of 2024, which required updates to the firmware. This newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet the newer modules can be identified by a serial number SN &#8805; 3202995. For the older modules use the firmware with the label "-xtal" in the name.
+Note: EByte has silently changed the hardware of the E77 module around the beginning of 2024, which required updates to the firmware. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet the newer modules can be identified by a serial number SN &#8805; 3202995. For the older modules use the firmware with the label "-xtal" in the name.
 
 ### As Tx Module ###
 
