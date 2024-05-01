@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The E77 Easy Solder Boards are designed to allow one with minimal soldering skills to build their own mLRS hardware. All of the parts except for the E77 module are through-hole parts to aid in assembly.  These boards are flexible in that they can be used as a Tx module, receiver or a SiK replacement. Additionally, these boards support diversity when paired with an additional E22 module.
+The E77 Easy Solder Boards are designed to allow one with minimal soldering skills to build their own mLRS hardware. All of the parts except for the E77 module are through-hole parts to aid in assembly. These boards are flexible in that they can be used as a Tx module, receiver or a SiK replacement. Additionally, these boards support diversity when paired with an additional E22 module.
 
 <table>
   <tbody>
@@ -21,19 +21,30 @@ The E77 Easy Solder Boards are designed to allow one with minimal soldering skil
   </tbody>
 </table>
 
+Note:
+- EByte has silently changed the hardware of the E77 module in around begining 2024, and the required firmware depends on it. The newer modules use a (better) TCXO, while the older modules use a ceramic crystal oscillator. According to the datasheet the newer modules can be identified by a serial number SN &#8805; 3202995. For the older modules use the firmware with the label "-xtal" in the name.
+
 ### As Tx Module ###
 
 Connections (name in respect to board print-ons, otherwise please refer to graphic):
 
-- serial: Tx, Rx
-- com/cli: Tx, Rx
-- JRPin5/in: S
-- button: bind / cli
-- debug: STx
+<table>
+  <tbody>
+    <tr>
+      <td>serial:</td><td>Tx, Rx</td>
+    </tr><tr>
+      <td>com / cli:</td><td>Tx, Rx</td>
+    </tr><tr>
+      <td>JRPin5 / in:</td><td>S</td>
+    </tr><tr>
+      <td>bind:</td><td>button</td>
+    </tr><tr>
+      <td>debug:</td><td>STx</td>
+    </tr>
+  </tbody>
+</table>
 
-Notes:
-
-- To enable the cli, hold down the bind button during boot
+Note: To enable the cli, hold down the bind button during boot.
 
 <img src="images/E77_Tx_Wiring.png" width="720">
 
@@ -41,12 +52,23 @@ Notes:
 
 Connections (name in respect to board print-ons, otherwise please refer to graphic):
 
-- serial: Tx, Rx
-- out: S
-- button: bind
-- debug: STx
+<table>
+  <tbody>
+    <tr>
+      <td>serial:</td><td>Tx, Rx</td>
+    </tr><tr>
+      <td>out:</td><td>S</td>
+    </tr><tr>
+      <td>bind:</td><td>button</td>
+    </tr><tr>
+      <td>debug:</td><td>STx</td>
+    </tr>
+  </tbody>
+</table>
 
 <img src="images/E77_Rx_Wiring.png" width="720">
+
+Note: In order to send RC channels over the serial connection (no need for OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
 
 ## Flashing ##
 
@@ -100,14 +122,11 @@ The electronic scheme and board design files, as well as Gerber files for orderi
       <td>LED2</td><td>green LED 1.8 mm</td>
     </tr><tr>
       <td>SW1</td><td>button 6 x 3.5 mm</td>
-    </tr><tr>
-      <td>D1**</td><td>BAT42, Schottky diode (Tx modules only)</td>
     </tr>
   </tbody>
 </table>
 
 \* The parts C5, C6 and IC3 are only required, and only need to be populated, when diversity is desired.<br>
-\*\* For Tx modules the Schottky diode D1 is normally not needed, and should normally not be populated. For receivers it never must be populated. 
 
 For convenience, a Mouser list is available [here](https://eu.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=b60c19cf3a&_gl=1*nmaj37*_ga*OTEyNjU5NzcwLjE2NzU2MzU2MjQ.*_ga_15W4STQT4T*MTY5NjI2NzIzMS4xMS4wLjE2OTYyNjcyMzIuNTkuMC4w). The Ebyte modules can be purchased on Aliexpress.
 
