@@ -2,9 +2,20 @@
 
 ([back to main page](../README.md))
 
+## Selected ELRS Receivers ##
+
+The following receivers are good choices and are recommended if you need to purchase a receiver. They support &#8805; 100 mW transmit power, are affordable, and have been validated by the mLRS team.
+
+| Product Name           | Frequency Band | Transmit Power  | Notes                          |
+| ---------------------- | -------------- | --------------- | ------------------------------ |
+| Bayck 915M Nano Pro    | 868/915 MHz    | 27 dBm (500 mW) | PA + LNA                       |
+| BetaFPV SuperD 2.4G    | 2.4 GHz        | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO |
+| RadioMaster RP4TD 2.4G | 2.4 GHz        | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO |
+| SpeedyBee Nano 2.4G    | 2.4 GHz        | 20 dBm (100 mW) | PA + LNA                       |
+
 ## Supported ELRS Receivers ##
 
-The following ELRS receiver targets are supported:
+Additionally, the following ELRS receiver targets are also supported:
 
 | Target              | Transmit Power   | Notes                         |
 | ------------------- | ---------------- | ----------------------------- |
@@ -16,20 +27,9 @@ The following ELRS receiver targets are supported:
 | Generic 2400 D PA   | 23 dBm (200 mW)  | PA + LNA, single antenna only |
 | Generic 2400 TD PA  | 20 dBm (100 mW)  | True Diversity, PA + LNA      |
 
-To determine if your receiver hardware is supported, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and find the layout file of your hardware.
+To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses.
 
 Note: 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules using the SX126x LoRa chipset. This is because the 868/915 MHz ELRS receivers use the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the spreading factor which is used for the mLRS 31 Hz mode.
-
-## Selected ELRS Receivers ##
-
-The following receivers are good choices. They support &#8805; 100 mW, are affordable, and have been validated by the mLRS team.
-
-| Product Name | Frequency Band | Transmit Power | Notes |
-| --- | --- | --- | --- |
-| Bayck 915M Nano Pro | 868/915 MHz | 27 dBm (500 mW) | PA + LNA |
-| BetaFPV SuperD 2.4G | 2.4 GHz | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO |
-| RadioMaster RP4TD 2.4G | 2.4 GHz | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO |
-| SpeedyBee Nano 2.4G | 2.4 GHz | 20 dBm (100 mW) | PA + LNA |
 
 ## Connections ##
 
