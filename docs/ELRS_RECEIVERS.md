@@ -6,14 +6,14 @@
 
 The following ELRS receiver targets are supported:
 
-| Target              | Transmit Power   | Notes    |
-| ------------------- | ---------------- | -------- |
-| Generic 900         | 17 dBm (50 mW)   |          |
-| Generic 900 PA      | 27 dBm (500 mW)  | PA + LNA |
-| RadioMaster BR3 900 | 27 dBm (500 mW)  | PA + LNA |
-| Generic 2400        | 12.5 dBm (18 mW) |          |
-| Generic 2400 PA     | 20 dBm (100 mW)  | PA + LNA |
-| Generic 2400 TD PA  | 20 dBm (100 mW)  | True Diversity, PA + LNA |
+| Target              | Transmit Power   | Notes                         |
+| ------------------- | ---------------- | ----------------------------- |
+| Generic 900         | 17 dBm (50 mW)   |                               |
+| Generic 900 PA      | 27 dBm (500 mW)  | PA + LNA                      |
+| RadioMaster BR3 900 | 27 dBm (500 mW)  | PA + LNA, single antenna only |
+| Generic 2400        | 12.5 dBm (18 mW) |                               |
+| Generic 2400 PA     | 20 dBm (100 mW)  | PA + LNA                      |
+| Generic 2400 TD PA  | 20 dBm (100 mW)  | True Diversity, PA + LNA      |
 
 To determine if your receiver hardware is supported, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and find the layout file of your hardware.
 
