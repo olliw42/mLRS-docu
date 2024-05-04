@@ -6,12 +6,12 @@
 
 The following receivers are good choices and are recommended if you need to purchase a receiver. They support &#8805; 100 mW transmit power, are affordable, and have been validated by the mLRS team.
 
-| Product Name           | Frequency Band | Transmit Power  | Notes                          |
-| ---------------------- | -------------- | --------------- | ------------------------------ |
-| Bayck 915M Nano Pro    | 868/915 MHz    | 27 dBm (500 mW) | PA + LNA                       |
-| BetaFPV SuperD 2.4G    | 2.4 GHz        | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO |
-| RadioMaster RP4TD 2.4G | 2.4 GHz        | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO |
-| SpeedyBee Nano 2.4G    | 2.4 GHz        | 20 dBm (100 mW) | PA + LNA                       |
+| Product Name           | Frequency Band | Transmit Power  | Notes                                           |
+| ---------------------- | -------------- | --------------- | ----------------------------------------------- |
+| Bayck 915M Nano Pro    | 868/915 MHz    | 27 dBm (500 mW) | PA + LNA                                        |
+| BetaFPV SuperD 2.4G    | 2.4 GHz        | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO                  |
+| RadioMaster RP4TD 2.4G | 2.4 GHz        | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO, 2nd Serial Port |
+| SpeedyBee Nano 2.4G    | 2.4 GHz        | 20 dBm (100 mW) | PA + LNA                                        |
 
 ## Supported ELRS Receivers ##
 
