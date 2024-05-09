@@ -6,7 +6,7 @@ Note: 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules
 
 ## Selected ELRS Receivers ##
 
-The following receivers are good choices and are recommended if you need to purchase a receiver. They support &#8805; 100 mW transmit power, are affordable, and have been validated by the mLRS team.
+The following receivers are good choices. They support &#8805; 100 mW, are affordable, and have been validated by the mLRS team.
 
 | Product Name           | Frequency Band | Transmit Power  | Notes                                           |
 | ---------------------- | -------------- | --------------- | ----------------------------------------------- |
