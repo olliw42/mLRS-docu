@@ -2,6 +2,8 @@
 
 ([back to main page](../README.md))
 
+Note: 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules using the SX126x LoRa chipset. This is because the 868/915 MHz ELRS receivers use the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the spreading factor which is used for the mLRS 31 Hz mode.
+
 ## Supported ELRS Receivers ##
 
 The following ELRS receiver targets are supported:
@@ -17,8 +19,6 @@ The following ELRS receiver targets are supported:
 | Generic 2400 TD PA  | 20 dBm (100 mW)  | True Diversity, PA + LNA      |
 
 To determine if your receiver hardware is supported, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and find the layout file of your hardware.
-
-Note: 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules using the SX126x LoRa chipset. This is because the 868/915 MHz ELRS receivers use the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the spreading factor which is used for the mLRS 31 Hz mode.
 
 ## Selected ELRS Receivers ##
 
