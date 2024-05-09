@@ -21,7 +21,7 @@ The E77 Easy Solder Boards are designed to allow one with minimal soldering skil
   </tbody>
 </table>
 
-Note: EByte has silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet the newer modules can be identified by a serial number SN &#8805; 3202995. The new and old modules require different firmwares; for the older modules use the firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use RESET for flashing via SWD.
+Note: EByte has silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet the newer modules can be identified by a serial number SN &#8805; 3202995. The new and old modules require different firmwares; for the older modules use the firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use NRST (reset) for flashing via SWD.
 
 ### As Tx Module ###
 
@@ -77,7 +77,7 @@ Note: In order to send RC channels over the serial connection (no need for OUT w
 - Connect your ST-Link to the 3V3, GND, SWD, and SWCLK pins on the board (image below)
     - Refer to the diagrams above
     - Some ST-Link boards provide power and some do not - ensure the board is powered
-    - It might be necessary to also connect the RESET pin on the board to the ST-Link
+    - It might be necessary to also connect the reset pin on the board to the ST-Link's NRST
 - Launch STM32CubeProgrammer and select ST-Link as the connection method, click connect
 - From the menu on the left select the Download tile
 - Select the correct firmware in the Download section, click Start Program
