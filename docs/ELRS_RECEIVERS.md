@@ -54,6 +54,12 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
     - For receivers with a single (non-RGB) LED you can confirm the receiver is in bootloader mode if the LED is solid.
 - Open a supported browser (Chrome, Edge, Opera, not Firefox) and navigate [here](https://esp.huhn.me/).
 - Click connect and select the serial port of your USB<>UART.
-- Upload the .bin file for your receiver and click program.
+- For ESP8266 based receivers:
+    - Upload the .bin file for your receiver and click program.
+- For ESP32 based receivers:
+    - Download the additional files needed for flashing [here](./files/esp32_files.zip).
+    - Create additional entries with the following offsets and files.  Note: the firmware.bin should use the 10000 offset.
+    - <img src="images/ESP32_Flash.png">
+    - Click program.
 - Once the firmware has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
     - Note: Binding can be done by holding down the button for four seconds.
