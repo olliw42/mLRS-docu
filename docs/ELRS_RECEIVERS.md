@@ -57,7 +57,7 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
 - For ESP8266 based receivers:
     - Upload the .bin file for your receiver and click program.
 - For ESP32 based receivers:
-    - Download the additional files needed for flashing [here](./files/esp32_files.zip).
+    - Download the additional files needed for flashing [here](https://github.com/olliw42/mLRS-docu/raw/esp32-flashing/docs/files/esp32_files.zip).
     - Create additional entries with the following offsets and files.  Note: the firmware.bin should use the 10000 offset.
     - <img src="images/ESP32_Flash.png">
     - Click program.
