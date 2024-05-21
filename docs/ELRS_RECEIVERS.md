@@ -29,6 +29,8 @@ Additionally, the following ELRS receiver targets are also supported:
 | Generic 2400 PA     | 20 dBm (100 mW)  | PA + LNA                      |
 | Generic 2400 D PA   | 23 dBm (200 mW)  | PA + LNA, single antenna only |
 | Generic 2400 TD PA  | 20 dBm (100 mW)  | True Diversity, PA + LNA      |
+| iFlight 2400 PA     | 27 dBm (500 mW)  | PA + LNA                      |
+| iFlight 2400 TD PA  | 24 dBm (250 mW)  | True Diversity, PA + LNA      |
 
 To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses.
 
@@ -54,6 +56,12 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
     - For receivers with a single (non-RGB) LED you can confirm the receiver is in bootloader mode if the LED is solid.
 - Open a supported browser (Chrome, Edge, Opera, not Firefox) and navigate [here](https://esp.huhn.me/).
 - Click connect and select the serial port of your USB<>UART.
-- Upload the .bin file for your receiver and click program.
+- For ESP8266 based receivers:
+    - Upload the .bin file for your receiver: <br> <img src="images/ESP8266_Flash.png">
+    - Click program.
+- For ESP32 based receivers:
+    - Download the additional files needed for flashing  [here](https://github.com/olliw42/mLRS-docu/raw/esp32-flashing/docs/files/esp32_files.zip) and unpack them.
+    - Create additional entries with the following offsets and files.  Note: the firmware.bin should use the 10000 offset. <br> <img src="images/ESP32_Flash.png">
+    - Click program.
 - Once the firmware has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
     - Note: Binding can be done by holding down the button for four seconds.
