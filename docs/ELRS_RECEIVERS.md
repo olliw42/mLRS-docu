@@ -57,14 +57,11 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
 - Open a supported browser (Chrome, Edge, Opera, not Firefox) and navigate [here](https://esp.huhn.me/).
 - Click connect and select the serial port of your USB<>UART.
 - For ESP8266 based receivers:
-    - Upload the .bin file for your receiver:
-    - <img src="images/ESP8266_Flash.png">
+    - Upload the .bin file for your receiver: <br> <img src="images/ESP8266_Flash.png">
     - Click program.
 - For ESP32 based receivers:
-    - Download the additional files needed for flashing [here](https://github.com/olliw42/mLRS-docu/raw/esp32-flashing/docs/files/esp32_files.zip).
-    - Create additional entries with the following offsets and files.  
-    - Note: the firmware.bin should use the 10000 offset.
-    - <img src="images/ESP32_Flash.png">
+    - Download the additional files needed for flashing  [here](https://github.com/olliw42/mLRS-docu/raw/esp32-flashing/docs/files/esp32_files.zip) and unpack them.
+    - Create additional entries with the following offsets and files.  Note: the firmware.bin should use the 10000 offset. <br> <img src="images/ESP32_Flash.png">
     - Click program.
 - Once the firmware has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
     - Note: Binding can be done by holding down the button for four seconds.
