@@ -4,9 +4,14 @@
 
 **Important: MSP support is experimental and currently only available in the branch 'dev-mspx'.**
 
-MspX is a technology designed to improve the over-the-air communication for systems using the MSP protocol, such as INAV systems. It introduces more robust framing and parsing which reduces packet losses to the minimum, and adds features such as compression of some very large MSP messages. It also converts MSP messages into CRSF telemetry messages to the radio, thus providng telemetry to the radio and Lua scripts running on the radio, such as the INAV app.
+MspX is a technology designed to improve the over-the-air communication for systems using the MSP protocol, such as INAV. It includes the following features:
+- Robust framing and parsing which reduces packet losses to a minimum.
+- Compression of some very large MSP messages to increase probability of successful transmission.
+- MSP to CRSF message conversion which provides telemetry elements to the radio and therefore enables Lua scripts on the radio such as the INAV app to function.
 
-MspX is currently under test with INAV 7.1.
+MspX is currently tested for INAV 7.1.
+
+## Configuration
 
 MspX is enabled by setting the "Rx Ser Link Mode" parameter in the receiver to "mspX".
 
