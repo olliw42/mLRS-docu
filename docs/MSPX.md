@@ -16,7 +16,7 @@ MspX is currently tested for INAV 7.1.
 MspX is enabled by setting the "Rx Ser Link Mode" parameter in the receiver to "mspX".
 
 Further parameter settings:
-- "Rx Snd RcChannel": When set to "rc override" or "rc channels", MSP SET_RAW_RC messages are sent to the flight controller. In the fligh controller configure the receiver to the MSP protocol. This allows one to avoid the extra wire for CRSF.
+- "Rx Snd RcChannel": When set to "rc override" or "rc channels", SET_RAW_RC MSP messages are sent to the flight controller. In the flight controller configure the receiver to the MSP protocol. This allows one to avoid the extra wire for CRSF.
 - "Rx Snd RadioStat": has no effect.
 
 
