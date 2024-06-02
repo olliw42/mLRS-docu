@@ -25,8 +25,6 @@ Note that R9M module cannot connect with mLRS boards which support 868/915 MHz a
 
 ## R9M Tx Module ##
 
-While the R9M module supports 1 W output power, there are some limitations with the serial port of the module. The R9M module provides access to only one serial port, which has inverted TTL signals.
-
 Connections:
 
 4-Pin Header (from top to bottom):
@@ -40,21 +38,23 @@ Connections:
 
 ### Serial Port ###
 
-- As there is only one serial port, one can configure the serial port to be either "serial" or "CLI". This is done by changing the setting on dip switch 1, which is read at power up:
+There are some limitations with the serial port of the module. The R9M module provides access to only one serial port, which has inverted TTL signals.
+
+As there is only one serial port, one can configure the serial port to be function either as "serial" or "CLI". This is done by changing the setting on dip switch 1, which is read at power up:
   - off (switch down) = CLI
   - on (switch up) = serial
   - <img src="images/Frsky_R9M_Dip.png" width="720px">
 
-- Dealing with the inverted TTL signals is best addressed by using an ESP32 module connected to the serial port as a wireless bridge, this is detailed below in the 'ESP32 Wireless Bridge' section. 
+- Dealing with the inverted TTL signals is best addressed by using an ESP32 module connected to the serial port to act as a wireless bridge. This is detailed below in the 'ESP32 Wireless Bridge' section. 
 
 - If you prefer to use a wired connection for the serial port instead, then the following options are available:
 
-  1. Use the FT_prog tool to reconfigure FTDI based serial adapters:
+  1. Use the FT_prog tool to reconfigure FTDI based serial adapters to use inverted TTL signals:
       - Notes: 
         - Do not connect the 5V pin! Only connect Gnd, RX, and TX.    
         - This may not work on all versions of this adapter, many have non-genuine chips.
       - The FT_prog tool can be downloaded [here](https://ftdichip.com/utilities/#ft_prog). 
-      - Instructions on using the tool can be [here](https://github.com/kaack/elrs-joystick-control?tab=readme-ov-file#configuring-the-ftdi-adapter). 
+      - Instructions can be found [here](https://github.com/kaack/elrs-joystick-control?tab=readme-ov-file#configuring-the-ftdi-adapter). 
 
   2. Buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
 
@@ -121,7 +121,7 @@ Once the ELRS bootloader is installed, the following precedure can be followed t
 
 #### Install the mLRS Lua Script ####
 
-Once mLRS is installed, you can verify that every is working as expected using the Lua script, instructions are found([here.](../LUA.md))
+Once mLRS is installed, you can verify that every is working as expected using the Lua script, instructions are found [here](../LUA.md).
 
 ### Flash/Update via ST-Link ###
 
@@ -131,11 +131,11 @@ Notes:
 
 1. Download the non-"elrs-bl" firmware, which can be identified by the ".hex" extension and that the label "elrs-bl" is not contained in the firmware file name. 
 
-2. Follow the instructions [here.](https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stlink)
+2. Follow the instructions [here](https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stlink).
 
 #### Install the mLRS Lua Script ####
 
-Once mLRS is installed, you can verify that every is working as expected using the Lua script, instructions are found([here.](../LUA.md))
+Once mLRS is installed, you can verify that every is working as expected using the Lua script, instructions are found [here](../LUA.md).
 
 ### ESP32 Wireless Bridge ###
 
@@ -175,6 +175,6 @@ Connecting the M5Stamp C3U Mate or Pico Mate to the R9M is easy:
 
 ### Cooling ###
 
-The R9M module will require active cooling when running at power levels at or above 500 mW, but cooling is also advisable at lower powers. A description for installing a fan using a 3D printed case cover can be found [here.](https://www.expresslrs.org/2.0/hardware/fan-mod/) mLRS also uses pin PB9 to control the fan.
+The R9M module will require active cooling when running at power levels at or above 500 mW, but cooling is also advisable at lower powers. A description for installing a fan using a 3D printed case cover can be found [here](https://www.expresslrs.org/2.0/hardware/fan-mod/). mLRS also uses pin PB9 to control the fan.
 
 Note that there is little point running the transmitter at power levels > 100 mW (20 dBm) if you are using one of the low-power Frsky receivers as they only support 50 mW (17 dBm) output power.
