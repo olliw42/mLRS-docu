@@ -4,6 +4,8 @@
 
 EBYTE E77 MBL Boards are an option for building mLRS equipment. These boards use the EBYTE E77 module and are available in both 868/915 MHz and 433 MHz/70 cm versions. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
+**Important: If you are planning to use the SMA connector for the antenna, ensure that a 0 Ohm resistor is populated. Multiple users have reported that it is not present on their modules. Refer to the red square next to the SMA connector in the diagrams below for the location.**
+
 <table>
   <tbody>
     <tr>
@@ -25,7 +27,7 @@ EBYTE E77 MBL Boards are an option for building mLRS equipment. These boards use
   </tbody>
 </table>
 
-**Important: If you are planning to use the SMA connector for the antenna, ensure that a 0 Ohm resistor is populated. Multiple users have reported that it is not present on their modules. Refer to the red square next to the SMA connector in the diagrams below for the location.**
+Note: EByte silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet, newer modules can be identified by serial number SN &#8805; 3202995. The new and old modules require different firmware.  The old modules will need firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use NRST (reset) for flashing via SWD.
 
 ## EBYTE E77 MBL Boards ##
 
