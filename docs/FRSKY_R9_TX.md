@@ -43,7 +43,8 @@ The R9M module provides access to only one serial port, which has inverted TTL s
 As there is only one serial port, one can configure the serial port to be function either as "serial" or "CLI". This is done by changing the setting on dip switch 1, which is read at power up:
   - off (switch down) = CLI
   - on (switch up) = serial
-  - <img src="images/Frsky_R9M_Dip.png" width="720px">
+
+<img src="images/Frsky_R9M_Dip.png" width="720px">
 
 - Dealing with the inverted TTL signals is best addressed by using an ESP32 module connected to the serial port to act as a wireless bridge. This is detailed below in the 'ESP32 Wireless Bridge' section. 
 
@@ -87,23 +88,15 @@ The ExpressLRS documentation provides ELRS specific instructions [here](https://
 #### Flash the ELRS Bootloader ####
 
 1. Download the [r9m\_elrs\_bl.frk](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_elrs_bl.frk?raw=true) file from the ExpressLRS git repository and copy it to the FIRMWARE folder on your radio's SD card.
-
 2. Install the R9M module in your radio and power it on.
-
 3. Enter the System Menu and navigate using the page buttons to the SD card page.
-
 4. Scroll to the FIRMWARE folder and select the r9m\_elrs\_bl.frk file. Choose "Flash external module".
-
 5. Follow the instructions in the next section to flash the mLRS firmware.
-
 If you have previously flashed via ST-Link, you can install the ELRS bootloader using ST-Link instead:
 
 1. Download the [r9m\_bootloader.bin](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_bootloader.bin?raw=true) file from the ExpressLRS git repository.
-
 2. Connect to the R9M and perform a full chip erase.
-
 3. Flash the bootloader.bin to the beginning of the flash (address 0x8000000).
-
 4. Follow the instructions in the next section to flash the mLRS firmware.
 
 #### Flash/Update the mLRS Firmware ####
@@ -111,12 +104,9 @@ If you have previously flashed via ST-Link, you can install the ELRS bootloader 
 Once the ELRS bootloader is installed, the following precedure can be followed to install/update the mLRS firmware.
 
 1. Download the latest mLRS firmware, or build with MLRS\_FEATURE\_ELRS\_BOOTLOADER defined.
-
 2. Copy the latest tx-R9M-f103c8-elrs-bl-v*.elrs file to FIRMWARE folder on your radio's SD card. Note the "elrs-bl" in the file name.
    - Note: On bw radios it will be necessary to rename the firmware file to a shorter file name such as "tx-r9m.elrs"
-
 3. Enter the System Menu and navigate using the page buttons to the SD card page.
-
 4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-v*.elrs file. Choose "Flash external ELRS".
 
 #### Install the mLRS Lua Script ####
@@ -130,7 +120,6 @@ Notes:
   - In the ExpressLRS docs it is suggested to download and use the "ST-LINK Utility" software. This software is pretty outdated (NRND = not recommended for new designs). Please use the new and recommended tool "STM32CubeProgrammer".
 
 1. Download the non-"elrs-bl" firmware, which can be identified by the ".hex" extension and that the label "elrs-bl" is not contained in the firmware file name. 
-
 2. Follow the instructions [here](https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stlink).
 
 #### Install the mLRS Lua Script ####
@@ -139,7 +128,7 @@ Once mLRS is installed, you can verify that everything is working as expected us
 
 ### ESP32 Wireless Bridge ###
 
-<img src="images/Frsky_R9M_M5Stamp_C3U_installed.jpg" width="360px">
+<img src="images/Frsky_R9M_M5Stamp_C3U_installed.jpg" width="360px"> <br>
 
 The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a wireless bridge.  This allows a wireless connection to Ground Control Software. Two of these supported boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate have pinouts which are able to connect directly to the serial pins on the R9M Tx module. The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed using its USB port, however, it does not support Bluetooth Classic. If you want to use Bluetooth Classic to connect to your GCS and/or want to access the CLI wirelessly, then the [M5Stamp Pico Mate](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) is the recommended choice. Both of these modules use the 2.4 GHz band for the wireless bridge and will work well with 868/915 MHz systems like the R9 as the separate frequency band minimizes interference.
 
@@ -148,13 +137,13 @@ The mLRS git repository includes an Arduino sketch which allows several supporte
 __Be sure to unplug the M5Stamp C3U Mate from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
 
 To install the sketch on the M5Stamp C3U Mate:
-  - Open the Arduino IDE.
-  - If not already installed, install the ESP32 core using the Boards Manager.
-  - Open the mlrs-wireless-bridge.ino sketch from the mLRS esp/mlrs-wireless-bridge folder.
-  - Edit the sketch to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define.
-  - Select the ESP32C3 Dev board in the IDE.
-  - Connect the M5Stamp C3U Mate via USB to your computer while holding down the center button.
-  - Upload the sketch.
+  1. Open the Arduino IDE.
+  2. If not already installed, install the ESP32 core using the Boards Manager.
+  3. Open the mlrs-wireless-bridge.ino sketch from the mLRS esp/mlrs-wireless-bridge folder.
+  4. Edit the sketch to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define.
+  5. Select the ESP32C3 Dev board in the IDE.
+  6. Connect the M5Stamp C3U Mate via USB to your computer while holding down the center button.
+  7. Upload the sketch.
 
 #### ESP32 Wireless Bridge | Programming the M5Stamp Pico Mate ####
 
@@ -165,15 +154,15 @@ To program the M5Stamp Pico Mate follow the steps above for the M5Stamp C3U Mate
 #### ESP32 Wireless Bridge Hardware Installation ####
 
 Connecting the M5Stamp C3U Mate or Pico Mate to the R9M is easy:
-  - Remove the M5Stamp module's screw and plastic cover. 
-  - Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position. 
+  1. Remove the M5Stamp module's screw and plastic cover. 
+  2. Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position. 
     - This position serves as a key to avoid plugging in the board incorrectly. 
-  - Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.
-  - Program the sketch onto the board, detailed below.
-  - Install on the back of the R9M as shown above. 
-  - You can then connect your GCS computer or mobile device to the "mLRS AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
+  3. Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.
+  4. Program the sketch onto the board, detailed below.
+  5. Install on the back of the R9M as shown above. 
+  6. You can then connect your GCS computer or mobile device to the "mLRS AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
 
-<img src="images/Frsky_R9M_M5Stamp_headers.png" width="720px">
+<br> <img src="images/Frsky_R9M_M5Stamp_headers.png" width="720px">
 
 ### Cooling ###
 
