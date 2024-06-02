@@ -23,7 +23,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 
 ### STM32 Hardware ###
 - [FlySky FRM303 Module](docs/FLYSKY_FRM303.md)
-- [Frsky R9M Transmitter](docs/FRSKY_R9_TX.md)
+- [Frsky R9M Transmitter Module](docs/FRSKY_R9_TX.md)
 - [Frsky R9 Receivers](docs/FRSKY_R9_RX.md)
 - [SeeedStudio Wio-E5 Boards](docs/SEEEDSTUDIO_WIO_E5.md)
 - [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
