@@ -2,13 +2,13 @@
 
 ([back to main page](../README.md))
 
-Note: This page contains additional detail on certain configuration options that are applicable only to ArduPilot systems.  Initial configuration should follow the process described within the [CRSF Telemetry and Yaapu Telemetry App](CRSF.md) page. If you are using a separate RC system and only want to have SiK functionality then you can refer to the [SiK Telemetry Replacement](docs/SETUP_SIK.md) page. 
+Note: This page contains additional detail on certain configuration options that are applicable only to ArduPilot systems. Initial configuration should follow the process described within the [CRSF Telemetry and Yaapu Telemetry App](CRSF.md) page. If you are using a separate RC system and only want to have SiK functionality then you can refer to the [SiK Telemetry Replacement](docs/SETUP_SIK.md) page. 
 
 ## CRSF Receiver
 
 Setting up ArduPilot for a CRSF receiver can be a bit tricky, as it depends on the flight controller board, and might need BRD_ALT_CONFIG to be set to a specific value. It is best to consult the ArduPilot wiki, or ask in the ArduPilot discussion channel.
 
-CRSF works best on serial ports that have DMA enabled.  This is only a concern on F4 and F7 flight controllers.  The serial ports that have DMA enabled can be found by using the MAVProxy command 'ftp get @SYS/uarts.txt -', an '*' will denote serial ports that have DMA enabled (example for Matek F405 VTOL):
+CRSF works best on serial ports that have DMA enabled. This is only a concern on F4 and F7 flight controllers. The serial ports that have DMA enabled can be found by using the MAVProxy command 'ftp get @SYS/uarts.txt -', an '*' will denote serial ports that have DMA enabled (example for Matek F405 VTOL):
 
 <img src="images/Serial_DMA.png">
 
@@ -31,14 +31,14 @@ Notes & References:
 
 ## Stream Rates
 
-When configuring the SRx parameters, the 'x' does not correspond to the serial port number  but to the number of serial ports set to MAVLink.
+When configuring the SRx parameters, the 'x' does not correspond to the serial port number but to the number of serial ports set to MAVLink.
 
 Example with MAVLink on serial ports 0 and 3:
 
 - Serial 0: SR0_
 - Serial 3: SR1_
 
-To understand how stream rates affect the MAVLink data rate, you can use this [calculator](https://github.com/ArduPilot/pymavlink/blob/master/tools/mavtelemetry_datarates.py)  (requires Python).
+To understand how stream rates affect the MAVLink data rate, you can use this [calculator](https://github.com/ArduPilot/pymavlink/blob/master/tools/mavtelemetry_datarates.py) (requires Python).
 
 ## mLRS Rx Module
 
