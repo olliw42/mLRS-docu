@@ -1,0 +1,175 @@
+# mLRS Documentation: Frsky R9M Transmitter #
+
+([back to main page](../README.md))
+
+The Frsky R9M transmitter module can be a relatively easy way to get started with mLRS as they are commercially available. However, the R9M module does have some limitations as detailed below which may affect some applications.
+
+<table>
+  <tbody>
+    <tr>
+      <td>Frequency Bands</td>
+      <td>868 MHz/915 MHz</td>
+    </tr>
+    <tr>
+      <td>Max. RF Output Power</td>
+      <td>30 dBm (1 W)</td>
+    </tr>
+    <tr>
+      <td>Supported Modes</td>
+      <td>19 Hz</td>
+    </tr>
+  </tbody>
+</table>
+
+Note that R9M module cannot connect with mLRS boards which support 868/915 MHz and use the SX126x LoRa chipset. This is because R9 hardware uses the SX127x LoRa chipset, which is incompatible with the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
+
+## R9M Tx Module ##
+
+The R9M transmitter module is a great option given its 1 W transmit power but is somewhat limited with respect to serial ports. It provides access to only one serial port, which has inverted TTL signals. In order to use this serial port, these conditions apply:
+
+1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective. Refer to the photo below:
+
+    <img src="images/Frsky_R9M_Dip.png" width="720px">
+
+2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. This is detailed further below in the 'ESP32 Wireless Bridge' section. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink. Additionally, the CLI can be accessed with common terminal programs when using the mlrs-wireless-bridge sketch in Bluetooth Classic mode. For ESP32 modules that do not support Bluetooth Classic (C3, C6 and S3 variants) one can configure the sketch for TCP and use telnet on Linux or Windows or another TCP terminal App on Mobile devices. You may need to map received CR characters to CR+LF. If you use telnet, you can do this by typing the escape sequence which is shown when you start telnet and then type "toggle crmod".
+
+If you prefer to use a wired connection for the serial port instead, the following options are available:
+
+1. Use the FT_prog tool to reconfigure FTDI based serial adapters:
+
+    Notes:
+    - This may not work on all versions of this adapter, many have non-genuine chips.
+    - Do not connect the 5V pin! Only connect Gnd, RX, and TX.    
+
+    The tool can be downloaded [here](https://ftdichip.com/utilities/#ft_prog). Instructions on using the tool can be [found on GitHub](https://github.com/kaack/elrs-joystick-control?tab=readme-ov-file#configuring-the-ftdi-adapter). 
+
+    <img src="images/Frsky_R9M_inverted_ftdi.png" width="360px">
+
+4. One can buy or build a "Frsky inverter" dongle to connect a standard serial adapter.
+
+Connections:
+
+4-Pin Header (from top to bottom):
+
+| Pin       | Use
+| --------- | ---
+| Pin 1     | Inverted serial Rx
+| Pin 2     | Inverted serial Tx
+| Pin 3 VCC | 5 V
+| Pin 4 GND | Ground
+
+### R9M Versions ###
+
+Frsky updated the R9 system a year after introducing it, so there are two versions of the Tx Module. Both versions run the same mLRS firmware, but the newer version included some small hardware improvements to better support the CRSF connection between the radio and the module.
+
+If you have the older 2018, "ACCST" version of the R9M, you will want to perform the Inverter Mod to allow reliable communication with the radio at higher baud rates. This is nicely documented in the [ExpressLRS documentation](https://www.expresslrs.org/hardware/inverter-mod/). The newer 2019, "ACCESS" version of the R9M does not need this modification.
+
+### ESP32 Wireless Bridge ###
+
+The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a wireless bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl. This approach also eliminates the need for a separate inverter dongle. Two of these boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module. The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port and does not require a separate programmer. However, it does not support Bluetooth Classic. If you want to use Bluetooth Classic to connect to your GCS, then the [M5Stamp Pico Mate](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) is the recommended choice. Both of these modules use the 2.4 GHz band for the wireless bridge and will work well with 868/915 MHz systems like the R9 as the separate frequency band minimizes interference.
+
+#### ESP32 Wireless Bridge Hardware Installation ####
+
+<img src="images/Frsky_R9M_M5Stamp_C3U_installed.jpg" width="360px">
+
+Connecting the M5Stamp C3U Mate or Pico Mate to the R9M is easy:
+  - Remove the M5Stamp module's screw and plastic cover. 
+  - Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position. 
+    - This position serves as a key to avoid plugging in the board incorrectly. 
+  - Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.
+  - Program the sketch onto the board, detailed below.
+  - Install on the back of the R9M as shown above. 
+  - You can then connect your GCS computer or mobile device to the "mLRS AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
+
+<img src="images/Frsky_R9M_M5Stamp_headers.png" width="720px">
+
+#### ESP32 Wireless Bridge | Programming the M5Stamp C3U Mate ####
+
+__Be sure to unplug the M5Stamp C3U Mate from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
+
+To install the sketch on the M5Stamp C3U Mate, use the Arduino IDE:
+  - Open the mlrs-wireless-bridge.ino sketch from the mLRS esp/mlrs-wireless-bridge folder.
+  - Edit the mlrs-wireless-bridge.ino file to uncomment only the MODULE\_M5STAMP\_C3U\_MATE\_FOR\_FRSKY\_R9M define.
+  - Select the ESP32C3 Dev board in the IDE.
+  - Connect the M5Stamp C3U Mate module USB connector to your computer while holding down the center button.
+  - Upload the sketch via the IDE.
+
+#### ESP32 Wireless Bridge | Programming the M5Stamp Pico Mate ####
+
+If you use the M5Stamp Pico Mate, you can alternatively select the Bluetooth protocol when you edit the mlrs-wireless-bridge.ino file as detailed above. This allows one to connect to your GCS via Bluetooth. The Bluetooth option can be very convenient, especially in cases where WiFi might be used for an Internet connection on your GCS computer or device.
+
+Programming the Pico Mate is straightforward using a USB TTL serial adapter which supports the DTR and RTS pins. The adapter which comes with the [M5Stamp Pico DIY Kit](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) is the most convenient and the kit includes the Pico Mate module. You can solder the 6 pin female header connector to the appropriate pins on the module and plug in the kit's serial adapter directly (recommended). Or, if you prefer to leave off the programming connector, it is possible to insert the serial adapter pins into the appropriate thru-holes on the module and hold it in place with some pressure at an angle as to ensure continuous contact with all 6 pins during the programming process.
+
+To program the M5Stamp Pico Mate follow the steps above for the M5Stamp C3U Mate adjusting to the M5Stamp Pico Mate where appropiate. 
+
+### Cooling ###
+
+The R9M module will require active cooling when running at power levels at or above 500 mW, but cooling might be advisable also at lower powers. Note there is little point running the transmitter at power levels > 100 mW (20 dBm) if you are using one of the low-power Frsky receivers as they only support 50 mW (17 dBm) output power.
+
+A description for installing a fan using a 3D printed case cover can be found here https://www.expresslrs.org/2.0/hardware/fan-mod/. Note: mLRS also uses pin PB9 to control the fan.
+
+## Flashing ##
+
+For flashing, as well as upgrading, several methods are available: ExpressLRS bootloader, or ST-Link/SWD. The methods for each described in the following. 
+
+### Acknowledgments ###
+
+We wish to express our thanks to the folks of the ExpressLRS project, who have worked out the easy way to flash the R9 hardware, which is now also available for mLRS. With gratitude, here we are utilizing the ExpressLRS bootloader images and scripts and, in some cases, also their excellent documentation.
+
+### ELRS Bootloader (Recommended) ###
+
+You can flash the ELRS bootloader and the mLRS firmware to the R9M module using your radio with OpenTX &#8805; 2.3.12 or EdgeTX &#8805; 2.4.0.
+
+The ExpressLRS documentation provides ELRS specific instructions [here](https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stock_bl) which you might want to reference if the instructions here are not clear. Of course, you should ignore the references to the ELRS configurator and build mLRS as instructed elsewhere.
+
+#### Flash the ELRS Bootloader ####
+
+These steps only need to be performed once. If you experience a "No Sync" error, ensure that you have selected CRSF (with 400k baud) external mode in the radio.
+
+If you have never previously flashed the R9M module via ST-Link, you can use the stock Frsky bootloader to flash the ELRS bootloader alongside the stock bootloader. This method will preserve the ability to return to the stock Frsky firmware.
+
+1. Download the [r9m\_elrs\_bl.frk](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_elrs_bl.frk?raw=true) file from the ExpressLRS git repository and copy it to the FIRMWARE folder on your radio's SD card.
+
+2. Install the R9M module in your radio and power it on.
+
+3. Enter the System Menu and navigate using the page buttons to the SD card page.
+
+4. Scroll to the FIRMWARE folder and select the r9m\_elrs\_bl.frk file. Choose "Flash external module".
+
+5. Follow the instructions in the next section to flash the mLRS firmware.
+
+If you have already flashed via ST-Link, you can still insteall the ELRS bootloader, by using ST-Link one last time:
+
+1. Download the [r9m\_bootloader.bin](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_bootloader.bin?raw=true) file from the ExpressLRS git repository.
+
+2. Flash it to the beginning of the flash (0x8000000) using ST-Link and STM32CubeProgrammer.
+
+3. Follow the instructions in the next section to flash the mLRS firmware.
+
+#### Flash/Update the mLRS Firmware ####
+
+Once the ELRS bootloader is installed, the following precedure can be followed to install the mLRS firmware.
+
+1. Download the latest mLRS firmware, or build with MLRS\_FEATURE\_ELRS\_BOOTLOADER defined.
+
+2. Copy the latest tx-R9M-f103c8-elrs-bl-v*.elrs file to FIRMWARE folder on your radio's SD card. Note the "elrs-bl" in the file name.
+   - Note: On bw radios it will be necessary to rename the firmware file to a shorter file name such as "tx-r9m.elrs"
+
+3. Enter the System Menu and navigate using the page buttons to the SD card page.
+
+4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-v*.elrs file. Choose "Flash external ELRS".
+
+#### Install the mLRS Lua Script ####
+
+Once mLRS is installed, you can verify that every is working as expected using the Lua script, instructions are found([here.](../LUA.md))
+
+### Flash/Update via ST-Link ###
+
+Note: Flashing any Frsky R9 board with ST-Link is a non-reversible operation, i.e., it is not possible to revert back to the original Frsky firmware. It is possible to switch to ExpressLRS however.
+
+The ST-Link connection is made as follows:
+- R9M module: https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stlink
+
+Use the non-"elrs-bl" firmware versions, which can be identified by the ".hex" extension and that the label "elrs-bl" is not contained in the firmware file name. 
+
+Note: In the ExpressLRS docs it is suggested to download and use the "ST-LINK Utility" software. This software is pretty outdated (NRND = not recommended for new designs). Please use the new and recommended tool "STM32CubeProgrammer".
