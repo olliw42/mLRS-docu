@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-Note: This page contains additional detail on certain configuration options that are applicable only to ArduPilot systems.  Initial configuration should follow the settings described within the [CRSF Telemetry and Yaapu Telemetry App](CRSF.md) page. If you are using a separate RC system and only want to have SiK functionality then you can refer to the [SiK Telemetry Replacement](docs/SETUP_SIK.md) page. 
+Note: This page contains additional detail on certain configuration options that are applicable only to ArduPilot systems.  Initial configuration should follow the process described within the [CRSF Telemetry and Yaapu Telemetry App](CRSF.md) page. If you are using a separate RC system and only want to have SiK functionality then you can refer to the [SiK Telemetry Replacement](docs/SETUP_SIK.md) page. 
 
 ## CRSF Receiver
 
