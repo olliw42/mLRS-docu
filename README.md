@@ -18,7 +18,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [SBus Radios](docs/BASIC_SETUP.md)
 - [mTX (formerly MAVLink for OpenTx)](docs/MTX.md)
 - [Dual Band](docs/DUAL_BAND.md)
-- [Configuration Options for ArduPilot Systems](docs/ARDUPILOT.md)
+- [Additional Configuration for ArduPilot Systems](docs/ARDUPILOT.md)
 - [Experimental: Relay](docs/RELAY.md)
 
 ### STM32 Hardware ###
