@@ -163,6 +163,7 @@ Set the following parameters using the CLI or Lua script:
     - 230400 for FLRC
 - Rx Ser Link Mode = mavlink
 - Rx Snd RadioStat= ardu_1
+- Rx Snd RcChannel = off
 
 ## Yaapu Telemetry App Setup for EdgeTX/OpenTX
 
