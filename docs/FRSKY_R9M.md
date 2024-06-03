@@ -165,3 +165,30 @@ Connecting the M5Stamp C3U Mate or Pico Mate to the R9M is easy:
 The R9M module will require active cooling when running at power levels at or above 500 mW, but cooling is also advisable at lower powers. A description for installing a fan using a 3D printed case cover can be found [here](https://www.expresslrs.org/2.0/hardware/fan-mod/). mLRS also uses pin PB9 to control the fan.
 
 Note that there is little point running the transmitter at power levels > 100 mW (20 dBm) if you are using one of the low-power Frsky receivers as they only support 50 mW (17 dBm) output power.
+
+## As Receiver ##
+
+The R9M module can also be used as a 1 W receiver.  This is done by flashing the 'rx-R9M-f103c8...' firmware using the steps detailed above.
+
+Connections:
+
+4-Pin Header (from top to bottom):
+
+| Pin       | Use
+| --------- | ---
+| Pin 1 Rxd | Inverted serial Rx
+| Pin 2 Txd | Inverted serial Tx
+| Pin 3 +5V | 5 V
+| Pin 4 GND | Ground
+
+Note: As the serial connection is inverted, one can use an inverter cable as mentioned above. Alternatively, ArduPilot F7 and H7 based flight controllers have built-in inverters which can be enabled using with the SERIALx_OPTIONS parameter.
+
+JR Bay connector:
+
+| Pin         | Use
+| ----------- | ---
+| Pin 1       | not used
+| Pin 2       | not used
+| Pin 3 VBAT  | Power 2S
+| Pin 4 GND   | Ground
+| Pin 5 SPort | Out (SBus only)
