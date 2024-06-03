@@ -21,7 +21,7 @@ The Frsky R9M transmitter module is a a good choice for mLRS since it supports 1
   </tbody>
 </table>
 
-Note that R9M module cannot connect with mLRS boards which support 868/915 MHz and use the SX126x LoRa chipset. This is because R9 hardware uses the SX127x LoRa chipset, which is incompatible with the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
+Note: The R9M module cannot connect with mLRS boards which support 868/915 MHz and use the SX126x LoRa chipset. This is because R9 hardware uses the SX127x LoRa chipset, which is incompatible with the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode. The R9M module is compatible with all ELRS 868/915 MHz receivers as they share the SX127x LoRa chipset.
 
 ## R9M Tx Module ##
 
@@ -109,7 +109,7 @@ Once the ELRS bootloader is installed, the following precedure can be followed t
 3. Enter the System Menu and navigate using the page buttons to the SD card page.
 4. Select the FIRMWARE folder and scroll to and select the tx-R9M-f103c8-elrs-bl-v*.elrs file. Choose "Flash external ELRS".
 
-#### Flash/Update via ST-Link ####
+### Flash/Update via ST-Link ###
 
 Notes:
   - Flashing any Frsky R9 module with ST-Link means that it is not possible to revert back to the original Frsky firmware. However, it is possible to switch to ExpressLRS.
