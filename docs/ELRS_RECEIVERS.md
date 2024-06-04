@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-Note: 868/915 MHz ELRS receivers cannot connect with 868/915 MHz mLRS Tx modules using the SX126x LoRa chipset. This is because the 868/915 MHz ELRS receivers use the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the spreading factor which is used for the mLRS 31 Hz mode.
+Note: 868/915 MHz ELRS hardware cannot connect with 868/915 MHz mLRS hardware using the SX126x LoRa chipset (E5 Mini, E77 Easy Solder, E77 MBL). This is because the 868/915 MHz ELRS hardware uses the SX127x LoRa chipset, which is incompatible with the SX126x LoRa chipset for the spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the spreading factor which is used for the mLRS 31 Hz mode.
 
 ## Selected ELRS Receivers ##
 
