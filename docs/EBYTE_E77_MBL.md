@@ -23,6 +23,14 @@ EBYTE E77 MBL Boards are an option for building mLRS equipment. These boards use
       <td>31 Hz, 19 Hz</td>
     </tr>
     <tr>
+      <td>LoRa Chipset</td>
+      <td>SX126x</td>
+    </tr>
+      <tr>
+      <td>Compatibility</td>
+      <td>Compatible with SeeedStudio Wio-E5, E77 Easy Solder.  Incompatible with SX127x hardware (Frsky R9 and ELRS).</td>
+    </tr>
+    <tr>
       <td>Weight</td>
       <td>9.35 grams without antenna</td>
     </tr>

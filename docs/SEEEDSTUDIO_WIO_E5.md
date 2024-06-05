@@ -21,6 +21,14 @@ The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC
       <td>31 Hz, 19 Hz</td>
     </tr>
     <tr>
+      <td>LoRa Chipset</td>
+      <td>SX126x</td>
+    </tr>
+    <tr>
+      <td>Compatibility</td>
+      <td>Compatible with EBYTE E77 MBL, E77 Easy Solder.  Incompatible with SX127x hardware (Frsky R9 and ELRS).</td>
+    </tr>
+    <tr>
       <td>Weight</td>
       <td>Wio-E5 Mini: ~7 grams without antenna</td>
     </tr>

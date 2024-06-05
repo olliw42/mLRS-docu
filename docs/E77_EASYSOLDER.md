@@ -2,8 +2,6 @@
 
 ([back to main page](../README.md))
 
-Note: 868/915 MHz E77 hardware cannot connect with 868/915 MHz mLRS hardware using the SX127x LoRa chipset (ELRS, R9). This is because the 868/915 MHz E77 hardware uses the SX126x LoRa chipset, which is incompatible with the SX127x LoRa chipset for the spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the spreading factor which is used for the mLRS 31 Hz mode.
-
 The E77 Easy Solder Boards are designed to allow one with minimal soldering skills to build their own mLRS hardware. All of the parts except for the E77 module are through-hole parts to aid in assembly. These boards are flexible in that they can be used as a Tx module, receiver or a SiK replacement. Additionally, these boards support diversity when paired with an additional E22 module.
 
 <table>
@@ -19,6 +17,14 @@ The E77 Easy Solder Boards are designed to allow one with minimal soldering skil
     <tr>
       <td>Supported Modes</td>
       <td>31 Hz, 19 Hz</td>
+    </tr>
+    <tr>
+      <td>LoRa Chipset</td>
+      <td>SX126x</td>
+    </tr>
+      <tr>
+      <td>Compatibility</td>
+      <td>Compatible with SeeedStudio Wio-E5, EBYTE E77 MBL.  Incompatible with SX127x hardware (Frsky R9 and ELRS).</td>
     </tr>
   </tbody>
 </table>
