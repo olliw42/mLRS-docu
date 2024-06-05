@@ -2,6 +2,8 @@
 
 ([back to main page](../README.md))
 
+Note: 868/915 MHz E5 hardware cannot connect with 868/915 MHz mLRS hardware using the SX127x LoRa chipset (ELRS, R9). This is because the 868/915 MHz E5 hardware uses the SX126x LoRa chipset, which is incompatible with the SX127x LoRa chipset for the spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the spreading factor which is used for the mLRS 31 Hz mode.
+
 The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module) is a highly attractive module for building mLRS equipment. SeeedStudio provides a number of boards which are based on this module, and which are quite interesting hardware for mLRS. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
 <table>
@@ -17,6 +19,14 @@ The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC
     <tr>
       <td>Supported Modes</td>
       <td>31 Hz, 19 Hz</td>
+    </tr>
+    <tr>
+      <td>LoRa Chipset</td>
+      <td>SX126x</td>
+    </tr>
+    <tr>
+      <td>Compatibility</td>
+      <td>Compatible with EBYTE E77 MBL, E77 Easy Solder.  Incompatible with SX127x hardware (Frsky R9 and ELRS).</td>
     </tr>
     <tr>
       <td>Weight</td>

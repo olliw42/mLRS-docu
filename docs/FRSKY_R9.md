@@ -18,10 +18,16 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
       <td>Supported Modes</td>
       <td>19 Hz</td>
     </tr>
+    <tr>
+      <td>LoRa Chipset</td>
+      <td>SX127x</td>
+    </tr>
+      <tr>
+      <td>Compatibility</td>
+      <td>Compatible with Frsky R9 and ELRS hardware.  Incompatible with SX126x hardware (SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder).</td>
+    </tr>
   </tbody>
 </table>
-
-Note that R9 hardware cannot connect with mLRS boards which support 868/915 MHz and use the SX126x LoRa chipset. This is because R9 hardware uses the SX127x LoRa chipset, which is incompatible with the SF6 spreading factor used by the mLRS 19 Hz mode. In addition, the SX127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
 
 ## R9M Tx Module ##
 
