@@ -10,14 +10,6 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
       <td>Frequency Bands</td>
       <td>868 MHz/915 MHz</td>
     </tr>
-      <tr>
-      <td>LoRa Chipset</td>
-      <td>SX127x</td>
-    </tr>
-      <tr>
-      <td>Compatibility</td>
-      <td>Compatible with R9, ELRS Hardware.  Incompatible with E5 Mini, E77 Easy Solder, E77 MBL.</td>
-    </tr>
     <tr>
       <td>Max. RF Output Power</td>
       <td>30 dBm (1 W) for R9M, R9M Lite Pro, 17 dBm (50 mW) for R9 MX, R9 MM, R9 Mini</td>
@@ -25,6 +17,14 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
     <tr>
       <td>Supported Modes</td>
       <td>19 Hz</td>
+    </tr>
+    <tr>
+      <td>LoRa Chipset</td>
+      <td>SX127x</td>
+    </tr>
+      <tr>
+      <td>Compatibility</td>
+      <td>Compatible with Frsky R9 and ELRS hardware.  Incompatible with SX126x hardware (SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder).</td>
     </tr>
   </tbody>
 </table>
