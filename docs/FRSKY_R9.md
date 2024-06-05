@@ -15,7 +15,7 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
       <td>SX127x</td>
     </tr>
       <tr>
-      <td>Compatability</td>
+      <td>Compatibility</td>
       <td>Compatible with R9, ELRS Hardware.  Incompatible with E5 Mini, E77 Easy Solder, E77 MBL.</td>
     </tr>
     <tr>
