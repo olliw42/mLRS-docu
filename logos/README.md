@@ -1,5 +1,4 @@
-<p align="center">
-<a href="mLRS_logo_long_w_slogan_1280x768.png"><img src="mLRS_logo_long_w_slogan_1280x768.png" align="center" height="192" width="320" ></a>
+<p align="center"><a href="logos/mLRS_logo_long_w_slogan_1280x768.png"><img src="logos/mLRS_logo_long_w_slogan_1280x768.png" align="center" height="153" width="256" ></a>
 
 # mLRS Logos #
 
