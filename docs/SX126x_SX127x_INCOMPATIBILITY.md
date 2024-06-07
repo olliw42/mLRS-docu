@@ -2,12 +2,12 @@
 
 ([back to main page](../README.md))
 
-mLRS hardware using the sx126x and sx127x LoRa chipsets are not compatible with each other, and cannot be operated together (they don't bind).
+mLRS hardware using the SX126x and SX127x LoRa chipsets are not compatible with each other and will not bind.
 
 This is for two reasons:
-- the SF6 spreading factor, which is used by mLRS for the 19 Hz mode, is incompatible for the sx126x and sx127x chipsets. 
-- the sx127x does not support the SF5 spreading factor which is used for the mLRS 31 Hz mode.
+- The 31 Hz mode uses spreading factor 5 (SF5), which is only available on the SX126x chipset.
+- The 19 Hz mode uses spreading factor 6 (SF6), which was modified on the SX126x chipset making it incompatible with the SX127x chipset.
 
-This is the relevant part in the datasheet of the sx126x chipset:
+This is the relevant part in the datasheet of the SX126x chipset:
 
 <img src="images/SX126x_SF6_incompatibility.png" width="900px">
