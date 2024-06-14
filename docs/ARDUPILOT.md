@@ -31,9 +31,7 @@ Notes & References:
 
 ## Stream Rates
 
-When configuring the SRx parameters, the 'x' does not correspond to the serial port number but to the number of serial ports set to MAVLink.
-
-Example with MAVLink on serial ports 0 and 3:
+When configuring the SRy parameters, 'y' does not necessarily correspond to the serial port number but to the count of serial ports set to MAVLink. Here is an example with MAVLink on serial ports 0 and 3:
 
 - Serial 0: SR0_
 - Serial 3: SR1_

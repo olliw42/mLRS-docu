@@ -138,7 +138,10 @@ Note: 'x' refers to the serial port of your flight controller used for MAVLink
   </tbody>
 </table>
 
-Note: 'y' refers to the MAVLink stream number of the serial port, which is usually different to 'x' in SERIALx
+Note: When configuring SRy parameters, 'y' does not necessarily correspond to the serial port number but to the count of serial ports set to MAVLink. Here is an example with MAVLink on serial ports 0 and 3:
+
+- Serial 0: SR0_
+- Serial 3: SR1_
 
 ### CRSF Receiver
 
