@@ -19,19 +19,19 @@ The following receivers are good choices. They support &#8805; 100 mW, are affor
 
 Additionally, the following ELRS receiver targets are also supported:
 
-| Target              | Transmit Power   | Notes                         |
-| ------------------- | ---------------- | ----------------------------- |
-| Generic 900         | 17 dBm (50 mW)   |                               |
-| Generic 900 PA      | 27 dBm (500 mW)  | PA + LNA                      |
-| Generic 900 TD PA   | 27 dBm (500 mW)  | True Diversity, PA + LNA      |
-| iFlight 900 TD PA   | 27 dBm (500 mW)  | True Diversity, PA + LNA      |
-| RadioMaster BR3 900 | 27 dBm (500 mW)  | PA + LNA, single antenna only |
-| Generic 2400        | 12.5 dBm (18 mW) |                               |
-| Generic 2400 PA     | 20 dBm (100 mW)  | PA + LNA                      |
-| Generic 2400 D PA   | 23 dBm (200 mW)  | PA + LNA, single antenna only |
-| Generic 2400 TD PA  | 20 dBm (100 mW)  | True Diversity, PA + LNA      |
-| iFlight 2400 PA     | 27 dBm (500 mW)  | PA + LNA                      |
-| iFlight 2400 TD PA  | 24 dBm (250 mW)  | True Diversity, PA + LNA      |
+| Target              | Transmit Power   | Notes                                                         |
+| ------------------- | ---------------- | ------------------------------------------------------------- |
+| Generic 900         | 17 dBm (50 mW)   |                                                               |
+| Generic 900 PA      | 27 dBm (500 mW)  | PA + LNA                                                      |
+| Generic 900 TD PA   | 27 dBm (500 mW)  | True Diversity, PA + LNA                                      |
+| iFlight 900 TD PA   | 27 dBm (500 mW)  | True Diversity, PA + LNA, actual transmit power ~ 350 mW      |
+| RadioMaster BR3 900 | 27 dBm (500 mW)  | PA + LNA, single antenna only                                 |
+| Generic 2400        | 12.5 dBm (18 mW) |                                                               |
+| Generic 2400 PA     | 20 dBm (100 mW)  | PA + LNA                                                      |
+| Generic 2400 D PA   | 23 dBm (200 mW)  | PA + LNA, single antenna only                                 |
+| Generic 2400 TD PA  | 20 dBm (100 mW)  | True Diversity, PA + LNA                                      |
+| iFlight 2400 PA     | 27 dBm (500 mW)  | PA + LNA                                                      |
+| iFlight 2400 TD PA  | 24 dBm (250 mW)  | True Diversity, PA + LNA                                      |
 
 To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses.
 
