@@ -1,8 +1,8 @@
-# mLRS Documentation: RadioMaster RP4 Receiver #
+# mLRS Documentation: RadioMaster RP4TD Receiver #
 
 ([back to main page](../README.md))
 
-The RadioMaster RP4 is a good option for a 2.4 GHz receiver as it offers true diversity, PA & LNA, a TCXO and additional pads for RC out functionality.  Furthermore, it is also able to used as a Tx module with SiK like functionality.
+The RadioMaster RP4TD is a good option for a 2.4 GHz receiver as it offers true diversity, PA & LNA, dual TCXO and additional pads for RC out functionality.  Furthermore, it is able to be used as a Tx module with SiK like functionality.
 
 <table>
   <tbody>
