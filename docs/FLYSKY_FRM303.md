@@ -16,7 +16,7 @@ The FlySky FRM303 transmitter module is a nearly perfect option for building mLR
     </tr>
     <tr>
       <td>Supported Modes</td>
-      <td>50 Hz, 31 Hz, 19 Hz</td>
+      <td>111 Hz, 50 Hz, 31 Hz, 19 Hz</td>
     </tr>
     <tr>
       <td>Weight</td>
