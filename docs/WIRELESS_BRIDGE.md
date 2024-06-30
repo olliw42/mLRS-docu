@@ -47,4 +47,4 @@ Configuration is done within the sketch, the following options can be set:
 - Bluetooth Device Name
 - Baudrate
 
-Note: The ESP8266 and some EPS32 do not offer BlueTooth.
+Note: The ESP8266 and some ESP32 do not offer Bluetooth.
