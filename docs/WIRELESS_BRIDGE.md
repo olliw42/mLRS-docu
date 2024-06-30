@@ -5,8 +5,8 @@
 mLRS provides an Arduino sketch which enables ESP32 or ESP8266 development modules to be used as a wireless bridge providing communication between the Tx module and a computer running GCS software such as Mission Planner. This allows for the operator to control the vehicle and have a GCS connection without being tethered to the computer.
 
 Sketch locations:
-- esp32: [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge)
-- esp8266: [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge-esp8266)
+- ESP32: [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge)
+- ESP8266: [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge-esp8266)
 
 ## Hardware Selection & Configuration
 
@@ -28,7 +28,7 @@ The serial port (or one of the serial ports) of the Tx module will need to be co
 
 ### ESP8266
 
-Any ESP8266 module will work, the sketch may have to be adapted slightly for a specific module however.
+Any ESP8266 module will work. The sketch may have to be adapted slightly for a specific module however.
 
 ## Software Configuration
 
