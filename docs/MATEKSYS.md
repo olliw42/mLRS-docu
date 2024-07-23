@@ -18,6 +18,6 @@ Note: The MatekSys mLRS gear in the 868/915 MHz band use the newer SX126x chipse
 ## 868 MHz  / 915 MHz ##
 
 - [mR900-30](MATEKSYS_MR900_30.md)
-- mR900-22
+- [mR900-22](MATEKSYS_MR900_22.md)
 
 
