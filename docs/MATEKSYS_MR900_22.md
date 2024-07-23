@@ -49,7 +49,7 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
     </tr><tr>
       <td>Tx1, Rx1:</td><td>serial, also for firmware flashing</td>
     </tr><tr>
-      <td>Tx2</td><td>OUT</td>
+      <td>Tx2</td><td>OUT (CRSF, SBus, SBus inv.)</td>
     </tr><tr>
       <td>Bind button:</td><td>bind</td>
     </tr><tr>
