@@ -1,10 +1,11 @@
 # mLRS Documentation: MatekSys mR900-30 #
 
 ([back to main page](../README.md))
+([back to MatekSys page](MATEKSYS.md))
 
 The MatekSys mLRS receivers and Tx modules are specifically designed for mLRS, and are currently simply the best options available. 
 
-They are available for the [2.4 GHz band](MATEKSYS) and the [868/915 MHz band](MATEKSYS). This page describes the MatekSys mR900-30 for the 868/915 MHz band.
+This page describes the MatekSys mR900-30 device for the 868/915 MHz band.
 
 <table>
   <tbody>
@@ -26,7 +27,8 @@ They are available for the [2.4 GHz band](MATEKSYS) and the [868/915 MHz band](M
     </tr>
     <tr>
       <td>Compatibility</td>
-      <td>Compatible with SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder. Incompatible with all SX127x hardware (Frsky R9 and ELRS).</tr>
+      <td>Compatible with SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder. Incompatible with all SX127x hardware (Frsky R9 and ELRS 900 Mhz).</td>
+    </tr>
   </tbody>
 </table>
 
@@ -40,7 +42,7 @@ The mR900-30 device can be used in three ways:
 - as transmitter
 - in combination with a Tx carrier board it can be used as a Tx module
 
-The mR900-30 provides a USB-C port, a 8-pin pn header, and a good number of solder pads on the bottom for additional use.
+The mR900-30 provides a 8-pin pin header, a USB-C port, and a good number of solder pads on the bottom for additional use.
 
 
 ### As Transmitter ###
@@ -64,8 +66,8 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 </table>
 
 Notes:
-- To enter the system bootloader for flashing, hold the button down direction during power up.
-- The USB-C port can be used fo rpowering as well as for flashing (per DFU).
+- To enter the system bootloader for flashing, hold the button down during power up.
+- The USB-C port can be used for powering as well as for flashing (per DFU).
 - The Rx2 pin has no function.
 
 
@@ -88,8 +90,8 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 </table>
 
 Notes:
-- To enter the system bootloader for flashing, hold the button down direction during power up.
-- The USB-C port can be used fo rpowering as well as for flashing (per DFU).
+- To enter the system bootloader for flashing, hold the button down during power up.
+- The USB-C port can be used for powering as well as for flashing (per DFU).
 - The Rx2, LT1, LT2 pins have no function.
 
 
