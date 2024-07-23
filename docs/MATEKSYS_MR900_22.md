@@ -43,24 +43,24 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 <table>
   <tbody>
     <tr>
-      <td>V:</td><td>power supply, 4 - 9 V</td>
+      <td>V</td><td>power supply, 4 - 9 V</td>
     </tr><tr>
-      <td>G:</td><td>ground</td>
+      <td>G</td><td>ground</td>
     </tr><tr>
-      <td>Tx2, Rx2:</td><td>serial, also for firmware flashing</td>
+      <td>Tx2, Rx2</td><td>serial, also for firmware flashing</td>
     </tr><tr>
       <td>Tx1</td><td>OUT (CRSF, SBus, SBus inv.)</td>
     </tr><tr>
-      <td>BIND button:</td><td>bind</td>
+      <td>BIND button</td><td>bind</td>
     </tr><tr>
-      <td>Boot button:</td><td>system bootloader</td>
+      <td>Boot button</td><td>system bootloader</td>
     </tr>
   </tbody>
 </table>
 
 
 Notes:
-- To enter bind mode, press the bind button for ca 4 esc. Alternative, power up the device quickly for 4 times.</td>
+- To enter bind mode, press the bind button for ca 4 sec. Alternatively, power up the device quickly 4 times.</td>
 - To enter the system bootloader for firmware upgrade, hold the boot button down during power up (not bind button!).
 - The Rx1 pin has no function.
 
