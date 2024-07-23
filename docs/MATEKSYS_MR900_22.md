@@ -43,26 +43,26 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 <table>
   <tbody>
     <tr>
-      <td>V:</td><td>power supply, 4.5 V - 13 V</td>
+      <td>V:</td><td>power supply, 4 - 9 V</td>
     </tr><tr>
       <td>G:</td><td>ground</td>
     </tr><tr>
-      <td>Tx1, Rx1:</td><td>serial, also for firmware flashing</td>
+      <td>Tx2, Rx2:</td><td>serial, also for firmware flashing</td>
     </tr><tr>
-      <td>Tx2</td><td>OUT (CRSF, SBus, SBus inv.)</td>
+      <td>Tx1</td><td>OUT (CRSF, SBus, SBus inv.)</td>
     </tr><tr>
-      <td>Bind button:</td><td>bind</td>
+      <td>BIND button:</td><td>bind</td>
     </tr><tr>
-      <td>Boot0 button:</td><td>system bootloader</td>
+      <td>Boot button:</td><td>system bootloader</td>
     </tr>
   </tbody>
 </table>
 
 
 Notes:
-- To enter bind mode, press the Bind button for ca 4 esc. Alternative, power up the device quickly for 4 times.</td>
-- To enter the system bootloader for firmware upgrade, hold the Boot0 button down during power up (not Bind button!).
-- The Rx2 pin has no function.
+- To enter bind mode, press the bind button for ca 4 esc. Alternative, power up the device quickly for 4 times.</td>
+- To enter the system bootloader for firmware upgrade, hold the boot button down during power up (not bind button!).
+- The Rx1 pin has no function.
 
 
 ## Flashing ##
@@ -72,7 +72,7 @@ Notes:
 ### Uart via Tx2, Rx2 Pins ###
 
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
-- Hold down the Boot0 button while powering up
+- Hold down the boot button while powering up
 - Connect the device via a USB-TTL adapter, wired to the Tx2, Rx2 pins, to your PC
 - Launch STM32CubeProgrammer and select UART as the connection method, select the correct COM port, click connect
 - From the menu on the left select the Download tile
