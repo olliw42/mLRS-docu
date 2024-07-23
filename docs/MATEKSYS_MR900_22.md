@@ -72,7 +72,7 @@ Notes:
 ### Uart via Tx2, Rx2 Pins ###
 
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
-- Hold down the button while powering up
+- Hold down the Boot0 button while powering up
 - Connect the device via a USB-TTL adapter, wired to the Tx2, Rx2 pins, to your PC
 - Launch STM32CubeProgrammer and select UART as the connection method, select the correct COM port, click connect
 - From the menu on the left select the Download tile
