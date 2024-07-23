@@ -45,32 +45,6 @@ The mR24-30 device can be used in three ways:
 The mR24-30 provides a 8-pin pin header, a USB-C port, and a good number of solder pads on the bottom side for additional use.
 
 
-### As Transmitter ###
-
-Connections (name in respect to board print-ons, otherwise please refer to graphic):
-
-<table>
-  <tbody>
-    <tr>
-      <td>V:</td><td>power supply, 4.5 V - 13 V</td>
-    </tr><tr>
-      <td>serial:</td><td>Tx1, Rx1</td>
-    </tr><tr>
-      <td>com / cli:</td><td>LT1, LR1</td>
-    </tr><tr>
-      <td>JRPin5 / in:</td><td>Tx2</td>
-    </tr><tr>
-      <td>bind:</td><td>button</td>
-    </tr>
-  </tbody>
-</table>
-
-Notes:
-- To enter the system bootloader for flashing, hold the button down during power up.
-- The USB-C port can be used for powering as well as for flashing (per DFU).
-- The Rx2 pin has no function.
-
-
 ### As Receiver ###
 
 Connections (name in respect to board print-ons, otherwise please refer to graphic):
@@ -78,20 +52,56 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 <table>
   <tbody>
     <tr>
-      <td>V:</td><td>power supply, 4.5 V - 13 V</td>
+      <td>V</td><td>Power supply, 4.5 - 13 V</td>
     </tr><tr>
-      <td>serial:</td><td>Tx1, Rx1</td>
+      <td>G</td><td>Ground</td>
     </tr><tr>
-      <td>OUT:</td><td>Tx2</td>
+      <td>Tx1, Rx1</td><td>Serial</td>
     </tr><tr>
-      <td>bind:</td><td>button</td>
+      <td>Tx2</td><td>Out (CRSF, SBus, SBUs inv.)</td>
+    </tr><tr>
+      <td>button</td><td>Bind, and for firmware upgrade</td>
+    </tr><tr>
+      <td>USB-C</td><td>Power & firmware upgrade</td>
     </tr>
   </tbody>
 </table>
 
 Notes:
-- To enter the system bootloader for flashing, hold the button down during power up.
-- The USB-C port can be used for powering as well as for flashing (per DFU).
+- To enter bind mode, press the button for ca 4 sec.
+- To enter the system bootloader for firmware upgrade, press the button during power up.
+- The USB-C port can be used for powering as well as for firmware upgrade (per DFU).
+- The Rx2, LT1, LT2 pins have no function.
+
+
+### As Transmitter ###
+
+Connections (name in respect to board print-ons, otherwise please refer to graphic):
+
+<table>
+  <tbody>
+    <tr>
+      <td>V</td><td>Power supply, 4.5 - 13 V</td>
+    </tr><tr>
+      <td>G</td><td>Ground</td>
+    </tr><tr>
+      <td>Tx1, Rx1</td><td>Serial</td>
+    </tr><tr>
+      <td>LT1, LR1</td><td>Com / Cli</td>
+    </tr><tr>
+      <td>Tx2</td><td>JRPin5 / In</td>
+    </tr><tr>
+      <td>button</td><td>Bind, and for firmware upgrade</td>
+    </tr><tr>
+      <td>USB-C</td><td>Power & firmware upgrade</td>
+    </tr>
+  </tbody>
+</table>
+
+Notes:
+- To enter bind mode, press the button for ca 4 sec.
+- To enter the system bootloader for firmware upgrade, press the button during power up.
+- The USB-C port can be used for powering as well as for firmware upgrade (per DFU).
 - The Rx2 pin has no function.
 
 
@@ -109,7 +119,7 @@ TODO
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
 - Hold down the button while powering up
 - Connect the device via USB-C to your PC
-- Launch STM32CubeProgrammer and select USB as the connection method, click connect
+- Launch STM32CubeProgrammer and select USB as the connection method, click connect. If the Port field does not show "USB1", the click the buttun right to it.
 - From the menu on the left select the Download tile
 - Select the correct firmware in the Download section, click Start Program
 - Power cycle the board, the red LED should blink which indicates that the board is disconnected
