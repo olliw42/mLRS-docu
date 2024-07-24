@@ -32,6 +32,8 @@ This page describes the MatekSys mR24-30 device for the 2.4 GHz band.
   </tbody>
 </table>
 
+Note: The mR24-30 will not be damaged when powered without antenna (even at 1 W), but it is nevertheless good practice to ensure that there is an antenna connected when you power up.
+
 
 ## mR24-30 ##
 
@@ -111,8 +113,6 @@ TODO
 
 
 ## Flashing ##
-
-**Important: Every time that you power a board you should ensure that there is an antenna connected otherwise you risk damaging the RF section.**
 
 ### DFU via USB-C ###
 

@@ -32,6 +32,7 @@ This page describes the MatekSys mR900-22 device for the 868/915 MHz band.
   </tbody>
 </table>
 
+Note: The mR900-22 will not be damaged when powered without antenna, but it is nevertheless good practice to ensure that there is an antenna connected when you power up.
 
 
 ## mR900-22 Receiver ##
@@ -66,8 +67,6 @@ Notes:
 
 
 ## Flashing ##
-
-**Important: Every time that you power a board you should ensure that there is an antenna connected otherwise you risk damaging the RF section.**
 
 ### Uart via Tx2, Rx2 Pins ###
 
