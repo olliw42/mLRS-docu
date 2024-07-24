@@ -119,7 +119,7 @@ TODO
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
 - Hold down the button while powering up
 - Connect the device via USB-C to your PC
-- Launch STM32CubeProgrammer and select USB as the connection method, click connect. If the Port field does not show "USB1", the click the buttun right to it.
+- Launch STM32CubeProgrammer and select USB as the connection method, click connect. If the Port field does not show "USB1", the click the button right to it.
 - From the menu on the left select the Download tile
 - Select the correct firmware in the Download section, click Start Program
 - Power cycle the board, the red LED should blink which indicates that the board is disconnected
