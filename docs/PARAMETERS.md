@@ -73,6 +73,10 @@ Enables the buzzer, and selects what data it reflects. Can be "off", "LP", "rxLQ
 
 LP stands for Lost Packet, and here the buzzer emits a short beep for any lost packet. rxLQ stands for receiver Link Quality, and here the buzzer beeps every second, with the beep length reflecting LQ (longer beep equals lower LQ).
 
+#### Tx Mav Component ####
+Enabled parameter configuration using the MAVLink parameter service.
+Can be "enabled", "off".
+
 #### Tx Cli LineEnd ####
 Determines the line termination character(s) used by the CLI. 
 Can be "CR", "LF", "CRLF".
