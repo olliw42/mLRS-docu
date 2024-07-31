@@ -33,7 +33,7 @@ Additionally, the following ELRS receiver targets are also supported:
 | iFlight 2400 PA     | 27 dBm (500 mW)  | PA + LNA                                                      |
 | iFlight 2400 TD PA  | 24 dBm (250 mW)  | True Diversity, PA + LNA                                      |
 
-To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses.
+To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses. Alternatively, you can use this browser based tool to look up the layout of your target: [ELRS Layout File Search](https://sunjunkim.github.io/elrs_target_search/) 
 
 ## Connections ##
 
