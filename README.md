@@ -24,6 +24,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [Experimental: Relay](docs/RELAY.md)
 
 ### STM32 Hardware ###
+- [Matek mLRS Hardware](docs/MATEKSYS.md)
 - [FlySky FRM303 Module](docs/FLYSKY_FRM303.md)
 - [Frsky R9 Devices](docs/FRSKY_R9.md)
 - [SeeedStudio Wio-E5 Boards](docs/SEEEDSTUDIO_WIO_E5.md)
