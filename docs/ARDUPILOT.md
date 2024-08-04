@@ -42,4 +42,4 @@ To understand how stream rates affect the MAVLink data rate, you can use this [c
 
 - Rx Snd RadioStat:
     - ardu_1: optimizes for ArduPilot usage
-    - brad: optimizes for PX4 usage
+    - meth_b: optimizes for PX4 usage
