@@ -24,7 +24,7 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
     </tr>
       <tr>
       <td>Compatibility</td>
-      <td>Compatible with Frsky R9 and ELRS hardware.  Incompatible with SX126x hardware (SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder).</td>
+      <td>Compatible with Frsky R9 and ELRS hardware.  Incompatible with SX126x/STM32WLE hardware (Matek mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder).</td>
     </tr>
   </tbody>
 </table>
