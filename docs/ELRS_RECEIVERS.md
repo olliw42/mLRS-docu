@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-Note: 868/915 MHz ELRS receivers are only compatible with the Frsky R9M Tx module.  868/915 MHz ELRS receivers are incompatible with SX126x hardware (SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder).
+Note: 868/915 MHz ELRS receivers are only compatible with the Frsky R9M Tx module.  868/915 MHz ELRS receivers are incompatible with SX126x/STM32WLE hardware (SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder).
 
 ## Selected ELRS Receivers ##
 
