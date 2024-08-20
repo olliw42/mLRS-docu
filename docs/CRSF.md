@@ -46,7 +46,8 @@ A basic setup is described in this section which should get one started, further
 ### MAVLink Serial Port
 
 - SERIALx_BAUD:
-    - 57 for 31 Hz, 50 Hz
+    - 115 for 50 Hz
+    - 57 for 31 Hz
     - 38 for 19 Hz (57 works very well too, only parameter download is slower)
     - 230 for FLRC
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
