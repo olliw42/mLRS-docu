@@ -19,10 +19,11 @@ Further parameter settings:
 
 ## INAV Configuration
 
+MspX is tested and verified with INAV 7.1 as well as 8.0 development builds but should also work with INAV 6.0 and newer. The baudrate should be set to 115200 as lower baud rates have shown irregular telemetry update rates on the radio due to the lack of flow control on the INAV side. INAV 8.0 and later will also support a baud rate of 230400 but no change in performance or stability was noticed. Additionally with INAV 8.0 the performance of the serial link to a Ground Control Station (GCS) will be increased, due to some optimizations in INAV. 
+
 To use a mLRS Receiver with INAV in MspX mode, the following settings have to be applied:
 - Enable MSP for the Serial Port the mLRS receiver is conencted to (UART 2 is recommended on most STM32 Flight-Controllers; do not enable "Serial RX")
-- Set the Baud-Rate to 115200 or higher (Only INAV 7.1 and 8.0-dev are tested, Version 6.0 and newer should also work)
-- INAV 8.0 and later will also support Baud 230400 but with no noticeable difference in performance or stability
+- Set the Baud-Rate to 115200 or higher
   
 ![image](https://github.com/user-attachments/assets/e4263b21-f3c5-40b5-a498-bf3c4906fdc2)
 
@@ -30,6 +31,11 @@ To use a mLRS Receiver with INAV in MspX mode, the following settings have to be
 - In the Receiver Tab, select the Receiver Mode Type to MSP and save settings
   
 ![image](https://github.com/user-attachments/assets/d3f9adb4-3438-4552-989b-dea2ab1c044e)
+
+
+- When connecting INAV 8.0 Configurator through mLRS it is highly recommended to enable the Wireless Mode switch before connection for better link reliability. (Do not use Wireless Mode with Versions older than 8.0).
+
+
 
 
 If your radio is connected, you should now be able to see the channel values update. No further settings are needed and telemetry will work for OpenTX/EdgeTX radios after scanning for sensors. 
