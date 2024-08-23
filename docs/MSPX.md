@@ -33,8 +33,9 @@ To use a mLRS Receiver with INAV in MspX mode, the following settings have to be
 ![image](https://github.com/user-attachments/assets/d3f9adb4-3438-4552-989b-dea2ab1c044e)
 
 
-- When connecting INAV 8.0 Configurator through mLRS it is highly recommended to enable the Wireless Mode switch before connection for better link reliability. (Do not use Wireless Mode with Versions older than 8.0).
+- When connecting INAV 8.0 Configurator through mLRS it is highly recommended to enable the Wireless Mode switch before connection, for better link reliability. (Do not use Wireless Mode with versions older than 8.0).
 
+![image](https://github.com/user-attachments/assets/2291187a-5d27-4857-a4d6-454f6b0f5e30)
 
 
 
