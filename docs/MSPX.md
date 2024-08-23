@@ -19,7 +19,9 @@ Further parameter settings:
 
 ## INAV Configuration
 
-MspX is tested and verified with INAV 7.1 as well as 8.0 development builds but should also work with INAV 6.0 and newer. The baudrate should be set to 115200 as lower baud rates have shown irregular telemetry update rates on the radio due to the lack of flow control on the INAV side. INAV 8.0 and later will also support a baud rate of 230400 but no change in performance or stability was noticed. Additionally with INAV 8.0 the performance of the serial link to a Ground Control Station (GCS) will be increased, due to some optimizations in INAV. 
+MspX is tested and verified with INAV 7.1 as well as 8.0 development builds but should also work with INAV 6.0 and newer. The baudrate should be set to 115200 as lower baud rates have shown irregular telemetry update rates on the radio due to the lack of flow control on the INAV side. 
+
+INAV 8.0 and later will also support a baud rate of 230400 but no change in performance or stability was noticed. Additionally with INAV 8.0 the performance of the serial link to a Ground Control Station (GCS) will be increased, due to some optimizations in INAV. 
 
 To use a mLRS Receiver with INAV in MspX mode, the following settings have to be applied:
 - Enable MSP for the Serial Port the mLRS receiver is conencted to (UART 2 is recommended on most STM32 Flight-Controllers; do not enable "Serial RX")
