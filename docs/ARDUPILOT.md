@@ -31,10 +31,7 @@ Notes & References:
 
 ## Stream Rates
 
-When configuring the SRy parameters, 'y' does not necessarily correspond to the serial port number but to the count of serial ports set to MAVLink. Here is an example with MAVLink on serial ports 0 and 3:
-
-- Serial 0: SR0_
-- Serial 3: SR1_
+When configuring SRy parameters, 'y' does not necessarily correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol.  SERIAL0, and thus SR0, will nearly always be reserved for the USB connection and set to use the MAVLink protocol (which should not be modified). Therefore, as an example, in a setup with SERIAL1 and SERIAL2 not set to the MAVLink and with the mLRS receiver connected to SERIAL3, then SR1 should be used to configured the stream rates for the mLRS receiver.
 
 To understand how stream rates affect the MAVLink data rate, you can use this [calculator](https://github.com/ArduPilot/pymavlink/blob/master/tools/mavtelemetry_datarates.py) (requires Python).
 
