@@ -24,7 +24,7 @@ The E77 Easy Solder Boards are designed to allow one with minimal soldering skil
     </tr>
       <tr>
       <td>Compatibility</td>
-      <td>Compatible with Matek mR900, SeeedStudio Wio-E5, EBYTE E77 MBL.  Incompatible with SX127x hardware (Frsky R9 and ELRS).</td>
+      <td>Compatible with MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL. Incompatible with SX127x hardware (Frsky R9 and ELRS 900 MHz).</td>
     </tr>
   </tbody>
 </table>
