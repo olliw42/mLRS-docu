@@ -24,7 +24,7 @@ The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC
     </tr>
     <tr>
       <td>Compatibility</td>
-      <td>Compatible with Matek mR900, EBYTE E77 MBL, E77 Easy Solder.  Incompatible with SX127x hardware (Frsky R9 and ELRS).</td>
+      <td>Compatible with MatekSys mR900, EBYTE E77 MBL, E77 Easy Solder. Incompatible with SX127x hardware (Frsky R9 and ELRS 900 MHz).</td>
     </tr>
     <tr>
       <td>Weight</td>

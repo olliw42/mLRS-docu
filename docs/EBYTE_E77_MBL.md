@@ -26,7 +26,7 @@ EBYTE E77 MBL Boards are an option for building mLRS equipment. These boards use
     </tr>
       <tr>
       <td>Compatibility</td>
-      <td>Compatible with SeeedStudio Wio-E5, E77 Easy Solder.  Incompatible with SX127x hardware (Frsky R9 and ELRS).</td>
+      <td>Compatible with MatekSys mR900, SeeedStudio Wio-E5, E77 Easy Solder. Incompatible with SX127x hardware (Frsky R9 and ELRS 900 MHz).</td>
     </tr>
     <tr>
       <td>Weight</td>
