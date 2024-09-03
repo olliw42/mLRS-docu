@@ -21,6 +21,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [mTX (formerly MAVLink for OpenTx)](docs/MTX.md)
 - [Dual Band](docs/DUAL_BAND.md)
 - [Additional Configuration for ArduPilot Systems](docs/ARDUPILOT.md)
+- [INAV/MSP Systems](docs/MSPX.md)
 - [Experimental: Relay](docs/RELAY.md)
 
 ### STM32 Hardware ###
