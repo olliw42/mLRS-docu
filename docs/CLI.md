@@ -41,6 +41,9 @@ Changes the setting of the parameter with name 'name' to the specified value. Co
 #### pstore; #### 
 Stores the new parameter settings into the Tx module and, if connected, also into the receiver.
 
+#### setconfigid; #### 
+Set the Configuration ID of the Tx module.
+
 #### bind; #### 
 Starts the binding. Comment: Only the Tx module is set into binding mode. The receiver must be put into binding mode by pressing its bind button.
 
