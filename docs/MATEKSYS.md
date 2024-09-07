@@ -14,11 +14,11 @@ Links to the MatekSys website are found below, which include product specificati
 
 ## 2.4 GHz Hardware ##
 
-- [mR24-30 Tx Module](https://www.mateksys.com/?portfolio=mr24-30-tx)
+- [mR24-30 Tx Module Kit](https://www.mateksys.com/?portfolio=mr24-30-tx)
 - [mR24-30 Receiver](https://www.mateksys.com/?portfolio=mr24-30)
 
 ## 868 MHz  / 915 MHz Hardware ##
 
-- [mR900-30 Tx Module](https://www.mateksys.com/?portfolio=mr900-30-tx)
+- [mR900-30 Tx Module Kit](https://www.mateksys.com/?portfolio=mr900-30-tx)
 - [mR900-30 Receiver](https://www.mateksys.com/?portfolio=mr900-30)
 - [mR900-22 Receiver](https://www.mateksys.com/?portfolio=mr900-22)
