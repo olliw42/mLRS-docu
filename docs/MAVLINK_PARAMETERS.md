@@ -13,11 +13,12 @@ Note: If no receiver is connected, then only the parameters of the Tx module can
 
 The MAVLink parameters are identical to those described in [Configuration Parameters](PARAMETERS.md), but have different names which conform to the MAVLink standard. They should be easy to recognize. For instance, the parameter "Rx Ser Link Mode" shows up as "RX_SER_LNK_MODE". 
 
-Four exceptions exist:
+These exceptions exist:
 1. An additional parameter "PSTORE" is available. Parameter changes are not permanently stored in the Tx module or receiver when written. In order to store them permanently, the parameter PSTORE must be set to 1 and written to the component. This is somewhat similar to the CLI's pstore command or the Lua script's "Store" button.
 2. The bind phrase is presented as an uint32_t number instead of a string of 6 chars as in the other methods, and the parameter is called "BIND_PHRASE_U32". This means that setting a bind phrase is a bit inconvenient, as the MAVLink parameter system only allows numeric values.
 3. The parameter "TX_MAV_COMPONENT" ("Tx Mav Component") cannot be set or modified and will always be 1. This is to prevent unintentional disabling of the MAVLink component.
 4. The parameter "RX_SER_LNK_MODE" ("Rx Ser Link Mode") cannot be set to 0. This is to prevent unintentional disabling of the MAVLink component.
+5. An additional parameter "CONFIG ID" is available, which allows one to set the [configuration ID](CONFIGID.md).
 
 A major painpoint of the MAVLink parameter system is that the parameter settings are only available as numeric values, and not as plain text, as with the other methods. There is unfortunately nothing mLRS can do about this. The meaning of the parameter values need to be inferred from the information given in [Configuration Parameters](PARAMETERS.md).
 
