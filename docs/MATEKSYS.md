@@ -22,3 +22,9 @@ Links to the MatekSys website are found below, which include product specificati
 - [mR900-30 Tx Module Kit](https://www.mateksys.com/?portfolio=mr900-30-tx)
 - [mR900-30 Receiver](https://www.mateksys.com/?portfolio=mr900-30)
 - [mR900-22 Receiver](https://www.mateksys.com/?portfolio=mr900-22)
+
+## Flashing / Upgrading Firmware ##
+
+The most convenient way of flashing the mLRS devices is via their USB-C port and using the [mLRS Web Flasher](https://mlrs.xyz/flash) app.
+
+Plugin the UBS-C while pressing the bind button. This puts the mLRS device into the DFU mode (LEDs are not flashing). then follow the instructions provided by the mLRS Web Flasher app.
