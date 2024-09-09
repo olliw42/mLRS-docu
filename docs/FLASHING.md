@@ -8,7 +8,9 @@ Depending on the device, a confusing number of options can exist for flashing an
 
 The easiest way to flash firmware can be the [mLRS Web Flasher](https://mlrs.xyz/flash). 
 
-Note: Only few devices are supported currently (currently only DFU mode is supported, which covers the MatekSys mLRS devices).
+Notes: 
+- Only few devices are supported currently (currently only DFU mode is supported, which covers the MatekSys mLRS devices).
+- It does not run on all browsers (specifically not on Firefox).
 
 ## STM32CubeProgrammer
 
