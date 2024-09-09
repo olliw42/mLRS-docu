@@ -27,4 +27,4 @@ Links to the MatekSys website are found below, which include product specificati
 
 The most convenient way of flashing the mLRS devices is via their USB-C port and using the [mLRS Web Flasher](https://mlrs.xyz/flash) app.
 
-Plugin the UBS-C while pressing the bind button. This puts the mLRS device into the DFU mode (LEDs are not flashing). then follow the instructions provided by the mLRS Web Flasher app.
+Plug in the USB-C cable while pressing the bind button. This puts the mLRS device into DFU mode (LEDs are not flashing). Then follow the instructions provided by the mLRS Web Flasher app.
