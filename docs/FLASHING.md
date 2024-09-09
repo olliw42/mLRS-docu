@@ -4,7 +4,7 @@
 
 Depending on the device, a confusing number of methods can exist for flashing and upgrading the firmware. Here is provided a general overview of some of the methods.
 
-Note: Flashing for a specific device is described in more depth on the hardware specific pages, please checks those out for step by step instructions.
+Note: Flashing for a specific device is described in more depth on the hardware specific pages, please check those out for step by step instructions.
 
 ## mLRS Web Flasher
 
