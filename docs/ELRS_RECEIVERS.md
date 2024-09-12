@@ -56,7 +56,7 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
 - When powering on the receiver you will need to have the bind button pushed down to enter into bootloader mode.
     - For receivers with a single (non-RGB) LED you can confirm the receiver is in bootloader mode if the LED is solid.
 - If your ELRS receiver is built-in to your Flight Controller or you have already connected your receiver to your Flight Controller, you can use your FC with serial passthrough instead of an USB<>UART adapter.  This option requires Ardupilot version 4.5.2 or newer.
-    - Connect your to your FC via USB using Mission Planner or another GCS and if you haven't already, set the correct SERIALx\_PROTOCOL parameter to 2 ("MAVLink2").  You may also want to set SERIALx\_BAUD at this time.
+    - Connect to your FC via USB using Mission Planner or another GCS and if you haven't already, set the correct SERIALx\_PROTOCOL parameter to 2 ("MAVLink2").  You may also want to set SERIALx\_BAUD at this time.
 	- Set SERIAL\_PASSTIMO to 0 to prevent timeout. SERIAL\_PASS1 should already be 0.
 	- Set SERIAL\_PASS2 to x, the serial port your receiver is connected to.  Don't forget to Write Parameters.  This step will cause the GCS to report "connection lost".  Note that this parameter will revert to 0 and disable passthrough when you power cycle the FC after flashing.
 	- Exit the GCS program so the FC USB serial port is available for flashing.
