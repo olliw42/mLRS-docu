@@ -55,8 +55,13 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
     - Rx to Tx
 - When powering on the receiver you will need to have the bind button pushed down to enter into bootloader mode.
     - For receivers with a single (non-RGB) LED you can confirm the receiver is in bootloader mode if the LED is solid.
+- If your ELRS receiver is built-in to your Flight Controller or you have already connected your receiver to your Flight Controller, you can use your FC with serial passthrough instead of an USB<>UART adapter.  This option requires Ardupilot version 4.5.2 or newer.
+    - Connect your to your FC via USB using Mission Planner or another GCS and if you haven't already, set the correct SERIALx\_PROTOCOL parameter to 2 ("MAVLink2").  You may also want to set SERIALx\_BAUD at this time.
+	- Set SERIAL\_PASSTIMO to 0 to prevent timeout. SERIAL\_PASS1 should already be 0.
+	- Set SERIAL\_PASS2 to x, the serial port your receiver is connected to.  Don't forget to Write Parameters.  This step will cause the GCS to report "connection lost".  Note that this parameter will revert to 0 and disable passthrough when you power cycle the FC after flashing.
+	- Exit the GCS program so the FC USB serial port is available for flashing.
 - Open a supported browser (Chrome, Edge, Opera, not Firefox) and navigate [here](https://esp.huhn.me/).
-- Click connect and select the serial port of your USB<>UART.
+- Click connect and select the serial port of your USB<>UART or FC.
 - For ESP8266 based receivers:
     - Upload the .bin file for your receiver: <br> <img src="images/ESP8266_Flash.png">
     - Click program.
@@ -64,5 +69,5 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
     - Download the additional files needed for flashing  [here](https://github.com/olliw42/mLRS-docu/raw/master/docs/files/esp32_files.zip) and unpack them.
     - Create additional entries with the following offsets and files.  Note: the firmware.bin should use the 10000 offset. <br> <img src="images/ESP32_Flash.png">
     - Click program.
-- Once the firmware has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
-    - Note: Binding can be done by holding down the button for four seconds.
+- Once the firmware has been written sucessfully, power cycle the receiver/FC. The LED should blink to indicate that it is looking for a connection.
+    - Note: Binding can be done by holding down the button for four seconds if it doesn't connect automatically.
