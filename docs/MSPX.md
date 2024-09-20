@@ -1,4 +1,4 @@
-# mLRS Documentation: INAV/MSP Support #
+# mLRS Documentation: INAV/MSP Configuration #
 
 ([back to main page](../README.md))
 
@@ -8,6 +8,13 @@ mLRS provides the MspX technology, which is designed to improve the over-the-air
 
 Note: MspX is tested and verified for INAV 7.1. It has been successfully tested with INAV 8.0 development builds, and should also work with INAV 6.0 and newer (not tested).
 
+## mLRS Transmitter Configuration
+Below configuration has been used with mLRS transmitter when setting up MSP in INAV. Please ignore "Power" setting and make sure this is not "min" before flight.
+
+
+![mlrs-inav-msp-tx-config](https://github.com/user-attachments/assets/8bb72fff-c229-4af0-a1d2-a5bee60811b2)
+
+
 ## mLRS Receiver Configuration
 
 MspX is enabled by setting the "Rx Ser Link Mode" parameter in the receiver to "mspX".
@@ -15,6 +22,10 @@ MspX is enabled by setting the "Rx Ser Link Mode" parameter in the receiver to "
 Further parameter settings:
 - "Rx Snd RcChannel": When set to "rc override" or "rc channels", SET_RAW_RC MSP messages are sent to the flight controller. In the flight controller configure the receiver to the MSP protocol. This allows one to avoid the extra wire for CRSF or SBUS.
 - "Rx Snd RadioStat": has no effect.
+
+
+![mlrs-inav-msp-rx-config](https://github.com/user-attachments/assets/7ff38c7b-bf0e-4f19-8347-5de82ef2d38c)
+
 
 ## INAV Configuration
 
