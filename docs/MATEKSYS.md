@@ -31,7 +31,7 @@ Plug in the USB-C cable while pressing the bind button. This puts the mLRS devic
 
 ## Tx Module | HC-04 Bluetooth Troubleshooting ##
 
-To use the HC-04 Bluetooth module on Matek mLRS Tx modules, no additional configuration should be needed as mLRS will automatically configure all of the necessary settings on the HC-04 module. However, if you're having problems you can check the following items:
+To use the HC-04 Bluetooth module on Matek mLRS Tx modules, no additional configuration should be needed as mLRS will automatically configure all of the necessary settings on the module. However, if you're having problems you can check the following items:
 
 - Ensure that the 3 dip switches are all in the 'ON' / left position when looking at the Tx module with the antenna pointing up. PShoto:
     - <img src="images/Matek_HC04.png">
