@@ -23,12 +23,14 @@ Configure the DroneCAN virtual serial port:
 - CAN_D1_UC_S1_BD = 57600
 - CAN_D1_UC_S1_IDX = 0
 - CAN_D1_UC_S1_NOD = 68
-- CAN_D1_UC_S1_BD = 2
+- CAN_D1_UC_S1_PRO = 2
 
 Adjust the DroneCAN streams:
 
 - CAN_D1_UC_NTF_RT = 1
 - CAN_D1_UC_SRV_RT = 0
+
+Note: This assumes that you are not using DroneCAN for servo outputs.
 
 Enable RC Channels via DroneCAN:
 
