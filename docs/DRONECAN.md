@@ -20,7 +20,6 @@ Setup the CAN driver, protocol and enable the virtual serial port, then reboot t
 
 Configure the DroneCAN virtual serial port:
 
-- CAN_D1_UC_S1_BD = 57600
 - CAN_D1_UC_S1_IDX = 0
 - CAN_D1_UC_S1_NOD = 68
 - CAN_D1_UC_S1_PRO = 2
