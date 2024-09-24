@@ -10,13 +10,8 @@ Each numbered topic is structured as a test procedure with expected results foll
 
 Some notation and terminology:
 
-- We use "Tx module" to refer to a mLRS radio module in the Tx or transmitter role.  In the use case assumed here, it will be installed in a OpenTX or EdgeTX radio handset.
-
-- We use "receiver" to refer to a mLRS radio module used in the receiver or Rx role.  In this use case, it will be mounted on the vehicle and connected to the flight controller.
-
-- We use lower case "rx" when refering to the receive pad or pin of a serial port connection.
-
-- We use lower case "tx" when refering to the transmit pad or pin of a serial port connection.
+- We use "Tx module" and "receiver" to refer to a mLRS module in the Tx/transmitter role and Rx/receiver role. In the use case assumed here, the Tx module will be installed in a OpenTX or EdgeTX radio handset, and the receiver will be mounted on the vehicle and connected to the flight controller.
+- We use lower case "rx" and "tx" when refering to the receive abd transmit pads or pins of a serial port connection.
 
 ## 1. Confirm successful firmware install
 
@@ -31,11 +26,8 @@ In most cases, you can confirm that mLRS firmware is installed by observing the 
 Carefully install your Tx module into your OpenTX or EdgeTX radio.  Some Tx modules can be fussy on pin alignment; don't use excessive force or you may break something.  Follow the [instructions](LUA.md) to configure your radio and install the mLRS Lua script. Then, confirm you can talk to the Tx module via the Lua script.  You should see the TX module firmware version reported at the top of the screen.
 
 - If the Lua script does not work, ensure you have installed the correct version.  There is a separate version for radios with a lower resolution black and white screens.
-
 - Inspect the Tx module connector and ensure your Tx module is fully seated in the bay.
-
 - Check that the external CRSF baud rate is set to 400k; this is the only speed supported by mLRS.
-
 - If your Tx module is the older version of the [R9M](FRSKY_R9.md#r9m-versions), don't forget to do the Inverter Mod.
 
 ## 3. Confirm radio link between Tx module and receiver
@@ -49,9 +41,7 @@ When the Tx module and receiver are bound and powered on, a LED (usually green) 
 You should also use the [mLRS Lua script](LUA.md) to confirm the radio link and firmware versions.  It is HIGHLY recommended to use the same firmware version on both the receiver and Tx module. The latest released firmware is also recommended, especially for new installs.
 
 - If the radio link does not connect, follow the [Binding](BINDING.md) procedure.
-
 - If the binding procedure doesn't establish the connection, verify that both the receiver and Tx module are compatible, which means they must be on the same band (2.4 GHz, 915/868 MHz or 433 MHz). In the case of 915/868 MHz, also check that the LoRa chipsets are [compatible](SX126x_SX127x_INCOMPATIBILITY.md).  For example, the FrSky R9 series and ELRS 900 MHz receivers are not compatible with the MatekSys 900 MHz hardware.
-
 - Be sure you have flashed the correct [firmware file](https://github.com/olliw42/mLRS#firmware-flashing).  Files which start with tx are only for modules functioning in the Tx role and files which start with rx are only for modules functioning in the receiver role.  Also, pay attention to the variants for different use cases and hardware configurations.  For example, there are 3 separate files for different hardware and use case options for the MatekSys mR900-30 when used as a Tx module and a 4th file for when the same hardware is used as a Rx.  A module with rx firmware flashed won't connect with any other module with rx firmware flashed and tx firmware won't connect with tx firmware.
 
 ## 4. Confirm MAVLink message flow from flight controller to receiver and Tx module
@@ -61,11 +51,8 @@ In OpenTX/EdgeTX go to MDL->TELEMETRY and select "Discover new sensors".  Then, 
 Above, you have already confirmed the radio link and communication between the Tx module and OpenTX/EdgeTX.  So, if you don't see the FM sensor updating, this very likely indicates that the HEARTBEAT MAVLink message which is sent once per second by ArduPilot on all MAVLink interfaces is not reaching the Rx.
 
 - Check your serial port wiring between the flight controller and the receiver to ensure you have connected serial rx on one board to serial tx on the other board in both directions and ground to ground.
-
 - Use the mLRS Lua script or another configuration method to check your [mLRS receiver setup](CRSF.md#mlrs-rx-module-setup) to be sure MAVLinkX or MAVLink is selected for the Rx Ser Link Mode and that [Rx Ser Baudrate](PARAMETERS.md#rx-ser-baudrate) is correct and matches what you set in the following bullet.
-
 - Use a USB connected ground control station to check your ArduPilot serial [configuration](CRSF.md#ardupilot-setup) to be sure the SERIALx_PROTOCOL is set to MAVLink2 and the SERIALx_BAUD are set for the correct serial port number (x) and ensure that the baud rate matches what you set the receiver to use in the previous bullet.
-
 - If it is still not working, use a volt meter or oscilloscope to verify that both serial port wires between the mLRS receiver and flight controller have a voltage with respect to ground that is constantly changing.  If either wire has no changing signal, you have probably still missed something above.
 
 ## 5. Confirm MAVLink message flow from Tx module to ground station
@@ -75,17 +62,11 @@ Start your ground station software and connect to your Tx module by whatever met
 This is a complex topic since there are so many ways to connect a Tx module to a ground station.
 
 - Use the [mLRS Lua script](LUA.md#usage) or [CLI](CLI.md) to check that "Tx Ser Dest" is correct and that "Tx Ser Baudrate" matches your wireless bridge or ground control setting.
-
 - If the data path between your Tx module and ground station includes a serial port, double check your serial port wiring between the Tx module and the ground station or wireless bridge; ensure you have connected serial rx on one board to serial tx on the other board in both directions and ground to ground.
-
 - If your Tx module is the [R9M](FRSKY_R9.md#r9m-tx-module), don't forget to account for the inverted serial port and set dip switch 1 to "on" before powering up.
-
 - If the ground station runs on a mobile device and is connected via USB, an OTG adapter may be required.
-
 - If you want to connect via Bluetooth to the original [MatekSys mLRS Tx Module Kit](MATEKSYS.md), don't forget to enable the HC04 Bluetooth module by moving all three [dip switches](https://www.mateksys.com/?portfolio=mr900-30-tx#tab-id-2) to the "on" position.
-
 - If the connection is via Bluetooth, the devices need to be paired by your operating system first.
-
 - If the connection is via UDP or TCP over WiFi, connect to the WiFi access point before starting the ground station.
 
 ## 6. Confirm MAVLink message flow from receiver to flight controller
@@ -105,7 +86,6 @@ You should see the RC\_CHANNELS\_OVERRIDE message is being received at the same 
 Using your ground station connected to your Tx module, verify that you can change flight modes (Using the ground station, not the radio) or successfully download parameters.
 
 - If you can't change flight modes or download parameters or issue other commands via the ground station, check your wiring to ensure that the correct serial tx output on your ground control device or wireless module or serial adapter is connected to the correct serial rx input on your Tx module.
-
 - If flight mode changes initiated by the ground control system are correctly reported back to the ground control system and FM sensor, but parameter download fails, see [Confirm reliable message delivery](TROUBLE.md#Confirm reliable message delivery) below.
 
 ## 8. Confirm RC control is passed from the radio to the flight controller
@@ -113,13 +93,9 @@ Using your ground station connected to your Tx module, verify that you can chang
 Use the radio calibration page of your ground station (connected either via your Tx module or directly to USB) to verify all RC controls are working as expected.
 
 - If you use "Rx Snd RcChannel" = "rc overwrite" setting instead of connecting a CRSF receiver output and are testing with QGroundControl, switch to Mission Planner or APM Planner 2.0 since QGroundControl doesn't show data from RC\_CHANNELS\_OVERRIDE MAVLink messages on this page.
-
 - If the display doesn't follow stick movement and you use a CRSF connection between your receiver and your flight controller, check that you have connected the wire to the correct pins/pads on both your receiver and flight controller.
-
 - For CRSF, check that you have correctly [configured ArduPilot](ARDUPILOT.md#crsf-receiver) to use this input.
-
 - For CRSF, check that you have correctly [configured your Rx](CRSF.md#mlrs-rx-module-setup) for crsf output with "Rx Out Mode" = "crsf".
-
 - If your receiver [doesn't provide an RC output](ELRS_RECEIVERS.md#connections) or you don't want to use it, check that you have set ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) to "rc override".
 
 ## 9. Confirm reliable message delivery
@@ -133,9 +109,7 @@ For Mission Planner, select "Stats" in the upper right, move the windows so you 
 You should see very few or no messages lost.
 
 - If you see more than the occasional lost message or if parameter download takes more time than expected (8 to 60 seconds, depending on mode and ArduPilot version), check that the [Rx Ser Link Mode"](PARAMETERS.md#rx-ser-link-mode) parameter is set to "mavlink" or "mavlinkX" and that ["Rx Snd Radiostat"](PARAMETERS.md#rx-snd-radiostat) is set to "ardu_1" or "meth_b"
-
 - Depending on your ArduPilot version, it may help to adjust your [ArduPilot setup](CRSF.md#ardupilot-setup) to use the recommended baud rate between the receiver and flight controller; also adjust your configured stream rates as appropriate for your radio mode.
-
 - Upgrade to a newer version of ArduPilot which may have fixed flow control issues.
 
 ## Range issues
@@ -143,17 +117,11 @@ You should see very few or no messages lost.
 If you don't see the range you expect, consider the following.
 
 - Powering up a receiver or Tx module without an antenna connected may cause damage, especially at high output levels.
-
 - When choosing and connecting antennas be aware of the difference between SMA and RP-SMA.  It is unfortunately possible to attach an RP-SMA antenna to an SMA jack but there will be no electrical connection of the signal (see previous bullet).
-
 - If your vehicle allows, always use a vertical antenna orientation on both the Tx module and the Rx.  Especially with non-diversity systems.
-
 - Be aware that calculated/estimated maximum ranges are free-space line of sight numbers and don't take into account obstructions or near by objects such as trees and buildings.  Nor do they take into account RF noise from electronics on the craft or other users of the band.
-
 - Not all antennas are created equal and some are surprisingly bad or just plain defective.
-
 - Directional antennas, especially on the Tx module can increase or decrease range depending on antenna orientation.
-
 - Metal, body parts, CF frames and wires near the antenna can cause reduced range.
 
 ## Fail-safe testing
@@ -161,9 +129,7 @@ If you don't see the range you expect, consider the following.
 It is critical to check and test your failsafe behavior and configuration ***before*** you experience a connection loss in flight.
 
 - The "no signal" method is highly recommended.
-
 - See [Rx Failsafe Mode](PARAMETERS.md#rx-failsafe-mode).
-
 - See ArduCopter [Radio failsafe](https://ardupilot.org/copter/docs/radio-failsafe.html) documentation.
 
 ## Misc problems and non-problems
