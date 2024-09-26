@@ -15,7 +15,7 @@ The following parameters need to be set to enable MAVLink and RC over DroneCAN.
 Setup the CAN driver, protocol and enable the virtual serial port, then reboot the flight controller:
 
 - CAN_P1_DRIVER = 1
-- CAN_D1_PROTOCOL = 1
+- CAN_D1_PROTOCOL = 1 (set to 1 by default)
 - CAN_D1_UC_SER_EN = 1
 
 Configure the DroneCAN virtual serial port:
@@ -33,6 +33,6 @@ Note: This assumes that you are not using DroneCAN for servo outputs.
 
 Enable RC Channels via DroneCAN:
 
-- RC_PRTOCOLS bitmask should have the 'DroneCAN' bit enabled
+- RC_PROTOCOLS bitmask should have the 'DroneCAN' bit enabled
 
 Note: Do not enable rc_override or rc_channels in the mLRS configuration when using RC Channels via DroneCAN as it adds unnecessary traffic on the bus.
