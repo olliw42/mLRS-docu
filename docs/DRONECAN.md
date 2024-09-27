@@ -42,3 +42,13 @@ Enable RC Channels via DroneCAN:
 - RC_PROTOCOLS bitmask should have the 'DroneCAN' bit enabled
 
 Note: Do not enable rc_override or rc_channels in the mLRS configuration when using RC Channels via DroneCAN as it adds unnecessary traffic on the bus.
+
+Adjust the Stream Rates:
+
+Stream rates should be set based on the RF mode in use, they can be found on the ([CRSF Page](../CRSF.md#stream-rates))
+
+Note: When configuring SRy parameters for DroneCAN, 'y' will correspond to the number of regular serial ports that have you enabled for MAVLink.  For example, if you are using Serial0 for USB and Serial2 for MAVLink then you'll have to modify the SR2 parameters for the DroneCAN connection.
+
+- Serial0 will use SR0
+- Serial2 will use SR1
+- DroneCAN will use SR2
