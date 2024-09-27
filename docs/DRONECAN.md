@@ -4,9 +4,15 @@
 
 DroneCAN can be utilized for MAVLink and RC with mLRS instead of traditional serial communication if both the flight controller and receiver have the hardware necessary to support it.
 
-## Wiring
+## Wiring & Powering
 
 TBD
+
+## mLRS Receiver Settings
+
+With a CAN-enabled firmware flashed, the receiver will output RC channel data on the CAN bus without any further settings.
+
+In order to enable also the serial (MAVLink) communication via DroneCAN, one needs to set "Rx Serial Port = can".
 
 ## ArduPilot Settings
 
