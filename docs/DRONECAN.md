@@ -45,7 +45,7 @@ Note: Do not enable rc_override or rc_channels in the mLRS configuration when us
 
 Adjust the Stream Rates:
 
-Stream rates should be set based on the RF mode in use, they can be found on the ([CRSF Page](../CRSF.md#stream-rates))
+Stream rates should be set based on the RF mode in use, they can be found on the [CRSF Page](CRSF.md#stream-rates).
 
 Note: When configuring SRy parameters for DroneCAN, 'y' will correspond to the number of regular serial ports that have you enabled for MAVLink.  For example, if you are using Serial0 for USB and Serial2 for MAVLink then you'll have to modify the SR2 parameters for the DroneCAN connection.
 
