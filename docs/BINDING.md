@@ -15,13 +15,13 @@ Both the Tx module and the receiver will need to be put into bind mode, there ar
     1. Press the bind button (for ca. 4 seconds) on the receiver.
     2. Power cycle the receiver quickly 3 times (wait for the LEDs to blink 3 times), the receiver will then enter bind mode on the 4th power up.
 
-The sequence doesn't matter, i.e., one can first put the receiver into bind mode and then set the Tx module into bind mode or vice-versa.
+The sequence does not matter, i.e., one can first put the receiver into bind mode and then set the Tx module into bind mode or vice-versa.
 
 When in bind mode, the green and red LEDs will blink alternatively with ca 2.5 Hz.
 
-When a receiver is bound and connected to a Tx module, the common parameters as well as all other parameters can be changed and stored permanently by issuing a save command either via the CLI (pstore; command), the mLRS Lua script (Save button), or the OLED display if available (STORE option).
+When a receiver is bound and connected to a Tx module, the common parameters as well as all other parameters can be changed and stored permanently by issuing a store command either via the CLI (pstore; command), the mLRS Lua script (Save button), or the OLED display if available (STORE option).
 
-Note: When flashing mLRS to new hardware or after performing a factory reset (e.g. by a full chip erase) the Tx module and receiver should usually connect immediately as they will be bound already (i.e. both have the default bind phrase of 'mlrs.0', default mode and default frequency band).
+***Note***: When flashing mLRS to new hardware or after performing a factory reset (e.g. by a full chip erase) the Tx module and receiver should usually connect immediately as they will be bound already (i.e. both have the default bind phrase of 'mlrs.0', default mode and default frequency band).
 
 The following video shows the various LED blink pattern: 
 

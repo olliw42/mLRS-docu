@@ -4,15 +4,19 @@
 
 Brief description of the parameters for configuring mLRS. The parameters fall into three categories: 
 
-1. Parameters common to the Tx module and receiver. These need to be configured to be identical for both, in order for a connection to be possible. For an arbitrary receiver, this can be achieved by binding the receiver to the Tx module.
+1. Parameters common to the Tx module and receiver (common parameters). These need to be configured to be identical for both, in order for a connection to be possible. For an arbitrary receiver, this can be achieved by binding the receiver to the Tx module.
 
 2. Parameters only for the Tx module (Tx parameters).
 
 3. Parameters only for the receiver (Rx parameters).
 
-All parameters are configured via the Tx module, by using the CLI or the mLRS configuration Lua script (or the OLED if available). If no receiver is connected, then the Rx parameters cannot be configured.
+All parameters are configured via the Tx module, by using the CLI or the mLRS Lua script (or the OLED if available). If no receiver is connected, then the Rx parameters cannot be configured.
 
 Depending on the specific mLRS hardware, it may happen that some parameters are not available or that for a parameter some options are not available.
+
+***Notes***:
+- When the common parameters are equal for both the Tx module and receiver, the Tx module and receiver are said to be "bound". They then are able to establish a connection.
+- When the common parameters are not equal, i.e., Tx module and receiver are not bound, then they cannot establish a connection.
 
 ## Common Parameters ##
 
@@ -45,15 +49,15 @@ Can be "enabled", "antenna1", "antenna2", "r:en, t:ant1", "r:en, t:ant2".
 The last two options allow for having receive diversity while choosing to transmit on a specific antenna.
 
 #### Tx Ch Source #### 
-Selects the source from which the rc data should be read. 
+Selects the source from which the RC data should be read. 
 Can be "none", "crsf", "in", "mbridge".
 
 #### Tx Ch Order #### 
-Channel order of the rc data provided to the Tx module. 
+Channel order of the RC data provided to the Tx module. 
 Can be "AETR", "TAER", "ETAR".
 
 #### Tx In Mode #### 
-Selects the protocol of the rc data on the in port. Effective only when "Tx Ch Source" = "in". 
+Selects the protocol of the RC data on the in port. Effective only when "Tx Ch Source" = "in". 
 Can be "sbus", "sbus inv".
 
 #### Tx Ser Dest #### 
@@ -93,11 +97,11 @@ Can be "enabled", "antenna1", "antenna2", "r:en, t:ant1", "r:en, t:ant2".
 The last two options allow for having receive diversity while choosing to transmit on a specific antenna.
 
 #### Rx Ch Order #### 
-Channel order of the rc data emitted by the receiver. 
+Channel order of the RC data emitted by the receiver. 
 Can be "AETR", "TAER", "ETAR".
 
 #### Rx Out Mode #### 
-Selects the protocol of the rc data emitted on the out port. 
+Selects the protocol of the RC data emitted on the out port. 
 Can be "sbus", "crsf", "sbus inv".
 
 #### Rx Out Rssi Ch #### 
@@ -120,7 +124,7 @@ Can be "9600", "19200", "38400", "57600", "115200", "230400".
 Selects how the serial data stream is processed. 
 Can be "transp.", "mavlink", "mavlinkX".
 
-The setting is also applied to the Tx module. For MAVLinkX see [here](MAVLINKX.md).
+This setting is also applied to the Tx module. For MAVLinkX see [here](MAVLINKX.md).
 
 #### Rx Snd RadioStat #### 
 Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and which flow control algorithm is used. Effective only when "Rx Ser Link Mode" = "mavlink" or "mavlinkX". 
@@ -140,5 +144,5 @@ Enables the buzzer, and selects what data it reflects. Can be "off" or "LP".
 LP stands for Lost Packet, and here the buzzer emits a short beep for any lost packet.
 
 #### Rx FS Ch1 - Rx FS Ch16 #### 
-Sets the rc channel value upon a failsafe. Effective only when "Rx FailSafe Mode" = "by cnf". 
+Sets the RC channel value upon a failsafe. Effective only when "Rx FailSafe Mode" = "by cnf". 
 Can be a value between -120% and +120%.
