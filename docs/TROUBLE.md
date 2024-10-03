@@ -51,7 +51,7 @@ In EdgeTx/OpenTX go to MDL->TELEMETRY and select "Discover new sensors".  Then, 
 Above, you have already confirmed the radio link and communication between the Tx module and Edgetx/OpenTX.  So, if you don't see the FM sensor updating, this very likely indicates that the HEARTBEAT MAVLink message which is sent once per second by ArduPilot on all MAVLink interfaces is not reaching the receiver.
 
 - Check your serial port wiring between the flight controller and the receiver to ensure you have connected serial rx on one board to serial tx on the other board in both directions and ground to ground.
-- Use the mLRS Lua script or another configuration method to check your [mLRS receiver setup](CRSF.md#mlrs-rx-module-setup) to be sure "mavlinkX" or "mavlink" is selected for the "Rx Ser Link Mode" and that ["Rx Ser Baudrate"](PARAMETERS.md#rx-ser-baudrate) is correct and matches what you set in the following bullet.
+- Use the mLRS Lua script or another configuration method to check your [mLRS receiver setup](CRSF.md#mlrs-rx-module-setup) to be sure "mavlinkX" or "mavlink" is selected for the ["Rx Ser Link Mode"](PARAMETERS.md#rx-ser-link-mode) and that ["Rx Ser Baudrate"](PARAMETERS.md#rx-ser-baudrate) is correct and matches what you set in the following bullet.
 - Use a USB connected ground control station to check your ArduPilot serial [configuration](CRSF.md#ardupilot-setup) to be sure the SERIALx_PROTOCOL is set to MAVLink2 and the SERIALx_BAUD are set for the correct serial port number (x), and ensure that the baud rate matches what you set the receiver to use in the previous bullet.
 - If it is still not working, use a volt meter or oscilloscope to verify that both serial port wires between the mLRS receiver and flight controller have a voltage with respect to ground that is constantly changing.  If either wire has no changing signal, you have probably still missed something above.
 
@@ -61,7 +61,7 @@ Start your ground station software and connect to your Tx module by whatever met
 
 This is a complex topic since there are so many ways to connect a Tx module to a ground station.
 
-- Use the [mLRS Lua script](LUA.md#usage) or [CLI](CLI.md) to check that "Tx Ser Dest" is correct and that "Tx Ser Baudrate" matches your wireless bridge or ground control setting.
+- Use the [mLRS Lua script](LUA.md#usage) or [CLI](CLI.md) to check that ["Tx Ser Dest"](PARAMETERS.md#tx-ser-dest) is correct and that ["Tx Ser Baudrate"](PARAMETERS.md#tx-ser-baudrate) matches your wireless bridge or ground control setting.
 - If the data path between your Tx module and ground station includes a serial port, double check your serial port wiring between the Tx module and the ground station or wireless bridge; ensure you have connected serial rx on one board to serial tx on the other board in both directions and ground to ground.
 - If your Tx module is the [R9M](FRSKY_R9.md#r9m-tx-module), don't forget to account for the inverted serial port and set dip switch 1 to "on" before powering up.
 - If the ground station runs on a mobile device and is connected via USB, an OTG adapter may be required.
@@ -92,10 +92,10 @@ Using your ground station connected to your Tx module, verify that you can chang
 
 Use the radio calibration page of your ground station (connected either via your Tx module or directly to USB) to verify all RC controls are working as expected.
 
-- If you use "Rx Snd RcChannel" = "rc overwrite" setting instead of connecting a CRSF receiver output and are testing with QGroundControl, switch to Mission Planner or APM Planner 2.0 since QGroundControl doesn't show data from RC\_CHANNELS\_OVERRIDE MAVLink messages on this page.
+- If you use ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) = "rc overwrite" setting instead of connecting a CRSF receiver output and are testing with QGroundControl, switch to Mission Planner or APM Planner 2.0 since QGroundControl doesn't show data from RC\_CHANNELS\_OVERRIDE MAVLink messages on this page.
 - If the display doesn't follow stick movement and you use a CRSF connection between your receiver and your flight controller, check that you have connected the wire to the correct pins/pads on both your receiver and flight controller.
 - For CRSF, check that you have correctly [configured ArduPilot](ARDUPILOT.md#crsf-receiver) to use this input.
-- For CRSF, check that you have correctly [configured your receiver](CRSF.md#mlrs-rx-module-setup) for CRSF output with "Rx Out Mode" = "crsf".
+- For CRSF, check that you have correctly [configured your receiver](CRSF.md#mlrs-rx-module-setup) for CRSF output with ["Rx Out Mode"](PARAMETERS.md#rx-out-mode) = "crsf".
 - If your receiver [doesn't provide an RC output](ELRS_RECEIVERS.md#connections) or you don't want to use it, check that you have set ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) to "rc override".
 
 ## 9. Confirm reliable message delivery
