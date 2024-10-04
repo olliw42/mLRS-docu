@@ -91,9 +91,7 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 - Select the correct firmware in the Download section, click Start Program
 - Power cycle the board, the red LED should blink which indicates that the board is disconnected
 
-***Notes***:
-
-If you are unable to to flash due to readout protection, perform the following steps after connecting to the device:
+***Note***: If you are unable to flash due to readout protection, perform the following steps after connecting to the device:
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
     - This will erase the current firmware
