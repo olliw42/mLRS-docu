@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The E77 Easy Solder Boards are designed to allow one with minimal soldering skills to build their own mLRS hardware. All of the parts except for the E77 module are through-hole parts to aid in assembly. These boards are flexible in that they can be used as a Tx module, receiver or a SiK replacement. Additionally, these boards support diversity when paired with an additional E22 module.
+The E77 Easy Solder Boards are designed to allow one with minimal soldering skills to build their own mLRS hardware. All of the parts except for the E77 module are through-hole parts to aid in assembly. These boards are flexible in that they can be used as a Tx module, receiver or SiK replacement. Additionally, these boards support diversity when paired with an additional E22 module.
 
 <table>
   <tbody>
@@ -29,7 +29,7 @@ The E77 Easy Solder Boards are designed to allow one with minimal soldering skil
   </tbody>
 </table>
 
-Note: EByte silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet, newer modules can be identified by serial number SN &#8805; 3202995. The new and old modules require different firmware. The old modules will need firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use NRST (reset) for flashing via SWD.
+***Note***: EByte silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet, newer modules can be identified by serial number SN &#8805; 3202995. The new and old modules require different firmware. The old modules will need firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use NRST (reset) for flashing via SWD.
 
 ### As Tx Module ###
 
@@ -51,7 +51,7 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
   </tbody>
 </table>
 
-Note: To enable the cli, hold down the bind button during boot.
+***Note***: To enable the cli, hold down the bind button during boot.
 
 <img src="images/E77_Tx_Wiring.png" width="720">
 
@@ -75,11 +75,11 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 
 <img src="images/E77_Rx_Wiring.png" width="720">
 
-Note: In order to send RC channels over the serial connection (no need for OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
+***Note***: In order to send RC channels over the serial connection (no need for OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
 
 ## Flashing ##
 
-**Important: Every time that you power a board you should ensure that there is an antenna connected otherwise you risk damaging the RF section.**
+***Important: Every time that you power a board you should ensure that there is an antenna connected otherwise you risk damaging the RF section.***
 
 - Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
 - Connect your ST-Link to the 3V3, GND, SWD, and SWCLK pins on the board (image below)
@@ -91,7 +91,7 @@ Note: In order to send RC channels over the serial connection (no need for OUT w
 - Select the correct firmware in the Download section, click Start Program
 - Power cycle the board, the red LED should blink which indicates that the board is disconnected
 
-Notes:
+***Notes***:
 
 If you are unable to to flash due to readout protection, perform the following steps after connecting to the device:
 - From the menu on the left select the OB (Option Bytes) tile

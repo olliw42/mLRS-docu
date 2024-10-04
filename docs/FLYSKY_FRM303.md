@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The FlySky FRM303 transmitter module is a nearly perfect option for building mLRS equipment in the 2.4 GHz frequency range. Its main drawback is its price. It also has a small MCU which limits the available mLRS features. However, no hardware tweaking is required. Although mods, like the OLED mod and mLRS-Wireless-Bridge addition, are possible. See bottom of the page for more about optional modifications.
+The FlySky FRM303 transmitter module is a reasonable option for building mLRS equipment in the 2.4 GHz frequency range. Its main drawback is its price. It also has a small MCU which limits the available mLRS features. However, no hardware tweaking is required. Although mods, like the OLED mod and mLRS-Wireless-Bridge addition, are possible. See bottom of the page for more about optional modifications.
 
 <table>
   <tbody>
@@ -29,7 +29,7 @@ The FlySky FRM303 transmitter module is a nearly perfect option for building mLR
   </tbody>
 </table>
 
-**Important: Never power up without an antenna connected! Otherwise you risk damaging the RF section.**
+***Important: Never power up without an antenna connected! Otherwise you risk damaging the RF section.***
 
 - [Product Page](https://www.flysky-cn.com/frm303description)
 
@@ -52,9 +52,8 @@ USB-C connector:
 
 - bind button (to enter bind mode, hold the button in the down direction for ca 4 seconds)
 
-Notes:
-
-- To enter the system bootloader for flashing, hold the button in the down direction during power up (or use the CLI, Lua script, or OLED if available)
+***Notes***:
+- To enter the system bootloader for flashing, hold the button in the down direction during power up (or use the CLI, Lua script, or OLED if available).
 - When using >= +30 dBn power output it is recommended to power the module through the external XT30 connector.
 
 ## As Receiver ##
@@ -71,10 +70,9 @@ USB-C connector:
 
 - bind button (to enter bind mode, hold the button in the down direction for ca 4 seconds)
 
-Notes:
-
-- To enter the system bootloader for flashing, hold the button in the down direction during power up
-- The flight controller may not provide enough power for the FRM303 to run properly, choose a proper power source
+***Notes***:
+- To enter the system bootloader for flashing, hold the button in the down direction during power up.
+- The flight controller may not provide enough power for the FRM303 to run properly, choose a proper power source.
 - When using >= +30 dBn power output it is recommended to power the module through the external XT30 connector.
 
 ## Flashing ##
@@ -94,7 +92,7 @@ The first time that you flash the mLRS firmware to a FRM303 module you'll have t
 - Select the correct firmware in the Download section, click Start Program
 - Power cycle the board, the LEDs should start blinking
 
-Note: If you are unable to to flash due to readout protection, perform the following steps after connecting to the device:
+***Note***: If you are unable to to flash due to readout protection, perform the following steps after connecting to the device:
 - From the menu on the left select the OB (Option Bytes) tile
 - From the Read Out Protection section, change to AA, select Apply
     - This will erase the current firmware
@@ -118,7 +116,7 @@ The FRM303 Tx module can be optionally equipped with a 0.96" monochrome OLED scr
 
 <img src="images/FRM303-OLED-mod_finished.jpg" height="400px">
 
-To activate OLED screen, the "OLED" firmware version (indicated by a '-oled' label in the firmware file name) needs to be flashed into the Tx module. Please do also note that with FRM303 OLED firmware, presently the USB/CLI functionality will not be available, nevertheless for updating the firmware, DFU flashing still works.
+To activate OLED screen, the "OLED" firmware version (indicated by a '-oled' label in the firmware file name) needs to be flashed into the Tx module. Please do note that with FRM303 OLED firmware, the USB/CLI functionality will not be available, nevertheless for updating the firmware, DFU flashing still works.
 
 The OLED mod exploits the fact that the FRM303 module has four M2.5 threads on the front side, where the top two holes provide easy access to the interior of the housing and the bottom two holes almost perfectly match the distance of the mounting holes of a typical 0.96" OLED display (the OLED mounting holes need also to be slightly enlarged to fit the M2.5 screws).
 
@@ -143,9 +141,9 @@ Here the additional steps illustrated (click on the picture to open a bigger ver
 
 ### mLRS-Wireless-Bridge Addition ###
 
-With [mLRS-Wireless-Bridge](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge) mod, you will be able to stream the serial MAVLink data from the FRM303 to a WiFi or Bluetooth capable device, such as a computer, a tablet or a smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
+With the [mLRS-Wireless-Bridge](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge) mod, you will be able to stream the serial MAVLink data from the FRM303 to a WiFi or Bluetooth capable device, such as a computer, tablet or smartphone and use software such as [Mission Planner](https://ardupilot.org/planner/) to evaluate telemetry data or adjust flight controller parameters on the fly.
 
-Flysky FRM303 micro-JR bay adapter is spacious enough to hold an ESP32 module, such as the [M5Stack ATOM Lite](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with a 5V regulator, such as the [Adafruit MPM3610 5V](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
+Flysky FRM303 micro-JR bay adapter is spacious enough to hold an ESP32 module, such as the [M5Stack ATOM Lite](https://shop.m5stack.com/products/atom-lite-esp32-development-kit), together with a 5 V regulator, such as the [Adafruit MPM3610 5V](https://www.adafruit.com/product/4739). The result is a tidy and compact solution:
 
 <img src="images/FRM303_mlrs-wireless-bridge_assembled.jpg" width="400px">
 
