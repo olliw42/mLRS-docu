@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module) is an attractive module for building mLRS equipment. SeeedStudio provides a number of boards which are based on this module, and which are interesting hardware for mLRS. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
+The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC_Module) is an attractive module for building mLRS equipment. SeeedStudio provides a number of boards which are based on this module. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
 <table>
   <tbody>
