@@ -18,37 +18,49 @@ In order to enable also the serial (MAVLink) communication via DroneCAN, one nee
 
 The following parameters need to be set to enable MAVLink and RC over DroneCAN.
 
-Setup the CAN driver, protocol and enable the virtual serial port, then reboot the flight controller:
+Setup the CAN driver, protocol and enable the virtual serial support, then reboot the flight controller:
 
 - CAN_P1_DRIVER = 1
-- CAN_D1_PROTOCOL = 1 (set to 1 by default)
+- CAN_D1_PROTOCOL = 1 (is set to 1 by default)
 - CAN_D1_UC_SER_EN = 1
 
-Configure the DroneCAN virtual serial port:
+Configure the DroneCAN virtual serial port (mandatory settings):
 
 - CAN_D1_UC_S1_IDX = 0
 - CAN_D1_UC_S1_NOD = 68
 - CAN_D1_UC_S1_PRO = 2
+- CAN_D1_UC_S1_BD = 57 (57600)
 
-Adjust the DroneCAN streams:
+Adjust the DroneCAN streams (optional settings):
 
 - CAN_D1_UC_NTF_RT = 1
 - CAN_D1_UC_SRV_RT = 0
 
-Note: This assumes that you are not using DroneCAN for servo outputs.
+***Note***: This assumes that you are not using DroneCAN for servo outputs.
 
 Enable RC Channels via DroneCAN:
 
 - RC_PROTOCOLS bitmask should have the 'DroneCAN' bit enabled
 
-Note: Do not enable rc_override or rc_channels in the mLRS configuration when using RC Channels via DroneCAN as it adds unnecessary traffic on the bus.
+***Note***: Do not enable rc_override or rc_channels in the mLRS receiver when using DroneCAN as it adds substantial but unnecessary traffic on the CAN bus.
 
-Adjust the Stream Rates:
+Adjust the stream rates:
 
-Stream rates should be set based on the RF mode in use, they can be found on the [CRSF Page](CRSF.md#stream-rates).
+Stream rates should be set as recommended on the [CRSF page](CRSF.md#stream-rates).
 
-Note: When configuring SRy parameters for DroneCAN, 'y' will correspond to the number of regular serial ports that have you enabled for MAVLink.  For example, if you are using Serial0 for USB and Serial2 for MAVLink then you'll have to modify the SR2 parameters for the DroneCAN connection.
+***Note***: When configuring SRy parameters for DroneCAN, 'y' will correspond to the number of regular serial ports that you have enabled for MAVLink. For example, if you are using Serial0 for USB and Serial2 for MAVLink then you will have to modify the SR2 parameters for the DroneCAN connection:
 
 - Serial0 will use SR0
 - Serial2 will use SR1
 - DroneCAN will use SR2
+
+## Limitations
+
+Receivers using MAVLink via DroneCAN are a relatively new application of ArduPilot's DroneCAN virtual serial ports, and issues not seen before may be exposed now. So it is with ArduPilot 4.5.x, which results in these limitations:
+
+- In MissionPlanner, the DroneCAN/UAVCAN page does not work, i.e., one cannot communicate with the CAN nodes (mLRS has code to prevent this, as there is a critical bug in ArduPilot which otherwise would lead to a crash of ArduPilot).
+- The baudrate in the mLRS receiver ("Rx Ser Baudrate" parameter) and of the DroneCAN virtual serial port ("CAN_D1_UC_S1_BD" parameter) should be set to 57600; otherwise the MAVLink flow control will not work properly.
+- CRSF protocol cannot be used in addition to DroneCAN RC. DroneCAN RC unfortunately only provides RSSI but not LQ or SNR, and it thus might be tempting to use CRSF in additon as a workaround. Don't do this with 4.5.
+
+
+
