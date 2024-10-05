@@ -14,11 +14,11 @@ Optional but recommended steps:
 - Set the receiver into "MAVLink mode" (described below).
 - Install the Yaapu app (described below).
 
+The mLRS default parameter settings follow the below recommendations. That is, with a freshly flashed mLRS Tx module and receiver all you need to do is to set up your radio and flight controller!
+
 ***Notes***:
 - Any radio which supports the CRSF protocol should work, this should include many brands besides EdgeTX/OpenTX radios.
 - An ArduPilot flight controller is assumed. PX4 and INAV needs to be tested and validated.
-
-***Comment***: The mLRS default parameter settings follow the below recommendations. That is, with a freshly flashed mLRS Tx module and receiver all you need to do is to set up your radio and flight controller.
 
 <img src="images/mLRS-docu-setup-crsf-telemetry-yaapu-app-02.jpg" width="800px">
 
