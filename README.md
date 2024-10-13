@@ -7,6 +7,8 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 ## Content ##
 
 ### General ###
+- [mLRS Overview](https://github.com/olliw42/mLRS/blob/main/README.md)
+- [Quick Start](docs/QUICK_START.md)
 - [Binding](docs/BINDING.md)
 - [Configuration Parameters](docs/PARAMETERS.md)
 - [mLRS Lua Script](docs/LUA.md)
