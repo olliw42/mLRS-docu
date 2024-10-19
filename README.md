@@ -26,6 +26,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [Additional Configuration for ArduPilot Systems](docs/ARDUPILOT.md)
 - [INAV/MSP Systems](docs/MSPX.md)
 - [mTX (formerly MAVLink for OpenTx)](docs/MTX.md)
+- [Simple SBus Relay](docs/SBUS_RELAY.md)
 - [Experimental: Relay](docs/RELAY.md)
 
 ### STM32 Hardware ###
