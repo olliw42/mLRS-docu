@@ -8,7 +8,7 @@ This guide covers the use case where mLRS is used to provide a single radio link
 
 We expect that you are starting fresh and that all ArduPilot and mLRS parameters not covered here still have their default settings.
 
-The steps here should be followed in order and when practical we provide a way to confirm a step was completed successfully.
+The steps here should be followed in order and when practical, we provide a way to confirm a step was completed successfully.
 
 Some notation and terminology:
 - We use "Tx module" and "receiver" to refer to a mLRS module in the Tx/transmitter role and Rx/receiver role. In the use case assumed here, the Tx module will be installed in a EdgeTX or OpenTX radio handset, and the receiver will be mounted on the vehicle and connected to the flight controller.
@@ -17,7 +17,7 @@ Some notation and terminology:
 ## 1. Choose and purchase a Tx module and a compatible receiver
 
 There are many supported choices of mLRS hardware, including off-the-shelf options and many DIY designs.
-We cover here three popular but mutually incompatible commercially available off-the-shelf options.  We summarize some pros and cons below to help you choose. Don't mix Tx module and receiver between these options.
+We cover here three popular, but mutually incompatible, commercially available off-the-shelf options.  We summarize some pros and cons below to help you choose. Don't mix Tx module and receiver between these options.
 
 ### MatekSys mLRS [mR900-30-TX](https://www.mateksys.com/?portfolio=mr900-30-tx) module kit with their [mR900-30](https://www.mateksys.com/?portfolio=mr900-30) receiver
 - These 900 MHz band modules were designed specifically for mLRS and arrive pre-flashed with mLRS.
@@ -57,9 +57,9 @@ If you will use the MatekSys HC04 module to connect your ground station via Blue
 If you are using the [R9M Tx module](FRSKY_R9.md#r9m-tx-module):
 - Set [dip switch 1](FRSKY_R9.md#r9m-tx-module) to the on position to configure it for serial data.
 - Install the [Arduino IDE](https://www.arduino.cc/en/software) and use it to build and flash [firmware](WIRELESS_BRIDGE.md) on your ESP32 module.  Be sure to select the R9M variant for your module when you edit the mlrs-wireless-bridge.ino.
-- Connect your [ESP32 wireless bridge](https://FRSKY_R9.md#esp32-wireless-bridge) module to the serial and power pins of your R9M.
+- Connect your [ESP32 wireless bridge](FRSKY_R9.md#esp32-wireless-bridge) module to the serial and power pins of your R9M.
 
-When choosing and connecting antennas be aware of the difference between SMA and RP-SMA.  It is, unfortunately, possible to attach an RP-SMA antenna to an SMA jack but there will be no electrical connection of the signal.
+When choosing and connecting antennas, be aware of the difference between SMA and RP-SMA.  It is, unfortunately, possible to attach an RP-SMA antenna to an SMA jack but there will be no electrical connection of the signal.
 
 ## 3. Connect your receiver to your flight controller
 
