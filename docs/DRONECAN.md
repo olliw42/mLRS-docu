@@ -70,11 +70,15 @@ Stream rates should be set as recommended on the [CRSF page](CRSF.md#stream-rate
 
 Receivers using MAVLink via DroneCAN are a relatively new application of ArduPilot's DroneCAN virtual serial ports, and issues not seen before may be exposed now. ArduPilot has been found to have these limitations:
 
+#### ArduPilot all versions
+
+- In MissionPlanner, on the DroneCAN/UAVCAN page one cannot communicate with the CAN nodes when connected via the mLRS link (mLRS has code to prevent this, as there is a critical bug in some ArduPilot versions which would lead to a crash of ArduPilot). It works normally when the flight controller is connected to MissionPlanner e.g. via USB.
+- RC out functionality for CRSF or SBus cannot be used in combination with DroneCAN RC.
+
 #### ArduPilot 4.5.x
 
-- In MissionPlanner, the DroneCAN/UAVCAN page does not work, i.e., one cannot communicate with the CAN nodes via the mLRS link (mLRS has code to prevent this, as there is a critical bug in ArduPilot which otherwise would lead to a crash of ArduPilot).
-- The baudrate in the mLRS receiver ("Rx Ser Baudrate" parameter) and of the DroneCAN virtual serial port ("CAN_D1_UC_S1_BD" parameter) should be set to 57600; otherwise the MAVLink flow control will not work properly.
-- RC out functionality for CRSF or SBUS cannot be used in combination with DroneCAN RC. As DroneCAN RC only provides RSSI and not LQ or SNR, it might be tempting to use CRSF in addition but this will not work with 4.5.
+- The baudrate of the DroneCAN virtual serial port ("CAN_D1_UC_S1_BD" parameter) should be set to 57600; otherwise the MAVLink flow control will not work properly.
 - OSD is limited to RSSI.
+- RC out functionality for CRSF or SBus cannot be used in combination with DroneCAN RC. As DroneCAN RC only provides RSSI and not LQ or SNR, it might be tempting to use CRSF in addition but this will not work.
 
 
