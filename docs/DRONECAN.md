@@ -16,7 +16,7 @@ With a CAN-enabled firmware flashed, the receiver will output RC channel data on
 
 #### MAVLink
 
-In order to enable also the serial (MAVLink) communication via DroneCAN, one needs to set:
+In order to enable serial (MAVLink) communication via DroneCAN, one needs to set:
 
 - "Rx Serial Port" = "can"
 
