@@ -13,6 +13,8 @@ mLRS provides the MspX technology, which is designed to improve the over-the-air
 
 ## mLRS Receiver Configuration
 
+#### MspX
+
 MspX is enabled by this setting in the receiver:
 
 - "Rx Ser Link Mode" = "mspX"
@@ -23,7 +25,7 @@ For enabling MSP-RC set:
 
 - "Rx Snd RcChannel" = "rc override" or "rc channels"
 
-With MSP-RC enabled, SET_RAW_RC messages are sent to the flight controller. In the flight controller configure the receiver to the MSP protocol. This allows one to avoid the extra wire for CRSF or SBus.
+With MSP-RC enabled, SET_RAW_RC messages are sent to the flight controller. In the flight controller configure the receiver to the MSP protocol. This allows one to avoid the extra wire for CRSF or SBus. MspX needs to be enabled.
 
 ## INAV Configuration
 
@@ -31,7 +33,7 @@ The baudrate should be set to 115200 as lower baudrates have shown irregular tel
 
 INAV 8.0 and later will also support a baudrate of 230400 but no change in performance or stability was noticed. Additionally with INAV 8.0 the performance of the serial link to a ground control station will be increased, due to some optimizations in INAV. 
 
-To use a mLRS Receiver with INAV in MspX mode, the following settings have to be applied:
+To use a mLRS receiver with INAV in MspX mode, the following settings have to be applied in INAV:
 - Enable MSP for the Serial Port the mLRS receiver is connected to (UART 2 is recommended on most STM32 flight controllers; do not enable "Serial RX").
 - Set the baudrate to 115200 or higher.
   
@@ -45,4 +47,4 @@ To use a mLRS Receiver with INAV in MspX mode, the following settings have to be
 
 <img src="images/MSPX_wirelessmode.png" width="360px">
 
-If your radio is connected, you should now be able to see the channel values update when you move the radio sticks. No further settings are needed and telemetry will work for OpenTX/EdgeTX radios after scanning for sensors.
+If your radio is connected, you should now be able to see the channel values update when you move the radio sticks. No further settings are needed and telemetry will work for EdgeTX/OpenTX radios after scanning for sensors.
