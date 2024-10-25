@@ -39,7 +39,7 @@ To use a mLRS receiver with INAV in MspX mode, the following settings have to be
   
 <img src="images/MSPX_ports.png" width="720px">
 
-- In the Receiver tab, select the Receiver Type in the Receiver Mode pannel to MSP, and save settings.
+- In the Receiver tab, select the Receiver Type in the Receiver Mode panel to MSP, and save settings.
   
 <img src="images/MSPX_receivermode.png" width="720px">
 
