@@ -70,7 +70,7 @@ Stream rates should be set as recommended on the [CRSF page](CRSF.md#stream-rate
 
 Receivers using MAVLink via DroneCAN are a relatively new application of ArduPilot's DroneCAN virtual serial ports, and issues not seen before may be exposed now. ArduPilot has been found to have these limitations:
 
-#### ArduPilot all versions
+#### All Versions of ArduPilot
 
 - In MissionPlanner, on the DroneCAN/UAVCAN page one cannot communicate with the CAN nodes when connected via the mLRS link (mLRS has code to prevent this, as there is a critical bug in some ArduPilot versions which would lead to a crash of ArduPilot). It works normally when the flight controller is connected to MissionPlanner e.g. via USB.
 - RC out functionality for CRSF or SBus cannot be used in combination with DroneCAN RC.
