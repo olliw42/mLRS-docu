@@ -224,7 +224,7 @@ These steps only need to be performed once. If you experience a "No Sync" error,
 
 If you have never previously flashed the R9M module via ST-Link, you can use the stock Frsky bootloader to flash the ELRS bootloader alongside the stock bootloader. This method will preserve the ability to return to the stock Frsky firmware.
 
-1. Download the [r9m\_elrs\_bl.frk](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_elrs_bl.frk?raw=true) file from the ExpressLRS git repository and copy it to the FIRMWARE folder on your radio's SD card.
+1. Download the [r9m\_elrs\_bl.frk](https://github.com/ExpressLRS/ExpressLRS/blob/3.x.x-maintenance/src/bootloader/r9m_elrs_bl.frk?raw=true) file from the ExpressLRS git repository and copy it to the FIRMWARE folder on your radio's SD card.
 
 2. Install the R9M module in your radio and power it on.
 
@@ -236,7 +236,7 @@ If you have never previously flashed the R9M module via ST-Link, you can use the
 
 If you have already flashed via ST-Link, you can continue to flash updates via ST-Link the way you always have, or you can follow these steps to switch to flashing from the radio. To do this, you will flash the ELRS bootloader by using ST-Link one last time:
 
-1. Download the [r9m\_bootloader.bin](https://github.com/ExpressLRS/ExpressLRS/blob/master/src/bootloader/r9m_bootloader.bin?raw=true) file from the ExpressLRS git repository.
+1. Download the [r9m\_bootloader.bin](https://github.com/ExpressLRS/ExpressLRS/blob/3.x.x-maintenance/src/bootloader/r9m_bootloader.bin?raw=true) file from the ExpressLRS git repository.
 
 2. Flash it to the beginning of the flash (0x8000000) using ST-Link and STM32CubeProgrammer.
 
