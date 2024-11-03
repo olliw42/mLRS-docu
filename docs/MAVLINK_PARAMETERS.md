@@ -2,14 +2,16 @@
 
 ([back to main page](../README.md))
 
-The Tx module and receiver can also be configured via MAVLink parameters using ground control station (GCS) software such as Mission Planner. However, due to the limitations of the MAVLink parameter system, this method is only recommended when other configuration methods (CLI, Lua script, or OLED) are not easily accessible. The Tx module will present itself as a MAVLink component with a system id 51 (like SiK radios) and component id 68 (MAV_COMP_ID_TELEMETRY_RADIO). For instance, in MissionPlanner it will show up as "COMxx-51-TELEMETRY RADIO". The Tx module emits MAVLink [HEARTBEAT](https://mavlink.io/en/services/heartbeat.html) messages which allows a GCS to discover the Tx module and provide the [parameter microservice](https://mavlink.io/en/services/parameter.html). The GCS can connect to this component and edit its parameters.
+The Tx module and receiver can also be configured via MAVLink parameters using ground control station (GCS) software such as Mission Planner. However, due to the limitations of the MAVLink parameter system, this method is only recommended when other configuration methods (CLI, Lua script, or OLED) are not easily accessible. 
+
+The Tx module will present itself as a MAVLink component with a system id 51 (like SiK radios) and component id 68 (MAV_COMP_ID_TELEMETRY_RADIO). For instance, in MissionPlanner it will show up as "COMxx-51-TELEMETRY RADIO". The Tx module emits MAVLink [HEARTBEAT](https://mavlink.io/en/services/heartbeat.html) messages which allows a GCS to discover the Tx module and provide the [parameter microservice](https://mavlink.io/en/services/parameter.html). The GCS can connect to this component and edit its parameters.
 
 In order to utilize this functionality, one must do the following:
 - In the Tx module, the parameter "Tx Mav Component" must be set to "enabled". This is the default setting; if it has been changed, then this parameter must be configured using one of the other methods (CLI, Lua script, OLED).
 - Be connected to a receiver with the parameter "Rx Ser Link Mode" configured to "mavlink" or "mavlinkX". "mavlinkX" is the default setting; if it has been changed, then this parameter must be configured using one of the other methods (CLI, Lua script, OLED).
 - If no receiver is connected then the MAVLink component is only available if the last receiver which the Tx module "remembers" was configured with "Rx Ser Link Mode" = "mavlink" or "mavlinkX". This should be the last receiver which was connected to the Tx module for which a parameter store operation was done. 
 
-Note: If no receiver is connected, then only the parameters of the Tx module can be configured. However, the receiver parameters are always shown.
+***Note***: If no receiver is connected, then only the parameters of the Tx module can be configured. However, the receiver parameters are always shown.
 
 The MAVLink parameters are identical to those described in [Configuration Parameters](PARAMETERS.md), but have different names which conform to the MAVLink standard. They should be easy to recognize. For instance, the parameter "Rx Ser Link Mode" shows up as "RX_SER_LNK_MODE". 
 
@@ -31,3 +33,5 @@ Here are the steps that one should take to update a parameter in Mission Planner
 5. Click Write to permanently store the parameter
 
 This all may sound a bit complicated, but it is less complicated than it may read now. Those who are already comfortable editing parameters should be able to find this method a valid option for configuration.
+
+***Note***: MAVLink supports two [parameter encodings](https://mavlink.io/en/services/parameter.html#parameter-encoding). mLRS is using byte-wise encoding, and announces this properly by setting the respective flag in the capabilities field of the [AUTOPILOT_VERSION](https://mavlink.io/en/messages/common.html#AUTOPILOT_VERSION) MAVLink message. Most GCSes can handle both encodings, but some do not (for instance, pymavlink does not).
