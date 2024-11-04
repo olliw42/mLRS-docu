@@ -10,6 +10,7 @@ mLRS provides the MspX technology, which is designed to improve the over-the-air
 - MspX is not strictly compliant with the MSP protocol, and softwares which require strict compliance may not work properly. This includes e.g. MWP. In these cases, mLRS can be set into transparent mode by setting "Rx Ser Link Mode" = "transp." (the below features of MspX will then not be avaiable).
 - MspX is tested and verified for INAV 7.1. It has been successfully tested with INAV 8.0 development builds (it may also work with INAV 6.0 and newer, but this has not been tested).
 - INAV Configurator is assumed as ground control station, and INAV Lua app on the radio.
+- 'Link statistics and information such as RSSI, LQ, SNR, etc. are provided to the FC on INAV 8.0 and higher (not available on earlier versions). More info can be found [here](https://github.com/iNavFlight/inav/pull/10451).
 
 ## mLRS Receiver Configuration
 
