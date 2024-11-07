@@ -7,19 +7,23 @@ mLRS uses STM32CubeIDE for STM32 targets. For STM32 targets this procedure shoul
 ## Software: Installation Bits and Bops ##
 
 Let's assume that the project should be located in the folder C:/Me/Documents/Github/mlrs.
- 
-### I. Clone and setup the project files ###
+
+### Dependencies ###
+
+For the first step (step I) you need to have git and Python3 installed. Depending on the Python3 distribution you may need to install further libraries.
+
+### Clone and setup the project files (Step I) ###
 
 1. open a command line processor
 2. cd into `C:/Me/Documents/Github` (not C:/Me/Documents/Github/mlrs !)
 3. `git clone https://github.com/olliw42/mLRS.git mlrs`
 4. `cd mlrs`
-5. run `run_setup.py`. This does three steps: Initializes submodules (git submodule --init --recursive), copies ST HAL and LL drivers to the target folders, and generates the MAVLink library files.
-    - ***Note***: Ensure that all three steps are executed completely.
+5. run `run_setup.py`. This does four steps: Initializes submodules (git submodule --init --recursive), copies ST HAL and LL drivers to the target folders, generates the MAVLink library files, and finally generates the DroneCAN library files.
+    - ***Note***: Ensure that all four steps are executed completely.
 
 For cloning you of course can use any other tool you like.
 
-### II. STM32CubeIDE (for STM32 targets) ###
+### STM32CubeIDE (Step II) ###
 
 1. download and install STM32CubeIDE
     - ***Note***: Install into the default folder if possible.
@@ -40,8 +44,5 @@ The STM32CubeIDE has its weirdness, so you may have to get used to it.
 
 In case of issues with this procedure, don't hesitate to join the discussion thread at rcgroups or the discord channel, or submit an issue in the github repository.
 
-#### Dependencies ####
-
-You need to have git and Python3 installed. Depending on the Python3 distribution you may need to install further libraries.
 
 
