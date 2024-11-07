@@ -2,11 +2,13 @@
 
 ([back to main page](../README.md))
 
-mLRS uses STM32CubeIDE for STM32 targets. For STM32 targets this procedure should work:
+mLRS uses STM32CubeIDE for STM32 targets. The following procedure should work.
+
+In case of issues with this procedure, don't hesitate to join the discussion thread at rcgroups or the discord channel.
 
 ## Software: Installation Bits and Bops ##
 
-Let's assume that the project should be located in the folder C:/Me/Documents/Github/mlrs.
+Let's assume that the project should be located in the folder `C:/Me/Documents/Github/mlrs`.
 
 ### Dependencies ###
 
@@ -42,7 +44,6 @@ For cloning you of course can use any other tool you like.
 
 The STM32CubeIDE has its weirdness, so you may have to get used to it. 
 
-In case of issues with this procedure, don't hesitate to join the discussion thread at rcgroups or the discord channel, or submit an issue in the github repository.
 
 
 
