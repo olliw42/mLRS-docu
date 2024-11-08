@@ -15,7 +15,7 @@ For ESP targets, the project uses PlatformIO with Visual Studio Code, and the Ar
 
 Let's assume that the project should be located in the folder `C:/Me/Documents/Github/mlrs`.
 
-### Clone and Setup the Porject Files ###
+### Clone and Setup the Project Files ###
 
 - Open a command line processor and navigate to this directory:
     - `cd C:/Me/Documents/Github/`
