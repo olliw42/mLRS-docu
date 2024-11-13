@@ -35,6 +35,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [SeeedStudio Wio-E5 Boards](docs/SEEEDSTUDIO_WIO_E5.md)
 - [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
 - [E77 Easy Solder Boards](docs/E77_EASYSOLDER.md)
+- [STM32 Development](docs/STM32_DEVELOPMENT.md)
 
 ### ESP Hardware ###
 - [ELRS Receivers](docs/ELRS_RECEIVERS.md)
