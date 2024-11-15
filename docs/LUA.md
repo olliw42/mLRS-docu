@@ -41,9 +41,9 @@ Parameters which are not available are not displayed on the screen (i.e. the lis
 
 ## BW Lua Script Notes
 
-The Lua script for radios with a black and white screen now also supports all parameters, but because of screen and memory limitations it looks and behaves slightly differently than the color Lua script.
+The Lua script for radios with a black and white screen now also supports all parameters.  But because of screen and memory limitations it looks and behaves slightly differently than the color Lua script.
 
-The starting screen page contains common (shared) parameters, status info, and commands such as bind and save.  Seven additional parameters appear on each subsequent page and page navigation is linear via the "prev" and "next" commands.
+The starting screen page contains [common parameters](PARAMETERS.md#mlrs-documentation-parameters-v1300), status information, and commands such as bind and save.  Seven additional parameters appear on each subsequent page and page navigation is linear via the "prev" and "next" commands.
 
 Parameters which are not available are still displayed, but with a "-" character in the value position.  Parameters which cannot be changed are displayed as normal.  Unused lines on the last screen page contain a blank name and a value of ".".  The cursor can be moved to unavailable or unchangeable parameters and unused lines, but they can not be selected for edit with enter.
 
