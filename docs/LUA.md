@@ -5,7 +5,7 @@
 The mLRS Lua script provides a convenient way to change the Tx module and receiver settings.
 
 The Lua script works on both OpenTx and EdgeTx radios but there are two different versions depending on the display of your radio:
-1. If your radio has a 480x320 or 480x272 color screen (e.g. Jumper T15, Radiomaster TX16S) then use the "mLRS.lua" file
+1. If your radio has a 480x272 (e.g. Jumper T16, Radiomaster TX16S) or 480x320 (e.g. Jumper T15) color screen then use the "mLRS.lua" file
 2. If your radio has a black and white screen (e.g. Frsky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
 
 ***Note***: The mLRS Lua script requires EdgeTx version 2.9.x or later.
@@ -41,10 +41,10 @@ Parameters which are not available are not displayed on the screen (i.e. the lis
 
 ## BW Lua Script Notes
 
-The Lua script for radios with a black and white screen now also supports all parameters.  But because of screen and memory limitations it looks and behaves slightly differently than the color Lua script.
+The Lua script for radios with a black and white screen also supports editing all parameters. But because of screen and memory limitations it looks and behaves slightly differently than the color Lua script.
 
-The starting screen page contains [common parameters](PARAMETERS.md#mlrs-documentation-parameters-v1300), status information, and commands such as bind and save.  Seven additional parameters appear on each subsequent page and page navigation is linear via the "prev" and "next" commands.
+The starting page contains [common parameters](PARAMETERS.md#mlrs-documentation-parameters-v1300), status information, and commands such as bind and save. Seven additional parameters appear on each subsequent page and page navigation is linear via the "prev" and "next" commands.
 
-Parameters which are not available are still displayed, but with a "-" character in the value position.  Parameters which cannot be changed are displayed as normal.  Unused lines on the last screen page contain a blank name and a value of ".".  The cursor can be moved to unavailable or unchangeable parameters and unused lines, but they can not be selected for edit with enter.
+Parameters which are not available are still displayed, but with a "-" character in the value position. Parameters which cannot be changed are displayed as normal. Unused lines on the last page contain a blank name and a value of ".". The cursor can be moved to unavailable or unchangeable parameters and unused lines, but they can not be selected for edit; pressing enter on them will provide haptic feedback to indicate they can't be edited.
 
-***Note***:  If you receive a "not enough memory" error, you can try reducing the file size by running the code through a Lua minifier tool such as the one [here](https://mothereff.in/lua-minifier) and install the minified version as a workaround.  Please also report this to the mLRS developers.
+***Note***:  If you receive a "not enough memory" error, you can try reducing the file size by running the code through a Lua minifier tool such as the one [here](https://mothereff.in/lua-minifier) and install the minified version as a workaround. Please also report this to the mLRS developers.
