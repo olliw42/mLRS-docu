@@ -5,7 +5,7 @@
 The mLRS Lua script provides a convenient way to change the Tx module and receiver settings.
 
 The Lua script works on both OpenTx and EdgeTx radios but there are two different versions depending on the display of your radio:
-1. If your radio has a 480x272 color screen (e.g. Jumper T16, Radiomaster TX16S) then use the "mLRS.lua" file
+1. If your radio has a 480x272 (e.g. Jumper T16, Radiomaster TX16S) or 480x320 (e.g. Jumper T15) color screen then use the "mLRS.lua" file
 2. If your radio has a black and white screen (e.g. Frsky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
 
 ***Note***: The mLRS Lua script requires EdgeTx version 2.9.x or later.
@@ -22,7 +22,7 @@ Three things need to be done in order to use the Lua script:
 
 3. The Lua script "mLRS.lua" or "mLRS-bw.lua" located in the "lua" folder of the mLRS github repository needs to be copied to the "SCRIPTS/TOOLS" folder of the radio's SD card. One can follow the common tutorials for how to do this.
 
-You should then be able to run the Lua script by going to SYS->TOOLS on the radio, and selecting "mLRS Configurator".
+You should then be able to run the Lua script by going to SYS->TOOLS on the radio, and selecting "mLRS Configurator" or "mLRS-bw".
 
 ## Usage
 
@@ -41,8 +41,10 @@ Parameters which are not available are not displayed on the screen (i.e. the lis
 
 ## BW Lua Script Notes
 
-The Lua script for radios with a black and white screen is limited in functionality and only allows for 5 parameters to be configured.  By default, these are BindPhrase, Mode, TxPwr, RxPwr, and RxOutMode.
+The Lua script for radios with a black and white screen also supports editing all parameters. But because of screen and memory limitations it looks and behaves slightly differently than the color Lua script.
 
-If one wants to be able to change a different parameter, the 'custom param list' section in the Lua script can be updated to reference a different parameter. The parameter numbers are zero-based and can be determined from the 'Setup parameter list' section located in [setup_list.h](https://github.com/olliw42/mLRS/blob/main/mLRS/Common/setup_list.h).
+The starting page contains [common parameters](PARAMETERS.md#mlrs-documentation-parameters-v1300), status information, and commands such as bind and save. Seven additional parameters appear on each subsequent page and page navigation is linear via the "prev" and "next" commands.
 
-For example, if one wanted to replace "Mode" with "RF Band" then 'param_idx_list[1] = 1' needs to be updated to 'param_idx_list[1] = 2'
+Parameters which are not available are still displayed, but with a "-" character in the value position. Parameters which cannot be changed are displayed as normal. Unused lines on the last page contain a blank name and a value of ".". The cursor can be moved to unavailable or unchangeable parameters and unused lines, but they can not be selected for edit; pressing enter on them will provide haptic feedback to indicate they can't be edited.
+
+***Note***:  If you receive a "not enough memory" error, you can try reducing the file size by running the code through a Lua minifier tool such as the one [here](https://mothereff.in/lua-minifier) and install the minified version as a workaround. Please also report this to the mLRS developers.
