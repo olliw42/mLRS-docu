@@ -56,15 +56,15 @@ Therefore in Mission Planner three RSSI metrics are available when using mLRS (a
 
 ### RSSI dBm
 
-Given that the receive sensitivity limit will vary by RF mode it is often useful to know the exact RSSI dBm as opposed to RSSI as a percentage or an unsigned 8-bit value.  The RSSI dBm allows one to understand exactly how much margin there is in the link budget.  The table below provides conversions to RSSI dBm:
+Given that the receiver sensitivity will vary with the mLRS mode it is often useful to know the exact RSSI dBm as opposed to RSSI as a percentage or in MAVLink units. The RSSI dBm allows one to understand exactly how much margin there is in the link budget. The table below provides conversions to RSSI dBm:
 
-| RSSI dBm | RSSI % | RSSI uint8_t | Notes            |
+| RSSI dBm | RSSI % | RSSI MAVLink units | Notes            |
 |----------|--------|--------------|------------------|
-| 90       | 43     | 77           |                  |
-| 100      | 29     | 73           |                  |
-| 105      | 21     | 55           | 50 Hz Mode Limit |
-| 108      | 17     | 44           | 31 Hz Mode Limit |
-| 112      | 11     | 29           | 19 Hz Mode Limit |
+| -90       | 43     | 77           |                  |
+| -100      | 29     | 73           |                  |
+| -105      | 21     | 55           | 50 Hz Mode receiver sensitivity |
+| -108      | 17     | 44           | 31 Hz Mode receiver sensitivity |
+| -112      | 11     | 29           | 19 Hz Mode receiver sensitivity |
 
 ## Stream Rates
 
