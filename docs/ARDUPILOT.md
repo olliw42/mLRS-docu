@@ -33,11 +33,11 @@ Notes & References:
 
 RSSI is a relatively confusing topic with ArduPilot, since there are so many ways.
 
-First a comment on how RSSI is represented by ArduPilot. ArduPilot converts any RSSI value which it reads in to the range [0.0...1.0], where 0.0 represents the weakest and 1.0 the strongest signal. The conversion law which used for this scaling depends on the source of the RSSI value. In the dataflash log this value is available as RSSI:RXRSSI. For most output purposes, this internal RSSI value is then again converted into whatever the outpt format demands. For instance, for the OSD it is multiplied by 100 and displayed as 0% ... 100%. For MAVLink it is converted into the range [0...254] (0 = weakest signal, 254 = strongest signal, 255 = undefined)(this could be called the MAVLink units for RSSI).
+First a comment on how RSSI is represented by ArduPilot. ArduPilot converts any RSSI value which it reads in into the range [0.0...1.0], where 0.0 represents the weakest and 1.0 the strongest signal. The conversion law which is used for this scaling depends on the source of the RSSI value. In the dataflash log this value is available as RSSI:RXRSSI. For most output purposes, this internal RSSI value is then again converted into whatever the outpt format demands. For instance, for the OSD it is multiplied by 100 and displayed as 0% ... 100%. For MAVLink it is converted into the range [0...254] (0 = weakest signal, 254 = strongest signal, 255 = undefined)(this could be called the MAVLink units for RSSI).
 
 The source of the RSSI value (and thus applied conversion law) is determined by the ArduPilot parameter RSSI_TYPE. With mLRS these settings can be relevant:
 - RSSI_TYPE = 3 (ReceiverProtocol): mLRS will send RSSI in dBm in the CRSF stream and ArduPilot will apply scaling using the following formula: RSSI = 1 - ((RSSI_dBM - 50) / 70). That is -120 dBm is mapped to 0.0 and -50 dBm to 1.0.
-            - ***Note***: When using RSSI_TYPE = 3, it is possible to replace the RSSI with LQ using the RC_OPTIONS bitmask.
+            -- ***Note***: When using RSSI_TYPE = 3, it is possible to replace the RSSI with LQ using the RC_OPTIONS bitmask.
 - RSSI_TYPE = 5 (TelemetryRadioRSSI): mLRS will send RSSI in the MAVLink stream to the ArduPilot via the RADIO_STATUS message, in MAVLink units. mLRS applies the formula RSSI = (1 - ((RSSI_dBM - 50) / 70))*254 to convert to MAVLink units.
 - RSSI_TYPE = 2 (RCChannelPwmValue): mLRS can be configured to send RSSI (and LQ) as a channel value to ArduPilot. This option is not recommended and not further described.
 
