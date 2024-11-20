@@ -17,6 +17,8 @@ flowchart LR
     0xEE ~~~ id0[Frame Length] ~~~ 0x81 ~~~ id1[Command Byte] ~~~ Payload ~~~ CRC
 ```
 
+The Frame Length and CRC are as per the CRSF specification in the above.
+
 The mBridge protocol is relatively complicated, as it serves mLRS for various additional purposes besides communication with the Lua configuration script. 
 
 mLRS project home: https://github.com/olliw42/mLRS/
