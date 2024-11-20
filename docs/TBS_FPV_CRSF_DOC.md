@@ -7,7 +7,7 @@ The 0x80 and 0x81 frames establish the communcication of mLRS TX modules with mL
 
 ```mermaid
 flowchart LR
-    0xEA ~~~ Frame Length ~~~ 0x80 ~~~ 0x4F ~~~ 0x57 ~~~ Command Byte ~~~ Payload ~~~ CRC
+    0xEA ~~~ id0[Frame Length] ~~~ 0x80 ~~~ 0x4F ~~~ 0x57 ~~~ id1[Command Byte] ~~~ Payload ~~~ CRC
 ```
 
 **0x81**: Communication from TX module to Lua script/remote controller. The frame format is:
