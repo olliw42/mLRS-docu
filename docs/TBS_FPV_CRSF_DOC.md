@@ -14,7 +14,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    0xEE ~~~ Frame Length ~~~ 0x81 ~~~ Command Byte ~~~ Payload ~~~ CRC
+    0xEE ~~~ id0[Frame Length] ~~~ 0x81 ~~~ id1[Command Byte] ~~~ Payload ~~~ CRC
 ```
 
 The mBridge protocol is relatively complicated, as it serves mLRS for various additional purposes besides communication with the Lua configuration script. 
