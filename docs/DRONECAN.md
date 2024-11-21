@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-DroneCAN can be utilized for MAVLink and RC with mLRS instead of traditional serial communication if both the flight controller and receiver have the hardware necessary to support it.
+DroneCAN can be utilized for RC and MAVLink with mLRS instead of traditional serial communication if both the flight controller and receiver have the hardware necessary to support it.
 
 ## Wiring & Powering
 
