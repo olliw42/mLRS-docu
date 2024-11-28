@@ -169,6 +169,7 @@ Set the following parameters using the CLI or Lua script (or OLED if available):
 - Rx Ser Baudrate = must match the baudrate of the flight controller's serial port (see SERIALx_BAUD in the above)
 - Rx Ser Link Mode = mavlinkX (this sets the receiver into "MAVLink mode")
 - Rx Snd RadioStat= ardu_1
+- Rx Snd RcChannel = off
 
 The mLRS default settings are Rx Out Mode = crsf, Rx Ser Baudrate = 57600, Rx Ser Link Mode = mavlinkX, Rx Snd RadioStat= ardu_1.
 
