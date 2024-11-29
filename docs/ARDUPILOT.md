@@ -83,3 +83,7 @@ To understand how stream rates affect the MAVLink data rate, you can use this [c
 - Rx Snd RadioStat:
     - ardu_1: optimizes for ArduPilot usage
     - meth_b: optimizes for PX4 usage
+
+- Rx Snd RcChannel:
+    - rc_channel_overrides: outputs MAVLink RC_CHANNELS_OVERRIDE messages.
+    - radio_rc_channels: outputs MAVLink RC_CHANNELS messages. Requires ArduPilot v4.6.0 or later. Supported by 2 MB flash boards as standard, but boards with smaller flash may enable the feature by [creating a custom firmware version](https://custom.ardupilot.org/) with the option for 'MAVLink' under 'RC' being selected in the firmware configurator. RC_PROTOCOL parameter must have bit 17 enabled (MAVRadio).
