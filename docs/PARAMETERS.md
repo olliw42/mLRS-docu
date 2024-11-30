@@ -136,7 +136,7 @@ If "Rx Snd RcChannel" is set to "rc channels", then RADIO_LINK_FLOW_CONTROL mess
 Determines if a RC_CHANNELS_OVERRIDE or RADIO_RC_CHANNELS MAVLink message is emitted by the receiver. Effective only when "Rx Ser Link Mode" = "mavlink" or "mavlinkX". 
 Can be "off", "rc override", "rc channels".
 
-If using ArduPilot V4.6.0-dev on a 2 MB flight controller, the "rc channels" setting is strongly recommended. Otherwise, "rc override" must be used. (ArduPilot V4.6.0-dev supports the RADIO_RC_CHANNELS message, older versions do not)
+If using ArduPilot V4.6.0-dev on a 2 MB flight controller, the "rc channels" setting is strongly recommended. Otherwise, "rc override" must be used. See the detailed [ArduPilot configuration page](ARDUPILOT.md).
 
 #### Rx Buzzer #### 
 Enables the buzzer, and selects what data it reflects. Can be "off" or "LP".
