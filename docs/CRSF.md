@@ -17,7 +17,7 @@ Optional but recommended steps:
 > [!TIP]
 > The mLRS default parameter settings follow the below recommendations. That is, with a freshly flashed mLRS Tx module and receiver all you need to do is to set up your radio and flight controller.
 
-It is recommeneded that for first setup the Tx module and receiver are left in their default configuration. Once your system is up and running there is still time to explore the options for optimizing the performacne.
+It is recommended for the initial setup the Tx module and receiver are left in their default configuration. Once your system is up and running then you can explore the options for further optimizing performance.
 
 ***Notes***:
 - Any radio which supports the CRSF protocol should work, this should include many brands besides EdgeTX/OpenTX radios.
@@ -46,7 +46,7 @@ Set the following parameters using the CLI or Lua script (or OLED if available):
 
 ***Notes***: 
 - Tx Ser Baudrate should be larger than the link data rate in order to provide enough capacity (e.g., in the 50 Hz mode the link data rate is 4100 Bytes/sec and the baudrate should thus be larger than 41000), but otherwise the choice is not critical and largely determined by the user's need. The default value is 115200, and is a good choice for most cases.
-- While not necessary, for the FLRC mode it can be benefitial to use 230400.
+- While not necessary, for the FLRC mode it can be beneficial to use 230400.
 
 ## ArduPilot Setup
 
@@ -60,7 +60,7 @@ A basic setup of the ArduPilot parameters is described in this section which sho
 
 ***Note***: 'x' refers to the serial port of your flight controller used for connecting with the mLRS receiver's serial port.
 
-The baud rate setting in SERIALx_BAUD is not critical, as mLRS will gracefully work with them all. However, depending on the ArduPilot firmware version, parameter download can be optimized somewhat by "tuning" the baudrate. For instance, one can try:
+The baud rate setting in SERIALx_BAUD is not critical, as mLRS will gracefully work with them all. However, for ArduPilot version 4.5 or lower, parameter download can be optimized somewhat by "tuning" the baudrate. For instance, one can try:
 - 50 Hz and FSK: 115 (= 115200)
 - 31 Hz: 57 (= 57600)
 - 19 Hz: 38 (= 38400)
