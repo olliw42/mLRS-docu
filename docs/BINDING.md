@@ -21,7 +21,8 @@ When in bind mode, the green and red LEDs will blink alternatively with ca 2.5 H
 
 When a receiver is bound and connected to a Tx module, the common parameters as well as all other parameters can be changed and stored permanently by issuing a store command either via the CLI (pstore; command), the mLRS Lua script (Save button), or the OLED display if available (STORE option).
 
-***Note***: When flashing mLRS to new hardware or after performing a factory reset (e.g. by a full chip erase) the Tx module and receiver should usually connect immediately as they will be bound already (i.e. both have the default bind phrase of 'mlrs.0', default mode and default frequency band).
+> [!TIP]
+> When flashing mLRS to new hardware or after performing a factory reset (e.g. by a full chip erase) the Tx module and receiver should usually connect immediately as they will be bound already (i.e. both have the default bind phrase of 'mlrs.0', default mode and default frequency band).
 
 The following video shows the various LED blink pattern: 
 
