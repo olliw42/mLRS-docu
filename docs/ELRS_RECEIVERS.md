@@ -2,7 +2,8 @@
 
 ([back to main page](../README.md))
 
-Note: 868/915 MHz ELRS receivers are only compatible with the Frsky R9M Tx module; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+> [!IMPORTANT]
+> 868/915 MHz ELRS receivers are only compatible with the Frsky R9M Tx module; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 ## Selected ELRS Receivers ##
 
@@ -38,7 +39,7 @@ All ELRS receivers have a standardized pinout and will need to be connected to t
 
 <img src="images/ELRS_fc_wiring.png" width="600px">
 
-Note: In order to send RC channels over the serial connection, change the Rx Snd RcChannel parameter to 'rc override'.
+***Note***: In order to send RC channels over the serial connection, change the Rx Snd RcChannel parameter to 'rc override'.
 
 ## Flashing ##
 
@@ -73,4 +74,4 @@ Note: In order to send RC channels over the serial connection, change the Rx Snd
     - Create additional entries with the following offsets and files.  Note: the firmware.bin should use the 10000 offset. <br> <img src="images/ESP32_Flash.png">
     - Click program.
 - Once the firmware has been written sucessfully, power cycle the receiver/FC. The LED should blink to indicate that it is looking for a connection.
-    - Note: Binding can be done by holding down the button for four seconds if it doesn't connect automatically.
+    - ***Note***: Binding can be done by holding down the button for four seconds if it doesn't connect automatically.

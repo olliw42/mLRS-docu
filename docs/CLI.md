@@ -12,7 +12,10 @@ The CLI uses CRLF for terminating lines.
 
 Depending on the device, some parameters are not available for configuration or cannot be changed. For instance, for a device which does not support a buzzer the parameter "Buzzer" is not available, and for a device which does not support diversity the parameter "Diversity" cannot be changed. Parameters which are not available are displayed with a value "-", and parameters which cannot be changed are displayed with the current selection but a comment "(unchangeable)" in addition.
 
-***Note***: Parameter changes become permanent by invoking pstore; (else they are lost with the next power cycle). Many parameters require a power cycle to become effective. Ergo, one essentially should finish a parameter change session with pstore; if one is happy with the made changes.
+> [!IMPORTANT]
+> Parameter changes become permanent by invoking pstore; (else they are lost with the next power cycle). 
+
+Many parameters require a power cycle to become effective. Ergo, one essentially should finish a parameter change session with pstore; if one is happy with the made changes.
 
 ## Commands ##
 
