@@ -63,16 +63,24 @@ Starts streaming statistics. Terminate by sending any character. Format:
     </tr>
 </table>
 
-For some Tx modules further commands can be available:
+#### listfreqs; #### 
+Lists the frequencies used in the FHSS scheme.
 
-#### ptser; #### 
+#### systemboot; #### 
+Invokes the system bootloader.
+
+### Tx modules with an ESP WiFi bridge ###
+
+#### esppt; #### 
 Enters the serial passthrough mode (communication between CLI port and the Serial port).
 
 #### espboot; #### 
 Reboots a ESP32 module and enters the serial passthrough mode. For flashing the ESP32 module through the CLI port.
 
-#### espcli; #### 
-Set GPIO0 to low and enters the serial passthrough mode. For accessing the CLI of the ESP32 module.
+### Tx modules with an HC-04 Bluetooth module ###
 
-#### systemboot; #### 
-Invokes the system bootloader.
+#### hc04 pt; #### 
+Enters the serial passthrough mode (communication between CLI port and the Serial port).
+
+#### hc04 setpin; #### 
+Set the pin of the HC-04 module.
