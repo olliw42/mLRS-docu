@@ -65,7 +65,7 @@ Serial Mode:
   - allows RC Control over MSP (rc override)
   - Full MSP GCS Functionality with INAV Configurator, MWP and other applications
   - comprehensive OSD and Blackbox Link Statistics with dedicated MSP messages provided by mLRS
-  - limited to 50Hz RC Rate (only relevant for 2.4GHz FLRC mode, which will be limited to 37Hz RC rate, but full datarate)
+  - limited to 50Hz RC Rate (only relevant for 2.4GHz FLRC mode, which will be limited to 37Hz RC rate)
 - Transparent
   - Not recommended
   - See INAV 7 section
