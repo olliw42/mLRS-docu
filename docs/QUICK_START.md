@@ -36,7 +36,7 @@ We cover here three popular, but mutually incompatible, commercially available o
 - 2.4 GHz is a wider band which might support more simultaneous users.  But this band can also be noisy so you may notice some interference including potentially from the HC04 if you use it.
 - These modules support 19 Hz, 31 Hz, 50, and FLRC(111 Hz) modes.
 - The Tx module kit does not include an antenna or JR bay case which must be 3D printed.  If you don't have access to a 3D printer, you can purchase a print from a number of 3D printing services and also from some vendors.
-- If you don't need quite as much range, you can flash mLRS on one of the smaller and lighter [Selected 2.4 GHz ELRS](ELRS_RECEIVERS.md#selected-elrs-receivers) receivers such as the RadioMaster RP4TD.
+- If you don't need quite as much range, you can flash mLRS on one of the smaller and lighter [Selected 2.4 GHz ELRS](ELRS_RECEIVERS.md#selected-elrs-receivers) receivers such as the RadioMaster [RP4TD](RADIOMASTER_RP4TD.md#mlrs-documentation-radiomaster-rp4td-receiver).
 - Some AIO flight controller boards include a low power 2.4 GHz ELRS serial receiver which can also be flashed with mLRS for use with this Tx module.
 
 ### FrSky [R9M Tx module](FRSKY_R9.md#r9m-tx-module) with the [Bayck 915M Nano Pro](ELRS_RECEIVERS.md#selected-elrs-receivers) 900 MHz ELRS receiver

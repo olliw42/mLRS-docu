@@ -12,7 +12,10 @@ The CLI uses CRLF for terminating lines.
 
 Depending on the device, some parameters are not available for configuration or cannot be changed. For instance, for a device which does not support a buzzer the parameter "Buzzer" is not available, and for a device which does not support diversity the parameter "Diversity" cannot be changed. Parameters which are not available are displayed with a value "-", and parameters which cannot be changed are displayed with the current selection but a comment "(unchangeable)" in addition.
 
-***Note***: Parameter changes become permanent by invoking pstore; (else they are lost with the next power cycle). Many parameters require a power cycle to become effective. Ergo, one essentially should finish a parameter change session with pstore; if one is happy with the made changes.
+> [!IMPORTANT]
+> Parameter changes become permanent by invoking pstore; (else they are lost with the next power cycle). 
+
+Many parameters require a power cycle to become effective. Ergo, one essentially should finish a parameter change session with pstore; if one is happy with the made changes.
 
 ## Commands ##
 
@@ -63,16 +66,24 @@ Starts streaming statistics. Terminate by sending any character. Format:
     </tr>
 </table>
 
-For some Tx modules further commands can be available:
+#### listfreqs; #### 
+Lists the frequencies used in the FHSS scheme.
 
-#### ptser; #### 
+#### systemboot; #### 
+Invokes the system bootloader.
+
+### Tx modules with an ESP WiFi bridge ###
+
+#### esppt; #### 
 Enters the serial passthrough mode (communication between CLI port and the Serial port).
 
 #### espboot; #### 
 Reboots a ESP32 module and enters the serial passthrough mode. For flashing the ESP32 module through the CLI port.
 
-#### espcli; #### 
-Set GPIO0 to low and enters the serial passthrough mode. For accessing the CLI of the ESP32 module.
+### Tx modules with an HC-04 Bluetooth module ###
 
-#### systemboot; #### 
-Invokes the system bootloader.
+#### hc04 pt; #### 
+Enters the serial passthrough mode (communication between CLI port and the Serial port).
+
+#### hc04 setpin; #### 
+Set the pin of the HC-04 module.

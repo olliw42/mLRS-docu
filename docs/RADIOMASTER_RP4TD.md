@@ -61,7 +61,7 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 
 <img src="images/RP4_Rx_Wiring.png" width="480">
 
-Note: In order to send RC channels over the serial connection (which doesn't require an additional OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
+***Note***: In order to send RC channels over the serial connection (which doesn't require an additional OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
 
 ## Flashing ##
 

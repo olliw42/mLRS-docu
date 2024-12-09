@@ -44,6 +44,19 @@ For cloning you of course can use any other tool you like.
 
 The STM32CubeIDE has its weirdness, so you may have to get used to it. 
 
+#### GCC 11 Installation ####
 
+***Note***: If you get a compiler error stating 'Must be gnu gcc 11 or lower!' then you will have to install the GCC 11 toolchain.  Follow these steps:
+
+1. Within STM32CubeIDE go to Window > Preferences > STM32Cube > Toolchain Manager
+2. Wait for the process to fetch the list of toolchains.
+    - ***Note***: This can take some time, be patient.
+3. Once the list has loaded, select 'GNU Tools for STM32 (11.3rel1)' then click 'Install'.
+4. Click Apply and Close, the toolchain will install.
+    - ***Note***: This can take some time and there will be additional dialog boxes.
+5. Once the installation has finished, go back to the Toolchain Manager, following step 1.
+6. Select 'GNU Tools for STM32 (11.3rel1)' and click 'Set Default'.
+    - ***Note***: At this point, you do not have to wait for the list of toolchains to load.
+7. Click Apply and Close.
 
 
