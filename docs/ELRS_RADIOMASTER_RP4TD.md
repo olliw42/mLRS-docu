@@ -25,24 +25,6 @@ The RadioMaster RP4TD is a good option for a 2.4 GHz receiver as it offers true 
   </tbody>
 </table>
 
-### As Tx Module ###
-
-Connections (name in respect to board print-ons, otherwise please refer to graphic):
-
-<table>
-  <tbody>
-    <tr>
-      <td>serial:</td><td>TX, RX</td>
-    </tr><tr>
-      <td>com / cli:</td><td>T, R</td>
-    </tr><tr>
-      <td>bind:</td><td>button</td>
-    </tr>
-  </tbody>
-</table>
-
-<img src="images/RP4_Tx_Wiring.png" width="480">
-
 ### As Receiver ###
 
 Connections (name in respect to board print-ons, otherwise please refer to graphic):
@@ -61,7 +43,26 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 
 <img src="images/RP4_Rx_Wiring.png" width="480">
 
-***Note***: In order to send RC channels over the serial connection (which doesn't require an additional OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
+> [!TIP]
+> In order to send RC channels over the serial connection (which avoids the additional OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
+
+### As Tx Module ###
+
+Connections (name in respect to board print-ons, otherwise please refer to graphic):
+
+<table>
+  <tbody>
+    <tr>
+      <td>serial:</td><td>TX, RX</td>
+    </tr><tr>
+      <td>com / cli:</td><td>T, R</td>
+    </tr><tr>
+      <td>bind:</td><td>button</td>
+    </tr>
+  </tbody>
+</table>
+
+<img src="images/RP4_Tx_Wiring.png" width="480">
 
 ## Flashing ##
 
