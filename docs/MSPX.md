@@ -80,6 +80,7 @@ RC Out Mode (Can be combined with Serial if the Rx has 2 UART)
   - No Telemetry
 
  ***Recommendation*** 
+ 
  For INAV 7 we recommend one of three options, depending on the usecase. 
  - mspX+CRSF if mLRS is only used as a radio control system for FPV. The separate CRSF for RC Control is recommended, to have OSD Link Statistics available
  - mspX+MSP-RC if no OSD link statistics are needed (autonomous flights and LOS only) and if you use a GCS Software that can handle passive MSP Message Monitoring with no 2-way communication (MWP)
@@ -104,6 +105,7 @@ RC Out Mode (Can be combined with Serial if the Rx has 2 UART)
   - RC Rate up to 111Hz in 2.4GHz FLRC mode
 
  ***Recommendation***
+ 
 Since INAV 8 in combination with mLRS can provide all features over mspX, it is recommended to only use a single UART mspX connection for most vehicles. The only exception is the 2.4GHz FLRC mode that can provide 111Hz packet and RC rate. 
 Due to a performance limitation in INAV, this mode had to be limited to 37Hz RC Rate over MSP. Use a separated CRSF UART instead, to achieve full 111Hz RC Update Rates in this mode. All other features will work as normal. 
 
