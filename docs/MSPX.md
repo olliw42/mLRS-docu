@@ -12,14 +12,14 @@ mLRS provides the MspX technology, which is designed to improve the over-the-air
 - For INAV 7.1 and earlier, MspX does not fully comply with MSP functional design rules and might not work properly with GCS applications. This includes e.g. MWPTools. In these cases, mLRS can be set into transparent mode by setting "Rx Ser Link Mode" = "transp." (the below features of MspX will then not be avaiable).
 - It is highly recommended to use INAV 8 or later, although MspX has also been tested with INAV 7.1.
 - INAV Configurator is assumed as ground control station, and INAV Lua app on the radio.
-- Link statistics and information such as RSSI, LQ, SNR, etc. are provided to the FC only on INAV 8.0 and higher. More info can be found [here](https://github.com/iNavFlight/inav/pull/10451).
-- RC Rate will be limited to 37Hz in 2.4GHz FLRC mode (see INAV 8 Summary).
+- Link statistics and information such as RSSI, LQ, SNR, etc. are provided to the FC only on INAV 8 and higher. More info can be found [here](https://github.com/iNavFlight/inav/pull/10451).
+- RC Rate will be limited to 37Hz in 2.4GHz FLRC mode when using MspX (see INAV 8 summary).
 
 ## mLRS Receiver Configuration
 
 #### MspX
 
-MspX is enabled by this setting in the receiver:
+For enabling MspX set:
 
 - "Rx Ser Link Mode" = "mspX"
 - "Ser Baudrate" = "115200" or "230400" (for INAV 8 and later)
@@ -32,7 +32,7 @@ For enabling MSP-RC set:
 
 ***Notes***:
 - RC link statistics are only sent to the flight controller via MSP if "rc override" or "rc channels" is selected. 
-- MSP-RC messages will always override other RC Link inputs. If CRSF is connected and CRSF selected as the RC Protocol in INAV, MSP-RC still has priority if enabled in mLRS and connected to a MSP Enabled UART.
+- MSP-RC messages will always override other RC Link inputs. If CRSF is connected and selected as the RC Protocol in INAV, MSP-RC still has priority if enabled in mLRS and connected to a MSP Enabled UART.
 
 ## INAV Configuration
 
@@ -108,7 +108,7 @@ RC Out Mode (Can be combined with Serial if the Rx has 2 UART)
  
  For INAV 7 we recommend one of three options, depending on the usecase. 
  1. MspX+CRSF if you fly FPV, the separate CRSF for RC Control enables OSD Link Statistics.
- 2. MspX+MSP-RC if no OSD link statistics are needed (autonomous flights and LOS only) and if you use a GCS Software that can handle passive MSP Message Monitoring with no 2-way communication (MWP)
+ 2. MspX+MSP-RC if no OSD link statistics are needed (autonomous flights and LOS only) and if you use a GCS Software that can handle passive MSP Message Monitoring with no 2-way communication (MWP).
  3. Transparent+CRSF for full 2-Way GCS Communication and RC Control. However, in this case you will not have telemetry on your radio.
 
 
