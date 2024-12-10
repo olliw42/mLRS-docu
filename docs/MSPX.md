@@ -41,7 +41,7 @@ For enabling MSP-RC set:
 
 To use a mLRS receiver with INAV in MspX mode, the following settings have to be applied in INAV:
 - Enable MSP for the Serial Port the mLRS receiver is connected to (UART 2 is recommended on most STM32 flight controllers; do not enable "Serial RX").
-- Set the baudrate to 115200 or higher for consistent dataflow and RC control. Baudrates of less than 57600 can cause message loss on the INAV side and result in inconsistent RC control over MSP-RC (INAV Limitation).
+- Set the baudrate to 115200 or higher for consistent dataflow and RC control. Baudrates of less than 57600 can cause message loss on the INAV side and result in inconsistent RC control over MSP-RC (INAV limitation).
 - INAV 8 also supports a baudrate of 230400 but no change in performance or stability was noticed.
   
 <img src="images/MSPX_ports.png" width="720px">
@@ -50,7 +50,7 @@ To use a mLRS receiver with INAV in MspX mode, the following settings have to be
   
 <img src="images/MSPX_receiver.png" width="720px">
 
-- When connecting INAV 8 Configurator through mLRS for flight monitoring, it is recommended to enable the Wireless Mode switch before connection, for better link reliability (do not use Wireless Mode with versions less than INAV 8).
+- When connecting INAV 8 Configurator through mLRS for flight monitoring, it is recommended to enable the 'Wireless Mode' switch before connection, for better link reliability (do not use 'Wireless Mode' with versions less than INAV 8).
 
 <img src="images/MSPX_wirelessmode.png" width="360px">
 
@@ -82,7 +82,7 @@ RC Out Mode (can be combined with serial if the mLRS receiver has 2 UARTs)
 
  ***Recommendation***
  
-Since INAV 8 in combination with mLRS can provide all features over MspX, it is recommended to only use a single UART MspX connection for most vehicles. The only exception is the 2.4 GHz FLRC mode that can provide 111 Hz RC rate. Due to a performance limitation in INAV, this mode had to be limited to 37 Hz RC rate over MSP. Use a separate CRSF UART instead, to achieve full 111 Hz RC update rates in this mode. All other features will work as normal. 
+Since INAV 8 in combination with mLRS can provide all features over MspX, it is recommended to only use a single UART MspX connection for most vehicles. The only exception is the 2.4 GHz FLRC mode that can provide 111 Hz RC rate over CRSF. Due to a performance limitation in INAV, this mode had to be limited to 37 Hz RC rate over MSP. Use a separate CRSF UART instead, to achieve full 111 Hz RC update rates in this mode. All other features will work as normal. 
 
 ### INAV 7
 
