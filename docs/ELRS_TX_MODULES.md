@@ -2,13 +2,13 @@
 
 ([back to main page](../README.md))
 
-> [!IMPORTANT]
-> 868/915 MHz ELRS Tx modules are only compatible with ELRS 868/915 and Frsky R9 receivers; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
-
 mLRS supports some few ELRS Tx modules, but only for SiK telemetry use. 
 
 > [!IMPORTANT]
 > Only for SiK telemetry use means that RC control is not supported, neither via the JR bay nor via an IN port. This also means that the mLRS Lua script cannot be used, nor can the Yaapu app.
+
+> [!IMPORTANT]
+> 868/915 MHz ELRS Tx modules are only compatible with ELRS 868/915 and Frsky R9 receivers; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 ## BetaFPV 1W Micro Tx Module (2.4 GHz) ##
 
