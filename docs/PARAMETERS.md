@@ -1,4 +1,4 @@
-# mLRS Documentation: Parameters (v1.3.00) #
+# mLRS Documentation: Parameters (v1.3.04) #
 
 ([back to main page](../README.md))
 
@@ -81,9 +81,8 @@ LP stands for Lost Packet, and here the buzzer emits a short beep for any lost p
 Enabled parameter configuration using the MAVLink parameter service.
 Can be "enabled", "off".
 
-#### Tx Cli LineEnd ####
-Determines the line termination character(s) used by the CLI. 
-Can be "CR", "LF", "CRLF".
+#### Tx Power Sw Ch ####
+The channel that is used to switch the RF power of the Tx module. Use in combination with the Tx Power parameter to set the maximum power that you want to be able to switch to.  Designed for use with a 3-position switch, low / mid / high on the channel will switch between Max Power - 2, Max Power - 1 and Max Power, respectively. Additional power levels starting at the minimum power are available in the mid positions for advanced users needing more than 3 power levels.
 
 ## Rx Parameters ##
 
@@ -138,10 +137,8 @@ Can be "off", "rc override", "rc channels".
 
 If using ArduPilot V4.6.0-dev on a 2 MB flight controller, the "rc channels" setting is strongly recommended. Otherwise, "rc override" must be used. See the detailed [ArduPilot configuration page](ARDUPILOT.md).
 
-#### Rx Buzzer #### 
-Enables the buzzer, and selects what data it reflects. Can be "off" or "LP".
-
-LP stands for Lost Packet, and here the buzzer emits a short beep for any lost packet.
+#### Rx Power Sw Ch ####
+The channel that is used to switch the RF power of the receiver. Use in combination with the Rx Power parameter to set the maximum power that you want to be able to switch to.  Designed for use with a 3-position switch, low / mid / high on the channel will switch between Max Power - 2, Max Power - 1 and Max Power, respectively. Additional power levels starting at the minimum power are available in the mid positions for advanced users needing more than 3 power levels.
 
 #### Rx FS Ch1 - Rx FS Ch16 #### 
 Sets the RC channel value upon a failsafe. Effective only when "Rx FailSafe Mode" = "by cnf". 
