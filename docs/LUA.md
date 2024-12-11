@@ -23,6 +23,10 @@ Three things need to be done in order to use the Lua script:
 
 3. The Lua script "mLRS.lua" or "mLRS-bw.lua" located in the "lua" folder of the mLRS github repository needs to be copied to the "SCRIPTS/TOOLS" folder of the radio's SD card. One can follow the common tutorials for how to do this.
 
+    - ***Note***: The correct Lua version needs to be selected based on your firmware version:
+        - When using 1.3.04 pre-release, use the Lua scripts found [here.](https://github.com/olliw42/mLRS/tree/v1.3.04-pre-release/lua) 
+        - When using 1.3.0 release, use the Lua scripts found [here.](https://github.com/olliw42/mLRS/tree/v1.3-release/lua) 
+
 You should then be able to run the Lua script by going to SYS->TOOLS on the radio, and selecting "mLRS Configurator" or "mLRS-bw".
 
 ## Usage
