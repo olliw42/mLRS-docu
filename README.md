@@ -40,6 +40,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 ### ESP Hardware ###
 - [ELRS Receivers](docs/ELRS_RECEIVERS.md)
 - [RadioMaster RP4TD](docs/ELRS_RADIOMASTER_RP4TD.md)
+- [ELRS Tx Modules](docs/ELRS_TX_MODULES.md)
 - [ESP Development](docs/ESP_DEVELOPMENT.md)
 
 ### Advanced Options ###
