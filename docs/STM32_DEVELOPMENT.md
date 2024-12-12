@@ -20,7 +20,10 @@ For the first step (step I) you need to have git and Python3 installed. Dependin
 2. cd into `C:/Me/Documents/Github` (not C:/Me/Documents/Github/mlrs !)
 3. `git clone https://github.com/olliw42/mLRS.git mlrs`
 4. `cd mlrs`
-5. run `run_setup.py`. This does four steps: Initializes submodules (git submodule --init --recursive), copies ST HAL and LL drivers to the target folders, generates the MAVLink library files, and finally generates the DroneCAN library files.
+5. Create a virtual environment `python -m venv venv`
+6. Activate the virtual environment. On Windows: `.\venv\Scripts\activate`, on Linux/MacOS `source venv/bin/activate`
+7. Install the required modules `pip install -r requirements.txt`
+8. run `run_setup.py`. This does four steps: Initializes submodules (git submodule --init --recursive), copies ST HAL and LL drivers to the target folders, generates the MAVLink library files, and finally generates the DroneCAN library files.
     - ***Note***: Ensure that all four steps are executed completely.
 
 For cloning you of course can use any other tool you like.
