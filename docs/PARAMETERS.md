@@ -126,10 +126,8 @@ Can be "transp.", "mavlink", "mavlinkX".
 This setting is also applied to the Tx module. For MAVLinkX see [here](MAVLINKX.md).
 
 #### Rx Snd RadioStat #### 
-Determines if a MAVLink RADIO_STATUS or RADIO_LINK_FLOW_CONTROL message is emitted by the receiver, and which flow control algorithm is used. Effective only when "Rx Ser Link Mode" = "mavlink" or "mavlinkX". 
+Determines if a MAVLink RADIO_STATUS message is emitted by the receiver, and which flow control algorithm is used. Effective only when "Rx Ser Link Mode" = "mavlink" or "mavlinkX". 
 Can be "off", "ardu_1", "meth_b".
-
-If "Rx Snd RcChannel" is set to "rc channels", then RADIO_LINK_FLOW_CONTROL messages are emitted instead of RADIO_STATUS.
 
 #### Rx Snd RcChannel #### 
 Determines if a RC_CHANNELS_OVERRIDE or RADIO_RC_CHANNELS MAVLink message is emitted by the receiver. Effective only when "Rx Ser Link Mode" = "mavlink" or "mavlinkX". 
