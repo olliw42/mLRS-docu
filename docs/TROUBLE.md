@@ -26,6 +26,7 @@ In most cases, you can confirm that mLRS firmware is installed by observing the 
 Carefully install your Tx module into your EdgeTX or OpenTX radio.  Some Tx modules can be fussy on pin alignment; don't use excessive force or you may break something.  Follow the [instructions](LUA.md) to configure your radio and install the mLRS Lua script. Then, confirm you can talk to the Tx module via the Lua script.  You should see the TX module firmware version reported at the top of the screen.
 
 - If the Lua script does not work, ensure you have installed the correct version.  There is a separate version for radios with a lower resolution black and white screens.
+- If you use EdgeTx, check that the firmware version is 2.9.x or later.
 - Inspect the Tx module connector and ensure your Tx module is fully seated in the bay.
 - Check that the external CRSF baud rate is set to 400k; this is the only speed supported by mLRS.
 - If your Tx module is the older version of the [R9M](FRSKY_R9.md#r9m-versions), don't forget to do the Inverter Mod.
