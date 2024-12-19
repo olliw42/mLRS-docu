@@ -263,6 +263,8 @@ Once the ELRS bootloader is installed, the following precedure can be followed t
 
 Wiring the receiver to the JR Bay on the back of your radio and flashing the ELRS bootloader is documented [here](https://www.expresslrs.org/quick-start/receivers/r9/). The procedure is similar to flashing the R9M module as described above in the bootloader install section. Use the appropriate .frk file indicated in the ELRS instructions for the receiver you are flashing. Flashing the ELRS bootloader from the .frk file only needs to be done once.
 
+If you have already flashed your receiver via ST-Link, you can continue to flash updates via ST-Link the way you always have, or if you prefer to switch to flashing via the receivers serial port, you can follow the 3 steps at the end of the R9M section above to [Flash the ELRS bootloader](FRSKY_R9.md#flash-the-elrs-bootloader) using ST-Link one last time.  Instead of the "r9m_bootloader.bin" file, download the appropriate bootloader.bin file for your receiver from [here](https://github.com/ExpressLRS/ExpressLRS/tree/3.x.x-maintenance/src/bootloader) by selecting it and clicking on the "download raw file" icon in the upper right.
+
 #### Flash/Update the mLRS Firmware ####
 
 After flashing the ELRS bootloader, you can connect the receiver's serial port as described in the link above and use the ELRS UARTupload.py script to flash/update the latest mLRS firmware .elrs file. There are, of course, separate .elrs image files for each receiver.
