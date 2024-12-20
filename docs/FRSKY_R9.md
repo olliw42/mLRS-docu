@@ -273,8 +273,8 @@ After flashing the ELRS bootloader, you can connect the receiver's serial port a
 
 1. Download the latest mLRS firmware, or build with MLRS\_FEATURE\_ELRS\_BOOTLOADER defined.
 
-2. Download or git clone the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository.
-    - If you have subversion installed: Since you only need the src/python folder, you could use the svn github interface to get just what you need. From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/tree/master/src/python"
+2. Download or git clone the 3.x.x-maintenance branch of the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository.
+    - If you have subversion installed: Since you only need the src/python folder, you could use the svn github interface to get just what you need. From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/tree/3.x.x-maintenance/src/python"
 
 3. Connect a USB-TTL serial adapter to your computer and install a driver if it is not recognized.  
     - ***Note***: If you are having trouble flashing and are using a CP210X adapter, please try a different USB-TTL adapter. If you continue to have problems or don't have a USB-TTL serial adapter, you should be able to use your flight controller instead - see step 8.
