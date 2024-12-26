@@ -33,11 +33,11 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
 
 The R9M transmitter module is a great option given its 1 W transmit power but is somewhat limited with respect to serial ports. It provides access to only one serial port, which moreover has inverted TTL signals. In order to use this serial port, these conditions apply:
 
-1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective.  Refer to the photo below:
+1. The serial port of the R9M module can be configured to work either as "serial" or "CLI". This is done by setting the dip switch 1 (left dip switch): off (switch down) = CLI, on (switch up) = serial. Note that the dip switch position is read only at power up, i.e., one needs to re-power the module to make any change effective. Refer to the photo below:
 
 <img src="images/Frsky_R9M_Dip.png" width="720px">
 
-2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink. Additionally, the CLI can be accessed with common terminal programs when using the mlrs-wireless-bridge sketch in Bluetooth Classic mode.  For ESP32 modules that do not support Bluetooth Classic (C3, C6 and S3 variants) one can configure the sketch for TCP and use telnet on Linux or Windows or another TCP terminal App on Mobile devices.  You may need to map received CR characters to CR+LF.  If you use telnet, you can do this by typing the escape sequence which is shown when you start telnet and then type "toggle crmod".
+2. Dealing with the inverted TTL signals is best addressed by using a seperate ESP32 module connected to the serial port as the ESP32 supports inverted TTL signals. The mlrs-wireless-bridge sketch will allow one to connect a Ground Control Station wirelessly via MAVLink. Additionally, the CLI can be accessed with common terminal programs when using the mlrs-wireless-bridge sketch in Bluetooth Classic mode. For ESP32 modules that do not support Bluetooth Classic (C3, C6 and S3 variants) one can configure the sketch for TCP and use telnet on Linux or Windows or another TCP terminal App on Mobile devices. You may need to map received CR characters to CR+LF. If you use telnet, you can do this by typing the escape sequence which is shown when you start telnet and then type "toggle crmod".
 
 3. Another option is to use a software tool to reconfigure FTDI based serial adapters, to have inverted RX/TX.
 
@@ -58,7 +58,7 @@ Connections:
 
 Frsky updated the R9 system a year after introducing it, so there are two versions of the Tx Module. Both versions can run the same mLRS firmware, but the newer version included some small hardware improvements.
 
-If you have the older 2018, "ACCST" version of the R9M, you will want to perform the Inverter Mod to allow reliable communication with the radio at higher bit rates. This is nicely documented in the [ExpressLRS documentation](https://www.expresslrs.org/hardware/inverter-mod/).  The newer 2019, "ACCESS" version of the R9M does not need this modification.
+If you have the older 2018, "ACCST" version of the R9M, you will want to perform the Inverter Mod to allow reliable communication with the radio at higher bit rates. This is nicely documented in the [ExpressLRS documentation](https://www.expresslrs.org/hardware/inverter-mod/). The newer 2019, "ACCESS" version of the R9M does not need this modification.
 
 ### DIY Inverter Dongle ###
 
@@ -76,11 +76,11 @@ This may not work on all versions of this adapter, many have non-genuine chips. 
 
 ### ESP32 Wireless Bridge ###
 
-The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a wireless bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl. This approach can also eliminate the need for a separate inverter dongle.  Two of these boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate from M5Stack allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module.  The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port and does not require a separate programmer. However, it does not support Bluetooth Classic. If you want to use Bluetooth to connect to your GCS, then the [M5Stamp Pico Mate](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) is the recommended choice. Both of these modules use the 2.4 GHz band for the wireless bridge and will work well with 868/915 MHz systems like the R9 as the separate frequency range minimizes interference.
+The mLRS git repository includes an Arduino sketch which allows several supported ESP32 boards to be used as a wireless bridge to connect the serial port to any of the many available GCS such as Mission Planner or QGroundControl. This approach can also eliminate the need for a separate inverter dongle. Two of these boards, the M5Stamp Pico Mate and the M5Stamp C3U Mate from M5Stack allow pin layouts which are especially convenient to connect directly to the serial pins on the R9M Tx module. The [M5Stamp C3U Mate](https://shop.m5stack.com/collections/m5-controllers/products/m5stamp-c3u-mate-with-pin-headers) is the easiest option as it can be flashed via its included USB port and does not require a separate programmer. However, it does not support Bluetooth Classic. If you want to use Bluetooth to connect to your GCS, then the [M5Stamp Pico Mate](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) is the recommended choice. Both of these modules use the 2.4 GHz band for the wireless bridge and will work well with 868/915 MHz systems like the R9 as the separate frequency range minimizes interference.
 
 <img src="images/Frsky_R9M_M5Stamp_C3U_installed.jpg" width="360px">
 
-Connecting the M5Stamp C3U Mate or Pico Mate to the R9M is easy: Remove the M5Stamp module's screw and plastic cover. Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position. This position serves as a key to avoid plugging in the board incorrectly. Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover.  After programming the sketch, install on the back of the R9M as shown above. Then, you can connect your GCS computer or mobile device to the "mLRS AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
+Connecting the M5Stamp C3U Mate or Pico Mate to the R9M is easy: Remove the M5Stamp module's screw and plastic cover. Cut a 5 pin length of the included pin header female connector and pull out the pin from the last position. This position serves as a key to avoid plugging in the board incorrectly. Solder the pins in the thru holes as shown below (key position hanging over the left) and reinstall the plastic cover. After programming the sketch, install on the back of the R9M as shown above. Then, you can connect your GCS computer or mobile device to the "mLRS AP UDP" WiFi access point and connect the GCS via UDP on port 14550.
 
 <img src="images/Frsky_R9M_M5Stamp_headers.png" width="720px">
 
@@ -88,9 +88,9 @@ To install the sketch on the M5Stamp C3U Mate, use the Arduino IDE. Open the mlr
 
 __Be sure to unplug the M5Stamp C3U Mate from the back of the R9M when programming via USB to avoid feeding 5 volt power back to R9M which might cause damage.__
 
-If you use the M5Stamp Pico Mate, you can select the Bluetooth protocol when you edit the mlrs-wireless-bridge.ino file and then you can connect your GCS via Bluetooth.  The Bluetooth option can be very convenient, especially in cases where WiFi might be used for an Internet connection on your GCS computer or device.
+If you use the M5Stamp Pico Mate, you can select the Bluetooth protocol when you edit the mlrs-wireless-bridge.ino file and then you can connect your GCS via Bluetooth. The Bluetooth option can be very convenient, especially in cases where WiFi might be used for an Internet connection on your GCS computer or device.
 
-Programming the Pico Mate is fairly easy using a USB TTL serial adapter which supports the DTR and RTS pins.  The adapter which comes with the [M5Stamp Pico DIY Kit](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) may be the most convenient and the kit includes the Pico Mate module.  You can solder the 6 pin female header connector to the appropriate pins on the module and plug the kit's serial adapter directly (recommended).  Or, if you prefer to leave off the programming connector, it is possible to insert the serial adapter pins into the appropriate thru-holes on the module and hold it in place with some pressure at an angle so as to to ensure continuous contact with all 6 pins during the programming process.
+Programming the Pico Mate is fairly easy using a USB TTL serial adapter which supports the DTR and RTS pins. The adapter which comes with the [M5Stamp Pico DIY Kit](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) may be the most convenient and the kit includes the Pico Mate module. You can solder the 6 pin female header connector to the appropriate pins on the module and plug the kit's serial adapter directly (recommended). Or, if you prefer to leave off the programming connector, it is possible to insert the serial adapter pins into the appropriate thru-holes on the module and hold it in place with some pressure at an angle so as to to ensure continuous contact with all 6 pins during the programming process.
 
 ### Cooling ###
 
@@ -263,7 +263,7 @@ Once the ELRS bootloader is installed, the following precedure can be followed t
 
 Wiring the receiver to the JR Bay on the back of your radio and flashing the ELRS bootloader is documented [here](https://www.expresslrs.org/quick-start/receivers/r9/). The procedure is similar to flashing the R9M module as described above in the bootloader install section. Use the appropriate .frk file indicated in the ELRS instructions for the receiver you are flashing. Flashing the ELRS bootloader from the .frk file only needs to be done once.
 
-If you have already flashed your receiver via ST-Link, you can continue to flash updates via ST-Link the way you always have, or if you prefer to switch to flashing via the receivers serial port, you can follow the 3 steps at the end of the R9M section above to [Flash the ELRS bootloader](FRSKY_R9.md#flash-the-elrs-bootloader) using ST-Link one last time.  Instead of the "r9m_bootloader.bin" file, download the appropriate bootloader.bin file for your receiver from [here](https://github.com/ExpressLRS/ExpressLRS/tree/3.x.x-maintenance/src/bootloader) by selecting it and clicking on the "download raw file" icon in the upper right.
+If you have already flashed your receiver via ST-Link, you can continue to flash updates via ST-Link the way you always have, or if you prefer to switch to flashing via the receivers serial port, you can follow the 3 steps at the end of the R9M section above to [Flash the ELRS bootloader](FRSKY_R9.md#flash-the-elrs-bootloader) using ST-Link one last time. Instead of the "r9m_bootloader.bin" file, download the appropriate bootloader.bin file for your receiver from [here](https://github.com/ExpressLRS/ExpressLRS/tree/3.x.x-maintenance/src/bootloader) by selecting it and clicking on the "download raw file" icon in the upper right.
 
 #### Flash/Update the mLRS Firmware ####
 
@@ -276,10 +276,10 @@ After flashing the ELRS bootloader, you can connect the receiver's serial port a
 2. Download or git clone the 3.x.x-maintenance branch of the [ExpressLRS](https://github.com/ExpressLRS/ExpressLRS) repository.
     - If you have subversion installed: Since you only need the src/python folder, you could use the svn github interface to get just what you need. From the command line type something like this: "svn export https://github.com/ExpressLRS/ExpressLRS/tree/3.x.x-maintenance/src/python"
 
-3. Connect a USB-TTL serial adapter to your computer and install a driver if it is not recognized.  
+3. Connect a USB-TTL serial adapter to your computer and install a driver if it is not recognized. 
     - ***Note***: If you are having trouble flashing and are using a CP210X adapter, please try a different USB-TTL adapter. If you continue to have problems or don't have a USB-TTL serial adapter, you should be able to use your flight controller instead - see step 8.
 
-4. Refering to the pin tables and diagrams above for your receiver, wire the USB-TTL serial adapter to your receiver.  Connect Rx to Tx and Tx to Rx and ground to ground. But, don't connect the VCC wire yet.
+4. Refering to the pin tables and diagrams above for your receiver, wire the USB-TTL serial adapter to your receiver. Connect Rx to Tx and Tx to Rx and ground to ground. But, don't connect the VCC wire yet.
 
 5. Move the .elrs firmware file to the src/python folder downloaded in step 2. Open a command line processor and navigate to the src/python folder. Then execute the command 'python UARTupload.py XYZ.elrs' where XYZ is the .elrs firmware file for your hardware.
     - ***Note***: If the upload fails by connecting to the wrong port, you can specify the appropriate port after the firmware filename, e.g. 'python UARTupload.py XYZ.elrs COM11'.
@@ -289,10 +289,10 @@ After flashing the ELRS bootloader, you can connect the receiver's serial port a
 7. When the UARTupload.py script reports the flash was successful, you can leave the receiver powered and try to establish a connection from your Tx module. The LED will switch from 2 Hz red to 1 Hz green on both the receiver and Tx module when the connection is established.
 
 8. After you have connected the receiver serial port to your flight controller (FC) and installed it in your build, you can use ArduPilot's [serial passthrough](https://ardupilot.org/copter/docs/common-serial-passthrough.html) feature for future mLRS firmware updates without uninstalling the receiver from your build. It is recommended to power the receiver from a regulated power output on your FC or ESC which is active only when the battery is connected, but not powered when the FC is connected to USB without the battery. If this cannot easily be arranged, you will have to hold down the receiver button while connecting the FC USB port to put the receiver into bootloader flash mode.
-- Plug the USB port of your FC into your computer.  If the USB connection to your FC also powers your receiver, hold the boot/bind button down while plugging in the USB.
+- Plug the USB port of your FC into your computer. If the USB connection to your FC also powers your receiver, hold the boot/bind button down while plugging in the USB.
 - Start a MAVLink GCS on your PC and connect to the FC so you can setup the ArduPilot passthrough parameters.
 - Set SERIAL\_PASSTIMO to 0 to prevent timeout. Check SERIAL\_PASS1 which should already be 0.
-- Set SERIAL\_PASS2 to x, the serial port number your receiver is connected to for MAVLink2.  Don't forget to write parameters if you are using Mission Planner or another GCS which requires this.  This step will start passthrough and cause the GCS to report communication lost.  Note that this parameter will revert to -1 and disable passthrough when you power cycle the FC after flashing.
+- Set SERIAL\_PASS2 to x, the serial port number your receiver is connected to for MAVLink2. Don't forget to write parameters if you are using Mission Planner or another GCS which requires this. This step will start passthrough and cause the GCS to report communication lost. Note that this parameter will revert to -1 and disable passthrough when you power cycle the FC after flashing.
 - Exit the GCS program so the FC USB serial port is available for flashing.
 - Execute the python command as in step 5 above.
 - If your receiver is not powered by the USB connection, it should be powered up (battery connected) after the UARTupload.py script reports "attempting to reboot into bootloader" as in step 6 above.
