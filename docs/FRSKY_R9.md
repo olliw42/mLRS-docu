@@ -279,20 +279,27 @@ After flashing the ELRS bootloader, you can connect the receiver's serial port a
 3. Connect a USB-TTL serial adapter to your computer and install a driver if it is not recognized.  
     - ***Note***: If you are having trouble flashing and are using a CP210X adapter, please try a different USB-TTL adapter. If you continue to have problems or don't have a USB-TTL serial adapter, you should be able to use your flight controller instead - see step 8.
 
-4. Wire the USB-TTL serial adapter to your receiver as instructed [here](https://www.expresslrs.org/quick-start/receivers/r9/#wiring-up-your-receiver). But, don't connect the VCC wire yet.
+4. Refering to the pin tables and diagrams above for your receiver, wire the USB-TTL serial adapter to your receiver.  Connect Rx to Tx and Tx to Rx and ground to ground. But, don't connect the VCC wire yet.
 
 5. Move the .elrs firmware file to the src/python folder downloaded in step 2. Open a command line processor and navigate to the src/python folder. Then execute the command 'python UARTupload.py XYZ.elrs' where XYZ is the .elrs firmware file for your hardware.
     - ***Note***: If the upload fails by connecting to the wrong port, you can specify the appropriate port after the firmware filename, e.g. 'python UARTupload.py XYZ.elrs COM11'.
 
-6. When the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 Volt output of your USB-TTL serial adapter or a 5 Volt power supply. You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire. If you have trouble getting the timing correct, you can hold down the button when powering up the receiver to enter the ELRS bootloader. To confirm that you are in the bootloader you should see the red and green LEDs blink alternately on the receiver.
+6. After the python script reports "attempting to reboot into bootloader", power up the receiver by connecting the VCC wire to the 5 Volt output of your USB-TTL serial adapter or a 5 Volt power supply and ground. You should see the script report sync and begin the firmware download. If it fails, try again, the timing can be a bit tight. The first time you flash the .elrs file, you may not need to delay connecting the VCC wire. If you have trouble getting the timing correct, you can hold down the button when powering up the receiver to enter the ELRS bootloader. To confirm that you are in the bootloader you should see the red and green LEDs blink alternately on the receiver.
 
-7. When the UARTupload.py script reports the flash was successful, you can leave the receiver powered by the USB-TTL serial adapter and try to establish a connection from your Tx module. The LED will switch from rapid red to 1 Hz green on both the receiver and Tx module when the connection is established.
+7. When the UARTupload.py script reports the flash was successful, you can leave the receiver powered and try to establish a connection from your Tx module. The LED will switch from 2 Hz red to 1 Hz green on both the receiver and Tx module when the connection is established.
 
-8. After you have connected the receiver serial port to your flight controller and installed it in your build, you can use ArduPilot's [serial passthrough](https://ardupilot.org/copter/docs/common-serial-passthrough.html) feature for future mLRS firmware updates without uninstalling the receiver from your build. The baud rate for the FC serial port used should be configured for 420,000 in ArduPilot. The receiver should be powered up (battery connected) after the UARTupload.py script reports "attempting to reboot into bootloader" as in step 6. This is most easily accomplished by wiring the receiver to a regulated power output on your flight controller or ESC which is active only when the battery is connected, but not powered when the flight controller is connected to USB without the battery. If this cannot easily be arranged, you will have to hold down the receiver button when connecting the flight controller USB port.
+8. After you have connected the receiver serial port to your flight controller (FC) and installed it in your build, you can use ArduPilot's [serial passthrough](https://ardupilot.org/copter/docs/common-serial-passthrough.html) feature for future mLRS firmware updates without uninstalling the receiver from your build. It is recommended to power the receiver from a regulated power output on your FC or ESC which is active only when the battery is connected, but not powered when the FC is connected to USB without the battery. If this cannot easily be arranged, you will have to hold down the receiver button while connecting the FC USB port to put the receiver into bootloader flash mode.
+- Plug the USB port of your FC into your computer.  If the USB connection to your FC also powers your receiver, hold the boot/bind button down while plugging in the USB.
+- Start a MAVLink GCS on your PC and connect to the FC so you can setup the ArduPilot passthrough parameters.
+- Set SERIAL\_PASSTIMO to 0 to prevent timeout. Check SERIAL\_PASS1 which should already be 0.
+- Set SERIAL\_PASS2 to x, the serial port number your receiver is connected to for MAVLink2.  Don't forget to write parameters if you are using Mission Planner or another GCS which requires this.  This step will start passthrough and cause the GCS to report communication lost.  Note that this parameter will revert to -1 and disable passthrough when you power cycle the FC after flashing.
+- Exit the GCS program so the FC USB serial port is available for flashing.
+- Execute the python command as in step 5 above.
+- If your receiver is not powered by the USB connection, it should be powered up (battery connected) after the UARTupload.py script reports "attempting to reboot into bootloader" as in step 6 above.
 
 ### Flash/Update via ST-Link ###
 
-***Note***: Flashing any Frsky R9 board with ST-Link is a non-reversible operation, i.e., it is not possible to revert back to the original Frsky firmware. It is possible to switch to ExpressLRS however.
+***Note***: Flashing any Frsky R9 board with ST-Link is a non-reversible operation, i.e., it is not possible to revert back to the original Frsky firmware. It is possible to switch to ExpressLRS version 3.x however.
 
 The ST-Link connection is made as follows:
 - R9M module: https://www.expresslrs.org/quick-start/transmitters/frsky-r9modules/#via-stlink
@@ -311,6 +318,7 @@ When the R9 MX / R9 MM / R9 Mini receivers have been flashed with the non-"elrs-
 
 - Download and install STM32CubeProgrammer.
 - Connect the R9 MX / R9 MM / R9 Mini via the serial Rx/Tx pins to a USB-TTL adpater.
+- It is also possible to use ArduPilot serial passthrough, but only with ArduPilot version 4.6.0 or later.
 - Power up the R9 MX / R9 MM / R9 Mini while keeping the button pressed; this boots the receiver into the system bootloader.
 - Launch STM32CubeProgrammer and select the Serial connection option as the connection method, click connect.
 - From the menu on the left select the Download tile.
