@@ -2,49 +2,74 @@
 
 ([back to main page](../README.md))
 
-For ESP targets, the project uses PlatformIO with Visual Studio Code, and the Arduino framework with Espressif cores.
+Building the project for ESP platforms uses the Arduino Framework together with the [PlatformIO](https://platformio.org/) toolchain, which is an alternative to the original Arduino toolchain.
 
-## Software: Installation Bits and Bops
+## Software ##
 
 ### Prerequisites ####
 
-1. Install Visual Studio Code, which can be found here: [VSCode](https://code.visualstudio.com/)
-2. Install the PlatformIO extension, which is done within VSCode: [PlatformIO Instructions](https://platformio.org/install/ide?install=vscode)
-3. Install Python 3 and make sure that it is added to your environment/path variable.
-4. Install Git and make sure that it is added to your environment/path variable.
+#### Windows ####
 
-Let's assume that the project should be located in the folder `C:/Me/Documents/Github/mlrs`.
+You need:
+- An integrated development environment (IDE) to work with the code. The most popular choice on Windows is the [PlatformIO IDE](https://platformio.org/install/ide?install=vscode) which is nothing but a plugin for [Microsoft VSCode](https://code.visualstudio.com/).
+- A recent [Python](https://www.python.org/downloads/windows/) installation.
+- A recent [Tortoise Git](https://tortoisegit.org/) installation. Alternatively [Git for Windows](https://gitforwindows.org/) if you like to work in Git Bash.
 
-### Clone and Setup the Project Files ###
+#### Linux ####
+Linux comes with Git and Python by default. The choice of IDE does not matter because we will use shell commands and explain the steps shortly.
 
-- Open a command line processor and navigate to this directory:
-    - `cd C:/Me/Documents/Github/`
-    - ***Note***: not C:/Me/Documents/Github/mlrs!
-- Clone the repository to your local machine using the following command:
-    - `git clone https://github.com/olliw42/mLRS.git mlrs`
-- Move into the mLRS directory using the following command:
-    - `cd mlrs`
-- Run the python setup script by entering the below command. This does three steps: initializes submodules (git submodule --init --recursive), copies ST drivers (not needed for ESP targets), and generates the MAVLink library files.
+1. Setup a virtual environment to not taint your system's python installation.
+It does not matter where you create this but it makes sense to create it in the projects directory after you cloned it.
+
+```
+cd mLRS
+python -m venv .venv
+source .venv/bin/activate
+```
+
+2. Install the required python packages, empy and pexpect are named because modules like `dronecan` do not correctly specify
+their dependencies.
+
+```
+pip install platformio dronecan setuptools empy==3.3.4 pexpect
+```
+
+### Clone the Sources ###
+
+#### Windows ####
+Both Git-for-Windows and Tortoise-Git come with Integration in Windows Explorer.
+- Open Explorer and navigate to your workspace.
+- Right Click and navigate throught the menu. Find Git -> Clone
+- Paste the url `https://github.com/olliw42/mLRS.git` into the dialog and confirm.
+
+Git Bash users follow the Linux section instead.
+
+#### Linux ####
+In Bash, navigate to your workspace and clone the repo recursively.
+```
+git clone --recursive https://github.com/olliw42/mLRS.git
+```
+
+### Preparing the Sources ###
+
+In the mLRS directory, run the python setup script by entering the below command. This does three steps: initializes submodules (git submodule --init --recursive), copies ST drivers (not needed for ESP targets), and generates the MAVLink library files.
     - `python run_setup.py`
     - ***Note***: Ensure that the first and third steps are executed completely.
 
-### Open the Project ###
+### Working with the Project in Platform IDE ###
 
-- In the VSCode IDE top bar go to 'File->Open Folder'. 
-    - ***Note***: It is 'Open Folder', not 'Open File' or any other option
-    - <img src="images/ESP_open_folder.png">
-- In the Open Folder dialog browse to `C:/Me/Documents/Github/mlrs`. Hit [Select Folder] button. 
-    - ***Note***: It is not C:/Me/Documents/Github/mlrs/mLRS as if you were using STM32CubeIDE but C:/Me/Documents/Github/mlrs! If you proceed with the wrong path then there will be all sorts of issues which you want to avoid. As a general rule: It's always the folder which contains the 'platformio.ini' file.
-- Wait until PlatformIO/VSCode have done their thing. 
-    - ***Note***: Be patient, this can take a while and you will need an internet connection. You will see plenty of notifcation boxes showing up. Most of them are irrelevant and you can just close them or wait until they disappear.
-- In the bottom bar click the field which shows 'Default (mLRS)'.
-    - ***Note***: When you hover over it should say 'Switch PlatformIO Project Environment'
-    - <img src="images/ESP_environment.png">
-- In the menu at the top of the IDE select the environment you want.
-    - <img src="images/ESP_env_menu.png">
-- Wait for PlatformIO to configure the environment.
+In general, a project based on PlatformIO has a file called `platformio.ini` in the project directory.
+Check out the [Quick Start Guide](https://docs.platformio.org/en/latest/integration/ide/vscode.html#quick-start).
 
-## Firmware: Building & Flashing
+Thus, the project is loaded into the IDE by selecting the base directory.
+- Select `File->Open Folder`
+- Navigate to the top directory of the repo where the `platformio.ini` file is located and confirm.
+- Wait until the background tasks to finished. It may take a while as it installs compiler etc.
+
+Interaction is done by the [Bottom Toolbar](https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode-toolbar)
+Find the [Project Environment Switcher](https://docs.platformio.org/en/latest/integration/ide/vscode.html#task-runner) which is the right-most item.
+Environment in terms of PlatformIO is the target device.
+It will show 'Default (mLRS)'. Select the appropriate environment for your device.
 
 - To build the firmware, click the checkmark icon in the bottom bar.
     - ***Note***: When you hover over it should say 'PlatformIO: Build'
@@ -61,3 +86,21 @@ Let's assume that the project should be located in the folder `C:/Me/Documents/G
     - <img src="images/ESP_upload.png">
 - Once the firmware has been written sucessfully, power cycle the receiver. The LED should blink to indicate that it is looking for a connection.
     - ***Note***: Binding can be done by holding down the button for four seconds.
+
+### Building the Project from Console (LINUX) ###
+
+The platformio package comes with the [pio](https://docs.platformio.org/en/latest/core/userguide/cmd_run.html) executable.
+It is the build command of the toolchain. To verify your build environment does work, start building firmware for the most common ELRS 900Mhz receiver based on ESP32. Carefull, it does not use the same environment names as the ELRS project.
+
+```
+pio run --environment rx-generic-900
+```
+
+The trick is to find out what arguments to use for a specific task.
+Browsing through the `platformio.ini` file usually finds the correct environment.
+This one in particular builds and uploads to a specific serial port.
+
+```
+pio run --target upload --environment rx-generic-900 --upload-port /dev/ttyUSB0
+```
+
