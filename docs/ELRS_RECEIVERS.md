@@ -53,25 +53,26 @@ All ELRS receivers have a standardized pinout and will need to be connected to t
     - Rx to Tx
 - When powering on the receiver you will need to have the boot/bind button pushed down to enter into bootloader mode.
     - For receivers with a single (non-RGB) LED you can confirm the receiver is in bootloader mode if the LED is solid.
-- If you have already connected your receiver to your ArduPilot flight controller or if your ELRS receiver is built-in, you can use your flight controller with serial passthrough instead of an USB<>UART adapter.  This option requires ArduPilot version 4.5.2 or newer.
+- If you have already connected your receiver to your ArduPilot flight controller or if your ELRS receiver is built-in, you can use your flight controller with serial passthrough instead of an USB<>UART adapter. This option requires ArduPilot version 4.5.2 or newer.
     - Connect to your flight controller via USB using a MAVLink GCS on your PC.
 	- Set SERIAL\_PASSTIMO to 0 to prevent timeout. Check SERIAL\_PASS1 which should already be 0.
-	- Set SERIALx_PROTOCOL to 28 ("Scripting") where x is the serial port number connected to your receiver.  This prevents MAVLink message traffic from confusing the bootloader before we enable passthrough below.  If you have scripts which use UART.write(), disable them.
+	- Set SERIALx_PROTOCOL to 28 ("Scripting") where x is the serial port number connected to your receiver. This prevents MAVLink message traffic from confusing the bootloader before we enable passthrough below. If you have scripts which use UART.write(), disable them.
 	- If you wish, you can set SERIALx_BAUD for use with mLRS/MAVLink at this time, though this setting does not matter while flashing.
 	- Power off both the flight controller and receiver (Unplug USB and power if connected)
 	- Power back up again while holding the boot/bind button down and confirm the LED is on solid.
 	- Connect your GCS again via USB.
-	- If you wish, you can set the SERIALx\_PROTOCOL parameter back to 2 ("MAVLink2") at this time so you don't need to set it after flashing.  But don't reboot or power cycle this time because we don't want it to take effect yet.
-	- Set SERIAL\_PASS2 to x, the serial port number your receiver is connected to.  Don't forget to write parameters if you are using Mission Planner or another GCS which requires this.  This step will start passthrough and cause the GCS to report communication lost.  Note that this parameter will revert to -1 and disable passthrough when you power cycle the FC after flashing.
+	- If you wish, you can set the SERIALx\_PROTOCOL parameter back to 2 ("MAVLink2") at this time so you don't need to set it after flashing. But don't reboot or power cycle this time because we don't want it to take effect yet.
+	- Set SERIAL\_PASS2 to x, the serial port number your receiver is connected to. Don't forget to write parameters if you are using Mission Planner or another GCS which requires this. This step will start passthrough and cause the GCS to report communication lost. Note that this parameter will revert to -1 and disable passthrough when you power cycle the FC after flashing.
 	- Exit the GCS program so the FC USB serial port is available for flashing.
 - Open a supported browser (Chrome, Edge, Opera, not Firefox) and navigate [here](https://esp.huhn.me/).
 - Click connect and select the serial port of your USB<>UART or FC.
+- Click erase.
 - For ESP8266 based receivers:
     - Upload the .bin file for your receiver: <br> <img src="images/ESP8266_Flash.png">
     - Click program.
 - For ESP32 based receivers:
     - Download the additional files needed for flashing  [here](https://github.com/olliw42/mLRS-docu/raw/master/docs/files/esp32_files.zip) and unpack them.
-    - Create additional entries with the following offsets and files.  Note: the firmware.bin should use the 10000 offset. <br> <img src="images/ESP32_Flash.png">
+    - Create additional entries with the following offsets and files. Note: the firmware.bin should use the 10000 offset. <br> <img src="images/ESP32_Flash.png">
     - Click program.
-- Once the firmware has been written sucessfully, power cycle the receiver/FC. The LED should blink to indicate that it is looking for a connection.
+- Once the firmware has been written successfully, power cycle the receiver/FC. The LED should blink to indicate that it is looking for a connection.
     - ***Note***: Binding can be done by holding down the button for four seconds if it doesn't connect automatically.
