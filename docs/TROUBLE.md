@@ -29,7 +29,8 @@ Carefully install your Tx module into your EdgeTX or OpenTX radio.  Some Tx modu
 - If you use EdgeTx, check that the firmware version is 2.9.x or later.
 - Inspect the Tx module connector and ensure your Tx module is fully seated in the bay.
 - Check that the external CRSF baud rate is set to 400k; this is the only speed supported by mLRS.
-- If your Tx module is the older version of the [R9M](FRSKY_R9.md#r9m-versions), don't forget to do the Inverter Mod.
+- If you have an older FrSky radio such as the Horus X10/X10S/X12S, or Taranis QX7/X9D then you probably need to do an inverter mod and/or enable one bit mode in EdgeTx to ensure reliable operation at 400k baud.
+- If your Tx module is the older version of the [R9M](FRSKY_R9.md#r9m-versions), don't forget to do the R9M Inverter Mod.
 
 ## 3. Confirm radio link between Tx module and receiver
 
