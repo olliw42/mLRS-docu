@@ -30,6 +30,7 @@ Additionally, the following ELRS receiver targets are also supported:
 | Generic 2400 PA     | 20 dBm (100 mW)  | PA + LNA                                                      |
 | Generic 2400 D PA   | 23 dBm (200 mW)  | PA + LNA, single antenna only                                 |
 | Generic 2400 TD PA  | 20 dBm (100 mW)  | True Diversity, PA + LNA                                      |
+| Generic LR1121 TD   | 20 dBm (100 mW)  | 900 MHz only, SX126x compatible                               |
 
 To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses. Alternatively, you can use this browser based tool to look up the layout of your target: [ELRS Layout File Search](https://sunjunkim.github.io/elrs_target_search/) 
 
