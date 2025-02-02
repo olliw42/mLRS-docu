@@ -17,7 +17,7 @@ The easiest way to flash firmware can be the [mLRS Web Flasher](https://mlrs.xyz
 
 ## mLRS-Flasher Desktop App
 
-The [mLRS-Flasher](https://github.com/olliw42/mLRS-Flasher) desktop app also makes it easy to flash firmware but requires installation of the app on your desktop PC. 
+The [mLRS-Flasher](https://github.com/olliw42/mLRS-Flasher) desktop app also makes it easy to flash firmware but requires installation of the app on your computer. 
 
 It provides support for substantially more mLRS devices, and can run on Win, MacOS, and Linux systems. If the mLRS Web Flasher is not suitable for you, mLRS-Flasher might be the go-to tool.  
 
