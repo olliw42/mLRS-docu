@@ -77,7 +77,7 @@ TBD
 
 ### BetaFPV Micro 1W Dip Switch Settings ###
 
-The BetaFPV Micro 1W has 7 dip switches which need to be set correctly, use the following table based on what you are doing:
+The BetaFPV Micro 1W has 7 dip switches which need to be set correctly depending on the operation mode, refer to the following table:
 
 | Operation Mode                     | Dip Switches On | Dip Switches Off |
 | ---------------------------------- | --------------- | ---------------- |
