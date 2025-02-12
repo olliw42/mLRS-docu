@@ -34,7 +34,7 @@ Steps to flash:
 
 ### Flashing the Wireless Bridge on Internal Modules ###
 
-> [!PREREQUISITES]
+> [!IMPORTANT]
 > To flash the Wireless Bridge, you will need the mLRS firmware installed - this is done by following the steps outlined above.
 
 1. Plug the radio into the computer using USB, select 'USB Serial (VCP)' from the menu
