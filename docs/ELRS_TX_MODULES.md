@@ -57,7 +57,8 @@ mLRS supports the following ELRS external modules:
 ### Flashing External Modules ###
 
 > [!IMPORTANT]
-> The BetaFPV Micro 1W requires specific dip switch settings to flash and operate, these are detailed in the BetaFPV section below.
+> The BetaFPV Micro 1W requires specific dip switch settings to flash and operate, these are detailed in the 
+> [BetaFPV section](https://github.com/olliw42/mLRS-docu/blob/elrs-tx-modules-update/docs/ELRS_TX_MODULES.md#betafpv-micro-1w-dip-switch-settings).
 
 Flashing external modules is done using the mLRS Flasher App - this is found [here](https://github.com/olliw42/mLRS-Flasher).
 
