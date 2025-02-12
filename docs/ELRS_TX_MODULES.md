@@ -1,31 +1,85 @@
-# mLRS Documentation: ELRS Tx Modules #
+# mLRS Documentation: ELRS Internal & External Tx Modules #
 
 ([back to main page](../README.md))
-
-mLRS supports a few ELRS Tx modules, but only for SiK telemetry use. 
-
-> [!IMPORTANT]
-> Only for SiK telemetry use means that RC control is not supported, neither via the JR bay nor via an IN port. This also means that the mLRS Lua script cannot be used, nor can the Yaapu app.
 
 > [!IMPORTANT]
 > 868/915 MHz ELRS Tx modules are only compatible with ELRS 868/915 and Frsky R9 receivers; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
-The Tx modules below allow for convenient configuration through the OLED.
+## Internal Modules ##
 
-## BetaFPV 1W Micro Tx Module (2.4 GHz) ##
+mLRS supports the ELRS internal modules on the following radios:
+
+| Radio                                        | Target                             | Frequency Band | Transmit Power   |
+| -------------------------------------------- | ---------------------------------- | -------------- | ---------------- |
+| Jumper T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-900             | 868/915 MHz    | 30 dBm (1000 mW) |
+| Jumper T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-2400            | 2.4 GHz        | 30 dBm (1000 mW) |
+| RadioMaster Boxer                            | tx-radiomaster-internal-boxer-2400 | 2.4 GHz        | 30 dBm (1000 mW) |
+| RadioMaster Pocket, MT12, TX12, TX16S, Zorro | tx-radiomaster-internal-2400       | 2.4 GHz        | 24 dBm (250 mW)  |
+
+### Flashing Internal Modules ###
+
+Flashing internal modules is done using the mLRS Flasher App - this is found [here](https://github.com/olliw42/mLRS-Flasher).
+
+Steps to flash:
+
+1. Power the radio on
+2. Navigate to MDL->MODEL SETUP, select Internal RF and select Mode = CRSF
+3. Navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k
+4. Plug the radio into the computer using USB, select 'USB Serial (VCP)' from the menu
+5. Launch the mLRS Flasher App
+6. Select Tx Module (internal) from the left menu
+7. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
+8. Click Flash Tx Module, wait for the flash to finish
+9. Unplug the USB cable
+
+### Flashing the Wireless Bridge on Internal Modules ###
+
+> [!PREREQUISITES]
+> To flash the Wireless Bridge, you will need the mLRS firmware installed - this is done by following the steps outlined above.
+
+1. Plug the radio into the computer using USB, select 'USB Serial (VCP)' from the menu
+2. Launch the mLRS Flasher App
+3. Select Tx Module (internal) from the left menu
+4. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
+5. Click Flash Wireless Bridge, wait for the flash to finish
+6. Unplug the USB cable
+
+## External Modules ##
+
+mLRS supports the following ELRS external modules:
+
+| Module                   | Target                          | Frequency Band | Transmit Power   |
+| ------------------------ | ------------------------------- | -------------- | ---------------- |
+| BetaFPV Micro 1W         | tx-betafpv-micro-1w-2400        | 2.4 GHz        | 30 dBm (1000 mW) |
+| RadioMaster Bandit       | tx-radiomaster-bandit-900       | 868/915 MHz    | 30 dBm (1000 mW) |
+| RadioMaster Bandit Micro | tx-radiomaster-bandit-micro-900 | 868/915 MHz    | 30 dBm (1000 mW) |
+
+### Flashing External Modules ###
+
+> [!IMPORTANT]
+> The BetaFPV Micro 1W requires specific dip switch settings to flash and operate, these are detailed in the BetaFPV section below.
+
+Flashing external modules is done using the mLRS Flasher App - this is found [here](https://github.com/olliw42/mLRS-Flasher).
+
+Steps to flash:
+
+1. Plug the module into the computer using USB
+2. Launch the mLRS Flasher App
+3. Select Tx Module (external) from the left menu
+4. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
+5. Click Flash Tx Module, wait for the flash to finish
+6. Unplug the USB cable
+
+### Flashing the Wireless Bridge on External Modules ###
 
 TBD
 
-## RadioMaster Micro Bandit (868/915 MHz) ##
+### BetaFPV Micro 1W Dip Switch Settings ###
 
-TBD
+The BetaFPV Micro 1W has 7 dip switches which need to be set correctly, use the following table based on what you are doing:
 
-## RadioMaster Bandit (868/915 MHz) ##
-
-TBD
-
-## Flashing ##
-
-- Download the firmware for your Tx module.
-    - The latest official release or latest pre-release is found [here](https://github.com/olliw42/mLRS/releases).
-    - The latest dev release is found [here](https://github.com/olliw42/mLRS/tree/main/firmware/pre-release-esp).
+| Operation Mode                     | Dip Switches On | Dip Switches Off |
+| ---------------------------------- | --------------- | ---------------- |
+| Flash module or use USB for serial | 1,2             | 3,4,5,6,7        |
+| Flash Wireless Bridge              | 5,6,7           | 1,2,3,4          |
+| Use Wireless Bridge for serial     | 3,4             | 1,2,5,6,7        |
