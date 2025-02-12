@@ -64,14 +64,15 @@ Flashing internal modules is done using the mLRS Flasher Desktop App - this is f
 Steps to flash:
 
 1. Power the radio on
-2. Navigate to MDL->MODEL SETUP, select Internal RF and select Mode = CRSF
-3. Navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k
-4. Plug the radio into the computer using USB, select 'USB Serial (VCP)' from the menu
-5. Launch the mLRS Flasher App
-6. Select Tx Module (internal) from the left menu
-7. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
-8. Click Flash Tx Module, wait for the flash to finish
-9. Unplug the USB cable
+2. Plug the radio into the computer using USB, select 'USB Serial (VCP)' from the menu
+3. Launch the mLRS Flasher App
+4. Select Tx Module (internal) from the left menu
+5. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
+6. Click Flash Tx Module, wait for the flash to finish
+7. Unplug the USB cable
+
+> [!NOTE]
+> mLRS only supports 400k baudrate, for internal modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k.
 
 ### Flashing the Wireless Bridge on Internal Modules ###
 
