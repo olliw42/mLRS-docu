@@ -38,7 +38,13 @@ Steps to flash:
 
 ### Flashing the Wireless Bridge on External Modules ###
 
-TBD
+1. Plug the module into the computer using USB
+2. Launch the mLRS Flasher Desktop App
+3. Select Tx Module (external) from the left menu
+4. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
+5. Follow the instructions under 'Wireless Bridge' to allow flashing
+6. Click Flash Wireless Bridge, wait for the flash to finish
+7. Unplug the USB cable
 
 ### BetaFPV Micro 1W Dip Switch Settings ###
 
