@@ -38,6 +38,9 @@ Steps to flash:
 
 ### Flashing the Wireless Bridge on External Modules ###
 
+> [!IMPORTANT]
+> To flash the Wireless Bridge, you will need the mLRS firmware installed - this is done by following the steps outlined above.
+
 1. Plug the module into the computer using USB
 2. Launch the mLRS Flasher Desktop App
 3. Select Tx Module (external) from the left menu
