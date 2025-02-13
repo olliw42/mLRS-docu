@@ -53,7 +53,7 @@ mLRS supports the ELRS internal modules on the following radios:
 | Radio                                        | Target                             | Frequency Band | Transmit Power   |
 | -------------------------------------------- | ---------------------------------- | -------------- | ---------------- |
 | Jumper T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-900             | 868/915 MHz    | 30 dBm (1000 mW) |
-| Jumper T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-2400            | 2.4 GHz        | 30 dBm (1000 mW) |
+| Jumper T20 V1, T-20 V2, T15, T14, T-Pro S    | tx-jumper-internal-2400            | 2.4 GHz        | 30 dBm (1000 mW) |
 | RadioMaster Boxer                            | tx-radiomaster-internal-boxer-2400 | 2.4 GHz        | 30 dBm (1000 mW) |
 | RadioMaster Pocket, MT12, TX12, TX16S, Zorro | tx-radiomaster-internal-2400       | 2.4 GHz        | 24 dBm (250 mW)  |
 
