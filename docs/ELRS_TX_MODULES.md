@@ -5,6 +5,9 @@
 > [!IMPORTANT]
 > 868/915 MHz ELRS Tx modules are only compatible with ELRS 868/915 and Frsky R9 receivers; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
+> [!NOTE]
+> mLRS only supports 400k baudrate, For external Tx modules navigate to MODEL SETTINGS->MODEL SETUP->Extrenal RF and select Mode = CRSF and Baudrate = 400k; for internal Tx modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k.
+
 ## External Modules ##
 
 mLRS supports the following ELRS external modules:
@@ -26,11 +29,12 @@ Flashing external modules is done using the mLRS Flasher Desktop App - this is f
 Steps to flash:
 
 1. Plug the module into the computer using USB
-2. Launch the mLRS Flasher App
+2. Launch the mLRS Flasher Desktop App
 3. Select Tx Module (external) from the left menu
 4. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
-5. Click Flash Tx Module, wait for the flash to finish
-6. Unplug the USB cable
+5. Select the correct serial port
+6. Click Flash Tx Module, wait for the flash to finish
+7. Unplug the USB cable
 
 ### Flashing the Wireless Bridge on External Modules ###
 
@@ -53,7 +57,7 @@ mLRS supports the ELRS internal modules on the following radios:
 | Radio                                        | Target                             | Frequency Band | Transmit Power   |
 | -------------------------------------------- | ---------------------------------- | -------------- | ---------------- |
 | Jumper T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-900             | 868/915 MHz    | 30 dBm (1000 mW) |
-| Jumper T20 V1, T-20 V2, T15, T14, T-Pro S    | tx-jumper-internal-2400            | 2.4 GHz        | 30 dBm (1000 mW) |
+| Jumper T20 V1, T20 V2, T15, T14, T-Pro S     | tx-jumper-internal-2400            | 2.4 GHz        | 30 dBm (1000 mW) |
 | RadioMaster Boxer                            | tx-radiomaster-internal-boxer-2400 | 2.4 GHz        | 30 dBm (1000 mW) |
 | RadioMaster Pocket, MT12, TX12, TX16S, Zorro | tx-radiomaster-internal-2400       | 2.4 GHz        | 24 dBm (250 mW)  |
 
@@ -65,14 +69,11 @@ Steps to flash:
 
 1. Power the radio on
 2. Plug the radio into the computer using USB, select 'USB Serial (VCP)' from the menu
-3. Launch the mLRS Flasher App
+3. Launch the mLRS Flasher Desktop App
 4. Select Tx Module (internal) from the left menu
 5. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
 6. Click Flash Tx Module, wait for the flash to finish
 7. Unplug the USB cable
-
-> [!NOTE]
-> mLRS only supports 400k baudrate, for internal modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k.
 
 ### Flashing the Wireless Bridge on Internal Modules ###
 
@@ -80,7 +81,7 @@ Steps to flash:
 > To flash the Wireless Bridge, you will need the mLRS firmware installed - this is done by following the steps outlined above.
 
 1. Plug the radio into the computer using USB, select 'USB Serial (VCP)' from the menu
-2. Launch the mLRS Flasher App
+2. Launch the mLRS Flasher Desktop App
 3. Select Tx Module (internal) from the left menu
 4. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
 5. Click Flash Wireless Bridge, wait for the flash to finish
