@@ -6,7 +6,7 @@
 > 868/915 MHz ELRS Tx modules are only compatible with ELRS 868/915 and Frsky R9 receivers; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 > [!NOTE]
-> mLRS only supports 400k baudrate, For external Tx modules navigate to MODEL SETTINGS->MODEL SETUP->Extrenal RF and select Mode = CRSF and Baudrate = 400k; for internal Tx modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k.
+> mLRS only supports 400k baudrate, for external Tx modules navigate to MODEL SETTINGS->MODEL SETUP->External RF and select Mode = CRSF and Baudrate = 400k; for internal Tx modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k.
 
 ## External Modules ##
 
