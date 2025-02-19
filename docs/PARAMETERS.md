@@ -72,17 +72,17 @@ Can be "9600", "19200", "38400", "57600", "115200", "230400".
 Determines if a MAVLink RADIO_STATUS message is emitted by the Tx module. Effective only when in the receiver "Rx Ser Link Mode" = "mavlink" or "mavlinkX" is set. 
 Can be "off", "1 Hz".
 
-#### Tx Buzzer #### 
-Enables the buzzer, and selects what data it reflects. Can be "off", "LP", "rxLQ".
-
-LP stands for Lost Packet, and here the buzzer emits a short beep for any lost packet. rxLQ stands for receiver Link Quality, and here the buzzer beeps every second, with the beep length reflecting LQ (longer beep equals lower LQ).
-
 #### Tx Mav Component ####
-Enabled parameter configuration using the MAVLink parameter service.
+Enables parameter configuration via the MAVLink parameter service.
 Can be "enabled", "off".
 
 #### Tx Power Sw Ch ####
 The channel that is used to switch the RF power of the Tx module. Use in combination with the Tx Power parameter to set the maximum power that you want to be able to switch to.  Designed for use with a 3-position switch, low / mid / high on the channel will switch between Max Power - 2, Max Power - 1 and Max Power, respectively. Additional power levels starting at the minimum power are available in the mid positions for advanced users needing more than 3 power levels.
+
+#### Tx Buzzer #### 
+Enables the buzzer, and selects what data it reflects. Can be "off", "LP", "rxLQ".
+
+LP stands for Lost Packet, and here the buzzer emits a short beep for any lost packet. rxLQ stands for receiver Link Quality, and here the buzzer beeps every second, with the beep length reflecting LQ (longer beep equals lower LQ).
 
 ## Rx Parameters ##
 
@@ -103,14 +103,6 @@ Can be "AETR", "TAER", "ETAR".
 Selects the protocol of the RC data emitted on the out port. 
 Can be "sbus", "crsf", "sbus inv".
 
-#### Rx Out Rssi Ch #### 
-Determines if and on which channel the RSSI value is send out. 
-Can be "off", "5" - "16".
-
-#### Rx Out Lq Ch #### 
-Determines if and on which channel the LQ value is send out. 
-Can be "off", "5" - "16".
-
 #### Rx FailSafe Mode #### 
 Determines the behavior upon a failsafe. 
 Can be "no sig", "low thr", "by cnf", "low thr cnt", "ch1ch4 cnt".
@@ -121,9 +113,9 @@ Can be "9600", "19200", "38400", "57600", "115200", "230400".
 
 #### Rx Ser Link Mode #### 
 Selects how the serial data stream is processed. 
-Can be "transp.", "mavlink", "mavlinkX".
+Can be "transp.", "mavlink", "mavlinkX", "mspX".
 
-This setting is also applied to the Tx module. For MAVLinkX see [here](MAVLINKX.md).
+This setting is also applied to the Tx module. For MAVLinkX see [here](MAVLINKX.md). For MspX see [here](MSPX.md).
 
 #### Rx Snd RadioStat #### 
 Determines if a MAVLink RADIO_STATUS message is emitted by the receiver, and which flow control algorithm is used. Effective only when "Rx Ser Link Mode" = "mavlink" or "mavlinkX". 
@@ -134,6 +126,14 @@ Determines if a RC_CHANNELS_OVERRIDE or RADIO_RC_CHANNELS MAVLink message is emi
 Can be "off", "rc override", "rc channels".
 
 If using ArduPilot V4.6.0-dev on a 2 MB flight controller, the "rc channels" setting is strongly recommended. Otherwise, "rc override" must be used. See the detailed [ArduPilot configuration page](ARDUPILOT.md).
+
+#### Rx Out Rssi Ch #### 
+Determines if and on which channel the RSSI value is send out. 
+Can be "off", "5" - "16".
+
+#### Rx Out LQ Ch #### 
+Determines if and on which channel the LQ value is send out. 
+Can be "off", "5" - "16".
 
 #### Rx Power Sw Ch ####
 The channel that is used to switch the RF power of the receiver. Use in combination with the Rx Power parameter to set the maximum power that you want to be able to switch to.  Designed for use with a 3-position switch, low / mid / high on the channel will switch between Max Power - 2, Max Power - 1 and Max Power, respectively. Additional power levels starting at the minimum power are available in the mid positions for advanced users needing more than 3 power levels.
