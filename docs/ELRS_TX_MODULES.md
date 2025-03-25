@@ -17,6 +17,7 @@ mLRS supports the following ELRS external modules:
 | BetaFPV Micro 1W         | tx-betafpv-micro-1w-2400        | 2.4 GHz        | 30 dBm (1000 mW) |
 | RadioMaster Bandit       | tx-radiomaster-bandit-900       | 868/915 MHz    | 30 dBm (1000 mW) |
 | RadioMaster Bandit Micro | tx-radiomaster-bandit-micro-900 | 868/915 MHz    | 30 dBm (1000 mW) |
+| RadioMaster Ranger       | tx-radiomaster-ranger-2400      | 2.4 GHz        | 30 dBm (1000 mW) |
 
 ### Flashing External Modules ###
 
