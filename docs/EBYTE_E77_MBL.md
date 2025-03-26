@@ -59,8 +59,6 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 
 <img src="images/mLRS-EByte-E77-MBLKit-Tx.jpg" width="900px">
 
-*The Schottky diode between the PB6 and PB7 pins is not needed with the default firmware. If you are having communication issues between the radio and the Tx module then you can install the Schottky diode and use the 'sdiode' firmware ('sdiode' will be included in the file name, e.g. tx-E77-MBLKit-wle5cc-400-**sdiode**-vX.X.XX.hex).  
-
 ### As Rx Module ###
 
 Connections (name in respect to board print-ons, otherwise please refer to graphic):
