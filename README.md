@@ -16,6 +16,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [Configuration ID](docs/CONFIGID.md)
 - [Flashing/Upgrading Firmware](docs/FLASHING.md)
 - [Troubleshooting](docs/TROUBLE.md)
+- [Logging](docs/LOGGING.md)
 
 ### Setups ###
 - [CRSF Telemetry and Yaapu Telemetry App](docs/CRSF.md)
