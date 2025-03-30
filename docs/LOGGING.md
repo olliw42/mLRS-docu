@@ -29,18 +29,19 @@ A good option is to use this browser based solution [here](https://maxbl4.github
 
 ## ArduPilot Logging ##
 
-An ArduPilot Lua script has been developed which records link statistics as part of the flight controller log.  Note that this requires a flight controller with 2 MB of flash and 80 kB of memory (H7 and some F7 flight controllers).
+An ArduPilot Lua script has been developed which records link statistics as part of the flight controller log.  This requires a flight controller with 
+Lua Scripting and MAVLink RC features enabled.  These are only enabled by default on 2 MB flight controllers.  For other flight controllers, you will have to create a custom build which includes both of these features.  This can be done using the [Ardupilot Custom Firmware Builder](https://custom.ardupilot.org/).
 
 ### Setup & Validation ###
 
-1. Download the Lua file from [here](https://github.com/olliw42/mLRS/blob/main/ardupilot_tools/mlrs_mavlink_link_stats.lua) and place in the /APM/SCRIPTS/ folder on the SD Card of your flight controller. If the /APM/SCRIPTS/ folder doesn't exist, you will need to create it.
-2. On your flight controller, enable scripting by setting the parameter SCR_ENABLE to 1, then reboot the flight controller.
+1. Download the Lua script from [here](https://github.com/olliw42/mLRS/blob/main/ardupilot_tools/mlrs_mavlink_link_stats.lua) and place in the /APM/SCRIPTS/ folder on the SD Card of your flight controller. If the /APM/SCRIPTS/ folder doesn't exist, you will need to create it.
+2. On your flight controller, enable scripting by setting the parameter `SCR_ENABLE` to `1` and then reboot the flight controller.
 3. Set the following two parameters in mLRS:
-    1. 'Rx Ser Link Mode' = 'mavlink' or 'mavlinkX' ('mavlinkX' should be preferred)
-    2. 'Rx Snd RcChannel' = 'rc channels' (NOT 'rc override'!)
+    1. `Rx Ser Link Mode` = `mavlink` or `mavlinkX` (`mavlinkX` should be preferred)
+    2. `Rx Snd RcChannel` = `rc channels` (NOT `rc override`!)
 4. To validate, arm your flight controller for a few seconds, then disarm.
 5. Check the /APM/LOGS/ folder on the SD Card of your flight controller, you should see a BIN file.
 
 ### Analysis ###
 
-Analysis can be done in Mission Planner by following the steps [here](https://ardupilot.org/copter/docs/common-downloading-and-analyzing-data-logs-in-mission-planner.html#downloading-logs-via-mavlink).
+Analysis can be done in Mission Planner by following the steps [here](https://ardupilot.org/copter/docs/common-downloading-and-analyzing-data-logs-in-mission-planner.html#downloading-logs-via-mavlink). mLRS specific logging can be found under MLR1, MLR2, MLR3, MLR4 and MLR5 entries.
