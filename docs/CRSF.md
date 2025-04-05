@@ -166,6 +166,18 @@ Generally, the stream rate settings are not critical, as mLRS will gracefully ad
 
 **If these settings do not work, more details are available on the [ArduPilot Systems](ARDUPILOT.md) page.**
 
+### Airspeed vs Groundspeed
+
+The Yaapu telemetry script shows a speed ticker by default on the left of the flight display. Depending on the configuration of ARSPD_USE, this can show either groundspeed or a combination of airspeed and groundspeed:
+
+- ARSPD_USE = 0: Yaapu displays groundspeed only as a green number
+- ARSPD_USE = 1: Yaapu displays airspeed as a green number and groundspeed below it as a white number
+- ARSPD_USE = 2: Displays as = 1, but airspeed will only update when throttle is zero.
+
+If you have no airspeed sensor and are therefore relying on synthetic airspeed, Yaapu will display groundspeed only.
+
+Setting FRSKY_OPTIONS = 1, as mentioned in the Yaapu wiki, **is not necessary** for mLRS.
+
 ## mLRS Receiver Setup
 
 Set the following parameters using the CLI or Lua script (or OLED if available):
