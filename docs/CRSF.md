@@ -192,9 +192,15 @@ Set the following parameters using the CLI or Lua script (or OLED if available):
 
 ## Yaapu Telemetry App Setup for EdgeTX/OpenTX
 
-In EdgeTX/OpenTX go to MDL->TELEMETRY and select "Discover new sensors". You should see sensors appearing; mLRS currently provides 28 sensors ([CRSF Sensors](CRSF_SENSORS.md)).
+With an active connection to the receiver, in EdgeTX/OpenTX go to MDL->TELEMETRY and select "Discover new sensors". You should start to see sensors appearing; mLRS currently provides 28 sensors ([CRSF Sensors](CRSF_SENSORS.md)).
 
-Install the Yaapu app exactly as described in its wiki. Note: You need to install the dev version, the stable release version will not work. You need to enable the CRSF support: Start the "Yaapu Config" script in SYS->TOOLS, and set "enable CRSF support: yes" (then repower the radio). You can check if all is good by running the "Yaapu Debug CRSF" script in SYS->TOOLS.
+Install the latest Yaapu app exactly as described in its wiki. Note: you should always install the latest dev / master version, previous releases aren't guaranteed to work.
+
+Once installed, you need to enable CRSF support: 
+- Start the "Yaapu Config" script in SYS->TOOLS
+- Set "enable CRSF support: yes" 
+- Reboot the radio 
+- You can check if all is working by running the "Yaapu Debug CRSF" script in SYS->TOOLS
 
 ## Demo
 
