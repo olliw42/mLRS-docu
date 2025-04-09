@@ -1,4 +1,4 @@
-# mLRS Documentation: Parameters (v1.3.04) #
+# mLRS Documentation: Parameters (v1.3.06) #
 
 ([back to main page](../README.md))
 
