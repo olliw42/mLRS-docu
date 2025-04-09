@@ -65,10 +65,10 @@ Two methods are supported:
 
 1. Launch the mLRS Flasher Desktop App
 2. Connect the flight controller via USB
-3. Select the SERIAL port that the receiver is connected to
+3. Select the flight controller SERIAL port that the receiver is connected to
 4. Click Flash Receiver
-5. Wait for the console to appear
-6. Unplug the flight controller, then power up while holding down the button
+5. Wait for the console to appear and find the flight controller
+6. Unplug the flight controller, then power up while holding down the receiver button
 7. Wait 30 seconds for the flight controller to boot
 8. Press enter in the console to continue, wait for the flash to finish
 9. Power cycle the receiver
