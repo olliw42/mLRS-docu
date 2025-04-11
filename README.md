@@ -32,7 +32,6 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 ### STM32 Hardware ###
 - [MatekSys mLRS Hardware](docs/MATEKSYS.md)
 - [Frsky R9 Devices](docs/FRSKY_R9.md)
-- [FlySky FRM303 Module](docs/FLYSKY_FRM303.md)
 - [SeeedStudio Wio-E5 Boards](docs/SEEEDSTUDIO_WIO_E5.md)
 - [EBYTE E77 MBL Boards](docs/EBYTE_E77_MBL.md)
 - [E77 Easy Solder Boards](docs/E77_EASYSOLDER.md)
