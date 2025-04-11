@@ -12,6 +12,7 @@ mLRS provides the MspX technology, which is designed to improve the over-the-air
 - It is highly recommended to use INAV 8 or later, although mLRS has also been tested with INAV 7.1.
 - For INAV 7.1 and earlier, several limitations exist. For the details please see the last chapter below, [Differences between INAV 8 and 7 when using MspX](#differences-between-inav-8-and-7-when-using-mspx).
 - MspX requires mLRS 1.3.04 or higher to be used.
+- An in-depth description of what is going on under the hood is given [here](https://discord.com/channels/1005096100572700794/1005268892437970945/1359794224349974608) and [here](https://discord.com/channels/1005096100572700794/1005268892437970945/1359795724056789002).
 
 In the following INAV 8 is assumed.
 
