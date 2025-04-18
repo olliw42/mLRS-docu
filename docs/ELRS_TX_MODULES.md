@@ -44,6 +44,9 @@ Steps to flash:
 > [!IMPORTANT]
 > To flash the Wireless Bridge, you will need the mLRS firmware installed - this is done by following the steps outlined above.
 
+> [!NOTE]
+> The mLRS wireless bridge uses the "backpack" ESP8285 chip available on these ELRS Tx modules.
+
 1. Plug the module into the computer using USB
 2. Launch the mLRS Flasher Desktop App
 3. Select Tx Module (external) from the left menu
@@ -93,7 +96,7 @@ Steps to flash:
 > To flash the Wireless Bridge, you will need the mLRS firmware installed - this is done by following the steps outlined above.
 
 > [!NOTE]
-> The mLRS wireless bridge uses the "backpack" ESP8285 chip available on many ELRS Tx modules.
+> The mLRS wireless bridge uses the "backpack" ESP8285 chip available on these ELRS Tx modules.
 
 1. Plug the radio into the computer using USB, select 'USB Serial (VCP)' from the menu
 2. Launch the mLRS Flasher Desktop App
