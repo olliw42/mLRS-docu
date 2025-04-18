@@ -2,15 +2,17 @@
 
 ([back to main page](../README.md))
 
+mLRS supports a number of external ELRS modules as well as the internal ELRS modules in a number of popular radios.
+
 > [!IMPORTANT]
 > 868/915 MHz ELRS Tx modules are only compatible with ELRS 868/915 and Frsky R9 receivers; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 > [!NOTE]
-> mLRS only supports 400k baudrate, for external Tx modules navigate to MODEL SETTINGS->MODEL SETUP->External RF and select Mode = CRSF and Baudrate = 400k; for internal Tx modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k.
+> mLRS only supports CRSF for 400k baudrate. For external Tx modules navigate to MODEL SETTINGS->MODEL SETUP->External RF and select Mode = CRSF and Baudrate = 400k; for internal Tx modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k.
 
-## External Modules ##
+## External Tx Modules ##
 
-mLRS supports the following ELRS external modules:
+mLRS supports the following external ELRS modules:
 
 | Module                   | Target                          | Frequency Band | Transmit Power   |
 | ------------------------ | ------------------------------- | -------------- | ---------------- |
@@ -19,13 +21,13 @@ mLRS supports the following ELRS external modules:
 | RadioMaster Bandit Micro | tx-radiomaster-bandit-micro-900 | 868/915 MHz    | 30 dBm (1000 mW) |
 | RadioMaster Ranger       | tx-radiomaster-ranger-2400      | 2.4 GHz        | 30 dBm (1000 mW) |
 
-### Flashing External Modules ###
+### Flashing External Tx Modules ###
 
 > [!IMPORTANT]
 > The BetaFPV Micro 1W requires specific dip switch settings to flash and operate, these are detailed in the 
 > [BetaFPV section](https://github.com/olliw42/mLRS-docu/blob/elrs-tx-modules-update/docs/ELRS_TX_MODULES.md#betafpv-micro-1w-dip-switch-settings).
 
-Flashing external modules is done using the mLRS Flasher Desktop App - this is found [here](https://github.com/olliw42/mLRS-Flasher).
+Flashing external Tx modules is done using the mLRS Flasher Desktop App - this is found [here](https://github.com/olliw42/mLRS-Flasher).
 
 Steps to flash:
 
@@ -37,10 +39,13 @@ Steps to flash:
 6. Click Flash Tx Module, wait for the flash to finish
 7. Unplug the USB cable
 
-### Flashing the Wireless Bridge on External Modules ###
+### Flashing the Wireless Bridge on External Tx Modules ###
 
 > [!IMPORTANT]
 > To flash the Wireless Bridge, you will need the mLRS firmware installed - this is done by following the steps outlined above.
+
+> [!NOTE]
+> The mLRS wireless bridge uses the "backpack" ESP8285 chip available on these ELRS Tx modules.
 
 1. Plug the module into the computer using USB
 2. Launch the mLRS Flasher Desktop App
@@ -60,9 +65,9 @@ The BetaFPV Micro 1W has 7 dip switches which need to be set correctly depending
 | Flash Wireless Bridge              | 5,6,7           | 1,2,3,4          |
 | Use Wireless Bridge for serial     | 3,4             | 1,2,5,6,7        |
 
-## Internal Modules ##
+## Internal Tx Modules ##
 
-mLRS supports the ELRS internal modules on the following radios:
+mLRS supports the internal ELRS modules on the following radios:
 
 | Radio                                        | Target                             | Frequency Band | Transmit Power   |
 | -------------------------------------------- | ---------------------------------- | -------------- | ---------------- |
@@ -89,6 +94,9 @@ Steps to flash:
 
 > [!IMPORTANT]
 > To flash the Wireless Bridge, you will need the mLRS firmware installed - this is done by following the steps outlined above.
+
+> [!NOTE]
+> The mLRS wireless bridge uses the "backpack" ESP8285 chip available on these ELRS Tx modules.
 
 1. Plug the radio into the computer using USB, select 'USB Serial (VCP)' from the menu
 2. Launch the mLRS Flasher Desktop App
