@@ -9,6 +9,7 @@ The wireless bridge consists of an additional ESP32 or ESP8266/ESP8285 module, c
 The following wireless protocols are supported:
 
 | chipset  | TCP | UDP | UDPCl | classic BT |
+| --- | --- | --- | --- | --- |
 | ESP32 | x | x | x | x | x |
 | ESP82xx | x | x | x | x | - |
 
