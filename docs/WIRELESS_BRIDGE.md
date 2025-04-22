@@ -10,8 +10,8 @@ The following wireless protocols are supported:
 
 | chipset  | TCP | UDP | UDPCl | classic BT |
 | --- | --- | --- | --- | --- |
-| ESP32 | x | x | x | x | x |
-| ESP82xx | x | x | x | x | - |
+| ESP32 | x | x | x | x |
+| ESP82xx | x | x | x | - |
 
 For some Tx modules the wireless bridge can be configured from the Tx module, that is, via the CLI, Lua script or OLED (this depends on the specific hardware of the Tx module). Otherwise, the wireless bridge needs to be configured in the Arduino sketch and a new firmware be compiled and uploaded with each change.
 
