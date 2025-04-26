@@ -17,7 +17,7 @@ Three things need to be done in order to use the Lua script:
 
 1. The Tx module must be configured for CRSF or mBridge mode, by setting the parameter "Tx Ch Source" to "crsf" or "mbridge" respectively. Since firmware version v0.2.13 "crsf" is the default setting, so this will be already completed after an initial flash. If not, the CLI needs to be used to set this parameter accordingly, as described in [CLI Commands](CLI.md).
 
-2. In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the external RF module for CRSF or mBridge protocol with 400K baud rate.
+2. In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF or mBridge protocol with 400K baud rate.
 
     - ***Note***: mLRS only officially supports 400K baud rate.
 
