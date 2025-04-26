@@ -28,7 +28,7 @@ Carefully install your Tx module into your EdgeTX or OpenTX radio.  Some Tx modu
 - If the Lua script does not work, ensure you have installed the correct version.  There is a separate version for radios with a lower resolution black and white screens.
 - If you use EdgeTx, check that the firmware version is 2.9.x or later.
 - Inspect the Tx module connector and ensure your Tx module is fully seated in the bay.
-- Check that the external CRSF baud rate is set to 400k; this is the only speed supported by mLRS.
+- Check that the CRSF baud rate is set to 400k; this is the only speed supported by mLRS.  The external module baud rate is set on the MDL->MODEL SETUP page.  The internal module baud rate is set on the SYS->HARDWARE page.
 - If you have an older FrSky radio such as the Horus X10/X10S/X12S, or Taranis QX7/X9D then you probably need to do an inverter mod and/or enable one bit mode in EdgeTx to ensure reliable operation at 400k baud.
 - If your Tx module is the older version of the [R9M](FRSKY_R9.md#r9m-versions), don't forget to do the R9M Inverter Mod.
 
@@ -76,7 +76,7 @@ This is a complex topic since there are so many ways to connect a Tx module to a
 Use the mLRS Lua script or another configuration method to temporarily set ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) to "rc override".  If you use the mLRS Lua script there is no need to store; just press the RTN button after selecting "rc override".
 
 Connect a ground station via USB directly to your flight controller and view the MAVLink messages.
-With QGroundControl, use "Analyze Tools" -> "MAVLink Inspector" and select System 255 in the upper right.
+With QGroundControl, use "Analyze Tools" -> "MAVLink Inspector" and select System 255 in the upper right.  Note that the System selection will only appear if messages from multiple systems are being received, so if you don't see it, your flight controller is not receiving from the receiver correctly.
 With Mission Planner, Press Ctrl-F, select "MAVLink Inspector" and expand "Vehicle 255" -> "Comp 68" -> "RC\_CHANNELS\_OVERRIDE".
 
 You should see the RC\_CHANNELS\_OVERRIDE message is being received at the same rate as your configured mLRS mode.  Note that this also confirms your Tx module is receiving RC channel data from your radio and sending it to the receiver.
@@ -94,7 +94,7 @@ Using your ground station connected to your Tx module, verify that you can chang
 
 Use the radio calibration page of your ground station (connected either via your Tx module or directly to USB) to verify all RC controls are working as expected.
 
-- If you use ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) = "rc overwrite" setting instead of connecting a CRSF receiver output and are testing with QGroundControl, switch to Mission Planner or APM Planner 2.0 since QGroundControl doesn't show data from RC\_CHANNELS\_OVERRIDE MAVLink messages on this page.
+- If you use ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) = "rc override" setting instead of connecting a CRSF receiver output and are testing with QGroundControl, switch to Mission Planner or APM Planner 2.0 since QGroundControl doesn't show data from RC\_CHANNELS\_OVERRIDE MAVLink messages on this page.
 - If the display doesn't follow stick movement and you use a CRSF connection between your receiver and your flight controller, check that you have connected the wire to the correct pins/pads on both your receiver and flight controller.
 - For CRSF, check that you have correctly [configured ArduPilot](ARDUPILOT.md#crsf-receiver) to use this input.
 - For CRSF, check that you have correctly [configured your receiver](CRSF.md#mlrs-rx-module-setup) for CRSF output with ["Rx Out Mode"](PARAMETERS.md#rx-out-mode) = "crsf".
