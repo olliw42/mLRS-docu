@@ -28,7 +28,7 @@ Carefully install your Tx module into your EdgeTX or OpenTX radio.  Some Tx modu
 - If the Lua script does not work, ensure you have installed the correct version.  There is a separate version for radios with a lower resolution black and white screens.
 - If you use EdgeTx, check that the firmware version is 2.9.x or later.
 - Inspect the Tx module connector and ensure your Tx module is fully seated in the bay.
-- Check that the CRSF baud rate is set to 400k; this is the only speed supported by mLRS.  The external module baud rate is set on the Model setup page.  The internal module baud rate is set on the Hardware page.
+- Check that the CRSF baud rate is set to 400k; this is the only speed supported by mLRS.  The external module baud rate is set on the MDL->MODEL SETUP page.  The internal module baud rate is set on the SYS->HARDWARE page.
 - If you have an older FrSky radio such as the Horus X10/X10S/X12S, or Taranis QX7/X9D then you probably need to do an inverter mod and/or enable one bit mode in EdgeTx to ensure reliable operation at 400k baud.
 - If your Tx module is the older version of the [R9M](FRSKY_R9.md#r9m-versions), don't forget to do the R9M Inverter Mod.
 
@@ -76,7 +76,7 @@ This is a complex topic since there are so many ways to connect a Tx module to a
 Use the mLRS Lua script or another configuration method to temporarily set ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) to "rc override".  If you use the mLRS Lua script there is no need to store; just press the RTN button after selecting "rc override".
 
 Connect a ground station via USB directly to your flight controller and view the MAVLink messages.
-With QGroundControl, use "Analyze Tools" -> "MAVLink Inspector" and select System 255 in the upper right.  Note that the System selection will only appear if messages from multiple systems is being received, so if you don't see it, your flight controller is not receiving from the receiver correctly.
+With QGroundControl, use "Analyze Tools" -> "MAVLink Inspector" and select System 255 in the upper right.  Note that the System selection will only appear if messages from multiple systems are being received, so if you don't see it, your flight controller is not receiving from the receiver correctly.
 With Mission Planner, Press Ctrl-F, select "MAVLink Inspector" and expand "Vehicle 255" -> "Comp 68" -> "RC\_CHANNELS\_OVERRIDE".
 
 You should see the RC\_CHANNELS\_OVERRIDE message is being received at the same rate as your configured mLRS mode.  Note that this also confirms your Tx module is receiving RC channel data from your radio and sending it to the receiver.
