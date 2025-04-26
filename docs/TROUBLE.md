@@ -76,7 +76,7 @@ This is a complex topic since there are so many ways to connect a Tx module to a
 Use the mLRS Lua script or another configuration method to temporarily set ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) to "rc override".  If you use the mLRS Lua script there is no need to store; just press the RTN button after selecting "rc override".
 
 Connect a ground station via USB directly to your flight controller and view the MAVLink messages.
-With QGroundControl, use "Analyze Tools" -> "MAVLink Inspector" and select System 255 in the upper right.  Note that the System selection will only appear if messages from multiple systems is being received, so if you don't see it, your flight controller is not receiving from the Rx module correctly.
+With QGroundControl, use "Analyze Tools" -> "MAVLink Inspector" and select System 255 in the upper right.  Note that the System selection will only appear if messages from multiple systems is being received, so if you don't see it, your flight controller is not receiving from the receiver correctly.
 With Mission Planner, Press Ctrl-F, select "MAVLink Inspector" and expand "Vehicle 255" -> "Comp 68" -> "RC\_CHANNELS\_OVERRIDE".
 
 You should see the RC\_CHANNELS\_OVERRIDE message is being received at the same rate as your configured mLRS mode.  Note that this also confirms your Tx module is receiving RC channel data from your radio and sending it to the receiver.
