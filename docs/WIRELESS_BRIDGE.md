@@ -14,7 +14,7 @@ The following wireless protocols are supported:
 | ESP82xx | x | x | x | - |
 | ESP32-C3 | x | x | x | - |
 
-Some Tx modules allow the wireless bridge to be configured from the Tx module, via the CLI, Lua script or OLED (this depends on the specific hardware of the Tx module). Otherwise, the wireless bridge needs to be configured in the Arduino sketch and a new firmware be compiled and uploaded with each change.
+Some Tx modules allow the wireless bridge to be configured from the Tx module, via the CLI, Lua script or OLED (this depends on the hardware of the Tx module). Otherwise, the wireless bridge needs to be configured in the Arduino sketch and a new firmware be compiled and uploaded with each change.
 
 ## DIY Builds
 
@@ -53,4 +53,4 @@ Configuration is done within the Arduino sketch, the following options can be se
 - Bluetooth Device Name
 - Baudrate
 
-***Note***: The ESP8266/ESP8285 does not offer classic Bluetooth.
+***Note***: The ESP8266/ESP8285 and the newer ESP-Cx chips do not offer classic Bluetooth.
