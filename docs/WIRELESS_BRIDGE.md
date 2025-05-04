@@ -4,7 +4,7 @@
 
 mLRS supports a "wireless bridge" for providing wireless communication between the Tx module and a computer running GCS software such as Mission Planner. This allows for the operator to control the vehicle and have a GCS connection without being tethered to a computer.
 
-The wireless bridge consists of an additional ESP32 or ESP8266/ESP8285 module, connected to one of the Tx module's serial port (often serial2), and additional hardware connections may exist for extended functionality. mLRS provides an Arduino sketch for creating the firmware to be loaded into the ESP32/ESP82xx chip (located [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge)).
+The wireless bridge consists of an additional ESP32 or ESP8266/ESP8285 module, connected to one of the Tx module's serial port (often serial2). Additional hardware connections may exist for extended functionality. mLRS provides an Arduino sketch for creating the firmware to be loaded into the ESP32/ESP82xx chip (located [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge)).
 
 The following wireless protocols are supported:
 
@@ -12,8 +12,9 @@ The following wireless protocols are supported:
 | --- | --- | --- | --- | --- |
 | ESP32 | x | x | x | x |
 | ESP82xx | x | x | x | - |
+| ESP32-C3 | x | x | x | - |
 
-For some Tx modules the wireless bridge can be configured from the Tx module, that is, via the CLI, Lua script or OLED (if this is possible depends on the specific hardware of the Tx module). Otherwise, the wireless bridge needs to be configured in the Arduino sketch and a new firmware be compiled and uploaded with each change.
+Some Tx modules allow the wireless bridge to be configured from the Tx module, via the CLI, Lua script or OLED (this depends on the specific hardware of the Tx module). Otherwise, the wireless bridge needs to be configured in the Arduino sketch and a new firmware be compiled and uploaded with each change.
 
 ## DIY Builds
 
