@@ -53,4 +53,4 @@ Configuration is done within the Arduino sketch, the following options can be se
 - Bluetooth Device Name
 - Baudrate
 
-***Note***: The ESP8266/ESP8285 and the newer ESP-Cx chips do not offer classic Bluetooth.
+***Note***: The ESP8266/ESP8285 and the newer ESP32-Cx chips do not offer classic Bluetooth.
