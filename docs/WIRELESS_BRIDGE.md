@@ -2,15 +2,23 @@
 
 ([back to main page](../README.md))
 
-mLRS provides an Arduino sketch which enables ESP32 or ESP8266 development modules to be used as a wireless bridge providing communication between the Tx module and a computer running GCS software such as Mission Planner. This allows for the operator to control the vehicle and have a GCS connection without being tethered to the computer.
+mLRS supports a "wireless bridge" for providing wireless communication between the Tx module and a computer running GCS software such as Mission Planner. This allows for the operator to control the vehicle and have a GCS connection without being tethered to a computer.
 
-Sketch locations:
-- ESP32: [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge)
-- ESP8266: [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge-esp8266)
+The wireless bridge consists of an additional ESP32 or ESP8266/ESP8285 module, connected to one of the Tx module's serial port (often serial2). Additional hardware connections may exist for extended functionality. mLRS provides an Arduino sketch for creating the firmware to be loaded into the ESP32/ESP82xx chip (located [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge)).
 
-## Hardware Selection & Configuration
+The following wireless protocols are supported:
 
-### ESP32
+| chipset  | TCP | UDP | UDPCl | classic BT |
+| --- | --- | --- | --- | --- |
+| ESP32 | x | x | x | x |
+| ESP82xx | x | x | x | - |
+| ESP32-C3 | x | x | x | - |
+
+Some Tx modules allow the wireless bridge to be configured from the Tx module, via the CLI, Lua script or OLED (this depends on the hardware of the Tx module). Otherwise, the wireless bridge needs to be configured in the Arduino sketch and a new firmware be compiled and uploaded with each change.
+
+## DIY Builds
+
+### Hardware Selection & Configuration
 
 Any ESP32 module will work, however, several modules are pre-configured and available as options within the sketch. These include:
 
@@ -24,15 +32,13 @@ Any ESP32 module will work, however, several modules are pre-configured and avai
 - M5Stack M5Stamp C3U Mate
 - M5Stack ATOM Lite
 
-The serial port (or one of the serial ports) of the Tx module will need to be connected to the ESP32 module using the pins specified in the boards.h file located [here](https://github.com/olliw42/mLRS/blob/main/esp/mlrs-wireless-bridge/mlrs-wireless-bridge-boards.h).
+In addition, any ESP8266 module will work. The sketch may have to be adapted slightly for a specific module however.
 
-### ESP8266
+One of the serial ports of the Tx module will need to be connected to the ESP32/ESP82xx module using the pins specified in the boards.h file located [here](https://github.com/olliw42/mLRS/blob/main/esp/mlrs-wireless-bridge/mlrs-wireless-bridge-boards.h).
 
-Any ESP8266 module will work. The sketch may have to be adapted slightly for a specific module however.
+### Software Configuration
 
-## Software Configuration
-
-Configuration is done within the sketch, the following options can be set:
+Configuration is done within the Arduino sketch, the following options can be set:
 
 - Module Type
 - Serial Level
@@ -47,4 +53,4 @@ Configuration is done within the sketch, the following options can be set:
 - Bluetooth Device Name
 - Baudrate
 
-Note: The ESP8266 and some ESP32 do not offer Bluetooth.
+***Note***: The ESP8266/ESP8285 and the newer ESP32-Cx chips do not offer classic Bluetooth.
