@@ -8,7 +8,7 @@ Depending on the device, a confusing number of methods can exist for flashing an
 > Flashing for a specific device is described in more depth on the hardware specific pages, please check those out for step by step instructions.
 
 > [!IMPORTANT]
-> Firmware with version numbers which end in a odd number (like v1.3.05) are developper versions (dev versions in slang). You should ***not*** use them unless you understand clearly what this implies. Firmware versions which end in an even number are safe to use (like v1.3.00 or v1.3.04).
+> Firmware with version numbers which end in a odd number (like v1.3.05) are developer versions (dev versions in slang). You should ***not*** use them unless you understand clearly what this implies. Firmware versions which end in an even number are safe to use (like v1.3.00 or v1.3.04).
 
 ## mLRS Web Flasher
 
