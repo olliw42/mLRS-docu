@@ -154,8 +154,8 @@ Generally, the stream rate settings are not critical, as mLRS will gracefully ad
 </table>
 
 > [!NOTE] 
-> When configuring SRy parameters, 'y' does not necessarily correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol. SERIAL0, and thus SR0, will nearly always be reserved for the USB connection and set to use the MAVLink protocol (which should not be modified). Therefore, as an example, in a setup with SERIAL1 and SERIAL2 not set to the MAVLink and with the mLRS receiver connected to SERIAL3, then SR1 should be used to configured the stream rates for the mLRS receiver.
-> These parameters have been renamed in ArduPilot 4.7 to 'MAVy_' and now start at 'MAV1_' (there is no 'MAV0_').
+> - When configuring SRy parameters, 'y' does not necessarily correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol. SERIAL0, and thus SR0, will nearly always be reserved for the USB connection and set to use the MAVLink protocol (which should not be modified). Therefore, as an example, in a setup with SERIAL1 and SERIAL2 not set to the MAVLink and with the mLRS receiver connected to SERIAL3, then SR1 should be used to configured the stream rates for the mLRS receiver.
+> - These parameters have been renamed in ArduPilot 4.7 to 'MAVy_' and now start at 'MAV1_' (there is no 'MAV0_').
 
 ### CRSF Receiver Protocol
 
