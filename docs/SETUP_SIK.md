@@ -8,13 +8,14 @@ This page describes how to use mLRS as a bi-directional MAVLink telemetry link s
 
 ## Setup
 
-The configuration for this mode is similar to others, except that one can ignore the RC settings on both the mLRS Tx module and receiver.  The RC input and output pins on the devices are not used.
+The configuration for this mode is similar to others, except that one can ignore the RC settings on both the mLRS Tx module and receiver. The RC input and output pins on the devices are not used.
 
 For this setup, the mLRS Tx module should having the following settings:
 - Tx Ch Source = none
 - Tx Snd RadioStat = 1 Hz
 
-Note: Tx Snd RadioStat sends the RSSI of the Tx module to the ground station software.
+> [!NOTE]
+> "Tx Snd RadioStat" = "1 Hz" sends the RSSI of the Tx module to the ground station software.
 
 There is no specific configuration of the mLRS receiver neccessary. 
 

@@ -8,25 +8,25 @@ In this setup, the radio only sends RC data to the mLRS Tx module using the SBus
 
 For this basic setup, the mLRS Tx module needs to be put into "SBus mode". In addition, the radio needs to be set up for SBus, but this proceeds exactly as described in common tutorials. In principle, there is no specific configuration of the mLRS receiver neccessary. It is however recommended to set it up for CRSF instead of SBus if possible. If a MAVLink serial stream is used, then it is strongly recommended to also set the system into "MAVLink mode".
 
-Notes:
-- Any radio which provides an SBus output should work, this should include many brands besides EdgeTX/OpenTX radios.
-- An ArduPilot flight controller is assumed. PX4 and INAV needs to be tested and validated.
+> [!NOTE]
+> - Any radio which provides an SBus output should work, this should include many brands besides EdgeTX/OpenTX radios.
+> - An ArduPilot flight controller is assumed. PX4 and INAV needs to be tested and validated.
 
 <img src="images/mLRS-docu-setup-basic-for-sbus-radios-02.jpg" width="800px">
 
 ## mLRS Tx Module Setup
 
 - Tx Ch Source = in
-- Tx Ch In Mode = sbus or sbus inv
-- Tx Ser Baudrate = 115200
+- Tx In Mode = sbus or sbus inv
 - Tx Ser Dest = serial or serial2 (not mbridge!)
-- Tx Snd RadioStat = off
+- Tx Ser Baudrate = 115200
+- Tx Snd RadioStat = 1 Hz
 
 If the serial data stream is MAVLink then it is recommended to set the respective parameters in the receiver (see next section).
 
 ## mLRS Receiver Setup
 
-The configuration of the mLRS receiver can follow exactly the description in [CRSF Telemetry and Yaapu Telemetry App: mLRS Rx Module Setup](CRSF.md#mlrs-rx-module-setup), if CRSF can be used.
+The configuration of the mLRS receiver can follow exactly the description in [CRSF Telemetry and Yaapu Telemetry App: mLRS Rx Module Setup](CRSF.md#mlrs-rx-module-setup), if CRSF can be used on the receiver side.
 
 If your flight controller does not support CRSF but only SBus, then the parameter "Rx Out Mode" needs to be set to "sbus" or "sbus inv", depending on the required polarity of the SBus signal.
 
@@ -36,4 +36,5 @@ The configuration of the ArduPilot flight controller can follow exactly the desc
 
 If your flight controller does not support CRSF but only SBus, then please consult the ArduPilot documentation. The SERIALx (serial port) and SRy (stream rates) parameters should however be configured as described in [CRSF Telemetry and Yaapu Telemetry App: ArduPilot Setup](CRSF.md#ardupilot-setup).
 
-Note: Setting up ArduPilot for a SBus or CRSF receiver can be a bit tricky by times, and there can be more than one way to achieve it. It is best to consult the ArduPilot wiki, or ask in the ArduPilot discussion channel.
+> [!TIP]
+> Setting up ArduPilot for a SBus or CRSF receiver can be a bit tricky by times, and there can be more than one way to achieve it. It is best to consult the ArduPilot wiki, or ask in the ArduPilot discussion channel.
