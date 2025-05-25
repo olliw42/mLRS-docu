@@ -16,7 +16,8 @@ Notes:
 
 ## mLRS Tx Module Setup
 
-- Tx Ch Source = sbus
+- Tx Ch Source = in
+- Tx Ch In Mode = sbus or sbus inv
 - Tx Ser Baudrate = 115200
 - Tx Ser Dest = serial or serial2 (not mbridge!)
 - Tx Snd RadioStat = off
