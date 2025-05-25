@@ -12,7 +12,7 @@ For this basic setup, the mLRS Tx module needs to be put into "SBus mode". In ad
 > - Any radio which provides an SBus output should work, this should include many brands besides EdgeTX/OpenTX radios.
 > - An ArduPilot flight controller is assumed. PX4 and INAV needs to be tested and validated.
 
-<img src="images/mLRS-docu-setup-basic-for-sbus-radios-02.jpg" width="800px">
+<img src="images/mLRS-docu-setup-basic-for-sbus-radios-03.jpg" width="800px">
 
 ## mLRS Tx Module Setup
 
