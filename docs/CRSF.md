@@ -42,7 +42,7 @@ Set the following parameters using the CLI or Lua script (or OLED if available):
 - Tx Snd RadioStat = 1 Hz
 
 > [!TIP]
-> The mLRS default settings are "Tx Ch Source" = "crsf", "Tx Ser Baudrate" = "115200", "Tx Ser Dest" = "serial", "Tx Snd RadioStat" = "1 Hz". Therefore, except of Tx Ser Dest, adjustment of the parameters is usually not needed.
+> The mLRS default settings are "Tx Ch Source" = "crsf", "Tx Ser Baudrate" = "115200", "Tx Ser Dest" = "serial", "Tx Snd RadioStat" = "1 Hz". Therefore, except of "Tx Ser Dest", adjustment of the parameters is usually not needed.
 
 > [!NOTE]
 > - "Tx Ser Baudrate" should be larger than the link data rate in order to provide enough capacity (e.g., in the 50 Hz mode the link data rate is 4100 Bytes/sec and the baudrate should thus be larger than 41000), but otherwise the choice is not critical and largely determined by the user's need. The default value is 115200, and is a good choice for most cases.
