@@ -39,13 +39,13 @@ Set the following parameters using the CLI or Lua script (or OLED if available):
 - Tx Ch Source = crsf
 - Tx Ser Baudrate: 115200
 - Tx Ser Dest = serial or serial2 (not mbridge!)
-- Tx Snd RadioStat = on
+- Tx Snd RadioStat = 1 Hz
 
 > [!TIP]
-> The mLRS default settings are Tx Ch Source = crsf, Tx Ser Baudrate = 115200, Tx Ser Dest = serial, Tx Snd RadioStat = on. Therefore, except of Tx Ser Dest, adjustment of the parameters is usually not needed.
+> The mLRS default settings are "Tx Ch Source" = "crsf", "Tx Ser Baudrate" = "115200", "Tx Ser Dest" = "serial", "Tx Snd RadioStat" = "1 Hz". Therefore, except of "Tx Ser Dest", adjustment of the parameters is usually not needed.
 
 > [!NOTE]
-> - Tx Ser Baudrate should be larger than the link data rate in order to provide enough capacity (e.g., in the 50 Hz mode the link data rate is 4100 Bytes/sec and the baudrate should thus be larger than 41000), but otherwise the choice is not critical and largely determined by the user's need. The default value is 115200, and is a good choice for most cases.
+> - "Tx Ser Baudrate" should be larger than the link data rate in order to provide enough capacity (e.g., in the 50 Hz mode the link data rate is 4100 Bytes/sec and the baudrate should thus be larger than 41000), but otherwise the choice is not critical and largely determined by the user's need. The default value is 115200, and is a good choice for most cases.
 > - While not necessary, for the FLRC mode it can be beneficial to use 230400.
 
 ## ArduPilot Setup
@@ -192,7 +192,7 @@ Set the following parameters using the CLI or Lua script (or OLED if available):
 - Rx Snd RadioStat= ardu_1
 
 > [!TIP]
-> The mLRS default settings are Rx Out Mode = crsf, Rx Ser Baudrate = 57600, Rx Ser Link Mode = mavlinkX, Rx Snd RadioStat= ardu_1. Therefore, if the above suggestions are followed, the receiver should work out of the box.  
+> The mLRS default settings are "Rx Out Mode" = "crsf", "Rx Ser Baudrate" = "57600", "Rx Ser Link Mode" = "mavlinkX", "Rx Snd RadioStat" = "ardu_1". Therefore, if the above suggestions are followed, the receiver should work out of the box.  
 
 ## Yaapu Telemetry App Setup for EdgeTX/OpenTX
 
