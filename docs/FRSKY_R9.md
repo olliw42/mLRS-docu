@@ -16,7 +16,7 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
     </tr>
     <tr>
       <td>Supported Modes</td>
-      <td>19 Hz</td>
+      <td>19 Hz 7x</td>
     </tr>
     <tr>
       <td>LoRa Chipset</td>
