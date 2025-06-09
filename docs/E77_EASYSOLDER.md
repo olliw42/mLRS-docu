@@ -16,7 +16,7 @@ The E77 Easy Solder Boards are designed to allow one with minimal soldering skil
     </tr>
     <tr>
       <td>Supported Modes</td>
-      <td>31 Hz, 19 Hz</td>
+      <td>31 Hz, 19 Hz, FSK (50 Hz)</td>
     </tr>
     <tr>
       <td>LoRa Chipset</td>
