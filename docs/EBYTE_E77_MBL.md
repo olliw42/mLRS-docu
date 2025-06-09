@@ -18,7 +18,7 @@ The EBYTE E77 MBL boards use the EBYTE E77 module and are available in both 868/
     </tr>
     <tr>
       <td>Supported Modes</td>
-      <td>31 Hz, 19 Hz</td>
+      <td>31 Hz, 19 Hz, FSK (50 Hz)</td>
     </tr>
     <tr>
       <td>LoRa Chipset</td>
