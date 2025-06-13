@@ -32,3 +32,6 @@ The STM32CubeProgrammer is the go-to tool for flashing STM32 devices. Any STM32 
 
 The STM32CubeProgrammer can be downloded from ST's website: https://www.st.com/en/development-tools/stm32cubeprog.html. If you have installed the STM32CubeIDE for building/compiling the firmware yourself, it is usually included already.
 
+## STLink Programmer
+
+In many cases a STLink programmer is needed for flashing STM32 devices. It might be tempting to buy one of the cheap STLink/V2 clones, but these may cause issues or may not even work. The [STLINK-V3MINIE](https://www.st.com/en/development-tools/stlink-v3minie.html) is a genuine inexpensive STLink/V3 programmer from STMicroelectronics, which can be recommended.
