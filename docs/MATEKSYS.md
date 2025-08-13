@@ -24,6 +24,10 @@ Links to the MatekSys website are found below, which include product specificati
 - [mR900-30 Receiver](https://www.mateksys.com/?portfolio=mr900-30)
 - [mR900-22 Receiver](https://www.mateksys.com/?portfolio=mr900-22)
 
+## Video Tutorial ##
+
+[![mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones](https://img.youtube.com/vi/ej5qcmaGqNE/0.jpg)](https://www.youtube.com/watch?v=ej5qcmaGqNE "mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones")
+
 ## Flashing / Upgrading Firmware ##
 
 The most convenient way of flashing the mLRS devices is via their USB-C port and using the [mLRS Web Flasher](https://mlrs.xyz/flash) app.
