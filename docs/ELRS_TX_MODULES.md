@@ -14,13 +14,14 @@ mLRS supports a number of external ELRS modules as well as the internal ELRS mod
 
 mLRS supports the following external ELRS modules:
 
-| Module                   | Target                          | Frequency Band | Transmit Power   |
-| ------------------------ | ------------------------------- | -------------- | ---------------- |
-| BetaFPV Micro 1W         | tx-betafpv-micro-1w-2400        | 2.4 GHz        | 30 dBm (1000 mW) |
-| RadioMaster Bandit       | tx-radiomaster-bandit-900       | 868/915 MHz    | 30 dBm (1000 mW) |
-| RadioMaster Bandit Micro | tx-radiomaster-bandit-micro-900 | 868/915 MHz    | 30 dBm (1000 mW) |
-| RadioMaster Bandit Nano  | tx-radiomaster-bandit-micro-900 | 868/915 MHz    | 30 dBm (1000 mW) |
-| RadioMaster Ranger       | tx-radiomaster-ranger-2400      | 2.4 GHz        | 30 dBm (1000 mW) |
+| Module                   | Target                          | Frequency Band       | Transmit Power   |
+| ------------------------ | ------------------------------- | -------------------- | ---------------- |
+| BetaFPV Micro 1W         | tx-betafpv-micro-1w-2400        | 2.4 GHz              | 30 dBm (1000 mW) |
+| RadioMaster Bandit       | tx-radiomaster-bandit-900       | 868/915 MHz          | 30 dBm (1000 mW) |
+| RadioMaster Bandit Micro | tx-radiomaster-bandit-micro-900 | 868/915 MHz          | 30 dBm (1000 mW) |
+| RadioMaster Bandit Nano  | tx-radiomaster-bandit-micro-900 | 868/915 MHz          | 30 dBm (1000 mW) |
+| RadioMaster Nomad        | tx-radiomaster-nomad            | 868/915 MHz, 2.4 GHz | 30 dBm (1000 mW) |
+| RadioMaster Ranger       | tx-radiomaster-ranger-2400      | 2.4 GHz              | 30 dBm (1000 mW) |
 
 ### Flashing External Tx Modules ###
 
