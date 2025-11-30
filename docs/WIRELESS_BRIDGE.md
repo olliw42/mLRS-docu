@@ -20,8 +20,10 @@ Some Tx modules allow the wireless bridge to be configured from the Tx module, v
 
 ### Hardware Selection & Configuration
 
-Any ESP32 module will work, however, several modules are pre-configured and available as options within the sketch. These include:
+Any ESP32/ESP82xx module will work, however, several modules are pre-configured and available as options within the sketch. These include:
 
+- ESP82xx ELRS TX Backpack
+- ESP32-C3 ELRS TX Backpack
 - Espressif ESP32-DevKitC V4
 - NodeMCU ESP32-Wroom-32
 - Espressif ESP32-PICO-KIT
