@@ -3,36 +3,36 @@
 ([back to main page](../README.md))
 
 > [!IMPORTANT]
-> 868/915 MHz ELRS receivers are only compatible with the Frsky R9M and RadioMaster Bandit Tx modules; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+> ELRS 868/915 MHz receivers using the SX127x RF chipset are only compatible with SX127x (e.g. Frsky R9M, RM Bandit) and LR1121 (e.g. RM Nomad, GX12, TX15) Tx modules using the 19 Hz 7x mode; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 ## Selected ELRS Receivers ##
 
 The following receivers are good choices. They support &#8805; 100 mW, are affordable, and have been validated by the mLRS team.
 
-| Product Name           | Frequency Band | Transmit Power  | Notes                                           |
-| ---------------------- | -------------- | --------------- | ----------------------------------------------- |
-| Bayck 915M Nano Pro    | 868/915 MHz    | 27 dBm (500 mW) | PA + LNA                                        |
-| RadioMaster XR4        | 868/915 MHz    | 20 dBm (100 mW) | True Diversity, TCXO, 2nd Serial Port           |
-| BetaFPV SuperD 2.4G    | 2.4 GHz        | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO                  |
-| RadioMaster [RP4TD](ELRS_RADIOMASTER_RP4TD.md#mlrs-documentation-radiomaster-rp4td-receiver) 2.4G | 2.4 GHz | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO, 2nd Serial Port |
-| SpeedyBee Nano 2.4G    | 2.4 GHz        | 20 dBm (100 mW) | PA + LNA                                        |
+| Product Name           | Frequency Band       | RF Chipset | Transmit Power  | Notes                                           |
+| ---------------------- | -------------------- | ---------- | --------------- | ----------------------------------------------- |
+| Bayck 915M Nano Pro    | 868/915 MHz          | SX127x     | 27 dBm (500 mW) | PA + LNA                                        |
+| RadioMaster XR4        | 868/915 MHz, 2.4 GHz | LR1121     | 20 dBm (100 mW) | True Diversity, TCXO, 2nd Serial Port           |
+| BetaFPV SuperD 2.4G    | 2.4 GHz              | SX128x     | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO                  |
+| RadioMaster [RP4TD](ELRS_RADIOMASTER_RP4TD.md#mlrs-documentation-radiomaster-rp4td-receiver) 2.4G | 2.4 GHz | SX128x | 20 dBm (100 mW) | True Diversity, PA + LNA, TCXO, 2nd Serial Port |
+| SpeedyBee Nano 2.4G    | 2.4 GHz              | SX128x     | 20 dBm (100 mW) | PA + LNA                                        |
 
 ## Supported ELRS Receivers ##
 
 Additionally, the following ELRS receiver targets are also supported:
 
-| Target              | Transmit Power   | Notes                                                         |
-| ------------------- | ---------------- | ------------------------------------------------------------- |
-| Generic 900         | 17 dBm (50 mW)   |                                                               |
-| Generic 900 PA      | 27 dBm (500 mW)  | PA + LNA                                                      |
-| Generic 900 TD PA   | 27 dBm (500 mW)  | True Diversity, PA + LNA                                      |
-| RadioMaster BR3 900 | 27 dBm (500 mW)  | PA + LNA, single antenna only                                 |
-| Generic 2400        | 12.5 dBm (18 mW) | Also found on AIO FCs with integrated ELRS receiver           |
-| Generic 2400 PA     | 20 dBm (100 mW)  | PA + LNA                                                      |
-| Generic 2400 D PA   | 23 dBm (200 mW)  | PA + LNA, single antenna only                                 |
-| Generic 2400 TD PA  | 20 dBm (100 mW)  | True Diversity, PA + LNA                                      |
-| Generic LR1121 TD   | 20 dBm (100 mW)  | True Diversity, 900 MHz only, SX126x compatible               |
-| Generic C3 LR1121   | 20 dBm (100 mW)  | 900 MHz only, SX126x compatible                               |
+| Target              | Frequency Band       | RF Chipset | Transmit Power   | Notes                                               |
+| ------------------- | -------------------- | ---------- | ---------------- | --------------------------------------------------- |
+| Generic 900         | 868/915 MHz          | SX127x     | 17 dBm (50 mW)   |                                                     |
+| Generic 900 PA      | 868/915 MHz          | SX127x     | 27 dBm (500 mW)  | PA + LNA                                            |
+| Generic 900 TD PA   | 868/915 MHz          | SX127x     | 27 dBm (500 mW)  | True Diversity, PA + LNA                            |
+| RadioMaster BR3 900 | 868/915 MHz          | SX127x     | 27 dBm (500 mW)  | PA + LNA, single antenna only                       |
+| Generic 2400        | 2.4 GHz              | SX128x     | 12.5 dBm (18 mW) | Also found on AIO FCs with integrated ELRS receiver |
+| Generic 2400 PA     | 2.4 GHz              | SX128x     | 20 dBm (100 mW)  | PA + LNA                                            |
+| Generic 2400 D PA   | 2.4 GHz              | SX128x     | 23 dBm (200 mW)  | PA + LNA, single antenna only                       |
+| Generic 2400 TD PA  | 2.4 GHz              | SX128x     | 20 dBm (100 mW)  | True Diversity, PA + LNA                            |
+| Generic LR1121 TD   | 868/915 MHz, 2.4 GHz | LR1121     | 20 dBm (100 mW)  | True Diversity, 900 MHz only, SX126x compatible     |
+| Generic C3 LR1121   | 868/915 MHz, 2.4 GHz | LR1121     | 20 dBm (100 mW)  | 900 MHz only, SX126x compatible                     |
 
 To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses. Alternatively, you can use this browser based tool to look up the layout of your target: [ELRS Layout File Search](https://sunjunkim.github.io/elrs_target_search/) 
 

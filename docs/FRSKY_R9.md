@@ -19,7 +19,7 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
       <td>19 Hz 7x</td>
     </tr>
     <tr>
-      <td>LoRa Chipset</td>
+      <td>RF Chipset</td>
       <td>SX127x</td>
     </tr>
       <tr>

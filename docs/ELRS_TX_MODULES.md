@@ -5,7 +5,7 @@
 mLRS supports a number of external ELRS modules as well as the internal ELRS modules in a number of popular radios.
 
 > [!IMPORTANT]
-> 868/915 MHz ELRS Tx modules are only compatible with ELRS 868/915 and Frsky R9 receivers; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+> 868/915 MHz ELRS Tx modules using the SX127x RF chipset are only compatible with ELRS 868/915 SX127x receivers, ELRS LR1121 receivers and Frsky R9 receivers using the 19 Hz 7x mode; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 > [!NOTE]
 > mLRS only supports CRSF for 400k baudrate. For external Tx modules navigate to MODEL SETTINGS->MODEL SETUP->External RF and select Mode = CRSF and Baudrate = 400k; for internal Tx modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k.
@@ -14,14 +14,14 @@ mLRS supports a number of external ELRS modules as well as the internal ELRS mod
 
 mLRS supports the following external ELRS modules:
 
-| Module                   | Target                          | Frequency Band       | Transmit Power   |
-| ------------------------ | ------------------------------- | -------------------- | ---------------- |
-| BetaFPV Micro 1W         | tx-betafpv-micro-1w-2400        | 2.4 GHz              | 30 dBm (1000 mW) |
-| RadioMaster Bandit       | tx-radiomaster-bandit-900       | 868/915 MHz          | 30 dBm (1000 mW) |
-| RadioMaster Bandit Micro | tx-radiomaster-bandit-micro-900 | 868/915 MHz          | 30 dBm (1000 mW) |
-| RadioMaster Bandit Nano  | tx-radiomaster-bandit-micro-900 | 868/915 MHz          | 30 dBm (1000 mW) |
-| RadioMaster Nomad        | tx-radiomaster-nomad            | 868/915 MHz, 2.4 GHz | 30 dBm (1000 mW) |
-| RadioMaster Ranger       | tx-radiomaster-ranger-2400      | 2.4 GHz              | 30 dBm (1000 mW) |
+| Module                   | Target                          | Frequency Band       | RF Chipset | Transmit Power   |
+| ------------------------ | ------------------------------- | -------------------- | ---------- |----------------- |
+| BetaFPV Micro 1W         | tx-betafpv-micro-1w-2400        | 2.4 GHz              | SX128x     | 30 dBm (1000 mW) |
+| RadioMaster Bandit       | tx-radiomaster-bandit-900       | 868/915 MHz          | SX127x     | 30 dBm (1000 mW) |
+| RadioMaster Bandit Micro | tx-radiomaster-bandit-micro-900 | 868/915 MHz          | SX127x     | 30 dBm (1000 mW) |
+| RadioMaster Bandit Nano  | tx-radiomaster-bandit-micro-900 | 868/915 MHz          | SX127x     | 30 dBm (1000 mW) |
+| RadioMaster Nomad        | tx-radiomaster-nomad            | 868/915 MHz, 2.4 GHz | LR1121     | 30 dBm (1000 mW) |
+| RadioMaster Ranger       | tx-radiomaster-ranger-2400      | 2.4 GHz              | SX128x     | 30 dBm (1000 mW) |
 
 ### Flashing External Tx Modules ###
 
@@ -71,14 +71,14 @@ The BetaFPV Micro 1W has 7 dip switches which need to be set correctly depending
 
 mLRS supports the internal ELRS modules on the following radios:
 
-| Radio                                        | Target                             | Frequency Band       | Transmit Power   |
-| -------------------------------------------- | ---------------------------------- | -------------------- | ---------------- |
-| Jumper T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-900             | 868/915 MHz          | 30 dBm (1000 mW) |
-| Jumper T20 V1, T20 V2, T15, T14, T-Pro S     | tx-jumper-internal-2400            | 2.4 GHz              | 30 dBm (1000 mW) |
-| RadioMaster Boxer                            | tx-radiomaster-internal-boxer-2400 | 2.4 GHz              | 30 dBm (1000 mW) |
-| RadioMaster Pocket, MT12, TX12, TX16S, Zorro | tx-radiomaster-internal-2400       | 2.4 GHz              | 24 dBm (250 mW)  |
-| RadioMaster TX15                             | tx-radiomaster-internal-tx15       | 868/915 MHz, 2.4 GHz | 30 dBm (1000 mW) |
-| RadioMaster GX12                             | tx-radiomaster-internal-gx12       | 868/915 MHz, 2.4 GHz | 30 dBm (1000 mW) |
+| Radio                                        | Target                             | Frequency Band       | RF Chipset | Transmit Power   |
+| -------------------------------------------- | ---------------------------------- | -------------------- | ---------- |---------------- |
+| Jumper T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-900             | 868/915 MHz          | SX127x     | 30 dBm (1000 mW) |
+| Jumper T20 V1, T20 V2, T15, T14, T-Pro S     | tx-jumper-internal-2400            | 2.4 GHz              | SX128x     | 30 dBm (1000 mW) |
+| RadioMaster Boxer                            | tx-radiomaster-internal-boxer-2400 | 2.4 GHz              | SX128x     | 30 dBm (1000 mW) |
+| RadioMaster Pocket, MT12, TX12, TX16S, Zorro | tx-radiomaster-internal-2400       | 2.4 GHz              | SX128x     | 24 dBm (250 mW)  |
+| RadioMaster TX15                             | tx-radiomaster-internal-tx15       | 868/915 MHz, 2.4 GHz | LR1121     | 30 dBm (1000 mW) |
+| RadioMaster GX12                             | tx-radiomaster-internal-gx12       | 868/915 MHz, 2.4 GHz | LR1121     | 30 dBm (1000 mW) |
 
 ### Flashing Internal Modules ###
 
