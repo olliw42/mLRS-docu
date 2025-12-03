@@ -71,14 +71,14 @@ The BetaFPV Micro 1W has 7 dip switches which need to be set correctly depending
 
 mLRS supports the internal ELRS modules on the following radios:
 
-| Radio                                        | Target                             | Frequency Band       | RF Chipset | Transmit Power   |
-| -------------------------------------------- | ---------------------------------- | -------------------- | ---------- | ---------------- |
-| Jumper T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-900             | 868/915 MHz          | SX127x     | 30 dBm (1000 mW) |
-| Jumper T20 V1, T20 V2, T15, T14, T-Pro S     | tx-jumper-internal-2400            | 2.4 GHz              | SX128x     | 30 dBm (1000 mW) |
-| RadioMaster Boxer                            | tx-radiomaster-internal-boxer-2400 | 2.4 GHz              | SX128x     | 30 dBm (1000 mW) |
-| RadioMaster Pocket, MT12, TX12, TX16S, Zorro | tx-radiomaster-internal-2400       | 2.4 GHz              | SX128x     | 24 dBm (250 mW)  |
-| RadioMaster TX15                             | tx-radiomaster-internal-tx15       | 868/915 MHz, 2.4 GHz | LR1121     | 30 dBm (1000 mW) |
-| RadioMaster GX12                             | tx-radiomaster-internal-gx12       | 868/915 MHz, 2.4 GHz | LR1121     | 30 dBm (1000 mW) |
+| Radio                                        | Target                             | Frequency Band       | RF Chipset | Transmit Power.     |
+| -------------------------------------------- | ---------------------------------- | -------------------- | ---------- | ------------------- |
+| Jumper<br>T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-900             | 868/915 MHz          | SX127x     | 30 dBm<br>(1000 mW) |
+| Jumper<br>T20 V1, T20 V2, T15, T14, T-Pro S     | tx-jumper-internal-2400            | 2.4 GHz              | SX128x     | 30 dBm<br>(1000 mW) |
+| RadioMaster Boxer                            | tx-radiomaster-internal-boxer-2400 | 2.4 GHz              | SX128x     | 30 dBm<br>(1000 mW) |
+| RadioMaster<br>Pocket, MT12, TX12, TX16S, Zorro | tx-radiomaster-internal-2400       | 2.4 GHz              | SX128x     | 24 dBm<br>(250 mW)  |
+| RadioMaster TX15                             | tx-radiomaster-internal-tx15       | 868/915 MHz<br>2.4 GHz | LR1121     | 30 dBm<br>(1000 mW) |
+| RadioMaster GX12                             | tx-radiomaster-internal-gx12       | 868/915 MHz<br>2.4 GHz | LR1121     | 30 dBm<br>(1000 mW) |
 
 ### Flashing Internal Modules ###
 
