@@ -73,6 +73,7 @@ mLRS supports the internal ELRS modules on the following radios:
 
 | Radio                                        | Target                             | Frequency Band       | RF Chipset | Transmit Power.     |
 | -------------------------------------------- | ---------------------------------- | -------------------- | ---------- | ------------------- |
+| FlySky PA01                                  | tx-flysky-internal-pa01-2400       | 2.4 GHz              | SX128x     | 27 dBm (500 mW)  |
 | Jumper<br>T20 V2, T15, T14, T-Pro S             | tx-jumper-internal-900             | 868/915 MHz          | SX127x     | 30 dBm<br>(1000 mW) |
 | Jumper<br>T20 V1, T20 V2, T15, T14, T-Pro S     | tx-jumper-internal-2400            | 2.4 GHz              | SX128x     | 30 dBm<br>(1000 mW) |
 | RadioMaster Boxer                            | tx-radiomaster-internal-boxer-2400 | 2.4 GHz              | SX128x     | 30 dBm<br>(1000 mW) |
