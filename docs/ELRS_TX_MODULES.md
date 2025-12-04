@@ -79,6 +79,7 @@ mLRS supports the internal ELRS modules on the following radios:
 | RadioMaster Pocket, MT12, TX12, TX16S, Zorro | tx-radiomaster-internal-2400       | 2.4 GHz              | SX128x     | 24 dBm (250 mW)  |
 | RadioMaster TX15                             | tx-radiomaster-internal-tx15       | 868/915 MHz, 2.4 GHz | LR1121     | 30 dBm (1000 mW) |
 | RadioMaster GX12                             | tx-radiomaster-internal-gx12       | 868/915 MHz, 2.4 GHz | LR1121     | 30 dBm (1000 mW) |
+| FlySky PA01                                  | tx-flysky-internal-pa01-2400       | 2.4 GHz              | SX128x     | 27 dBm (500 mW)  |
 
 ### Flashing Internal Modules ###
 
