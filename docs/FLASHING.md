@@ -10,19 +10,11 @@ Depending on the device, a confusing number of methods can exist for flashing an
 > [!IMPORTANT]
 > Firmware with version numbers which end in a odd number (like v1.3.05) are developer versions (dev versions in slang). You should ***not*** use them unless you understand clearly what this implies. Firmware versions which end in an even number are safe to use (like v1.3.00 or v1.3.04).
 
-## mLRS Web Flasher
+## mLRS Flasher Web App
 
-The easiest way to flash firmware can be the [mLRS Web Flasher](https://mlrs.xyz/flash). 
+The by far easiest way to flash firmware is the [mLRS Flasher Web App](https://olliw.eu/mlrsflasher). 
 
-***Notes***:
-- Only few devices are supported currently (currently only DFU mode is supported, which covers the MatekSys mLRS devices).
-- It does not run on all browsers (specifically not on Firefox).
-
-## mLRS-Flasher Desktop App
-
-The [mLRS-Flasher](https://github.com/olliw42/mLRS-Flasher) desktop app also makes it easy to flash firmware but requires installation of the app on your computer. 
-
-It provides support for substantially more mLRS devices, and can run on Win, MacOS, and Linux systems. If the mLRS Web Flasher is not suitable for you, mLRS-Flasher might be the go-to tool.  
+***Note***: It is strongly recommended to use this tool.
 
 ## STM32CubeProgrammer
 
