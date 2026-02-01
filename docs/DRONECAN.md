@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-DroneCAN can be utilized for RC and MAVLink with mLRS instead of traditional serial communication if both flight controller and receiver have the hardware necessary to support it.
+DroneCAN can be utilized for RC and MAVLink with mLRS instead of the traditional serial communication if both flight controller and receiver have the hardware necessary to support it.
 
 ## Wiring & Powering
 
@@ -28,7 +28,7 @@ The following parameters need to be set to enable RC and MAVLink over DroneCAN.
 
 #### DroneCAN
 
-Setup the CAN driver, protocol and enable the virtual serial support:
+Set up the CAN driver, the protocol and enable the virtual serial support:
 
 - CAN_D1_PROTOCOL = 1 (is set to 1 by default)
 - CAN_P1_DRIVER = 1
