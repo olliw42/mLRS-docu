@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-DroneCAN can be utilized for RC and MAVLink with mLRS instead of traditional serial communication if both the flight controller and receiver have the hardware necessary to support it.
+DroneCAN can be utilized for RC and MAVLink with mLRS instead of traditional serial communication if both flight controller and receiver have the hardware necessary to support it.
 
 ## Wiring & Powering
 
@@ -12,7 +12,7 @@ TBD
 
 #### RC
 
-With a CAN-enabled firmware flashed, the receiver will output RC channels data on the CAN bus without any further settings.
+With a CAN-enabled firmware flashed, the mLRS receiver will output RC channels data on the CAN bus without any further settings.
 
 #### MAVLink
 
@@ -30,11 +30,13 @@ The following parameters need to be set to enable RC and MAVLink over DroneCAN.
 
 Setup the CAN driver, protocol and enable the virtual serial support:
 
-- CAN_P1_DRIVER = 1
 - CAN_D1_PROTOCOL = 1 (is set to 1 by default)
+- CAN_P1_DRIVER = 1
 - CAN_D1_UC_SER_EN = 1 (only needed when MAVLink via DroneCAN is desired)
 
-Then reboot the flight controller.
+***Note***: You need to reboot the flight controller after having adjusted CAN_P1_DRIVER, in order to see the parameter CAN_D1_UC_SER_EN.
+
+Then reboot the flight controller (again).
 
 #### RC
 
@@ -47,37 +49,36 @@ Enable RC channels via DroneCAN:
 Configure the DroneCAN virtual serial port (mandatory settings):
 
 - CAN_D1_UC_S1_BD = 57 (57600) (see also below in section Limitations)
-- CAN_D1_UC_S1_IDX = 0
+- CAN_D1_UC_S1_IDX = 0 (Serial 0)
 - CAN_D1_UC_S1_NOD = 68
-- CAN_D1_UC_S1_PRO = 2
+- CAN_D1_UC_S1_PRO = 2 (MAVLink 2)
 
-Adjust the DroneCAN streams (optional settings):
+***Note***: The setting "Serial 0" should not be confused with ArduPilot's SERIALx parameters or mLRS' serial and serial2 ports.   
+
+Adjust DroneCAN stream rates (optional settings):
 
 - CAN_D1_UC_NTF_RT = 1
-- CAN_D1_UC_SRV_RT = 0
 
-***Note***: This assumes that you are not using DroneCAN for servo outputs.
-
-Adjust the MAVLink stream rates:
+Adjust MAVLink stream rates:
 
 - Stream rates should be set as recommended on the [CRSF page](CRSF.md#stream-rates)
 
-***Note***: When configuring SRy parameters for DroneCAN, 'y' will correspond to the number of regular and virtual serial ports that you have enabled for MAVLink. For example, if you are using Serial0 for USB and Serial2 for MAVLink then you will have to modify the SR2 parameters for the DroneCAN connection:
+***Note***: When configuring SRy/MAVy parameters for DroneCAN, 'y' corresponds to the number of serial ports that you have enabled for MAVLink (SERIALx parameters). For example, if you are using SERIAL0 for USB and SERIAL2 for MAVLink then you will have to modify the SR2/MAV2 parameters for the DroneCAN connection:
 
-- Serial0 will use SR0
-- Serial2 will use SR1
-- DroneCAN will use SR2
+- SERIAL0 will use SR0/MAV0
+- SERIAL2 will use SR1/MAV1
+- DroneCAN will use SR2/MAV2
 
 ## Limitations
 
-Receivers using MAVLink via DroneCAN are a relatively new application of ArduPilot's DroneCAN, and issues not seen before may be exposed now. ArduPilot has been found to have these limitations:
+Receivers using MAVLink via DroneCAN are a relatively new application of ArduPilot's DroneCAN, and issues not seen before may become exposed now. ArduPilot has been found to have these limitations:
 
 #### All Versions of ArduPilot
 
-- In MissionPlanner, on the DroneCAN/UAVCAN page one cannot communicate with the CAN nodes when connected via the mLRS link (mLRS has code to prevent this, as there is a critical bug in some ArduPilot versions which would lead to a crash of ArduPilot). It works normally when the flight controller is connected to MissionPlanner e.g. via USB.
-- RC out functionality for CRSF or SBus cannot be used in combination with DroneCAN RC. As DroneCAN RC only provides RSSI and not LQ or SNR, it might be tempting to use CRSF in addition but this will not work.
+- In MissionPlanner, on the DroneCAN/UAVCAN page, communicate with the CAN nodes is not possible when connected via the mLRS link (mLRS has code to prevent this, as there is a critical bug in some ArduPilot versions which would lead to a crash of ArduPilot). This works normally when the flight controller is connected to MissionPlanner via e.g. USB.
+- CRSF or SBus cannot be used in combination with DroneCAN RC. As DroneCAN RC only provides RSSI and not LQ or SNR, it might be tempting to use CRSF in addition but this will not work.
 - OSD is limited to RSSI.
-- The MAVLink stream rates cannot be set to too high values as this will lead to lost messages.
+- The MAVLink stream rates must not be set to too high values as this can lead to lost messages.
 
 #### ArduPilot 4.5.x
 
