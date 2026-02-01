@@ -20,7 +20,8 @@ In order to enable serial (MAVLink) communication via DroneCAN, one needs to set
 
 - "Rx Serial Port" = "can"
 
-***Note***: Do not enable "rc_override" or "rc_channels" in the mLRS receiver settings when using MAVLink via DroneCAN as it adds substantial and unnecessary traffic on the CAN bus.
+> [!NOTE] 
+> Do not enable "rc_override" or "rc_channels" in the mLRS receiver settings when using MAVLink via DroneCAN as it adds substantial and unnecessary traffic on the CAN bus.
 
 ## ArduPilot Settings
 
@@ -34,7 +35,8 @@ Set up the CAN driver, the protocol and enable the virtual serial support:
 - CAN_P1_DRIVER = 1
 - CAN_D1_UC_SER_EN = 1 (only needed when MAVLink via DroneCAN is desired)
 
-***Note***: You need to reboot the flight controller after having adjusted CAN_P1_DRIVER, in order to see the parameter CAN_D1_UC_SER_EN.
+> [!NOTE]
+> You need to reboot the flight controller after having adjusted CAN_P1_DRIVER, in order to see the parameter CAN_D1_UC_SER_EN.
 
 Then reboot the flight controller (again).
 
@@ -53,7 +55,8 @@ Configure the DroneCAN virtual serial port (mandatory settings):
 - CAN_D1_UC_S1_NOD = 68
 - CAN_D1_UC_S1_PRO = 2 (MAVLink 2)
 
-***Note***: The setting "Serial 0" should not be confused with ArduPilot's SERIALx parameters or mLRS' serial and serial2 ports.   
+> [!NOTE]
+> The setting "Serial 0" should not be confused with ArduPilot's SERIALx parameters or mLRS' serial and serial2 ports.   
 
 Adjust DroneCAN stream rates (optional settings):
 
@@ -63,7 +66,8 @@ Adjust MAVLink stream rates:
 
 - Stream rates should be set as recommended on the [CRSF page](CRSF.md#stream-rates)
 
-***Note***: When configuring SRy/MAVy parameters for DroneCAN, 'y' corresponds to the number of serial ports that you have enabled for MAVLink (SERIALx parameters). For example, if you are using SERIAL0 for USB and SERIAL2 for MAVLink then you will have to modify the SR2/MAV2 parameters for the DroneCAN connection:
+> [!NOTE]
+> When configuring SRy/MAVy parameters for DroneCAN, 'y' corresponds to the number of serial ports that you have enabled for MAVLink (SERIALx parameters). For example, if you are using SERIAL0 for USB and SERIAL2 for MAVLink then you will have to modify the SR2/MAV2 parameters for the DroneCAN connection:
 
 - SERIAL0 will use SR0/MAV0
 - SERIAL2 will use SR1/MAV1
