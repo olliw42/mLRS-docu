@@ -38,7 +38,7 @@ Plug in the USB-C cable while pressing the bind button. This puts the mLRS devic
 
 To use the HC-04 Bluetooth module on Matek mLRS Tx modules, you need to set in the Tx module:
 
-- ["Tx Ser Dest"](PARAMETERS.md#tx-ser-dest) = "serial2"
+- ["Tx Ser Dest"](PARAMETERS.md#tx-ser-dest) = "serial"
 
 You can do this via the [mLRS Lua script](LUA.md) on your radio or the [CLI](CLI.md).
 
