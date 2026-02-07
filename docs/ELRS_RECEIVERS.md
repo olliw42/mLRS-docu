@@ -3,7 +3,7 @@
 ([back to main page](../README.md))
 
 > [!IMPORTANT]
-> ELRS 868/915 MHz receivers using the SX127x RF chipset are only compatible with SX127x (e.g. Frsky R9M, RM Bandit) and LR1121 (e.g. RM Nomad, GX12, TX15) Tx modules using the 19 Hz 7x mode; they are incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+> ELRS 868/915 MHz receivers using the SX127x RF chipset are only compatible with SX127x (e.g. Frsky R9M, RM Bandit) and LR1121 (e.g. RM Nomad, GX12, TX15) Tx modules using the '19 Hz 7x' mode; they are incompatible with SX126x/STM32WLE hardware providing the '19 Hz' mode (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 ## Selected ELRS Receivers ##
 
@@ -31,8 +31,8 @@ Additionally, the following ELRS receiver targets are also supported:
 | Generic 2400 PA     | 2.4 GHz              | SX128x     | 20 dBm<br>(100 mW)  | PA + LNA                                            |
 | Generic 2400 D PA   | 2.4 GHz              | SX128x     | 23 dBm<br>(200 mW)  | PA + LNA, single antenna only                       |
 | Generic 2400 TD PA  | 2.4 GHz              | SX128x     | 20 dBm<br>(100 mW)  | True Diversity, PA + LNA                            |
-| Generic LR1121 TD   | 868/915 MHz<br>2.4 GHz | LR1121     | 20 dBm<br>(100 mW)  | True Diversity, 900 MHz only, SX126x compatible   |
-| Generic C3 LR1121   | 868/915 MHz<br>2.4 GHz | LR1121     | 20 dBm<br>(100 mW)  | 900 MHz only, SX126x compatible                   |
+| Generic LR1121 TD   | 868/915 MHz<br>2.4 GHz | LR1121     | 20 dBm<br>(100 mW)  | True Diversity, SX126x compatible                   |
+| Generic C3 LR1121   | 868/915 MHz<br>2.4 GHz | LR1121     | 20 dBm<br>(100 mW)  | SX126x compatible                                   |
 
 To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses. Alternatively, you can use this browser based tool to look up the layout of your target: [ELRS Layout File Search](https://sunjunkim.github.io/elrs_target_search/) 
 
@@ -42,19 +42,22 @@ All ELRS receivers have a standardized pinout and will need to be connected to t
 
 <img src="images/ELRS_fc_wiring.png" width="600px">
 
-***Note***: In order to send RC channels over the serial connection, change the Rx Snd RcChannel parameter to 'rc override'.
+> [!TIP]
+> In order to send RC channels over the serial connection, change the "Rx Snd RcChannel" parameter to 'rc override', or preferably 'rc channels' if possible.
 
 ## Flashing ##
 
-Flashing receivers is done using the mLRS Flasher Desktop App - this is found [here](https://github.com/olliw42/mLRS-Flasher).
+Flashing receivers is done using the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) app.
 
 Two methods are supported:
 1. ESPTool with UART
 2. ArduPilot Passthrough
 
+Follow the instructions provided by the Web Flasher app. The steps in detail are these:
+
 ### Steps to flash using ESPTool with UART ###
 
-1. Launch the mLRS Flasher Desktop App
+1. Launch the mLRS Web Flasher app
 2. Connect the receiver to a USB<>UART
 3. Power up the receiver while holding down the button
 4. Select the correct serial port
@@ -63,7 +66,7 @@ Two methods are supported:
 
 ### Steps to flash using ArduPilot Passthrough ###
 
-1. Launch the mLRS Flasher Desktop App
+1. Launch the mLRS Web Flasher app
 2. Connect the flight controller via USB
 3. Select the flight controller SERIAL port that the receiver is connected to
 4. Click Flash Receiver
@@ -75,4 +78,4 @@ Two methods are supported:
 
 > [!NOTE]
 > - Once the firmware has been written successfully, power cycle the receiver/FC. The LED should blink to indicate that it is looking for a connection.
-> - Binding can be done by holding down the button for four seconds if it doesn't connect automatically.
+> - Binding can be done by holding down the button for four seconds if it does not connect automatically.
