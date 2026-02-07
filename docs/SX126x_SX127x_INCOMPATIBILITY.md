@@ -37,7 +37,7 @@ Compatibility chart:
   </tbody>
 </table>
 
-Whenever two devices devices say ✅ to a mode, they can work together in that mode.
+Whenever two devices say ✅ to a mode, they can work together in that mode.
 
 ## SX126x and SX127x Incompatibility
 
