@@ -44,7 +44,7 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 <img src="images/RP4_Rx_Wiring.png" width="480">
 
 > [!TIP]
-> In order to send RC channels over the serial connection (which avoids the additional OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
+> In order to send RC channels over the serial connection (which avoids the additional OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override', or prefarably 'rc channels' if possible.
 
 ### As Tx Module ###
 
