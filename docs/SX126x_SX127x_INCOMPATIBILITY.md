@@ -22,17 +22,17 @@ Compatibility chart:
       <th><strong>2.4 GHz</strong></th>
       <th><strong>868/915 MHz</strong></th>
     </tr><tr>
-       <th>50 Hz       </th><td> yes </td><td> -   </td><td> -   </td><td> yes </td><td> -   </td>
+       <th>50 Hz       </th><td> ✅ </td><td> ❌ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td>
     </tr><tr>
-       <th>31 Hz       </th><td> yes </td><td> yes </td><td> -   </td><td> yes </td><td> yes </td>
+       <th>31 Hz       </th><td> ✅ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td><td> ✅ </td>
     </tr><tr>
-       <th>19 Hz       </th><td> yes </td><td> yes </td><td> -   </td><td> yes </td><td> yes </td>
+       <th>19 Hz       </th><td> ✅ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td><td> ✅ </td>
     </tr><tr>
-       <th>19 Hz 7x    </th><td> -   </td><td> -   </td><td> yes </td><td> -   </td><td> yes </td>
+       <th>19 Hz 7x    </th><td> ❌ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td>
     </tr><tr>
-       <th>FSK 50 Hz   </th><td> -   </td><td> yes </td><td> -   </td><td> -   </td><td> yes </td>
+       <th>FSK 50 Hz   </th><td> ❌ </td><td> ✅ </td><td> ❌ </td><td> ❌ </td><td> ✅ </td>
     </tr><tr>
-       <th>FLRC 111 Hz </th><td> yes </td><td> -   </td><td> -   </td><td> -   </td><td> -   </td>
+       <th>FLRC 111 Hz </th><td> ✅ </td><td> ❌ </td><td> ❌ </td><td> ❌ </td><td> ❌ </td>
     </tr>
   </tbody>
 </table>
