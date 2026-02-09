@@ -12,18 +12,17 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [Binding](docs/BINDING.md)
 - [Configuration Parameters](docs/PARAMETERS.md)
 - [mLRS Lua Script](docs/LUA.md)
-- [CLI Commands](docs/CLI.md)
+- [OLED Display](docs/OLED.md)
 - [Configuration ID](docs/CONFIGID.md)
 - [Flashing/Upgrading Firmware](docs/FLASHING.md)
-- [Troubleshooting](docs/TROUBLE.md)
 - [Logging](docs/LOGGING.md)
+- [Troubleshooting](docs/TROUBLE.md)
 
 ### Setups ###
 - [CRSF Telemetry and Yaapu Telemetry App](docs/CRSF.md)
     - [CRSF Sensors](docs/CRSF_SENSORS.md)
 - [SiK Telemetry Replacement](docs/SETUP_SIK.md)
 - [SBus Radios](docs/BASIC_SETUP.md)
-- [Dual Band](docs/DUAL_BAND.md)
 - [Additional Configuration for ArduPilot Systems](docs/ARDUPILOT.md)
 - [INAV/MSP Systems](docs/MSPX.md)
 - [mTX (formerly MAVLink for OpenTx)](docs/MTX.md)
@@ -39,13 +38,15 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 
 ### ESP Hardware ###
 - [ELRS Receivers](docs/ELRS_RECEIVERS.md)
-- [RadioMaster RP4TD](docs/ELRS_RADIOMASTER_RP4TD.md)
 - [ELRS Tx Modules](docs/ELRS_TX_MODULES.md)
+- [RadioMaster RP4TD](docs/ELRS_RADIOMASTER_RP4TD.md)
 - [ESP Development](docs/ESP_DEVELOPMENT.md)
 
 ### Advanced Options ###
+- [CLI Commands](docs/CLI.md)
 - [Wireless Bridge](docs/WIRELESS_BRIDGE.md)
-- [OLED Display](docs/OLED.md)
+- [Dual Band](docs/DUAL_BAND.md)
+- [DroneCAN](docs/DRONECAN.md)
 - [FHSS Shaping](docs/FHSS_SHAPING.md)
 - [MavlinkX](docs/MAVLINKX.md)
 - [Configuration using MAVLink Parameters](docs/MAVLINK_PARAMETERS.md)
