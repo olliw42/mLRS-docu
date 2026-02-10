@@ -4,17 +4,19 @@
 
 mLRS supports a "wireless bridge" for providing wireless communication between the Tx module and a computer running GCS software such as Mission Planner. This allows for the operator to control the vehicle and have a GCS connection without being tethered to a computer.
 
-The wireless bridge consists of an additional ESP32 or ESP8266/ESP8285 module, connected to one of the Tx module's serial port (often serial2). Additional hardware connections may exist for extended functionality. mLRS provides an Arduino sketch for creating the firmware to be loaded into the ESP32/ESP82xx chip (located [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge)).
+The wireless bridge consists of an additional ESP32, ESP-C3 or ESP8266/ESP8285 module, connected to a Tx module serial port (often serial2). Additional hardware connections may exist for extended functionality. mLRS provides an Arduino sketch for creating the firmware to be loaded into the ESP32/ESP32-C3/ESP82xx chip (located [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-wireless-bridge)). The simplest way to flash your wireless bridge is to use the [mLRS Web Flasher](https://olliw.eu/mlrsflasher) app.
 
 The following wireless protocols are supported:
 
-| chipset  | TCP | UDP | UDPCl | classic BT |
-| --- | --- | --- | --- | --- |
-| ESP32 | x | x | x | x |
-| ESP82xx | x | x | x | - |
-| ESP32-C3 | x | x | x | - |
+| chipset  | TCP | UDP | UDPSTA | UDPCl | classic BT | BLE |
+| --- | --- | --- | --- | --- | --- | --- |
+| ESP32 | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
+| ESP32-C3 | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
+| ESP82xx | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
 
-Some Tx modules allow the wireless bridge to be configured from the Tx module, via the CLI, Lua script or OLED (this depends on the hardware of the Tx module). Otherwise, the wireless bridge needs to be configured in the Arduino sketch and a new firmware be compiled and uploaded with each change.
+## Configuration
+
+Some Tx modules allow the wireless bridge to be configured from the Tx module, CLI, Lua script or OLED (this depends on the hardware of the Tx module); see [Parameters](PARAMETERS.md). Otherwise, the wireless bridge needs to be configured in the Arduino sketch and a new firmware has to be compiled and uploaded with each change.
 
 ## DIY Builds
 
@@ -30,13 +32,13 @@ Any ESP32/ESP82xx module will work, however, several modules are pre-configured 
 - Adafruit QT Py S2
 - Lilygo TTGO-MICRO32
 - M5Stack M5Stamp C3 Mate
-- M5Stack M5Stamp Pico
 - M5Stack M5Stamp C3U Mate
+- M5Stack M5Stamp Pico
 - M5Stack ATOM Lite
 
 In addition, any ESP8266 module will work. The sketch may have to be adapted slightly for a specific module however.
 
-One of the serial ports of the Tx module will need to be connected to the ESP32/ESP82xx module using the pins specified in the boards.h file located [here](https://github.com/olliw42/mLRS/blob/main/esp/mlrs-wireless-bridge/mlrs-wireless-bridge-boards.h).
+One of the serial ports of the Tx module will need to be connected to the ESP32/ESP32-C3/ESP82xx module using the pins specified in the boards.h file located [here](https://github.com/olliw42/mLRS/blob/main/esp/mlrs-wireless-bridge/mlrs-wireless-bridge-boards.h).
 
 ### Software Configuration
 
