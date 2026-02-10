@@ -61,7 +61,7 @@ Starts streaming statistics. Terminate by sending any character. Format:
 <table>
     <tr>
         <td>Tx LQ</td><td>Tx valid frames LQ</td><td>Rx LQ</td>
-        <td>Tx RSSI</td><td>Rx RSSI</td><td>Tx SNR</td>
+        <td>Tx RSSI1</td><td>Tx RSSI2</td><td>Rx RSSI</td><td>Tx SNR1</td><td>Tx SNR2</td>
         <td>Tx bytes/sec transmitted</td><td>Tx bytes/sec received</td>
     </tr>
 </table>
@@ -85,5 +85,10 @@ Reboots a ESP32 module and enters the serial passthrough mode. For flashing the 
 #### hc04 pt; #### 
 Enters the serial passthrough mode (communication between CLI port and the Serial port).
 
+#### hc04 getpin; #### 
+Get the PIN of the HC-04 module.
+
 #### hc04 setpin; #### 
-Set the pin of the HC-04 module.
+Set the PIN of the HC-04 module.
+
+
