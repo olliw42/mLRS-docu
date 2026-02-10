@@ -15,6 +15,12 @@ Compatibility chart:
       <th>SX127x</th>
       <th colspan="2">LR1121</th>
     </tr><tr>
+      <td></td>
+      <td>MatekSys mR24, all ELRS 2400 gear, ...</td>
+      <td>MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder, ...</td>
+      <td>Frsky R9M, all ELRS 900 gear, ...</td>
+      <td colspan="2">RM Nomad, GX12, TX15, XR4, ...</td>
+    </tr><tr>
       <th></th>
       <th><strong>2.4 GHz</strong></th>
       <th><strong>868/915 MHz</strong></th>
