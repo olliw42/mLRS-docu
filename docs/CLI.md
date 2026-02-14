@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-Besides the mLRS Lua script and OLed interfaces, which however may not be available on all radio transmitters, the CLI is the main method for configuring mLRS Tx modules and receivers.
+The CLI is another interface for configuring mLRS Tx modules and receivers when the mLRS Lua script and OLED interfaces are not available.
 
 The CLI commands consist of one or more strings, each separated by a blank, and a terminating character. The terminating character can be '\r' (carriage return, CR), '\n' (line feed, LF), ',' or ';'. The CR/LF line feed handling depends very much on the terminal which is being used and its configuration. Hence, it is good practice to just always terminate the CLI commands with, e.g., a ';' (this will be done for the commands listed below). The CLI is case sensitive, except for parameter names. That is, the commands need to be entered lower case, but parameter names can be entered with any letter case.
 
