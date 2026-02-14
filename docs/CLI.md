@@ -1,16 +1,16 @@
-# mLRS Documentation: CLI Commands #
+# mLRS Documentation: CLI Commands (v1.3.08) #
 
 ([back to main page](../README.md))
 
-Besides the mLRS Lua script, which however is not available for all radio transmitters, the CLI is the main method for configuring the mLRS Tx modules and receivers.
+The CLI is another interface for configuring mLRS Tx modules and receivers when the mLRS Lua script and OLED interfaces are not available.
 
-The CLI commands consist of one or more strings, each separated by a blank, and a terminating character. The terminating character can be '\r' (carriage return), '\n' (line feed), ',' or ';'. The CR/LF line feed handling depends very much on the terminal which is being used and its configuration. Hence, it is good practice to just always terminate the CLI commands with, e.g., a ';' (this will be done for the commands listed below). The CLI is case sensitive, except for parameter names. That is, the commands need to be entered lower case, but parameter names can be entered with any letter case.
+The CLI commands consist of one or more strings, each separated by a blank, and a terminating character. The terminating character can be '\r' (carriage return, CR), '\n' (line feed, LF), ',' or ';'. The CR/LF line feed handling depends very much on the terminal which is being used and its configuration. Hence, it is good practice to just always terminate the CLI commands with, e.g., a ';' (this will be done for the commands listed below). The CLI is case sensitive, except for parameter names. That is, the commands need to be entered lower case, but parameter names can be entered with any letter case.
 
 The serial settings are: baudrate 115200 bps, 8 data bits, no parity, 1 stop bit (8N1).
 
 The CLI uses CRLF for terminating lines. 
 
-Depending on the device, some parameters are not available for configuration or cannot be changed. For instance, for a device which does not support a buzzer the parameter "Buzzer" is not available, and for a device which does not support diversity the parameter "Diversity" cannot be changed. Parameters which are not available are displayed with a value "-", and parameters which cannot be changed are displayed with the current selection but a comment "(unchangeable)" in addition.
+Depending on the device, some parameters are not available for configuration or cannot be changed. For instance, for a device which does not support a buzzer the parameter "Buzzer" is not available, and for a device which does not support diversity the parameter "Diversity" is available but cannot be changed. Parameters which are not available are displayed with a value "-", and parameters which cannot be changed are displayed with the current setting but a comment "(unchangeable)" in addition.
 
 > [!IMPORTANT]
 > Parameter changes become permanent by invoking pstore; (else they are lost with the next power cycle). 
@@ -53,7 +53,7 @@ Set the Configuration ID of the Tx module.
 Starts the binding. Comment: Only the Tx module is set into binding mode. The receiver must be put into binding mode by pressing its bind button.
 
 #### reload; #### 
-Reloads the current parameter values from the Tx and, if connected, the receiver.
+Reloads the current parameter values from the Tx module and, if connected, the receiver.
 
 #### stats; #### 
 Starts streaming statistics. Terminate by sending any character. Format:
@@ -69,16 +69,30 @@ Starts streaming statistics. Terminate by sending any character. Format:
 #### listfreqs; #### 
 Lists the frequencies used in the FHSS scheme.
 
+### Tx modules with a STM32 microcontroller ###
+
 #### systemboot; #### 
 Invokes the system bootloader.
 
-### Tx modules with an ESP WiFi bridge ###
+### Tx modules with an ESP-based wireless bridge ###
 
 #### esppt; #### 
 Enters the serial passthrough mode (communication between CLI port and the Serial port).
 
 #### espboot; #### 
-Reboots a ESP32 module and enters the serial passthrough mode. For flashing the ESP32 module through the CLI port.
+Reboots a ESP chip and enters the serial passthrough mode. For flashing the ESP chip through the CLI port.
+
+#### esp get pswd; ####
+Get the password used for the TCP, UDP, and UDPSTA protocols. An empty password means password-less operation. 
+
+#### esp set pswd = str; ####
+Set the password used for the TCP, UDP, and UDPSTA protocols. If no str value is given, i.e., "esp set pswd = ;" is entered, then an emtpy password is set.
+
+#### esp get netssid; ####
+Get the SSID used for the UDPSTA protocol.
+
+#### esp set netssid = str; ####
+Set the SSID used for the UDPSTA protocol. If no str value is given, i.e., "esp set netssid = ;" is entered, then the SIID is reset to the default value.
 
 ### Tx modules with an HC-04 Bluetooth module ###
 
