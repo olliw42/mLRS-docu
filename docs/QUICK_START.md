@@ -87,14 +87,7 @@ If both your receiver and Tx modules came pre-installed with mLRS firmware as wi
 
 Carefully install your Tx module into the bay of your EdgeTX or OpenTX radio.  Some Tx modules can be fussy about pin alignment; don't use excessive force or you may break something.
 
-[Flashing firmware](https://www.mateksys.com/?portfolio=mr24-30-tx#tab-id-3) to MatekSys mLRS modules with USB is especially easy via the [mLRS Web Flasher](https://mlrs.xyz/flash/) on a Chromium based browser.
-
-For the R9M Tx module, it is recommended to [Flash via EdgeTx/OpenTx](FRSKY_R9.md#flash-the-r9m-module-with-elrs-bootloader) which is a 2 step process:
-
-- First, [Flash the ELRS Bootloader](FRSKY_R9.md#flash-the-elrs-bootloader).
-- Next, use your EdgeTX/OpenTX radio to [Flash the mLRS Firmware](FRSKY_R9.md#flashupdate-the-mlrs-firmware).
-
-To flash ELRS receivers, you can use esptool or a Chromium based browser as instructed [here](ELRS_RECEIVERS.md#flashing).
+Flashing Firmware is done using the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) on a Chromium based browser.
 
 Once the firmware is installed, you can confirm operation by observing the LED.
 - When either a receiver or Tx module is powered on alone, a LED (usually red) should flash at 2 Hz (twice per second, on for 1/4 second then off for 1/4 second repeatedly).
@@ -102,7 +95,7 @@ Once the firmware is installed, you can confirm operation by observing the LED.
 
 ## 5. Install the mLRS Lua script and configure your mLRS system
 
-Follow the [instructions](LUA.md) and copy the correct mLRS Lua script to the SCRIPTS\TOOLS folder on your SD card and setup your RC radio external module.
+Use the 'Lua Script' page on the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) and follow the instructions to install the Lua script on your radio.
 
 Start the mLRS Lua script from the SYS->TOOLS menu and confirm you can talk to the Tx module.  You should see the Tx module firmware version reported at the top of the screen.
 
