@@ -6,11 +6,8 @@ The mLRS Lua script provides a convenient way to change the Tx module and receiv
 
 The Lua script works on OpenTx, EdgeTx, and Ethos radios but there are different versions depending on the display and OS of your radio:
 1. If your radio runs OpenTx/EdgeTx and has a 480x272 (e.g. Jumper T16, Radiomaster TX16S) or 480x320 (e.g. Jumper T15) color screen then use the "mLRS.lua" file
-2. If your radio runs OpenTx/EdgeTx and has a black and white screen (e.g. Frsky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
+2. If your radio runs OpenTx/EdgeTx and has a black and white screen (e.g. FrSky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
 3. If your radio runs Ethos (e.g. FrSky X18, X20) then use the "mlrs.lua", "main.lua", and "icon.png" files
-
-> [!IMPORTANT]
-> The mLRS Lua script requires EdgeTx version 2.9.x or later.
 
 ## Module Setup
 
@@ -18,7 +15,10 @@ The Tx module must be configured for CRSF or mBridge mode, by setting the parame
 
 ## OpenTx/EdgeTx Setup
 
-1. In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF or mBridge protocol with 400K baud rate.
+> [!IMPORTANT]
+> The mLRS Lua script requires EdgeTx version 2.9.x or later.
+
+1. In OpenTx/EdgeTx, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF or mBridge protocol with 400K baud rate.
 
     - ***Note***: mLRS only officially supports 400K baud rate.
 
@@ -26,7 +26,7 @@ The Tx module must be configured for CRSF or mBridge mode, by setting the parame
 
     - ***Note***: The correct Lua version needs to be selected based on your firmware version:
         - When using 1.3.04 or newer, you can download the Lua scripts from the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher)
-        - When using 1.3.0 release, use the Lua scripts found [here.](https://github.com/olliw42/mLRS/tree/v1.3-release/lua) 
+        - When using 1.3.0 release, use the Lua scripts found [here.](https://github.com/olliw42/mLRS/tree/v1.3-release/lua)
 
 You should then be able to run the Lua script by going to SYS->TOOLS on the radio, and selecting "mLRS Configurator" or "mLRS-bw".
 
