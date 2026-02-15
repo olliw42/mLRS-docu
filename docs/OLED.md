@@ -37,7 +37,7 @@ From the main screen, you can navigate through the 4 main screens using the up a
         <td>Tx, Rx Rssi</td>
         <td>Tx, Rx output power</td>
         <td></td>
-        <td></td>
+        <td>Wireless Bridge SSID</td>
     </tr>
     <tr>
         <td>Tx, Rx LQ</td>
