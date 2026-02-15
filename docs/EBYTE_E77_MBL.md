@@ -4,9 +4,6 @@
 
 The EBYTE E77 MBL boards use the EBYTE E77 module and are available in both 868/915 MHz and 433 MHz/70 cm versions. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
-> [!IMPORTANT]
-> If you are planning to use the SMA connector for the antenna, ensure that a 0 Ohm resistor is populated. Multiple users have reported that it is not present on their modules. Refer to the red square next to the SMA connector in the diagrams below for the location.***
-
 <table>
   <tbody>
     <tr>
@@ -31,6 +28,9 @@ The EBYTE E77 MBL boards use the EBYTE E77 module and are available in both 868/
     </tr>
   </tbody>
 </table>
+
+> [!IMPORTANT]
+> If you are planning to use the SMA connector for the antenna, ensure that a 0 Ohm resistor is populated. Multiple users have reported that it is not present on their modules. Refer to the red square next to the SMA connector in the diagrams below for the location.
 
 > [!IMPORTANT]
 > EBYTE E77 MBL boards use the SX126x/STM32WLE chipset and are only compatible with SX126x/STM32WLE and LR1121 hardware; they are incompatible with SX127x hardware providing the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
