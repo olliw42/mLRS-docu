@@ -8,13 +8,13 @@ mLRS provides the MspX technology, which is designed to improve the over-the-air
 - Option to have both RC and MSP serial data on a single UART. 
 - Robust framing and parsing which reduces packet losses to a minimum, and compression of some very large MSP messages to increase probability of successful transmission.
 
-***Notes***: 
-- It is highly recommended to use INAV 8 or later, although mLRS has also been tested with INAV 7.1.
-- For INAV 7.1 and earlier, several limitations exist. For the details please see the last chapter below, [Differences between INAV 8 and 7 when using MspX](#differences-between-inav-8-and-7-when-using-mspx).
-- MspX requires mLRS 1.3.04 or higher to be used.
-- An in-depth description of what is going on under the hood is given [here](https://discord.com/channels/1005096100572700794/1005268892437970945/1359794224349974608) and [here](https://discord.com/channels/1005096100572700794/1005268892437970945/1359795724056789002).
+> [!NOTE]
+> - It is highly recommended to use INAV 8 or later, although mLRS has also been tested with INAV 7.1.
+> - For INAV 7.1 and earlier, several limitations exist. For the details please see the last chapter below, [Differences between INAV 8/9 and 7 when using MspX](#differences-between-inav-89-and-7-when-using-mspx).
+> - MspX requires mLRS 1.3.04 or higher to be used.
+> - An in-depth description of what is going on under the hood is given [here](https://discord.com/channels/1005096100572700794/1005268892437970945/1359794224349974608) and [here](https://discord.com/channels/1005096100572700794/1005268892437970945/1359795724056789002).
 
-In the following INAV 8 is assumed.
+In the following INAV 8 or 9 is assumed.
 
 ## mLRS Receiver Configuration
 
@@ -33,10 +33,10 @@ For enabling MSP-RC set:
 
 - "Rx Snd RcChannel" = "rc override" or "rc channels" (both have the same functionality in MspX mode)
 
-***Notes***:
-- RC link statistics are only sent to the flight controller via MSP if "rc override" or "rc channels" is selected. 
-- MSP-RC messages will always override other RC inputs. If CRSF is connected and selected as the RC protocol in INAV, MSP-RC still has priority if enabled in mLRS and connected to a MSP enabled UART.
-- The RC update rate will be limited to 37 Hz in 2.4 GHz FLRC mode when using MspX (see [Differences between INAV 8 and 7 when using MspX](#differences-between-inav-8-and-7-when-using-mspx)).
+> [!NOTE]
+> - RC link statistics are only sent to the flight controller via MSP if "rc override" or "rc channels" is selected. 
+> - MSP-RC messages will always override other RC inputs. If CRSF is connected and selected as the RC protocol in INAV, MSP-RC still has priority if enabled in mLRS and connected to a MSP enabled UART.
+> - The RC update rate will be limited to 37 Hz in 2.4 GHz FLRC mode when using MspX (see [Differences between INAV 8/9 and 7 when using MspX](#differences-between-inav-89-and-7-when-using-mspx)).
 
 
 ## INAV Configuration
@@ -52,17 +52,17 @@ To use a mLRS receiver with INAV in MspX mode, the following settings have to be
   
 <img src="images/MSPX_receiver.png" width="720px">
 
-- When connecting INAV 8 Configurator through mLRS for flight monitoring, it is recommended to enable the 'Wireless Mode' switch before connection, for better link reliability (do not use 'Wireless Mode' with versions less than INAV 8).
+- When connecting INAV 8/9 Configurator through mLRS for flight monitoring, it is recommended to enable the 'Wireless Mode' switch before connection, for better link reliability (do not use 'Wireless Mode' with versions lower than INAV 8).
 
 <img src="images/MSPX_wirelessmode.png" width="360px">
 
 If your radio is connected, you should now be able to see the channel values update when you move the radio sticks. No further settings are needed and telemetry will work for EdgeTX/OpenTX radios after scanning for sensors.
 
-## Differences between INAV 8 and 7 when using MspX
+## Differences between INAV 8/9 and 7 when using MspX
 
-Depending on the chosen connection and serial mode, the functionality will differ for INAV 8 and INAV 7. This is a quick overview, what options are available and what functions to expect. 
+Depending on the chosen connection and serial mode, the functionality will differ for INAV 8/9 and INAV 7. This is a quick overview, what options are available and what functions to expect. 
 
-### INAV 8
+### INAV 8/9
 
 Serial Mode:
 - MspX
@@ -84,7 +84,7 @@ RC Out Mode (can be combined with serial if the mLRS receiver has 2 UARTs)
 
  ***Recommendation***
  
-Since INAV 8 in combination with mLRS can provide all features over MspX, it is recommended to only use a single UART MspX connection for most vehicles. The only exception is the 2.4 GHz FLRC mode that can provide 111 Hz RC rate over CRSF. Due to a performance limitation in INAV, this mode had to be limited to 37 Hz RC rate over MSP. Use a separate CRSF UART instead, to achieve full 111 Hz RC update rates in this mode. All other features will work as normal. 
+Since INAV 8/9 in combination with mLRS can provide all features over MspX, it is recommended to only use a single UART MspX connection for most vehicles. The only exception is the 2.4 GHz FLRC mode that can provide 111 Hz RC rate over CRSF. Due to a performance limitation in INAV, this mode had to be limited to 37 Hz RC rate over MSP. Use a separate CRSF UART instead, to achieve full 111 Hz RC update rates in this mode. All other features will work as normal. 
 
 ### INAV 7
 
