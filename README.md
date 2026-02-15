@@ -25,7 +25,6 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [SBus Radios](docs/BASIC_SETUP.md)
 - [Additional Configuration for ArduPilot Systems](docs/ARDUPILOT.md)
 - [INAV/MSP Systems](docs/MSPX.md)
-- [mTX (formerly MAVLink for OpenTx)](docs/MTX.md)
 - [Experimental: Relay](docs/RELAY.md)
 
 ### STM32 Hardware ###
@@ -39,7 +38,6 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 ### ESP Hardware ###
 - [ELRS Receivers](docs/ELRS_RECEIVERS.md)
 - [ELRS Tx Modules](docs/ELRS_TX_MODULES.md)
-- [RadioMaster RP4TD](docs/ELRS_RADIOMASTER_RP4TD.md)
 - [ESP Development](docs/ESP_DEVELOPMENT.md)
 
 ### Advanced Options ###
