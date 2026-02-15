@@ -52,7 +52,7 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 </table>
 
 > [!TIP]
-> To enable the cli, hold down the bind button during boot.
+> To enable the CLI, hold down the bind button during boot.
 
 <img src="images/E77_Tx_Wiring.png" width="720">
 

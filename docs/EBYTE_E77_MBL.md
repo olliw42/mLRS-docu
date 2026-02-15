@@ -55,7 +55,7 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 - debug: PA5
 
 > [!TIP]
-> - To enable the cli, hold down button2 during boot.
+> - To enable the CLI, hold down button2 during boot.
 > - To enter system bootloader, hold down button1 during boot.
 
 <img src="images/mLRS-EByte-E77-MBLKit-Tx.jpg" width="900px">
