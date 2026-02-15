@@ -12,7 +12,7 @@ Links to the MatekSys website are found below, which include product specificati
 
 > [!IMPORTANT]
 > MatekSys mLRS gear in the 868/915 MHz band use the SX126x/STM32WLE RF chipset and are only compatible 
-with SX126x/STM32WLE and LR1121 hardware; they are incompatible with SX127x hardware providing the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+with SX126x/STM32WLE and LR1121 hardware; they are incompatible with SX127x hardware which uses the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 ## 2.4 GHz Hardware ##
 

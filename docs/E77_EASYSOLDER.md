@@ -26,7 +26,7 @@ The E77 Easy Solder Boards are designed to allow one with minimal soldering skil
 </table>
 
 > [!IMPORTANT]
-> E77 Easy Solder boards use the SX126x/STM32WLE chipset and are only compatible with SX126x/STM32WLE and LR1121 hardware; they are incompatible with SX127x hardware providing the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+> E77 Easy Solder boards use the SX126x/STM32WLE chipset and are only compatible with SX126x/STM32WLE and LR1121 hardware; they are incompatible with SX127x hardware which uses the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 > [!NOTE]
 > EByte silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet, newer modules can be identified by serial number SN &#8805; 3202995. The new and old modules require different firmware. The old modules will need firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use NRST (reset) for flashing via SWD.
