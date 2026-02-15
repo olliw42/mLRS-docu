@@ -4,21 +4,21 @@
 
 The mLRS Lua script provides a convenient way to change the Tx module and receiver settings.
 
-The Lua script works on OpenTx, EdgeTx, and Ethos radios but there are different versions depending on the display and OS of your radio:
-1. If your radio runs OpenTx/EdgeTx and has a 480x272 (e.g. Jumper T16, Radiomaster TX16S) or 480x320 (e.g. Jumper T15) color screen then use the "mLRS.lua" file
-2. If your radio runs OpenTx/EdgeTx and has a black and white screen (e.g. FrSky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
+The Lua script works on EdgeTx, OpenTx, and Ethos radios but there are different versions depending on the display and OS of your radio:
+1. If your radio runs EdgeTx/OpenTx and has a 480x272 (e.g. Jumper T16, Radiomaster TX16S) or 480x320 (e.g. Jumper T15) color screen then use the "mLRS.lua" file
+2. If your radio runs EdgeTx/OpenTx and has a black and white screen (e.g. FrSky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
 3. If your radio runs Ethos (e.g. FrSky X18, X20) then use the "mlrs.lua", "main.lua", and "icon.png" files located in the 'Ethos' folder
 
-## Module Setup
+## Tx Module Setup
 
 The Tx module must be configured for CRSF mode, by setting the parameter "Tx Ch Source" to "crsf". This is the default setting after an initial flash. If this parameter was changed, you can set it using the OLED interface (if available) or the CLI. See [CLI Commands](CLI.md) for more details.
 
-## OpenTx/EdgeTx Setup
+## EdgeTx/OpenTx Setup
 
 > [!IMPORTANT]
 > The mLRS Lua script requires EdgeTx version 2.9.x or later.
 
-1. In OpenTx/EdgeTx, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF or mBridge protocol with 400K baud rate.
+1. In EdgeTx/OpenTx, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF or mBridge protocol with 400K baud rate.
 
     - ***Note***: mLRS only officially supports 400K baud rate.
 
