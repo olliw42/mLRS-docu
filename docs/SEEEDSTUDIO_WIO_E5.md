@@ -23,15 +23,14 @@ The SeeedStudio [Wio-E5 module](https://wiki.seeedstudio.com/LoRa-E5_STM32WLE5JC
       <td>SX126x</td>
     </tr>
     <tr>
-      <td>Compatibility</td>
-      <td>Compatible with MatekSys mR900, EBYTE E77 MBL, E77 Easy Solder. Incompatible with SX127x hardware (Frsky R9 and ELRS 900 MHz).</td>
-    </tr>
-    <tr>
       <td>Weight</td>
       <td>Wio-E5 Mini: ~7 grams without antenna</td>
     </tr>
   </tbody>
 </table>
+
+> [!IMPORTANT]
+> SeeedStudio Wio-E5 boards use the SX126x/STM32WLE chipset and are only compatible with SX126x/STM32WLE and LR1121 hardware; they are incompatible with SX127x hardware which uses the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 ## SeeedStudio Wio-E5 Mini dev Board ##
 
