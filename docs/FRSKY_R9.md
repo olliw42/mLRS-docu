@@ -22,12 +22,11 @@ The Frsky R9M, R9M Lite Pro transmitter modules and R9 MX, R9 MM, R9 Mini receiv
       <td>RF Chipset</td>
       <td>SX127x</td>
     </tr>
-      <tr>
-      <td>Compatibility</td>
-      <td>Compatible with Frsky R9 and ELRS 900 MHz hardware. Incompatible with SX126x/STM32WLE hardware (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder).</td>
-    </tr>
   </tbody>
 </table>
+
+> [!IMPORTANT]
+> Frsky R9 gear use the SX127x RF chipset and are only compatible with SX127x and LR1121 hardware using the '19 Hz 7x' mode; they are incompatible with SX126x/STM32WLE hardware providing the '19 Hz' mode (see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 ## R9M Tx Module ##
 

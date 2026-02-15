@@ -4,7 +4,8 @@
 
 The EBYTE E77 MBL boards use the EBYTE E77 module and are available in both 868/915 MHz and 433 MHz/70 cm versions. However, these boards are not perfect since their pins are not ready-made for the purposes of mLRS. So, some tweaking and (easy) soldering is required.
 
-***Important: If you are planning to use the SMA connector for the antenna, ensure that a 0 Ohm resistor is populated. Multiple users have reported that it is not present on their modules. Refer to the red square next to the SMA connector in the diagrams below for the location.***
+> [!IMPORTANT]
+> If you are planning to use the SMA connector for the antenna, ensure that a 0 Ohm resistor is populated. Multiple users have reported that it is not present on their modules. Refer to the red square next to the SMA connector in the diagrams below for the location.***
 
 <table>
   <tbody>
@@ -24,10 +25,6 @@ The EBYTE E77 MBL boards use the EBYTE E77 module and are available in both 868/
       <td>LoRa Chipset</td>
       <td>SX126x</td>
     </tr>
-      <tr>
-      <td>Compatibility</td>
-      <td>Compatible with MatekSys mR900, SeeedStudio Wio-E5, E77 Easy Solder. Incompatible with SX127x hardware (Frsky R9 and ELRS 900 MHz).</td>
-    </tr>
     <tr>
       <td>Weight</td>
       <td>9.35 grams without antenna</td>
@@ -35,7 +32,11 @@ The EBYTE E77 MBL boards use the EBYTE E77 module and are available in both 868/
   </tbody>
 </table>
 
-***Note***: EByte silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet, newer modules can be identified by serial number SN &#8805; 3202995. The new and old modules require different firmware. The old modules will need firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use NRST (reset) for flashing via SWD.
+> [!IMPORTANT]
+> EBYTE E77 MBL boards use the SX126x/STM32WLE chipset and are only compatible with SX126x/STM32WLE and LR1121 hardware; they are incompatible with SX127x hardware providing the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+
+> [!NOTE]
+> EByte silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet, newer modules can be identified by serial number SN &#8805; 3202995. The new and old modules require different firmware. The old modules will need firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use NRST (reset) for flashing via SWD.
 
 ## EBYTE E77 MBL Boards ##
 
@@ -53,9 +54,9 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 - button2: bind / cli
 - debug: PA5
 
-***Notes***:
-- To enable the cli, hold down button2 during boot.
-- To enter system bootloader, hold down button1 during boot.
+> [!TIP]
+> - To enable the cli, hold down button2 during boot.
+> - To enter system bootloader, hold down button1 during boot.
 
 <img src="images/mLRS-EByte-E77-MBLKit-Tx.jpg" width="900px">
 
@@ -69,7 +70,8 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 - button2: bind
 - debug: PA5
 
-***Note***: To enter system bootloader, hold down button1 during boot.
+> [!TIP]
+> To enter system bootloader, hold down button1 during boot.
 
 <img src="images/mLRS-EByte-E77-MBLKit-Rx.jpg" width="900px">
 

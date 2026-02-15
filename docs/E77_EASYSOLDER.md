@@ -22,14 +22,14 @@ The E77 Easy Solder Boards are designed to allow one with minimal soldering skil
       <td>LoRa Chipset</td>
       <td>SX126x</td>
     </tr>
-      <tr>
-      <td>Compatibility</td>
-      <td>Compatible with MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL. Incompatible with SX127x hardware (Frsky R9 and ELRS 900 MHz).</td>
-    </tr>
   </tbody>
 </table>
 
-***Note***: EByte silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet, newer modules can be identified by serial number SN &#8805; 3202995. The new and old modules require different firmware. The old modules will need firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use NRST (reset) for flashing via SWD.
+> [!IMPORTANT]
+> E77 Easy Solder boards use the SX126x/STM32WLE chipset and are only compatible with SX126x/STM32WLE and LR1121 hardware; they are incompatible with SX127x hardware providing the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+
+> [!NOTE]
+> EByte silently changed the hardware of the E77 module around the beginning of 2024. These newer modules use a (better) TCXO, whereas the older modules use a ceramic crystal oscillator. According to the datasheet, newer modules can be identified by serial number SN &#8805; 3202995. The new and old modules require different firmware. The old modules will need firmware with the label "-xtal" in the name. Also, some reports suggest that one needs to use NRST (reset) for flashing via SWD.
 
 ### As Tx Module ###
 
@@ -51,7 +51,8 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
   </tbody>
 </table>
 
-***Note***: To enable the cli, hold down the bind button during boot.
+> [!TIP]
+> To enable the cli, hold down the bind button during boot.
 
 <img src="images/E77_Tx_Wiring.png" width="720">
 
@@ -75,7 +76,8 @@ Connections (name in respect to board print-ons, otherwise please refer to graph
 
 <img src="images/E77_Rx_Wiring.png" width="720">
 
-***Note***: In order to send RC channels over the serial connection (no need for OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
+> [!TIP]
+> In order to send RC channels over the serial connection (no need for OUT wire), change the "Rx Snd RcChannel" parameter to 'rc override' (or 'rc channels' if possible).
 
 ## Flashing ##
 
