@@ -18,6 +18,16 @@ The following wireless protocols are supported:
 
 Some Tx modules allow the wireless bridge to be configured from the Tx module, CLI, Lua script or OLED (this depends on the hardware of the Tx module); see [Parameters](PARAMETERS.md). Otherwise, the wireless bridge needs to be configured in the Arduino sketch and a new firmware has to be compiled and uploaded with each change.
 
+## SSID / Name / Password
+
+The wireless bridge is per default configured to a SSID or Name which follows the pattern "mLRS-xxxx yyy", where xxxx is a 4 digit number generated from the MAC of the device (thus a sort of a GUID) and yyy is either "AP TCP", "AP UDP", "STA UDP", "BT" or "BLE". For instance, it could be "mLRS-4983 AP UDP".
+
+Per default, for TCP and UDP, a password is not set, whereas for UDPSTA the password is set to "mLRS-" plus the bindphrase. For instance, it could be "mLRS-mlrs.0". 
+
+For some Tx modules it is possible to configure the password used for TCP, UDP and UDPSTA via the CLI. For these Tx modules it is also possible to set the SSID used by UDPSTA per CLI.
+
+Otherwise they need to be set in the Arduino skecth and the firmware needs to be recompiled by the user.
+
 ## DIY Builds
 
 ### Hardware Selection & Configuration
