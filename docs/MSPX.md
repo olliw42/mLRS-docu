@@ -36,7 +36,7 @@ For enabling MSP-RC set:
 > [!NOTE]
 > - RC link statistics are only sent to the flight controller via MSP if "rc override" or "rc channels" is selected. 
 > - The RC update rate will be limited to 37 Hz in 2.4 GHz FLRC mode when using MspX (see [Differences between INAV 8/9 and 7 when using MspX](#differences-between-inav-89-and-7-when-using-mspx)).
-> Supports up to 32 controllable channels: channels 1–16 via mLRS/radio, and channels 1–32 when operated through a ground control station.
+> - Supports up to 32 controllable channels: channels 1–16 via mLRS/radio, and channels 1–32 when operated through a ground control station.
 
 ## INAV Configuration
 
