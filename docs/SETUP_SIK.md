@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-This page describes how to use mLRS as a bi-directional MAVLink telemetry link similar to a SiK telemetry unit. This setup doesn't require a radio and will only transmit and receive MAVLink data. The only unique aspect of "SiK Telemetry" method of operation is that RC over MAVLink is not utilized.
+This page describes how to use mLRS as a bi-directional MAVLink telemetry link similar to a SiK telemetry unit. This setup doesn't require a radio and will only transmit and receive MAVLink data. The only unique aspect of the "SiK Telemetry" method of operation is that RC over MAVLink is not utilized.
 
 <img src="images/mLRS-docu-setup-sik-telemetry-02.jpg" width="800px">
 
@@ -13,7 +13,10 @@ This page describes how to use mLRS as a bi-directional MAVLink telemetry link s
 
 ## mLRS Tx Module Setup
 
-No changes from the default should be necessary.
+No changes from the default should be necessary, relevant settings:
+
+- "Tx Ser Dest" = serial / serial2
+- "Tx Snd RadioStat" = 1 Hz
 
 ## mLRS Receiver Setup
 
@@ -26,7 +29,6 @@ Configure the serial port that is connected to the mLRS receiver:
 
 - SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
 - SERIALx_BAUD = must match the baudrate of the mLRS receiver's serial port
-- SERIALx_OPTIONS = 4096 (ignore commands from GCS to change stream rates)
 
 > [!NOTE]
 > 'x' refers to the serial port of your flight controller used for connecting with the mLRS receiver's serial port.
