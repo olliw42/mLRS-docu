@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-This page describes how to use mLRS as a bi-directional MAVLink telemetry link similar to a SiK telemetry unit. This setup doesn't require a radio and will only transmit and receive MAVLink data. The "SiK Telemetry" operation mode functions like any other mode; the only difference is that RC capability is not utilized.
+This page describes how to use mLRS as a bi-directional MAVLink telemetry link similar to a SiK telemetry unit. This setup doesn't require a radio and will only transmit and receive MAVLink data. The only unique aspect of "SiK Telemetry" method of operation is that RC over MAVLink is not utilized.
 
 <img src="images/mLRS-docu-setup-sik-telemetry-02.jpg" width="800px">
 
@@ -17,7 +17,8 @@ No changes from the default should be necessary.
 
 ## mLRS Receiver Setup
 
-- Rx Ser Baudrate = must match the baudrate of the flight controller's serial port
+- "Rx Ser Baudrate" = must match the baudrate of the flight controller's serial port
+- "Rx Snd RcChannel" = off
 
 ## ArduPilot Setup
 
@@ -34,12 +35,12 @@ If you are using a separate RC system (e.g. ELRS, Crossfire, FrSky, etc.), confi
 
 ### Stream Rates
 
-Stream rate settings are not critical, as mLRS will adjust them when needed. See the [CRSF Telemetry](CRSF.md#stream-rates) page for suggested settings.
+For MAVLink telemetry, stream rates must be enabled by setting the SRy/MAVy parameters in ArduPilot (ground control stations typically set stream rates upon connection). The exact stream rate values are not critical, as mLRS regulates the message flow when necessary. For recommended settings, see the [CRSF Telemetry](CRSF.md#stream-rates) page.
 
-## Ground Station Connection
+## Ground Control Station Connection
 
-Since there is no radio in the loop, the ground station connects directly to the mLRS Tx module. Several connection methods are available:
+Since there is no radio in the loop, the ground control station connects directly to the mLRS Tx module. Several connection methods are available:
 
 - **USB**: Some Tx modules provide USB serial access. The "siktelem" firmware variant enables this on MatekSys Tx modules.
 - **Wired serial**: A TTL level USB serial adapter can be used to connect a Tx module serial port directly to a PC or mobile device.
-- **Wireless bridge (WiFi/Bluetooth)**: An ESP or HC04 module connected to the Tx module serial port can provide a WiFi or Bluetooth link to the ground station. Some Tx modules include a built-in wireless bridge. See [Wireless Bridge](WIRELESS_BRIDGE.md) for details.
+- **Wireless bridge (WiFi/Bluetooth)**: An ESP or HC04 module connected to the Tx module serial port can provide a WiFi or Bluetooth link to the ground control station. Some Tx modules include a built-in wireless bridge. See [Wireless Bridge](WIRELESS_BRIDGE.md) for details.
