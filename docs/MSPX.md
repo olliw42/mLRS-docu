@@ -35,7 +35,6 @@ For enabling MSP-RC set:
 
 > [!NOTE]
 > - RC link statistics are only sent to the flight controller via MSP if "rc override" or "rc channels" is selected. 
-> - MSP-RC messages will always override other RC inputs. If CRSF is connected and selected as the RC protocol in INAV, MSP-RC still has priority if enabled in mLRS and connected to a MSP enabled UART.
 > - The RC update rate will be limited to 37 Hz in 2.4 GHz FLRC mode when using MspX (see [Differences between INAV 8/9 and 7 when using MspX](#differences-between-inav-89-and-7-when-using-mspx)).
 
 
