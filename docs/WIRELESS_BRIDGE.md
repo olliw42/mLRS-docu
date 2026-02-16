@@ -28,7 +28,7 @@ Per default, for TCP and UDP, a password is not set, whereas for UDPSTA the pass
 
 For some Tx modules it is possible to configure the password used for TCP, UDP and UDPSTA via the CLI. For these Tx modules it is also possible to set the SSID used by UDPSTA per CLI.
 
-Otherwise they need to be set in the Arduino skecth and the firmware needs to be recompiled by the user.
+Otherwise they need to be set in the Arduino sketch and the firmware needs to be recompiled by the user.
 
 ## DIY Builds
 
