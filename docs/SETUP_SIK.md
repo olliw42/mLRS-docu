@@ -2,26 +2,47 @@
 
 ([back to main page](../README.md))
 
-This page describes how to use mLRS as a bi-directional MAVLink telemetry link similar to a SiK telemetry unit. This setup doesn't require a radio and will only transmit and receive MAVLink data. The "SiK Telemetry" operation mode functions like any other mode; the only difference is that RC capability is not utilized.
+This page describes how to use mLRS as a bi-directional MAVLink telemetry link similar to a SiK telemetry unit. This setup doesn't require a radio and will only transmit and receive MAVLink data. The only unique aspect of the "SiK Telemetry" method of operation is that RC over MAVLink is not utilized.
 
 <img src="images/mLRS-docu-setup-sik-telemetry-02.jpg" width="800px">
 
-## Firmwares
+## Firmware
 
 - Tx module (ground module): needs to be flashed with a "tx-xxxx" firmware
-- receiver (vehicle module): needs to be flashed with a "rx-xxxx" firmware
+- Receiver (vehicle module): needs to be flashed with a "rx-xxxx" firmware
 
-## Setup
+## mLRS Tx Module Setup
 
-The configuration for this mode is identical to others, except that one can ignore the RC settings on both the mLRS Tx module and receiver. The RC input and output pins on the devices are not used.
+No changes from the default should be necessary, relevant settings:
 
-For this setup, the mLRS Tx module should having the following settings:
-- Tx Ch Source = none
-- Tx Snd RadioStat = 1 Hz
+- "Tx Ser Dest" = serial / serial2
+- "Tx Snd RadioStat" = 1 Hz
+
+## mLRS Receiver Setup
+
+- "Rx Ser Baudrate" = must match the baudrate of the flight controller's serial port
+- "Rx Snd RcChannel" = off
+
+## ArduPilot Setup
+
+Configure the serial port that is connected to the mLRS receiver:
+
+- SERIALx_PROTOCOL = 2 (important, do not use MAVLink v1!)
+- SERIALx_BAUD = must match the baudrate of the mLRS receiver's serial port
 
 > [!NOTE]
-> "Tx Snd RadioStat" = "1 Hz" sends the RSSI of the Tx module to the ground station software.
+> 'x' refers to the serial port of your flight controller used for connecting with the mLRS receiver's serial port.
 
-There is no specific configuration of the mLRS receiver neccessary. 
+If you are using a separate RC system (e.g. ELRS, Crossfire, FrSky, etc.), configure it according to that system's documentation.
 
-Further configuration should follow the settings described within the [CRSF Telemetry and Yaapu Telemetry App](CRSF.md) page. If you are using a separate RC system (e.g. Crossfire, ELRS, FrSky, etc.), the sub chapter [Setup ArduPilot: CRSF receiver](CRSF.md/#crsf-receiver) will need to be modified for the system you are using, otherwise it can be ignored.
+### Stream Rates
+
+For MAVLink telemetry, stream rates must be enabled by setting the SRy/MAVy parameters in ArduPilot (ground control stations typically set stream rates upon connection). The exact stream rate values are not critical, as mLRS regulates the message flow when necessary. For recommended settings, see the [CRSF Telemetry](CRSF.md#stream-rates) page.
+
+## Ground Control Station Connection
+
+Since there is no radio in the loop, the ground control station connects directly to the mLRS Tx module. Several connection methods are available:
+
+- **USB**: Some Tx modules provide USB serial access. The "siktelem" firmware variant enables this on MatekSys Tx modules.
+- **Wired serial**: A TTL level USB serial adapter can be used to connect a Tx module serial port directly to a PC or mobile device.
+- **Wireless bridge (WiFi/Bluetooth)**: An ESP or HC04 module connected to the Tx module serial port can provide a WiFi or Bluetooth link to the ground control station. Some Tx modules include a built-in wireless bridge. See [Wireless Bridge](WIRELESS_BRIDGE.md) for details.
