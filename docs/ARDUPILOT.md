@@ -75,7 +75,7 @@ It is often useful to know the exact RSSI dBm as opposed to RSSI as a percentage
 
 ## Stream Rates
 
-When configuring SRy/MAVy parameters, 'y' does usually not correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol. SERIAL0, and thus SR0, will nearly always be reserved for the USB connection and set to use the MAVLink protocol (which should not be modified). Therefore, as an example, in a setup with SERIAL1 and SERIAL2 not set to the MAVLink and with the mLRS receiver connected to SERIAL3, then SR1/MAV1 should be used to configured the stream rates for the mLRS receiver.
+When configuring SRy/MAVy parameters, 'y' does usually not correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol. SERIAL0, and thus SR0, is nearly always reserved for the USB connection and set to use the MAVLink protocol (not possible in ArduPilot 4.7, has no MAV0). Therefore, as an example, in a setup where SERIAL1 and SERIAL2 are not set to MAVLink protocol and with the mLRS receiver connected to SERIAL3, then SR1/MAV1 configures the stream rates for the mLRS receiver.
 
 To understand how stream rates affect the MAVLink data rate, you can use this [calculator](https://github.com/ArduPilot/pymavlink/blob/master/tools/mavtelemetry_datarates.py) (requires Python).
 
