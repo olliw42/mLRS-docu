@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-***Note***: This page contains additional detail on certain configuration options that are applicable only to ArduPilot systems. Initial configuration should follow the process described within the [CRSF Telemetry and Yaapu Telemetry App](CRSF.md) page. If you are using a separate RC system and only want to have SiK functionality then you can refer to the [SiK Telemetry Replacement](docs/SETUP_SIK.md) page.
+This page contains additional detail on certain configuration options that are applicable only to ArduPilot systems. Initial configuration should follow the process described in the [CRSF Telemetry and Yaapu Telemetry App](CRSF.md) page. If you are using a separate RC system and only want to have SiK functionality then you can refer to the [SiK Telemetry Replacement](docs/SETUP_SIK.md) page.
 
 ## CRSF Receiver
 
@@ -23,7 +23,7 @@ For a Matek H743 board the configuration is:
 - SERIAL7_OPTIONS = 0
 - SERIAL7_PROTOCOL = 23
 
-***Notes & References***:
+***References***:
 - [ArduPilot Docs for CRSF](https://ardupilot.org/copter/docs/common-tbs-rc.html)
 - [ArduPilot Docs for RC_PROTOCOLS](https://ardupilot.org/plane/docs/parameters.html#rc-protocols-rc-protocols-enabled)
 - [ArduPilot Docs for RSSI_TYPE](https://ardupilot.org/plane/docs/parameters.html#rssi-type-rssi-type)
@@ -54,36 +54,53 @@ Therefore in Mission Planner three RSSI metrics are available when using mLRS (a
 3. remrssi - the RSSI of the mLRS receiver, as seen by the mLRS Tx module (passed back to the ground within the mLRS OTA packet)
     - ***Note***: In theory, this value should match the 'rxrssi' value however due to scaling and timing this is not guaranteed.
 
-***Notes & References***:
+***References***:
 - [ArduPilot Docs for RSSI_TYPE](https://ardupilot.org/plane/docs/parameters.html#rssi-type-rssi-type)
 - The link quality indicator in the HUD of MissionPlanner shows the percentage of lost data packets (as determined from the seq number in the MAVLink packets), see [ArduPilot Docs for Flight Data Screen](https://ardupilot.org/planner/docs/mission-planner-ground-control-station.html)
 
-### RSSI dBm
+### RSSI Comparison Chart
 
-Given that the receiver sensitivity will vary with the mLRS mode it is often useful to know the exact RSSI dBm as opposed to RSSI as a percentage or in MAVLink units. The RSSI dBm allows one to understand exactly how much margin there is in the link budget. The table below provides conversions to RSSI dBm:
+It is often useful to know the exact RSSI dBm as opposed to RSSI as a percentage or in MAVLink units. The RSSI dBm allows one to understand exactly how much margin there is in the link budget. The table below provides conversions to RSSI dBm:
 
-| RSSI dBm | RSSI % | RSSI MAVLink units | Notes            |
+| RSSI dBm | RSSI % | RSSI MAVLink units | Notes |
 |----------|--------|--------------|------------------|
-| -90       | 43     | 77           |                  |
-| -100      | 29     | 73           |                  |
-| -105      | 21     | 55           | 50 Hz Mode receiver sensitivity |
-| -108      | 17     | 44           | 31 Hz Mode receiver sensitivity |
-| -112      | 11     | 29           | 19 Hz Mode receiver sensitivity |
+| -90      | 43     | 77           |                  |
+| -100     | 29     | 73           |                  |
+| -105     | 21     | 55           | 50 Hz Mode receiver sensitivity |
+| -108     | 17     | 44           | 31 Hz Mode receiver sensitivity |
+| -112     | 11     | 29           | 19 Hz Mode receiver sensitivity |
 
-***Note***: The given limits for the various modes assumes that the RF stage doesn't have a LNA.
+> [!NOTE]
+> The receiver sensitivity varies with the mLRS mode. The listed sensitivity limits assume that the RF stage does not include a LNA.
 
 ## Stream Rates
 
-When configuring SRy parameters, 'y' does not necessarily correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol.  SERIAL0, and thus SR0, will nearly always be reserved for the USB connection and set to use the MAVLink protocol (which should not be modified). Therefore, as an example, in a setup with SERIAL1 and SERIAL2 not set to the MAVLink and with the mLRS receiver connected to SERIAL3, then SR1 should be used to configured the stream rates for the mLRS receiver.
+When configuring SRy/MAVy parameters, 'y' does usually not correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol. SERIAL0, and thus SR0, will nearly always be reserved for the USB connection and set to use the MAVLink protocol (which should not be modified). Therefore, as an example, in a setup with SERIAL1 and SERIAL2 not set to the MAVLink and with the mLRS receiver connected to SERIAL3, then SR1/MAV1 should be used to configured the stream rates for the mLRS receiver.
 
 To understand how stream rates affect the MAVLink data rate, you can use this [calculator](https://github.com/ArduPilot/pymavlink/blob/master/tools/mavtelemetry_datarates.py) (requires Python).
 
 ## mLRS Receiver
 
-- Rx Snd RadioStat:
-    - ardu_1: optimizes for ArduPilot usage
-    - meth_b: optimizes for PX4 usage
+### Flow Control
 
-- Rx Snd RcChannel:
-    - rc_channel_overrides: outputs MAVLink RC_CHANNELS_OVERRIDE messages.
-    - radio_rc_channels: outputs MAVLink RADIO_RC_CHANNELS messages. Requires ArduPilot v4.6.0 or later. Supported by 2 MB flash boards as standard, but boards with smaller flash may enable the feature by [creating a custom firmware version](https://custom.ardupilot.org/) with the option for 'MAVLink' under 'RC' being selected in the firmware configurator. RC_PROTOCOL parameter must have bit 17 enabled (MAVRadio).
+The mLRS receiver can throttle the data rate of the flight controller, when configured as follows: 
+
+- "Rx Snd RadioStat" = "ardu_1": optimizes for ArduPilot usage
+- "Rx Snd RadioStat" = meth_b: optimizes for PX4 usage
+
+> [!TIP]
+> It is highly recommended to have this option enabled, i.e., have "Rx Snd RadioStat" configured to one of these two settings.
+
+### MAVLink RC
+
+RC data and link quality data can be provided to ArduPilot in several ways, for instance via a CRSF connection. It is also possible to send these data via the MAVLink serial port, which can make the etxra RC wire unneccessary.
+
+Two options are available, which can be enabled via the "Rx Snd RcChannel" parameter:
+
+- "Rx Snd RcChannel" = "rc_channel_overrides": outputs MAVLink RC_CHANNELS_OVERRIDE messages
+- "Rx Snd RcChannel" = "radio_rc_channels": outputs the newer MAVLink RADIO_RC_CHANNELS messages
+
+> [!NOTE]
+> Using "radio_rc_channels" requires ArduPilot v4.6.0 or later. Supported by 2 MB flash boards as standard; boards with smaller flash may enable the feature by [creating a custom firmware version](https://custom.ardupilot.org/) with the option for 'MAVLink' under 'RC' being selected in the firmware configurator. RC_PROTOCOL parameter must have bit 17 enabled (MAVRadio).
+
+
