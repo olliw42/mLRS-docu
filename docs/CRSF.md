@@ -34,12 +34,12 @@ In EdgeTX/OpenTX, navigate to MDL->MODEL SETUP and configure the external RF mod
 
 ## mLRS Tx Module Setup
 
-Set the following parameters using the Lua script or the CLI, or the OLED interface if available:
+Set the following parameters using the Lua script, the CLI, or the OLED interface if available:
 
-- Tx Ch Source = crsf
-- Tx Ser Baudrate: 115200
-- Tx Ser Dest = serial or serial2 (not mbridge!)
-- Tx Snd RadioStat = 1 Hz
+- "Tx Ch Source" = "crsf"
+- "Tx Ser Baudrate" = "115200"
+- "Tx Ser Dest" = "serial" or "serial2" (not "mbridge"!)
+- "Tx Snd RadioStat" = "1 Hz"
 
 > [!TIP]
 > The mLRS default settings are "Tx Ch Source" = "crsf", "Tx Ser Baudrate" = "115200", "Tx Ser Dest" = "serial", "Tx Snd RadioStat" = "1 Hz". Therefore, except of "Tx Ser Dest", adjustment of the parameters is usually not needed.
@@ -50,12 +50,12 @@ Set the following parameters using the Lua script or the CLI, or the OLED interf
 
 ## mLRS Receiver Setup
 
-Set the following parameters using the Lua script or the CLI, or the OLED interface if available:
+Set the following parameters using the Lua script, the CLI, or the OLED interface if available:
 
-- Rx Out Mode = crsf
-- Rx Ser Baudrate = must match the baudrate of the flight controller's serial port (see SERIALx_BAUD below)
-- Rx Ser Link Mode = mavlinkX (this sets the receiver into "MAVLink mode")
-- Rx Snd RadioStat= ardu_1
+- "Rx Out Mode" = "crsf"
+- "Rx Ser Baudrate" = must match the baudrate of the flight controller's serial port (see SERIALx_BAUD below)
+- "Rx Ser Link Mode" = "mavlinkX" (this sets the receiver into "MAVLink mode")
+- "Rx Snd RadioStat" = "ardu_1"
 
 > [!TIP]
 > The mLRS default settings are "Rx Out Mode" = "crsf", "Rx Ser Baudrate" = "57600", "Rx Ser Link Mode" = "mavlinkX", "Rx Snd RadioStat" = "ardu_1". Therefore, adjustment of the parameters is usually not needed.
@@ -171,6 +171,7 @@ Recommended settings are.
 
 > [!NOTE] 
 > - These parameters have been renamed in ArduPilot 4.7 to MAVy and now start at MAV1 (there is no MAV0).
+> - Some ArduPilot vehicles do not enable stream rates per default (e.g. Copter has them disabled, whereas Plane has them enabled).
 > - When configuring SRy/MAVy parameters, 'y' does usually not correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol. SERIAL0, and thus SR0, is nearly always reserved for the USB connection and set to use the MAVLink protocol (not possible in ArduPilot 4.7, hence no MAV0). Therefore, as an example, in a setup where SERIAL1 and SERIAL2 is not set to MAVLink protocol and with the mLRS receiver connected to SERIAL3, SR1/MAV1 configures the stream rates for the mLRS receiver.
 
 ### CRSF Receiver Protocol
@@ -181,7 +182,7 @@ Recommended settings are.
 - SERIALx_OPTIONS = 0
 - SERIALx_PROTOCOL = 23
 
-The configuration of ArduPilot for RSSI and link quality is somwhat involved; more information can be found [here](ARDUPILOT.md).
+The configuration of ArduPilot for RSSI and link quality data is somwhat involved; more information can be found [here](ARDUPILOT.md).
 
 > [!NOTE] 
 > 'x' refers to the serial port of your flight controller used for CRSF. This port is ***different*** to the serial port used in the above for the MAVLink serial stream.
