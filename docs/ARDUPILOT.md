@@ -83,7 +83,7 @@ To understand how stream rates affect the MAVLink data rate, you can use this [c
 
 ### Flow Control
 
-The mLRS receiver can throttle the data rate of the flight controller, when configured as follows: 
+The mLRS receiver implements software flow control between itself and the flight controller, when configured as follows: 
 
 - "Rx Snd RadioStat" = "ardu_1": optimizes for ArduPilot usage
 - "Rx Snd RadioStat" = meth_b: optimizes for PX4 usage
@@ -101,6 +101,7 @@ Two options are available, which can be enabled via the "Rx Snd RcChannel" param
 - "Rx Snd RcChannel" = "radio_rc_channels": outputs the newer MAVLink RADIO_RC_CHANNELS messages
 
 > [!NOTE]
-> Using "radio_rc_channels" requires ArduPilot v4.6.0 or later. Supported by 2 MB flash boards as standard; boards with smaller flash may enable the feature by [creating a custom firmware version](https://custom.ardupilot.org/) with the option for 'MAVLink' under 'RC' being selected in the firmware configurator. RC_PROTOCOL parameter must have bit 17 enabled (MAVRadio).
+> - Using "radio_rc_channels" requires ArduPilot v4.6.0 or later. Supported by 2 MB flash boards as standard; boards with smaller flash may enable the feature by [creating a custom firmware version](https://custom.ardupilot.org/) with the option for 'MAVLink' under 'RC' being selected in the firmware configurator. RC_PROTOCOL parameter must have bit 17 enabled (MAVRadio).
+> - With both options the link statistics data reported to ArduPilot is reduced as compared to CRSF (only RSSI or LQ is available).
 
 
