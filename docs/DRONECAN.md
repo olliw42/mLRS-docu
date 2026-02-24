@@ -79,9 +79,13 @@ Receivers using MAVLink via DroneCAN are a relatively new application of ArduPil
 #### All Versions of ArduPilot
 
 - In MissionPlanner, on the DroneCAN/UAVCAN page, communication with the CAN nodes is not possible when connected via the mLRS link (mLRS has code to prevent this, as there is a critical bug in some ArduPilot versions which would lead to a crash of ArduPilot). This works normally when the flight controller is connected to MissionPlanner via e.g. USB.
-- CRSF or SBus cannot be used in combination with DroneCAN RC. As DroneCAN RC only provides RSSI and not LQ or SNR, it might be tempting to use CRSF in addition but this will not work.
-- OSD is limited to RSSI.
+- CRSF or SBus cannot be used in combination with DroneCAN RC.
 - The MAVLink stream rates must not be set to too high values as this can lead to lost messages.
+
+#### ArduPilot 4.6.x
+
+- DroneCAN RC only provides RSSI and not LQ or SNR.
+- OSD is limited to RSSI.
 
 #### ArduPilot 4.5.x
 
