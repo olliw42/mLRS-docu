@@ -4,7 +4,9 @@
 
 mLRS hardware uses several Semtech RF chipsets that are not fully compatible with one another. As a result, not all mLRS devices can bind to each other (see the subsection below for details).
 
-Compatibility chart:
+## Compatibility Chart
+
+Whenever two devices say ✅ to a mode, they can work together in that mode.
 
 <table>
   <tbody>
@@ -36,8 +38,6 @@ Compatibility chart:
     </tr>
   </tbody>
 </table>
-
-Whenever two devices say ✅ to a mode, they can work together in that mode.
 
 ## SX126x and SX127x Incompatibility
 
