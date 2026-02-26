@@ -15,8 +15,8 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [OLED Display](docs/OLED.md)
 - [Configuration ID](docs/CONFIGID.md)
 - [Flashing/Upgrading Firmware](docs/FLASHING.md)
-- [Logging](docs/LOGGING.md)
 - [Compatibility Chart](docs/SX126x_SX127x_INCOMPATIBILITY.md)
+- [Logging](docs/LOGGING.md)
 - [Troubleshooting](docs/TROUBLE.md)
 
 ### Setups ###
