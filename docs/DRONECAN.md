@@ -115,4 +115,10 @@ Receivers using MAVLink via DroneCAN are a relatively new application of ArduPil
 
 - The baudrate of the DroneCAN virtual serial port ("CAN_D1_UC_S1_BD" parameter) should be set to 57600; otherwise the MAVLink flow control will not work properly.
 
+## DIY Conversion of Matek Receivers
+
+Currently, the "easiest" way to obtain a DroneCAN-capable mLRS receiver is to modify a Matek mR24-30 or mR900-30 receiver. This involves connecting a CAN transceiver (such as the TJA1051) to the USB pins on the Matek receiver. Specifically, connect D+ to CAN TX and D− to CAN RX. An example setup is shown [here](https://discord.com/channels/1005096100572700794/1005096101239603232/1476693807520153685).
+
+> [!NOTE]
+> Firmware updates via USB will no longer work (unless additional circuitry is added). Firmware can instead be updated via passthrough or SWD.
 
