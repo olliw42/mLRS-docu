@@ -6,7 +6,20 @@ DroneCAN can be utilized for RC and MAVLink with mLRS instead of the traditional
 
 ## Wiring & Powering
 
-TBD
+The DroneCAN connector and wiring specification is widely adopted by manufacturers. The DroneCAN micro connector standard is based on the 4-pin [JST-GH](https://www.jst.com/products/crimp-style-connectors-wire-to-board-type/gh-connector/) connector system with the following pinout:
+
+| Pin | Use
+| --- | ---
+| Pin 1 | Bus power (5 V)
+| Pin 2 | CANH
+| Pin 3 | CANL
+| Pin 4 | Ground
+
+Ideally, the CANH and CANL wires should be twisted together, and the 5 V and ground wires should be twisted together as well. Care must be taken with the bus power supply, which is rated for a maximum of 1 A. High-power mLRS receivers can consume a substantial fraction of this limit.
+
+Further technical details and recommendations are given in the [DroneCAN: Hardware design recommendations](https://dronecan.github.io/Specification/8._Hardware_design_recommendations).
+
+<img src="images/DRONECAN_wiring.png" width="720px">
 
 ## mLRS Receiver Settings
 
@@ -72,6 +85,17 @@ When configuring SRy/MAVy parameters for DroneCAN, 'y' corresponds to the number
 - SERIAL2 will use SR1/MAV1
 - DroneCAN will use SR2/MAV2
 
+## Supported DroneCAN Services
+
+- [protocol.NodeStatus](https://dronecan.github.io/Specification/7._List_of_standard_data_types/#nodestatus)
+- [protocol.GetNodeInfo](https://dronecan.github.io/Specification/7._List_of_standard_data_types/#getnodeinfo)
+- [protocol.dynamic_node_id.Allocation](https://dronecan.github.io/Specification/7._List_of_standard_data_types/#allocation)
+- [sensors.rc.RCInput](https://github.com/dronecan/DSDL/blob/master/dronecan/sensors/rc/1140.RCInput.uavcan)
+- [tunnel.Targetted](https://github.com/dronecan/DSDL/blob/master/uavcan/tunnel/3001.Targetted.uavcan)
+
+> [!NOTE]
+> Additional services, such as node configuration and firmware updates, are not supported.
+
 ## Limitations
 
 Receivers using MAVLink via DroneCAN are a relatively new application of ArduPilot's DroneCAN, and issues not seen before may become exposed now. ArduPilot has been found to have these limitations:
@@ -91,4 +115,9 @@ Receivers using MAVLink via DroneCAN are a relatively new application of ArduPil
 
 - The baudrate of the DroneCAN virtual serial port ("CAN_D1_UC_S1_BD" parameter) should be set to 57600; otherwise the MAVLink flow control will not work properly.
 
+## DIY Conversion of Matek Receivers
 
+Currently, the "easiest" way to obtain a DroneCAN-capable mLRS receiver is to modify a Matek mR24-30 or mR900-30 receiver. This involves connecting a CAN transceiver (such as the TJA1051) to the USB pins on the Matek receiver. Specifically, connect D+ to CAN TX and D− to CAN RX. An example setup is shown [here](https://discord.com/channels/1005096100572700794/1005096101239603232/1476693807520153685).
+
+> [!NOTE]
+> Firmware updates via USB will no longer work (unless additional circuitry is added) while the CAN transceiver is connected.
