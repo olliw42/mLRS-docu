@@ -85,6 +85,17 @@ When configuring SRy/MAVy parameters for DroneCAN, 'y' corresponds to the number
 - SERIAL2 will use SR1/MAV1
 - DroneCAN will use SR2/MAV2
 
+## Supported DroneCAN Services
+
+- [protocol.NodeStatus](https://dronecan.github.io/Specification/7._List_of_standard_data_types/#nodestatus)
+- [protocol.GetNodeInfo](https://dronecan.github.io/Specification/7._List_of_standard_data_types/#getnodeinfo)
+- [protocol.dynamic_node_id.Allocation](https://dronecan.github.io/Specification/7._List_of_standard_data_types/#allocation)
+- [sensors.rc.RCInput](https://github.com/dronecan/DSDL/blob/master/dronecan/sensors/rc/1140.RCInput.uavcan)
+- [tunnel.Targetted](https://github.com/dronecan/DSDL/blob/master/uavcan/tunnel/3001.Targetted.uavcan)
+
+> [!NOTE]
+> Additional services, such as node configuration and firmware updates, are not supported.
+
 ## Limitations
 
 Receivers using MAVLink via DroneCAN are a relatively new application of ArduPilot's DroneCAN, and issues not seen before may become exposed now. ArduPilot has been found to have these limitations:
