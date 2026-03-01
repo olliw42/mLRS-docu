@@ -6,7 +6,20 @@ DroneCAN can be utilized for RC and MAVLink with mLRS instead of the traditional
 
 ## Wiring & Powering
 
-TBD
+The DroneCAN connector and wiring specification is widely adopted by manufacturers. The DroneCAN micro connector standard is based on the 4-pin [JST-GH](https://www.jst.com/products/crimp-style-connectors-wire-to-board-type/gh-connector/) connector system with the following pinout:
+
+| Pin | Use
+| --- | ---
+| Pin 1 | Bus power (5 V)
+| Pin 2 | CANH
+| Pin 3 | CANL
+| Pin 4 | Ground
+
+Ideally, the CANH and CANL wires should be twisted together, and the 5 V and ground wires should be twisted together as well. Care must be taken with the bus power supply, which is rated for a maximum of 1 A. High-power mLRS receivers can consume a substantial fraction of this limit.
+
+Further technical details and recommendations are given in the [DroneCAN: Hardware design recommendations](https://dronecan.github.io/Specification/8._Hardware_design_recommendations).
+
+<img src="images/DRONECAN_wiring.png" width="720px">
 
 ## mLRS Receiver Settings
 
