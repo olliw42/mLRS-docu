@@ -8,11 +8,11 @@ The wireless bridge consists of an additional ESP32, ESP-C3 or ESP8266/ESP8285 m
 
 The following wireless protocols are supported:
 
-| chipset  | TCP | UDP | UDPSTA | UDPCl | classic BT | BLE |
-| --- | --- | --- | --- | --- | --- | --- |
-| ESP32 | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| ESP32-C3 | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
-| ESP82xx | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| chipset  | TCP | UDP | UDPSTA | UDPCl | Classic BT | BLE | ESP-NOW |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ESP32 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| ESP32-C3 | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ |
+| ESP82xx | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ |
 
 ## Configuration
 
@@ -31,6 +31,10 @@ For some Tx modules, you can configure the following via the CLI:
 - Wireless SSID for UDPSTA mode
 
 Otherwise the password or wireless SSID need to be set in the Arduino sketch and the firmware needs to be recompiled by the user.
+
+## ESP-NOW
+
+ESP-NOW requires an additional ESP module on the ground station side running the 'mlrs-espnow-gcs' firmware. This can be flashed using the Arduino IDE with the sketch here: [here](https://github.com/olliw42/mLRS/tree/main/esp/mlrs-espnow-gcs).
 
 ## DIY Builds
 
