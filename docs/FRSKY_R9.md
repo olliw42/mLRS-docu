@@ -166,15 +166,6 @@ Button:
 - press for ca 4 sec to enter bind mode
 - press during power up to enter system bootloader for firmware upgrade
 
-### As Tx Module ###
-
-The R9 MX receiver can also be used as mLRS Tx module. Due to hardware restrictions it is somewhat limited but can be a great choice for special applications.
-
-The module can be configured via CLI only. The CLI shares the same port used for serial/Mavlink communication. Switching between CLI and serial port is done via the bind button:
-- Powering up the R9 MX without holding down the bind button will boot in "Serial" mode. To enter CLI mode, press the bind button while powering up or shortly after powering up if using the ELRS bootloader. The device then runs in CLI mode, and can be configured as usual via CLI commands.
-
-The wiring is similar to when used as a receiver, with the exception that the "Inverted SPort" pin (original naming) is available as input port.
-
 ## R9 MM / R9 Mini Receiver ##
 
 The R9 MM and R9 Mini receivers are supported, however, flashing with ST-Link is tedious and requires top soldering skills or employing other tricks, as one needs to connect to four tiny solder pads in a tight space. If you want to flash via ST-Link, please consider using the R9 MX receiver instead.
