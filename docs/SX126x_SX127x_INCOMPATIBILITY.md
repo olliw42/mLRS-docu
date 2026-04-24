@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-mLRS hardware uses several Semtech RF chipsets that are not fully compatible with one another. As a result, not all mLRS devices can bind to each other (see the subsection below for details).
+mLRS hardware uses several Semtech RF chipsets that are not fully compatible with one another. As a result, not all mLRS devices can bind to each other.
 
 ## Compatibility Chart
 
@@ -16,6 +16,7 @@ Whenever two devices say ✅ to a mode, they can work together in that mode.
       <th>SX126x</th>
       <th>SX127x</th>
       <th colspan="2">LR1121</th>
+      <th colspan="2">LR2021</th>
     </tr><tr>
       <th></th>
       <th><strong>2.4 GHz</strong></th>
@@ -23,18 +24,20 @@ Whenever two devices say ✅ to a mode, they can work together in that mode.
       <th><strong>868/915 MHz</strong></th>
       <th><strong>2.4 GHz</strong></th>
       <th><strong>868/915 MHz</strong></th>
+      <th><strong>2.4 GHz</strong></th>
+      <th><strong>868/915 MHz</strong></th>
     </tr><tr align="center">
-       <th align="left">50 Hz       </th><td> ✅ </td><td> ❌ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td>
+       <th align="left">50 Hz       </th><td> ✅ </td><td> ❌ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td>
     </tr><tr align="center">
-       <th align="left">31 Hz       </th><td> ✅ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td><td> ✅ </td>
+       <th align="left">31 Hz       </th><td> ✅ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td><td> ✅ </td><td> ✅ </td><td> ✅ </td>
     </tr><tr align="center">
-       <th align="left">19 Hz       </th><td> ✅ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td><td> ✅ </td>
+       <th align="left">19 Hz       </th><td> ✅ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td><td> ✅ </td><td> ✅ </td><td> ✅ </td>
     </tr><tr align="center">
-       <th align="left">19 Hz 7x    </th><td> ❌ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td>
+       <th align="left">19 Hz 7x    </th><td> ❌ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td>
     </tr><tr align="center">
-       <th align="left">FSK 50 Hz   </th><td> ❌ </td><td> ✅ </td><td> ❌ </td><td> ❌ </td><td> ✅ </td>
+       <th align="left">FSK 50 Hz   </th><td> ❌ </td><td> ✅ </td><td> ❌ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td><td> ✅ </td>
     </tr><tr align="center">
-       <th align="left">FLRC 111 Hz </th><td> ✅ </td><td> ❌ </td><td> ❌ </td><td> ❌ </td><td> ❌ </td>
+       <th align="left">FLRC 111 Hz </th><td> ✅ </td><td> ❌ </td><td> ❌ </td><td> ❌ </td><td> ❌ </td><td> ✅ </td><td> ❌ </td>
     </tr>
   </tbody>
 </table>
