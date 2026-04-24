@@ -4,6 +4,8 @@
 
 DroneCAN can be utilized for RC and MAVLink with mLRS instead of the traditional serial communication if both flight controller and receiver have the hardware necessary to support it.
 
+MatekSys offers excellent [mLRS CAN receivers](MATEKSYS.md).
+
 ## Wiring & Powering
 
 The DroneCAN connector and wiring specification is widely adopted by manufacturers. The DroneCAN micro connector standard is based on the 4-pin [JST-GH](https://www.jst.com/products/crimp-style-connectors-wire-to-board-type/gh-connector/) connector system with the following pinout:
@@ -51,7 +53,7 @@ Set up the CAN driver, the protocol and enable the virtual serial support:
 > [!NOTE]
 > You need to reboot the flight controller after having adjusted CAN_P1_DRIVER, in order to see the parameter CAN_D1_UC_SER_EN.
 
-Then reboot the flight controller (again).
+Then reboot the flight controller (this might be the second required reboot if you changed CAN_D1_UC_SER_EN).
 
 #### RC
 
