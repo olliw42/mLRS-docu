@@ -23,17 +23,18 @@ with SX126x/STM32WLE and LR1121 hardware; they are incompatible with SX127x hard
 
 - [mR900-30 Tx Module Kit](https://www.mateksys.com/?portfolio=mr900-30-tx)
 - [mR900-30 Receiver](https://www.mateksys.com/?portfolio=mr900-30)
-- [mR900-22 Receiver](https://www.mateksys.com/?portfolio=mr900-22)
-
-## Video Tutorial ##
-
-[![mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones](https://img.youtube.com/vi/ej5qcmaGqNE/0.jpg)](https://www.youtube.com/watch?v=ej5qcmaGqNE "mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones")
+- [mR900-30C Receiver](https://www.mateksys.com/?portfolio=mr900-30c) (mLRS receiver with [CAN](DRONECAN.md))
+- [mR900-22 Receiver](https://www.mateksys.com/?portfolio=mr900-22) (out of production)
 
 ## Flashing / Upgrading Firmware ##
 
 The most convenient way of flashing the Matek mLRS devices is via their USB-C port and using the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) app.
 
 Plug in the USB-C cable while pressing the bind button. This puts the mLRS device into DFU mode (LEDs are not flashing). Then follow the instructions provided by the mLRS Web Flasher app.
+
+## Video Tutorial ##
+
+[![mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones](https://img.youtube.com/vi/ej5qcmaGqNE/0.jpg)](https://www.youtube.com/watch?v=ej5qcmaGqNE "mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones")
 
 ## Tx Module, HC-04 Bluetooth Notes ##
 
