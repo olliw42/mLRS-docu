@@ -83,10 +83,11 @@ mLRS supports the internal ELRS modules on the following radios:
 | RadioMaster TX15                             | tx-radiomaster-internal-tx15       | 868/915 MHz<br>2.4 GHz | LR1121     | 30 dBm<br>(1000 mW) |
 | RadioMaster GX12                             | tx-radiomaster-internal-gx12       | 868/915 MHz<br>2.4 GHz | LR1121     | 30 dBm<br>(1000 mW) |
 | RadioMaster TX16S MK3                        | tx-radiomaster-internal-tx16smk3   | 868/915 MHz<br>2.4 GHz | LR1121     | 30 dBm<br>(1000 mW) |
-
-### Flashing Internal Modules ###
+| RadioMaster AX12                             | tx-radiomaster-internal-ax12       | 868/915 MHz<br>2.4 GHz | LR1121     | 24 dBm<br>(250 mW) |
 
 Flashing internal modules is done using the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) app.
+
+### Flashing EdgeTX Internal Modules ###
 
 Follow the instructions provided by the Web Flasher app.
 
@@ -100,7 +101,7 @@ Steps to flash:
 6. Click Flash Tx Module, wait for the flash to finish
 7. Unplug the USB cable
 
-### Flashing the Wireless Bridge on Internal Modules ###
+### Flashing the Wireless Bridge on EdgeTX Internal Modules ###
 
 > [!IMPORTANT]
 > To flash the wireless bridge, you will need the mLRS firmware installed - this is done by following the steps outlined above.
@@ -114,3 +115,22 @@ Steps to flash:
 4. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
 5. Click Flash Wireless Bridge, wait for the flash to finish
 6. Unplug the USB cable
+
+### Flashing the RadioMaster AX12 Internal Module ###
+
+Follow the instructions provided by the Web Flasher app.
+
+Steps to flash:
+
+1. Power the AX12 radio on and enter the settings page of the RadioMaster app
+2. Set ELRS->RFBaud to 400000 and select the internal module
+3. Plug the radio DSC USB port into the computer
+4. Select ELRS->Transmitter->ELRS Updatemode to flash module or select UpdateBackpack to flash the wireless bridge
+5. Launch the mLRS Web Flasher app
+6. Select Tx Module (internal) from the left menu
+7. Select the Device Type, Firmware Version and Firmware File appropriate for your radio
+8. Click Flash Tx Module or Flash Wireless Bridge, wait for the flash to finish
+9. Unplug the USB cable
+
+> [!NOTE]
+> External mLRS modules are not currently supported on the AX12 due to it's non-standard uninverted S.Port serial signaling.
