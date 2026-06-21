@@ -133,4 +133,4 @@ Steps to flash:
 9. Unplug the USB cable
 
 > [!NOTE]
-> External mLRS modules are not currently supported on the A12 due to it's non-standard uninverted S.Port serial signaling.
+> External mLRS modules are not currently supported on the AX12 due to it's non-standard uninverted S.Port serial signaling.
