@@ -92,7 +92,7 @@ Set the password used for the TCP, UDP, and UDPSTA protocols. If no str value is
 Get the SSID used for the UDPSTA protocol.
 
 #### esp set netssid = str; ####
-Set the SSID used for the UDPSTA protocol. If no str value is given, i.e., "esp set netssid = ;" is entered, then the SIID is reset to the default value.
+Set the SSID used for the UDPSTA protocol. If no str value is given, i.e., "esp set netssid = ;" is entered, then the SSID is reset to the default value.
 
 ### Tx modules with an HC-04 Bluetooth module ###
 
