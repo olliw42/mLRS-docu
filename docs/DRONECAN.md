@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-DroneCAN can be utilized for RC and MAVLink with mLRS instead of the traditional serial communication if both flight controller and receiver have the hardware necessary to support it.
+DroneCAN can be utilized for RC and MAVLink with mLRS instead of the traditional serial communication if both flight controller and receiver have the hardware necessary to support it. mLRS supports classic CAN with 1 Mbps and CANFD with 1 Mbps arbitration and 4 Mbps data bitrate.
 
 MatekSys offers excellent [mLRS CAN receivers](MATEKSYS.md).
 
@@ -33,7 +33,7 @@ With a CAN-enabled firmware flashed, the mLRS receiver will output RC channels d
 
 In order to enable serial (MAVLink) communication via DroneCAN, one needs to set:
 
-- "Rx Serial Port" = "can"
+- "Rx Serial Port" = "can" or "canfd"
 
 > [!NOTE] 
 > Do not enable "rc_override" or "rc_channels" in the mLRS receiver settings when using MAVLink via DroneCAN as it adds substantial and unnecessary traffic on the CAN bus.
@@ -49,9 +49,13 @@ Set up the CAN driver, the protocol and enable the virtual serial support:
 - CAN_D1_PROTOCOL = 1 (is set to 1 by default)
 - CAN_P1_DRIVER = 1
 - CAN_D1_UC_SER_EN = 1 (only needed when MAVLink via DroneCAN is desired)
+- CAN_D1_UC_OPTION: for CANFD, enable the bit "EnableCanfd"
 
 > [!NOTE]
 > You need to reboot the flight controller after having adjusted CAN_P1_DRIVER, in order to see the parameter CAN_D1_UC_SER_EN.
+
+> [!NOTE]
+> mLRS requires CAN_P1_BITRATE = 1000000 and, if you want to use CANFD, CAN_P1_FDBITRATE = 4. However, these are the default values of ArduPilot, so that you normally don't need to adjust these parameters.
 
 Then reboot the flight controller (this might be the second required reboot if you changed CAN_D1_UC_SER_EN).
 

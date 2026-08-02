@@ -1,4 +1,4 @@
-# mLRS Documentation: Parameters (v1.4.0) #
+# mLRS Documentation: Parameters (v1.4.02) #
 
 ([back to main page](../README.md))
 
@@ -60,13 +60,23 @@ Can be: "AETR", "TAER", "ETAR".
 Selects the protocol of the RC data on the IN port. Effective only when "Tx Ch Source" = "in". 
 Can be: "sbus", "sbus inv".
 
-#### Tx Ser Dest #### 
+#### Tx Ser Port #### 
 Selects the destination/source of the serial data stream. 
-Can be: "serial", "serial2", "mbridge". 
+Can be: "serial", "wbridge", "serial2", "com", "mbridge". 
 
 #### Tx Ser Baudrate #### 
-Baudrate of the serial data stream. Effective only for "Tx Ser Dest" = "serial" or "serial2". 
-Can be: "9600", "19200", "38400", "57600", "115200", "230400".
+Baudrate of the serial data stream. Effective only if "Tx Ser Port" = "serial", "serial2", or "com". 
+Can be: "57600", "115200", "230400".
+
+The default is 115200 bps, which is appropriate for almost all cases. Anything below 57600 bps is not recommended. 
+
+#### Tx Ser Port2 #### 
+Selects the destination/source of the second serial data stream. 
+Can be: "none", "serial", "wbridge", "serial2"
+
+#### Tx Ser Baudrate2 #### 
+Baudrate of the second serial data stream.
+Can be: "57600", "115200", "230400".
 
 The default is 115200 bps, which is appropriate for almost all cases. Anything below 57600 bps is not recommended. 
 
@@ -76,7 +86,7 @@ Can be: "off", "1 Hz".
 
 #### Tx Mav Component ####
 Enables parameter configuration via the MAVLink parameter protocol.
-Can be: "enabled", "off".
+Can be: "off", "enabled".
 
 #### Tx Power Sw Ch ####
 The channel used to control the RF output power of the Tx module. The power levels available on the device are linearly interpolated over the RC input range of −100% to +100%, where +100% corresponds to the power level defined by the Tx Power parameter and −100% corresponds to the minimum available power level.
@@ -89,7 +99,7 @@ LP stands for Lost Packet, and here the buzzer emits a short beep for any lost p
 
 #### Tx Wifi Protocol #### 
 Protocol used by the wireless bridge. 
-Can be: "TCP", "UDP", "BT", "UDP STA", "BLE".
+Can be: "TCP", "UDP", "BT", "UDP STA", "BLE", "ESPNOW".
 
 #### Tx Wifi Channel #### 
 Wifi channel used by the wireless bridge.
@@ -122,9 +132,13 @@ Can be: "sbus", "crsf", "sbus inv".
 Determines the behavior upon a failsafe. 
 Can be: "no sig", "low thr", "by cnf", "low thr cnt", "ch1ch4 cnt".
 
+#### Rx Ser Port #### 
+Selects the destination/source of the serial data stream. 
+Can be: "serial", "can", "canfd". 
+
 #### Rx Ser Baudrate #### 
-Baudrate of the serial data stream. 
-Can be: "9600", "19200", "38400", "57600", "115200", "230400".
+Baudrate of the serial data stream. Effective only for "Rx Ser Port" = "serial".
+Can be: "57600", "115200", "230400".
 
 The default is 57600 bps. Anything below 57600 bps is not recommended. 
 
