@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-DroneCAN can be utilized for RC and MAVLink with mLRS instead of the traditional serial communication if both flight controller and receiver have the hardware necessary to support it. mLRS supports classic CAN with 1 Mbps and CANFD with 1 Mbps arbitration and 4 Mbps data bitrate.
+DroneCAN can be utilized for RC and MAVLink with mLRS instead of the traditional serial communication if both flight controller and receiver have the hardware necessary to support it. mLRS supports classic CAN with 1 Mbps bitrate and CANFD with 1 Mbps arbitration and 4 Mbps data bitrate.
 
 MatekSys offers excellent [mLRS CAN receivers](MATEKSYS.md).
 
@@ -56,6 +56,9 @@ Set up the CAN driver, the protocol and enable the virtual serial support:
 
 > [!NOTE]
 > mLRS requires CAN_P1_BITRATE = 1000000 and, if you want to use CANFD, CAN_P1_FDBITRATE = 4. However, these are the default values of ArduPilot, so that you normally don't need to adjust these parameters.
+
+> [!NOTE] 
+> For CANFD to work properly, ensure that your flight controller hardware supports it.
 
 Then reboot the flight controller (this might be the second required reboot if you changed CAN_D1_UC_SER_EN).
 
