@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The MatekSys mLRS Tx modules and receivers are specifically designed for mLRS and are the best options available. If you are new to mLRS, then it is highly recommended to start with this hardware.
+The MatekSys mLRS Tx modules and receivers are specifically designed for mLRS and are among the best options available. If you are new to mLRS, then it is highly recommended to start with this hardware.
 
 They are available for the 2.4 GHz band and the 868/915 MHz band. 
 
@@ -12,7 +12,7 @@ Links to the MatekSys website are found below, which include product specificati
 
 > [!IMPORTANT]
 > MatekSys mLRS gear in the 868/915 MHz band use the SX126x/STM32WLE RF chipset and are only compatible 
-with SX126x/STM32WLE, LR1121 or LR2021 hardware; they are incompatible with SX127x hardware which uses the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(for a compatibility chart see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+with SX126x/STM32WLE, LR1121 or LR2021 hardware; they are incompatible with SX127x hardware which offers the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear). For a compatibility chart see [here](SX126x_SX127x_INCOMPATIBILITY.md).
 
 ## 2.4 GHz Hardware ##
 
