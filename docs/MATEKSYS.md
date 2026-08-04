@@ -36,11 +36,21 @@ Plug in the USB-C cable while pressing the bind button. This puts the mLRS devic
 
 [![mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones](https://img.youtube.com/vi/ej5qcmaGqNE/0.jpg)](https://www.youtube.com/watch?v=ej5qcmaGqNE "mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones")
 
-## Tx Module, HC-04 Bluetooth Notes ##
+## Tx Module, Notes ##
+
+### Serial Ports ###
+
+Starting with firmware version 1.4.02, the handling of the serial ports on the Tx module has changed. The settings for the parameters "Tx Ser Port" and "Tx Ser Port2" now have the following meaning:
+
+- "serial": refers to the UART labelled LPT1/LPR2. This interface is on the front side available on the rightmost vertical pin header.
+- "wbridge": refers to the UART labelled T1/R1. Depending on the configuration of the dip switches, it is connected either to the HC-04 BT module (default) or to the leftmos vertical pin header on the front side.
+- "com": refers to the USB-C port
+
+### HC-04 Bluetooth Notes ###
 
 To use the HC-04 Bluetooth module on Matek mLRS Tx modules, you need to set in the Tx module:
 
-- ["Tx Ser Dest"](PARAMETERS.md#tx-ser-dest) = "serial"
+- ["Tx Ser Portt"](PARAMETERS.md#tx-ser-dest) = "wbridge"
 
 You can do this via the [mLRS Lua script](LUA.md) on your radio or the [CLI](CLI.md).
 
