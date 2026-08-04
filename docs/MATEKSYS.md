@@ -46,7 +46,7 @@ Starting with firmware version 1.4.02, the handling of the serial ports on the T
 - "wbridge": refers to the UART labelled T1/R1. Depending on the configuration of the dip switches, it is connected either to the HC-04 BT module (default) or to the leftmost vertical pin header on the front side.
 - "com": refers to the USB-C port.
 
-The CLI is normally on the USB-C port, but when ["Tx Ser Port"](PARAMETERS.md#tx-ser-port) = "com" is selected, it moves to the UART labelled LPT1/LPR2 (rightmost vertical pin header on the front side).
+The CLI is normally on the USB-C port, but when "Tx Ser Port" = "com" is selected, it moves to the UART labelled LPT1/LPR2 (rightmost vertical pin header on the front side).
 
 ### HC-04 Bluetooth Notes ###
 
@@ -54,7 +54,7 @@ To use the HC-04 Bluetooth module on Matek mLRS Tx modules, you need to set in t
 
 - ["Tx Ser Port"](PARAMETERS.md#tx-ser-port) = "wbridge"
 
-You can do this via the [mLRS Lua script](LUA.md) on your radio or the [CLI](CLI.md).
+You can do this via the [mLRS Lua script](LUA.md) on your radio or the [CLI](CLI.md) (the CLI can be accessed via the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) app).
 
 Additional configuration of the HC-04 module should not be needed as mLRS will automatically configure all of the necessary settings on the module. However, if you are having problems you can check the following items:
 
