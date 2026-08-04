@@ -43,7 +43,7 @@ Plug in the USB-C cable while pressing the bind button. This puts the mLRS devic
 Starting with firmware version 1.4.02, the handling of the serial ports on the Tx module has changed. The settings for the parameters "Tx Ser Port" and "Tx Ser Port2" now have the following meaning:
 
 - "serial": refers to the UART labelled LPT1/LPR2. This interface is on the front side available on the rightmost vertical pin header.
-- "wbridge": refers to the UART labelled T1/R1. Depending on the configuration of the dip switches, it is connected either to the HC-04 BT module (default) or to the leftmos vertical pin header on the front side.
+- "wbridge": refers to the UART labelled T1/R1. Depending on the configuration of the dip switches, it is connected either to the HC-04 BT module (default) or to the leftmost vertical pin header on the front side.
 - "com": refers to the USB-C port
 
 ### HC-04 Bluetooth Notes ###
