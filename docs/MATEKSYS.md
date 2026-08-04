@@ -50,7 +50,7 @@ Starting with firmware version 1.4.02, the handling of the serial ports on the T
 
 To use the HC-04 Bluetooth module on Matek mLRS Tx modules, you need to set in the Tx module:
 
-- ["Tx Ser Portt"](PARAMETERS.md#tx-ser-dest) = "wbridge"
+- ["Tx Ser Port"](PARAMETERS.md#tx-ser-dest) = "wbridge"
 
 You can do this via the [mLRS Lua script](LUA.md) on your radio or the [CLI](CLI.md).
 
