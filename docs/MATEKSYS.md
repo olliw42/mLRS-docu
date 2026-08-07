@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-The MatekSys mLRS Tx modules and receivers are specifically designed for mLRS and are the best options available. If you are new to mLRS, then it is highly recommended to start with this hardware.
+The MatekSys mLRS Tx modules and receivers are specifically designed for mLRS and are among the best options available. If you are new to mLRS, then it is highly recommended to start with this hardware.
 
 They are available for the 2.4 GHz band and the 868/915 MHz band. 
 
@@ -12,7 +12,7 @@ Links to the MatekSys website are found below, which include product specificati
 
 > [!IMPORTANT]
 > MatekSys mLRS gear in the 868/915 MHz band use the SX126x/STM32WLE RF chipset and are only compatible 
-with SX126x/STM32WLE, LR1121 or LR2021 hardware; they are incompatible with SX127x hardware which uses the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear)(for a compatibility chart see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
+with SX126x/STM32WLE, LR1121 or LR2021 hardware; they are incompatible with SX127x hardware which offers the '19 Hz 7x' mode (Frsky R9 system and ELRS 900 MHz gear). For a compatibility chart see [here](SX126x_SX127x_INCOMPATIBILITY.md).
 
 ## 2.4 GHz Hardware ##
 
@@ -36,13 +36,25 @@ Plug in the USB-C cable while pressing the bind button. This puts the mLRS devic
 
 [![mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones](https://img.youtube.com/vi/ej5qcmaGqNE/0.jpg)](https://www.youtube.com/watch?v=ej5qcmaGqNE "mLRS Tx Setup & Overview | Mavlink Telemetry & RC Input for Develop Air & Other Arducopter Drones")
 
-## Tx Module, HC-04 Bluetooth Notes ##
+## Tx Module, Notes ##
+
+### Serial Ports ###
+
+Starting with firmware version 1.4.02, the handling of the serial ports on the Tx module has changed. The settings for the parameters ["Tx Ser Port"](PARAMETERS.md#tx-ser-port) and ["Tx Ser Port2"](PARAMETERS.md#tx-ser-port2) now have the following meaning:
+
+- "serial": refers to the UART labelled LPT1/LPR2. This interface is on the front side available on the rightmost vertical pin header.
+- "wbridge": refers to the UART labelled T1/R1. Depending on the configuration of the dip switches, it is connected either to the HC-04 BT module (default) or to the leftmost vertical pin header on the front side.
+- "com": refers to the USB-C port.
+
+The CLI is normally on the USB-C port, but when "Tx Ser Port" = "com" is selected, it moves to the UART labelled LPT1/LPR2 (rightmost vertical pin header on the front side).
+
+### HC-04 Bluetooth Notes ###
 
 To use the HC-04 Bluetooth module on Matek mLRS Tx modules, you need to set in the Tx module:
 
-- ["Tx Ser Dest"](PARAMETERS.md#tx-ser-dest) = "serial"
+- ["Tx Ser Port"](PARAMETERS.md#tx-ser-port) = "wbridge"
 
-You can do this via the [mLRS Lua script](LUA.md) on your radio or the [CLI](CLI.md).
+You can do this via the [mLRS Lua script](LUA.md) on your radio or the [CLI](CLI.md) (the CLI can be accessed via the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) app).
 
 Additional configuration of the HC-04 module should not be needed as mLRS will automatically configure all of the necessary settings on the module. However, if you are having problems you can check the following items:
 
