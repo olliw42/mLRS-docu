@@ -48,7 +48,15 @@ You should also use the [mLRS Lua script](LUA.md) to confirm the radio link and 
 
 ## 4. Confirm MAVLink message flow from flight controller to receiver and Tx module
 
-In EdgeTx/OpenTX go to MDL->TELEMETRY and select "Discover new sensors".  Then, scroll up using the scroll wheel and you should find a sensor named FM among several other sensors.  It should have a star flashing next to it indicating it is updating about once per second.  See the [CRSF](CRSF.md) documentation page for background info.
+In EdgeTx/OpenTX go to MDL->TELEMETRY and select "Discover new sensors".  Then, scroll up using the scroll wheel and you should find a sensor named FM among several other sensors.  It should have an update marker flashing next to its name indicating it is updating about once per second:
+
+- on radios with a black and white screen, the marker is a `*`
+- on radios with a color screen, the marker is a small dot
+
+See the [CRSF](CRSF.md) documentation page for background info.
+
+> [!NOTE]
+> Don't confuse this flashing marker with the `*` which may be appended to the FM value itself, like "MANU\*". That `*` is part of the flight mode text and indicates that the vehicle is disarmed; it is static and does not flash.
 
 Above, you have already confirmed the radio link and communication between the Tx module and Edgetx/OpenTX.  So, if you don't see the FM sensor updating, this very likely indicates that the HEARTBEAT MAVLink message which is sent once per second by ArduPilot on all MAVLink interfaces is not reaching the receiver.
 
