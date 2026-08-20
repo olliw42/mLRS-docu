@@ -12,7 +12,7 @@ Let's assume that the project should be located in the folder `C:/Me/Documents/G
 
 ### Dependencies ###
 
-For the first step (step I) you need to have git and Python3 installed. Depending on the Python3 distribution you may need to install further libraries.
+For the first step (step I) you need to have git and Python3 installed. 
 
 ### Clone and setup the project files (Step I) ###
 
@@ -24,6 +24,9 @@ For the first step (step I) you need to have git and Python3 installed. Dependin
     - ***Note***: Ensure that all four steps are executed completely.
 
 For cloning you of course can use any other tool you like.
+
+> [!NOTE]
+Depending on your Python3 distribution, additional Python libraries may be required. If a required library is missing, `run_setup.py` will report an error indicating which library is missing. Install it with `python -m pip install --upgrade <libraryname>`. Then run `run_setup.py` again. Repeat this if further missing libraries are reported. For example, empy, pexpect and dronecan are often missing, and you may have to run `python -m pip install --upgrade empy pexpect dronecan`.
 
 ### STM32CubeIDE (Step II) ###
 
