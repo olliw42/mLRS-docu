@@ -31,8 +31,9 @@ Additionally, the following ELRS receiver targets are also supported:
 | Generic 2400 PA     | 2.4 GHz              | SX128x     | 20 dBm<br>(100 mW)  | PA + LNA                                            |
 | Generic 2400 D PA   | 2.4 GHz              | SX128x     | 23 dBm<br>(200 mW)  | PA + LNA, single antenna only                       |
 | Generic 2400 TD PA  | 2.4 GHz              | SX128x     | 20 dBm<br>(100 mW)  | True Diversity, PA + LNA                            |
-| Generic LR1121 TD   | 868/915 MHz<br>2.4 GHz | LR1121     | 20 dBm<br>(100 mW)  | True Diversity, SX126x compatible                   |
-| Generic C3 LR1121   | 868/915 MHz<br>2.4 GHz | LR1121     | 20 dBm<br>(100 mW)  | SX126x compatible                                   |
+| Generic LR1121 TD   | 868/915 MHz<br>2.4 GHz | LR1121     | 20 dBm<br>(100 mW)  | True Diversity, SX126x compatible                 |
+| Generic C3 LR1121   | 868/915 MHz<br>2.4 GHz | LR1121     | 20 dBm<br>(100 mW)  | SX126x compatible                                 |
+| Bayck UR1000        | 868/915 MHz<br>2.4 GHz | LR1121     | 30 dBm<br>(1000 mW) | SX126x compatible, PA + LNA                       |
 
 To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses. Alternatively, you can use this browser based tool to look up the layout of your target: [ELRS Layout File Search](https://sunjunkim.github.io/elrs_target_search/) 
 
