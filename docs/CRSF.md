@@ -27,7 +27,7 @@ It is recommended for the initial setup that the Tx module and receiver are left
 
 ## Radio Setup
 
-In EdgeTx/OpenTx, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF or mBridge protocol with 400K baud rate.
+In EdgeTx/OpenTx, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF protocol with 400K baud rate.
 
 > [!IMPORTANT]
 > mLRS only supports 400K baud rate.
@@ -38,14 +38,14 @@ Set the following parameters using the Lua script, the CLI, or the OLED interfac
 
 - "Tx Ch Source" = "crsf"
 - "Tx Ser Baudrate" = "115200"
-- "Tx Ser Dest" = "serial" or "serial2" (not "mbridge"!)
+- "Tx Ser Dest" = "serial", "serial2" or "wbridge"
 - "Tx Snd RadioStat" = "1 Hz"
 
 > [!TIP]
 > The mLRS default settings are "Tx Ch Source" = "crsf", "Tx Ser Baudrate" = "115200", "Tx Ser Dest" = "serial", "Tx Snd RadioStat" = "1 Hz". Therefore, except of "Tx Ser Dest", adjustment of the parameters is usually not needed.
 
 > [!NOTE]
-> - "Tx Ser Baudrate" should be larger than the link data rate in order to provide enough capacity (e.g., in the 50 Hz mode the link data rate is 4100 Bytes/sec and the baudrate should thus be larger than 41000), but otherwise the choice is not critical and largely determined by the user's need. The default value is 115200, which is a good choice for most cases.
+> - "Tx Ser Baudrate" should be larger than the link data rate in order to provide enough capacity (e.g., in the 50 Hz mode the link data rate is 4100 Bytes/sec and the baudrate should thus be larger than 41000 bps), but otherwise the choice is not critical and largely determined by the user's need. The default value is 115200, which is a good choice for almost all cases.
 > - While not necessary, for the FLRC mode it can be beneficial to use 230400.
 
 ## mLRS Receiver Setup
@@ -83,7 +83,7 @@ For ArduPilot version 4.5 or lower, parameter download can be improved somewhat 
  
 ### Stream Rates
 
-In order for mLRS to provide vehicle-related CRSF telemetry data, ArduPilot needs to be set up to stream MAVLink messages containing these data. The stream rates must be enabled by setting the SRy/MAVy parameters in ArduPilot. The exact stream rate values are not critical, as mLRS regulates the message flow when necessary.
+In order for mLRS to provide vehicle-related CRSF telemetry data, ArduPilot needs to be set up to stream MAVLink messages containing these data. The stream rates must be enabled by setting the MAVy parameters in ArduPilot. The exact stream rate values are not critical, as mLRS regulates the message flow when necessary.
 
 Recommended settings are.
 
@@ -97,70 +97,70 @@ Recommended settings are.
             <th><strong>FLRC</strong></th>
         </tr>
         <tr>
-            <th><strong>SRy_ADSB</strong></th>
+            <th><strong>MAVy_ADSB</strong></th>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
         </tr>
         <tr>
-            <th><strong>SRy_EXT_STAT</strong></th>
-            <td>2</td>
-            <td>2</td>
-            <td>1</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <th><strong>SRy_EXTRA1</strong></th>
+            <th><strong>MAVy_EXTRA1</strong></th>
             <td>4</td>
             <td>4</td>
             <td>4</td>
             <td>8</td>
         </tr>
         <tr>
-            <th><strong>SRy_EXTRA2</strong></th>
+            <th><strong>MAVy_EXTRA2</strong></th>
             <td>4</td>
             <td>4</td>
             <td>4</td>
             <td>8</td>
         </tr>
         <tr>
-            <th><strong>SRy_EXTRA3</strong></th>
+            <th><strong>MAVy_EXTRA3</strong></th>
             <td>2</td>
             <td>2</td>
             <td>1</td>
             <td>4</td>
         </tr>
         <tr>
-            <th><strong>SRy_PARAMS</strong></th>
+            <th><strong>MAVy_EXT_STAT</strong></th>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <th><strong>MAVy_PARAMS</strong></th>
             <td>50</td>
             <td>50</td>
             <td>50</td>
             <td>50</td>
         </tr>
         <tr>
-            <th><strong>SRy_POSITION</strong></th>
+            <th><strong>MAVy_POSITION</strong></th>
             <td>2</td>
             <td>2</td>
             <td>2</td>
             <td>4</td>
         </tr>
         <tr>
-            <th><strong>SRy_RAW_CTRL</strong></th>
+            <th><strong>MAVy_RAW_CTRL</strong></th>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
         </tr>
         <tr>
-            <th><strong>SRy_RAW_SENS</strong></th>
+            <th><strong>MAVy_RAW_SENS</strong></th>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
         </tr>
         <tr>
-            <th><strong>SRy_RC_CHAN</strong></th>
+            <th><strong>MAVy_RC_CHAN</strong></th>
             <td>1</td>
             <td>1</td>
             <td>1</td>
@@ -170,9 +170,9 @@ Recommended settings are.
 </table>
 
 > [!NOTE] 
-> - These parameters have been renamed in ArduPilot 4.7 to MAVy and now start at MAV1 (there is no MAV0).
+> - The streaming parameters have been renamed in ArduPilot 4.7 to MAVy and now start at MAV1 (there is no MAV0). In older versions they were named SRy and started at SR0.
 > - Some ArduPilot vehicles do not enable stream rates per default (e.g. Copter has them disabled, whereas Plane has them enabled).
-> - When configuring SRy/MAVy parameters, 'y' does usually not correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol. SERIAL0, and thus SR0, is nearly always reserved for the USB connection and set to use the MAVLink protocol (not possible in ArduPilot 4.7, has no MAV0). Therefore, as an example, in a setup where SERIAL1 and SERIAL2 are not set to MAVLink protocol and with the mLRS receiver connected to SERIAL3, then SR1/MAV1 configures the stream rates for the mLRS receiver.
+> - When configuring MAVy/SRy parameters, 'y' does usually ***not*** correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol. For example, in a setup where SERIAL1 and SERIAL3 is set to the MAVLink protocol, SERIAL2 is not, and with the mLRS receiver connected to SERIAL3, then MAV2/SR2 configures the stream rates for the mLRS receiver.
 
 ### CRSF Receiver Protocol
 
