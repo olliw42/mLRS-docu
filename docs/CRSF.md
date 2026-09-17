@@ -172,7 +172,7 @@ Recommended settings are.
 > [!NOTE] 
 > - The streaming parameters have been renamed in ArduPilot 4.7 to MAVy and now start at MAV1 (there is no MAV0). In older versions they were named SRy and started at SR0.
 > - Some ArduPilot vehicles do not enable stream rates per default (e.g. Copter has them disabled, whereas Plane has them enabled).
-> - When configuring MAVy/SRy parameters, 'y' does usually ***not*** correspond to the number 'x' of the SERIALx port but to the count of serial ports using the MAVLink protocol. For example, in a setup where SERIAL1 and SERIAL3 is set to the MAVLink protocol, SERIAL2 is not, and with the mLRS receiver connected to SERIAL3, then MAV2/SR2 configures the stream rates for the mLRS receiver.
+> - When configuring MAVy/SRy parameters, 'y' does usually ***not*** correspond to the number 'x' of the SERIALx port, but to the count of serial ports using the MAVLink protocol. Usually, the USB port on the flight controller will use MAV1/SR0 for its stream rates. Therefore, as an example, in a setup where SERIAL1 and SERIAL3 are set to the MAVLink protocol whereas SERIAL2 is not, and with the mLRS receiver connected to SERIAL3, MAV3/SR2 will configure the stream rates for the mLRS receiver.
 
 ### CRSF Receiver Protocol
 
