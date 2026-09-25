@@ -82,7 +82,7 @@ Configure the DroneCAN virtual serial port (mandatory settings):
 
 Adjust DroneCAN stream rates (optional settings):
 
-- CAN_D1_UC_NTF_RT = 1
+- CAN_D1_UC_NTF_RT = 10
 
 Adjust MAVLink stream rates:
 
