@@ -88,11 +88,11 @@ Adjust MAVLink stream rates:
 
 - Stream rates should be set as recommended on the [CRSF page](CRSF.md#stream-rates)
 
-When configuring SRy/MAVy parameters for DroneCAN, 'y' corresponds to the number of serial ports that you have enabled for MAVLink (SERIALx parameters). For example, if you are using SERIAL0 for USB and SERIAL2 for MAVLink then you will have to modify the SR2/MAV2 parameters for the DroneCAN connection:
+When configuring MAVy/SRy parameters for DroneCAN, 'y' corresponds to the number of serial ports that you have enabled for MAVLink (SERIALx parameters). For example, if you are using SERIAL0 for USB and SERIAL2 for MAVLink then you will have to modify the MAV3/SR2 parameters for the DroneCAN connection:
 
-- SERIAL0 will use SR0/MAV1
-- SERIAL2 will use SR1/MAV2
-- DroneCAN will use SR2/MAV3
+- SERIAL0 will use MAV1/SR0
+- SERIAL2 will use MAV2/SR1
+- DroneCAN will use MAV3/SR2
 
 ## Supported DroneCAN Services
 
