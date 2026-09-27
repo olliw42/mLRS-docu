@@ -13,12 +13,12 @@ mLRS provides encryption and authentication mechanisms to secure the over-the-ai
 It should be noted that encryption alone does not prevent an attacker from spoofing or injecting messages and potentially taking control of the vehicle. Encryption does, however, prevent adversaries from eavesdropping on the data. For instance, it makes it practically impossible to determine GPS positions or other sensitive "personal" data. For most applications, the protection provided by level 1 should be sufficient, while the associated reduction in available data rate remains acceptable. Level 3, on the other hand, is intended to provide a similar level of security to that offered by signing MAVLink messages (signing messages takes a large toll on the data rate, might not be necessary).
 
 > [!IMPORTANT]
-> The current implementation does not yet include protection against replay attacks.
+> The mLRS privacy features are relatively new. We therefore do not claim that the current implementation is fully mature or free of vulnerabilities. The description on this page should be understood as a description of the design and its intended security properties, not as a security guarantee. We believe that the encryption implementation is sound. The integration of authentication is considerably more complex, and the current implementation should be expected to contain weaknesses or attack vectors (for instance, the current implementation does not yet include protection against replay attacks). Competent contributions aimed at identifying and closing such gaps are highly welcome.
 
 > [!IMPORTANT]
 > mLRS privacy features are not intended to meet the security requirements of high-security applications.
 
-## Some Technical Details
+## Technical Details
 
 ChaCha20-Poly1305 uses a key, a nonce, and a message authentication code (MAC). The key must remain secret, whereas the nonce and MAC can be public. In mLRS, the nonce and MAC are transmitted with each frame (reducing the usable payload). The nonce is incremented for each frame. Since a nonce must never be reused with the same key, the size of the nonce limits the maximum duration of a session. In 50 Hz mode, a 3-byte nonce implies a maximum runtime of 2^24 / 50 sec or 3.9 days; a 4-byte nonce provides a runtime of 2.7 years.
 
