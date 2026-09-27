@@ -14,7 +14,7 @@ The channel layout changes as follows:
 - CH9 - CH16: 8 channels with 8-bit resolution, interlaced 1:2
 - CH17 - CH32: 16 channels with three-step resolution, interlaced 1:4
  
-The 11-bit channels are sent with every frame, and have a slightly higher reception probability than the other channels. The 8-bit channels are interlaced with a 1:2 ration, meaning that the blocks of channels CH9 - CH12 and CH13 - CH16 are send alternately, i.e., each block is send every second frame. The three-step channels are interlaced with 1:4, with each of the four blocks CH17 - CH20, CH21 - CH24, CH25 - CH28, and CH29 - CH32 being sent every fourth frame. In the 19 Hz mode, these channels are therefore updated every ca. 0.2 seconds.
+The 11-bit channels are sent with every frame, and have a slightly higher reception probability than the other channels. The 8-bit channels are interlaced with a 1:2 ratio, meaning that the blocks of channels CH9 - CH12 and CH13 - CH16 are sent alternately, each block is sent every second frame. The three-step channels are interlaced with 1:4, with each of the four blocks CH17 - CH20, CH21 - CH24, CH25 - CH28, and CH29 - CH32 being sent every fourth frame. In the 19 Hz mode, these channels are therefore updated every ca. 0.2 seconds.
 
 ## Receiver Output
 
