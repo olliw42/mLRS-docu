@@ -4,7 +4,8 @@
 
 mLRS provides encryption and authentication mechanisms to secure the over-the-air (OTA) communication using ChaCha20 and Poly1305 (since v1.4.04). These features are enabled through the common parameter "Privacy", which provides three settings with incrasing security level:
  
-|     | encryption<br>nonce size | authentication<br>MAC size | serial data rate<br>reduction | secured<br>data | comment |
+| | encryption<br>nonce size | authentication<br>MAC size | serial data rate<br>reduction | secured<br>data | comment |
+| --- | --- | --- | --- | --- | --- |
 | level 1 | 3 bytes / 24 bits | --- | -3 bytes / -4.7% uplink / -3.7% downlink | serial data | only encryption |
 | level 2 | 3 bytes / 24 bits | 3 bytes / 24 bits | -6 bytes / -9.4% uplink / -7.3% downlink | serial data | encryp. + auth. |
 | level 3 | 4 bytes / 32 bits | 8 bytes / 64 bits | -12 bytes / -18.8% uplink / -14.6% downlink | RC + serial data | encryp. + auth. |
