@@ -35,7 +35,7 @@ Since EdgeTx and Frsky radios do not natively support 32 channels via CRSF, mLRS
 
 ### EdgeTx/OpenTx Radios
 
-mLRS provides two scripts, a [mixes script](https://luadoc.edgetx.org/overview/script-types/mixes-scripts) and a [widget script](https://luadoc.edgetx.org/overview/script-types/widget-scripts). There is no fundamental advantage of the one over the other; it is a matter of user preference which to use.
+mLRS provides two scripts, a [mixes script](https://luadoc.edgetx.org/overview/script-types/mixes-scripts) and a [widget script](https://luadoc.edgetx.org/overview/script-types/widget-scripts). There is no fundamental advantage of the one over the other; which one to use is largely a matter of preference.
 
 #### Mixes Script
 
@@ -45,7 +45,7 @@ TODO
 
 #### Widget Script
 
-For installation, copy the folder mLRS32ChW with its content to the folder /SCRIPTS/WIDGETS on the radio's SD card (there should be then a folder /SCRIPTS/WIDGETS/mLRS32ChW). In order to run the script, place the widget as usual (see EdgeTx/OpenTx instructions for widgets). The widget has options to set the color of the text, and  enable or disable it. Enable it for it to send the CH17 - CH32 CRSF frames.
+For installation, copy the folder mLRS32ChW with its content to the folder /SCRIPTS/WIDGETS on the radio's SD card (there should be then a folder /SCRIPTS/WIDGETS/mLRS32ChW). In order to run the script, place the widget as usual (see EdgeTx/OpenTx instructions for [widgets](https://manual.edgetx.org/color-radios/screen-settings)). The widget has options to set the color of the text, and  enable or disable it. When enabled, it sends the CH17 - CH32 CRSF frames.
 
 ### Frsky/ETHOS Radios
 
