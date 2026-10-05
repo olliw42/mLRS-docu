@@ -15,7 +15,7 @@ The channel layout changes as follows:
 - CH17 - CH20: 4 channels with 9-position resolution, interlaced 1:4
 - CH21 - CH32: 12 channels with 3-position resolution, interlaced 1:4
 
-The 11-bit channels are sent with every frame, and have a slightly higher reception probability than the other channels. The 8-bit channels are interlaced with a 1:2 ratio, meaning that the blocks of channels CH9 - CH12 and CH13 - CH16 are sent alternately, each block is sent every second frame. The nine- and three-position channels are interlaced with 1:4, with each block of four channels being sent every fourth frame. In 19 Hz mode, these channels are therefore updated every ca. 0.2 seconds, in 50 Hz mode every 80 ms.
+The 11-bit channels are sent with every frame, and have a slightly higher reception probability than the other channels. The 8-bit channels are interlaced with a 1:2 ratio, meaning that the blocks of channels CH9 - CH12 and CH13 - CH16 are sent alternately, each block is sent every second frame. The nine- and three-position channels are interlaced with 1:4, with each block of four channels being sent every fourth frame. In 19 Hz mode, these channels are therefore updated at a rate of ca. 5 Hz, and in 50 Hz mode at a rate of 12.5 Hz.
 
 ## Receiver Output
 
@@ -37,19 +37,15 @@ Since EdgeTx and Frsky radios do not natively support 32 channels via CRSF, mLRS
 
 mLRS provides two Lua scripts, a [mixes script](https://luadoc.edgetx.org/overview/script-types/mixes-scripts) and a [widget script](https://luadoc.edgetx.org/overview/script-types/widget-scripts). There is no fundamental advantage of the one over the other; which one to use is largely a matter of preference.
 
-#### Mixes Script
+#### Mixes Lua Script
 
-For installation, copy the file in the folder mLRS32ChM to the folder /SCRIPTS/MIXES on the radio's SD card.
+For installation, copy the file mlrs32.lua LOCATED in the folder mLRS32ChM to the folder /SCRIPTS/MIXES on the radio's SD card. This also activates the script.
 
-TODO
+#### Widget Lua Script
 
-#### Widget Script
-
-For installation, copy the folder mLRS32ChW with its content to the folder /SCRIPTS/WIDGETS on the radio's SD card (there should be then a folder /SCRIPTS/WIDGETS/mLRS32ChW). In order to run the script, place the widget as usual (see EdgeTx/OpenTx instructions for [widgets](https://manual.edgetx.org/color-radios/screen-settings)). The widget has options to set the color of the text, and enable or disable it. When enabled, it sends the CH17 - CH32 CRSF frames.
+For installation, copy the folder mLRS32ChW with its content to the folder /SCRIPTS/WIDGETS/ on the radio's SD card (there should be then a folder /SCRIPTS/WIDGETS/mLRS32ChW). In order to run the script, place the widget as usual (see EdgeTx/OpenTx instructions for [widgets](https://manual.edgetx.org/color-radios/screen-settings)). The widget has options to set the color of the text, and enable or disable it. When enabled, it sends the CH17 - CH32 CRSF frames.
 
 ### Frsky/ETHOS Radios
 
-mLRS provides the script Ethos32Ch. 
-
-TODO: Installation and usage.
+mLRS provides also a Lua script for ETHOS radios. For installation, copy the file main.lua located in the folder Ethos/mLRS32Ch to the folder SD:/scripts/mlrs32/ on the radio's SD card, and restart the radio. Enable the task per model: Model setup -> Lua -> Lua tasks -> "mLRS 32Ch".
 
