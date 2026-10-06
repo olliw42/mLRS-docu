@@ -4,7 +4,7 @@
 
 mLRS supports 32 RC channels (since v1.4.04), with the following differences compared to the normal behavior in 16-channel operation mode.
 
-The 32-channel mode is selected automatically based on the CRSF frames sent to the Tx module. If the Tx module receives CRSF frames containing RC channel data for channels 17 – 32, it immediately switches to 32-channel mode, and the receiver follows accordingly. The receiver output then changes according to the selected method: CRSF, MAVLink RADIO_RC_CHANNELS, MSP-RC, or DroneCAN. SBus does not support 32 channels.
+The 32-channel mode is selected automatically based on the CRSF frames sent to the Tx module. If the Tx module receives CRSF frames containing RC channel data for channels 17 – 32, it immediately switches to 32-channel mode, and the receiver follows accordingly. The receiver output then changes according to the selected protocol: CRSF, MAVLink RADIO_RC_CHANNELS, MSP-RC, or DroneCAN. SBus does not support 32 channels.
 
 ## 32-Channel Layout
 
@@ -43,7 +43,7 @@ For installation, copy the file mlrs32.lua located in the folder mLRS32ChM to th
 
 #### Widget Lua Script
 
-For installation, copy the folder mLRS32ChW with its content to the folder /SCRIPTS/WIDGETS/ on the radio's SD card (there should be then a folder /WIDGETS/mLRS32ChW). In order to run the script, place the widget as usual (see EdgeTx/OpenTx instructions for [widgets](https://manual.edgetx.org/color-radios/screen-settings)). The widget has options to set the color of the text, and enable or disable it. When enabled, it sends the CH17 - CH32 CRSF frames.
+For installation, copy the folder mLRS32ChW with its content to the folder /WIDGETS/ on the radio's SD card (there should be then a folder /WIDGETS/mLRS32ChW/). In order to run the script, place the widget as usual (see EdgeTx/OpenTx instructions for [widgets](https://manual.edgetx.org/color-radios/screen-settings)). The widget has options to set the color of the text, and enable or disable it. When enabled, it sends the CH17 - CH32 CRSF frames.
 
 ### Frsky/ETHOS Radios
 
