@@ -43,7 +43,7 @@ For installation, copy the file mlrs32.lua located in the folder mLRS32ChM to th
 
 #### Widget Lua Script
 
-For installation, copy the folder mLRS32ChW with its content to the folder /SCRIPTS/WIDGETS/ on the radio's SD card (there should be then a folder /SCRIPTS/WIDGETS/mLRS32ChW). In order to run the script, place the widget as usual (see EdgeTx/OpenTx instructions for [widgets](https://manual.edgetx.org/color-radios/screen-settings)). The widget has options to set the color of the text, and enable or disable it. When enabled, it sends the CH17 - CH32 CRSF frames.
+For installation, copy the folder mLRS32ChW with its content to the folder /SCRIPTS/WIDGETS/ on the radio's SD card (there should be then a folder /WIDGETS/mLRS32ChW). In order to run the script, place the widget as usual (see EdgeTx/OpenTx instructions for [widgets](https://manual.edgetx.org/color-radios/screen-settings)). The widget has options to set the color of the text, and enable or disable it. When enabled, it sends the CH17 - CH32 CRSF frames.
 
 ### Frsky/ETHOS Radios
 
