@@ -26,6 +26,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [SBus Radios](docs/BASIC_SETUP.md)
 - [Additional Configuration for ArduPilot Systems](docs/ARDUPILOT.md)
 - [INAV/MSP Systems](docs/MSPX.md)
+- [32 RC Channels](docs/32CHANNELS.md)
 - [Experimental: Relay](docs/RELAY.md)
 
 ### STM32 Hardware ###
