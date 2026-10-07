@@ -11,7 +11,7 @@ The 32-channel mode is selected automatically based on the CRSF frames sent to t
 For comparision, the channel layout in 16-channel mode is recalled:
 
 - CH1 - CH8: 8 channels with 11-bit resolution
-- CH9 - CH12: 8 channels with 8-bit resolution
+- CH9 - CH12: 4 channels with 8-bit resolution
 - CH13 - CH16: 4 channels with 3-position resolution
 
 All channels are sent with every over-the-air (OTA) frame and are update at full rate. Channels CH1 - CH4 and CH13, CH14 have a slightly higher reception probability than the other channels.
