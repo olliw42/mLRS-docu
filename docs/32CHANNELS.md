@@ -45,7 +45,7 @@ Two Lua scripts are provided, a [mixes script](https://luadoc.edgetx.org/overvie
 > [!NOTE]
 > In a future version, EdgeTx may natively support 32 channels via CRSF. The Lua script would then no longer be needed.
 
-### Mixes Lua Script
+#### Mixes Lua Script
 
 For installation, copy the file mlrs32.lua located in the folder mLRS32ChM to the folder /SCRIPTS/MIXES/ on the radio's SD card. In order to run the script, add it to the mixer (custom) scripts (see EdgeTx/OpenTx instructions for [mixer scripts](https://manual.edgetx.org/color-radios/model-settings/custom-scripts)).
 
