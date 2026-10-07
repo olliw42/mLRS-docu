@@ -10,9 +10,13 @@ The 32-channel mode is selected automatically based on the CRSF frames sent to t
 
 For comparision, the channel layout in 16-channel mode is recalled:
 
-- CH1 - CH8: 8 channels with 11-bit resolution
-- CH9 - CH12: 4 channels with 8-bit resolution
-- CH13 - CH16: 4 channels with 3-position resolution
+<table><tr>
+<td>CH1 - CH8</td><td>8 channels with 11-bit resolution</td>
+</tr><tr>
+<td>CH9 - CH12</td><td>4 channels with 8-bit resolution</td>
+</tr><tr>
+<td>CH13 - CH16</td><td>4 channels with 3-position resolution</td>
+</tr></table>
 
 All channels are sent with every over-the-air (OTA) frame and are update at full rate. Channels CH1 - CH4 and CH13, CH14 have a slightly higher reception probability than the other channels.
 
@@ -20,10 +24,15 @@ All channels are sent with every over-the-air (OTA) frame and are update at full
 
 The channel layout in 32-channel mode is as follows:
 
-- CH1 - CH8: 8 channels with 11-bit resolution, full rate/no interlacing
-- CH9 - CH16: 8 channels with 8-bit resolution, interlaced 1:2
-- CH17 - CH20: 4 channels with 9-position resolution, interlaced 1:4
-- CH21 - CH32: 12 channels with 3-position resolution, interlaced 1:4
+<table><tr>
+<td>CH1 - CH8</td><td>8 channels with 11-bit resolution</td><td>full rate/no interlacing</td>
+</tr><tr>
+<td>CH9 - CH16</td><td>8 channels with 8-bit resolution</td><td>interlaced 1:2</td>
+</tr><tr>
+<td>CH17 - CH20</td><td>4 channels with 9-position resolution</td><td>interlaced 1:4</td>
+</tr><tr>
+<td>CH21 - CH32</td><td>12 channels with 3-position resolution</td><td>interlaced 1:4</td>
+</tr></table>
 
 The 11-bit channels are sent with every OTA frame, and have a slightly higher reception probability than the other channels. The 8-bit channels are interlaced with a 1:2 ratio, meaning that the blocks of channels CH9 - CH12 and CH13 - CH16 are sent alternately, each block is sent every second frame. The nine- and three-position channels are interlaced with 1:4, with each block of four channels being sent every fourth frame. In 19 Hz mode, these channels are therefore updated at a rate of ca. 5 Hz, and in 50 Hz mode at a rate of 12.5 Hz.
 
