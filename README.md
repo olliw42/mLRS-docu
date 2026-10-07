@@ -23,10 +23,10 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [CRSF Telemetry and Yaapu Telemetry App](docs/CRSF.md)
     - [CRSF Sensors](docs/CRSF_SENSORS.md)
 - [SiK Telemetry Replacement](docs/SETUP_SIK.md)
-- [SBus Radios](docs/BASIC_SETUP.md)
 - [Additional Configuration for ArduPilot Systems](docs/ARDUPILOT.md)
 - [INAV/MSP Systems](docs/MSPX.md)
 - [32 RC Channels](docs/32CHANNELS.md)
+- [DroneCAN](docs/DRONECAN.md)
 - [Experimental: Relay](docs/RELAY.md)
 
 ### STM32 Hardware ###
@@ -46,7 +46,6 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [CLI Commands](docs/CLI.md)
 - [Wireless Bridge](docs/WIRELESS_BRIDGE.md)
 - [Dual Band](docs/DUAL_BAND.md)
-- [DroneCAN](docs/DRONECAN.md)
 - [FHSS Shaping](docs/FHSS_SHAPING.md)
 - [MavlinkX](docs/MAVLINKX.md)
 - [Configuration using MAVLink Parameters](docs/MAVLINK_PARAMETERS.md)
