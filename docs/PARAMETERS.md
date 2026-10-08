@@ -37,9 +37,6 @@ Frequency band. May not be selectable (depends on hardware).
 For 2.4 GHz and 915 MHz FCC RF bands allows one to constrain the used frequencies in the FHSS sequence, see [FHSS_SHAPING](FHSS_SHAPING.md).
 Can be: "off", "1/3", "2/3", "3/3".
 
-#### Privacy ####
-Privacy level. May not be available (depends on hardware).
-
 ## Tx Parameters ##
 
 #### Tx Power #### 
