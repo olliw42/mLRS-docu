@@ -45,6 +45,14 @@ In 32-channel mode, the receiver outputs are as follows:
 - ***MSP-RC***: The MSP_SET_RAW_RC (#200) message carrying channels CH1 - CH16 is emitted as usual. In addition, the MSP2_INAV_SET_AUX_RC (#2230) message carrying channels CH17 - CH32 are emitted at the same rate as the MSP_SET_RAW_RC message. MSP2_INAV_SET_AUX_RC is only 15 bytes and the burden thus minimal. Note: The 9-position channels are broken down to 3-position values.
 - ***DroneCAN***: The RCInput message type contains the channel data for channels CH1 - CH32 instead of only CH1 - CH16 as normally. While twice as long as in 16-channels mode, the effect on the available data rate on the CAN bus is minimal.
 
+## FrSky/ETHOS Radios
+
+FrSky ETHOS radios support mLRS' 32-channel mode natively since ETHOS firmware 26.1.3. Go to the "RF systems" page and set the channel range to CH32.
+
+For those who prefer to update their radio later, or not at all, mLRS provides a Lua script that enables 32-channel support. For installation, copy the file main.lua from Ethos/mLRS32Ch/ to SD:/scripts/mlrs32/ on the radio's SD card, and restart the radio. Enable the task per model under Model setup -> Lua -> Lua tasks -> "mLRS 32Ch".
+
+mLRS thanks FrSky for the swift and great cooperation in bringing 32 channels to life in ETHOS.
+
 ## EdgeTx Radios
 
 EdgeTx does not natively support 32 channels via CRSF, therefore mLRS provides Lua scripts that can be installed on the radio. The scripts make the radio send the values of channels CH17 - CH32 to the Tx module. When enabled, this causes the Tx module, and consequently the receiver, to switch into 32-channel mode.
@@ -62,10 +70,3 @@ For installation, copy the file mlrs32.lua located in the folder mLRS32ChM to th
 
 For installation, copy the folder mLRS32ChW with its content to the folder /WIDGETS/ on the radio's SD card (there should be then a folder /WIDGETS/mLRS32ChW/). In order to run the script, place the widget as usual (see EdgeTx/OpenTx instructions for [widgets](https://manual.edgetx.org/color-radios/screen-settings)). The widget has options to set the color of the text, and enable or disable it. When enabled, it sends the CH17 - CH32 CRSF frames.
 
-## FrSky/ETHOS Radios
-
-FrSky/ETHOS will support mLRS' 32-channel mode natively in an upcoming ETHOS firmware release (26.1.3 or 26.1.4). The adventurers among you can try a nightly firmware build (available [here](https://github.com/FrSkyRC/ETHOS-Feedback-Community/releases#release-nightly26)). Go to the "RF systems" page and set the channel range to CH32.
-
-For those who prefer to update their ETHOS firmware later, or not at all, mLRS provides a Lua script that enables 32-channel support. For installation, copy the file main.lua from Ethos/mLRS32Ch/ to SD:/scripts/mlrs32/ on the radio's SD card, and restart the radio. Enable the task per model under Model setup -> Lua -> Lua tasks -> "mLRS 32Ch".
-
-mLRS thanks FrSky for the swift and great cooperation in bringing 32 channels to life in ETHOS.
