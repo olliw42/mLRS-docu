@@ -18,6 +18,14 @@ It should be noted that encryption alone does not prevent an attacker from spoof
 > [!IMPORTANT]
 > mLRS privacy features are not intended to meet the security requirements of high-security applications.
 
+## Practical Notes
+
+The following operational considerations apply when using the privacy features:
+
+Initial binding: A new binding must be performed at least once before the privacy features can be used. This is necessary because the Tx module and receiver must obtain the information required to generate the secret keys (see [Technical Details]).
+
+Privacy levels 2 and 3: Both the Tx module and receiver must be started from a powered-off state. Either device may be powered on first; no specific startup sequence is required. Once a connection has been established, repowering either device will result in a loss of connection.
+
 ## Technical Details
 
 ChaCha20-Poly1305 uses a key, a nonce, and a message authentication code (MAC). The key must remain secret, whereas the nonce and MAC are public. In mLRS, the nonce and MAC are transmitted with each frame (reducing the usable serial payload). The nonce is incremented for each frame. Since a nonce must never be reused with the same key, the size of the nonce limits the maximum duration of a session. In 50 Hz mode, a 3-byte nonce implies a maximum runtime of 2^24 / 50 sec or 3.9 days; a 4-byte nonce provides a runtime of 2.7 years.
@@ -33,5 +41,4 @@ Therefore, a new binding is not needed for each session. Since the exchange of t
 The random numbers are obtained from a hardware TRNG. Not all Tx modules contain a TRNG, and some are lacking in performance; these devices therefore do not support the privacy features (currently these are those with a STM32F103, STM32WLE or EPS8266 processor).
 
 mLRS uses the [Monocypher](https://monocypher.org/) cryptographic library.
-
 
