@@ -16,18 +16,17 @@ Some notation and terminology:
 
 ## 1. Choose and purchase a Tx module and a compatible receiver
 
-There are many supported choices of mLRS hardware, including off-the-shelf options and many DIY designs.
-We cover here three popular, but mutually incompatible, commercially available off-the-shelf options.  We summarize some pros and cons below to help you choose. Don't mix Tx module and receiver between these options.
+There are many supported choices of mLRS hardware, including off-the-shelf options and some DIY designs.
+We cover here three popular, commercially available, off-the-shelf Tx module options. The RF chipset used by your Tx module will determine which receivers are compatible. Don't mix Tx module and receiver between these three options except as noted. We summarize some pros and cons below to help you choose. 
 
 ### MatekSys mLRS [mR900-30-TX](https://www.mateksys.com/?portfolio=mr900-30-tx) module kit with their [mR900-30](https://www.mateksys.com/?portfolio=mr900-30) receiver
 - These 900 MHz band modules were designed specifically for mLRS and arrive pre-flashed with mLRS.
 - This option should provide the longest range of the three discussed here.
 - The mR900-30-TX module kit includes an HC04 module for a convenient Bluetooth serial connection to your ground station software running on a computer or Android device.
-- These modules are especially easy to flash via DFU over their USB-C connection.
+- These modules are especially easy to flash via DFU over their USB-C connection using the [mLRS Web Flasher](https://olliw.eu/mlrsflasher) app.
 - These use the SX126x LoRa chip and support 19 Hz, 31 Hz and FSK(50 Hz) modes.
-- This option does not work with any ELRS receivers.
+- This option does not work with SX127x or SX128x based ELRS receivers, but it does work with LR1121 based receivers.
 - The Tx module kit does not include an antenna or a JR bay case which must be 3D printed.  If you don't have access to a 3D printer, you can purchase a print from a number of 3D printing services and also from some vendors.
-- The [mR900-22](https://www.mateksys.com/?portfolio=mr900-22) is a compatible lower power receiver which is appropriate for smaller vehicles.  But it is not currently recommended for new users because it is not yet easy to flash without disconnecting it from your flight controller.
 
 ### MatekSys mLRS [mR24-30-TX](https://www.mateksys.com/?portfolio=mr24-30-tx) module kit with their [mr24-30](https://www.mateksys.com/?portfolio=mr24-30) receiver or any [Selected 2.4 GHz ELRS](ELRS_RECEIVERS.md#selected-elrs-receivers) receiver
 - These 2.4 GHz band modules were also designed specifically for mLRS and arrive pre-flashed with mLRS.
@@ -36,30 +35,22 @@ We cover here three popular, but mutually incompatible, commercially available o
 - 2.4 GHz is a wider band which might support more simultaneous users.  But this band can also be noisy so you may notice some interference including potentially from the HC04 if you use it.
 - These modules support 19 Hz, 31 Hz, 50, and FLRC(111 Hz) modes.
 - The Tx module kit does not include an antenna or JR bay case which must be 3D printed.  If you don't have access to a 3D printer, you can purchase a print from a number of 3D printing services and also from some vendors.
-- If you don't need quite as much range, you can flash mLRS on one of the smaller and lighter [Selected 2.4 GHz ELRS](ELRS_RECEIVERS.md#selected-elrs-receivers) receivers such as the RadioMaster [RP4TD](ELRS_RADIOMASTER_RP4TD.md#mlrs-documentation-radiomaster-rp4td-receiver).
-- Some AIO flight controller boards include a low power 2.4 GHz ELRS serial receiver which can also be flashed with mLRS for use with this Tx module.
+- If you don't need as much range, you can flash mLRS on one of the smaller and lighter [Selected 2.4 GHz ELRS](ELRS_RECEIVERS.md#selected-elrs-receivers) receivers such as the RadioMaster [RP4TD](ELRS_RADIOMASTER_RP4TD.md#mlrs-documentation-radiomaster-rp4td-receiver).
+- This TX module will work with mLRS flashed on many 2.4 GHz ELRS modules including some AIO flight controller boards with a 2.4 GHz ELRS serial receiver.
 
-### FrSky [R9M Tx module](FRSKY_R9.md#r9m-tx-module) with the [Bayck 915M Nano Pro](ELRS_RECEIVERS.md#selected-elrs-receivers) 900 MHz ELRS receiver
-- This option is not highly recommended for new users as it is more complicated and slightly less flexible, but is included here since it allows use of 900 MHz ELRS receivers you may already have.
-- This Tx module uses the SX1276 LoRa chip and supports only 19 Hz mode.  It works with many 900 MHz ELRS receivers but is incompatible with the MatekSys gear above.
-- The FrSky R9M can be flashed using your EdgeTX or OpenTX radio.
-- No 3D printer is required, but transmit power should be limited to less than 500 mW unless you add a fan.
-- The Bayck 915M Nano Pro ELRS receiver can be [flashed](ELRS_RECEIVERS.md#flashing) with mLRS firmware without removing it from your vehicle by using ArduPilot serial passthrough.
-- If you already have a R9MX or R9MM receiver, they are also compatible, but have lower power and are more difficult to [flash](FRSKY_R9.md#flash-r9-receivers-with-elrs-bootloader).
-- Unfortunately, the R9M has inverted serial port signals; if you choose this option you will probably also want to purchase an [ESP32 module](FRSKY_R9.md#esp32-wireless-bridge) such as the [M5 Stamp Pico Mate](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) to use as a wireless bridge and handle the inverted serial port.
+### An ELRS TX module such as the [RadioMaster Nomad](ELRS_TX_MODULES.md##external-tx-modules) with a compatible receiver such as the [Bayck 915M Nano Pro](ELRS_RECEIVERS.md#selected-elrs-receivers) 900 MHz ELRS receiver
+- This option is recommended for users who already have a supported [ELRS Tx module](ELRS_TX_MODULES.md) and [receiver](ELRS_RECEIVERS.md).  It is also recommended if you want a complete off-the-shelf, no assembly, solution.
+- The Nomad is a fairly compact, low cost, 1 Watt external Tx module using the LR1121 LoRa chip.  It supports ELRS 900 MHz and 2.4GHz band receivers as well as the MatekSys receivers discussed above.  An LR1121 based internal Tx module found in some newer EdgeTX radio handsets can also be used.
+- ELRS Tx modules can be [flashed](ELRS_TX_MODULES.md#flashing-external-tx-modules) via USB using the [mLRS Web Flasher](https://olliw.eu/mlrsflasher) app.
+- The Bayck 915M Nano Pro, like most ELRS receivers, is not quite as easy to flash as the full power MatekSys.
 
-## 2. Assemble your Tx module if required and install antennas on both the receiver and Tx module
+## 2. Assemble your Tx module if required, and install antennas on both the receiver and Tx module
 
 If you are using one of the MatekSys Tx module kits, print or purchase a JR bay case from the STL download available from [MatekSys](https://www.mateksys.com/?portfolio=mr900-30-tx#tab-id-1).
 
 If you will use the MatekSys HC04 module to connect your ground station via Bluetooth, set all three [dip switches](MATEKSYS.md#tx-module-hc-04-bluetooth-notes) to the on position before assembling your Tx module.
 
-If you are using the [R9M Tx module](FRSKY_R9.md#r9m-tx-module):
-- Set [dip switch 1](FRSKY_R9.md#r9m-tx-module) to the on position to configure it for serial data.
-- Install the [Arduino IDE](https://www.arduino.cc/en/software) and use it to build and flash [firmware](WIRELESS_BRIDGE.md) on your ESP32 module.  Be sure to select the R9M variant for your module when you edit the mlrs-wireless-bridge.ino.
-- Connect your [ESP32 wireless bridge](FRSKY_R9.md#esp32-wireless-bridge) module to the serial and power pins of your R9M.
-
-When choosing and connecting antennas, be aware of the difference between SMA and RP-SMA.  It is, unfortunately, possible to attach an RP-SMA antenna to an SMA jack but there will be no electrical connection of the signal.
+When choosing and connecting antennas, be aware of the difference between SMA and RP-SMA.  It is, unfortunately, possible to attach an RP-SMA antenna to an SMA jack but there will be no electrical connection of the signal which could damage your module.
 
 ## 3. Connect your receiver to your flight controller
 
@@ -87,13 +78,13 @@ If both your receiver and Tx modules came pre-installed with mLRS firmware as wi
 
 Carefully install your Tx module into the bay of your EdgeTX or OpenTX radio.  Some Tx modules can be fussy about pin alignment; don't use excessive force or you may break something.
 
-Flashing Firmware is done using the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) on a Chromium based browser.
+Flashing Firmware is best done using the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) on a Chromium based browser.
 
 Once the firmware is installed, you can confirm operation by observing the LED.
 - When either a receiver or Tx module is powered on alone, a LED (usually red) should flash at 2 Hz (twice per second, on for 1/4 second then off for 1/4 second repeatedly).
 - When the Tx module and receiver are both powered on and bound, they will connect and a LED (usually green) should flash more slowly at 1 Hz (once per second, on for 1/2 second then off for 1/2 second repeatedly) to indicate they are connected and exchanging radio messages.
 
-## 5. Install the mLRS Lua script and configure your mLRS system
+## 5. Install the mLRS Configurator Lua script and configure your mLRS system
 
 Use the 'Lua Script' page on the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) and follow the instructions to install the Lua script on your radio.
 
@@ -103,13 +94,13 @@ Use the mLRS Lua script to confirm the receiver is connected and the firmware ve
 - If the radio link does not connect, follow the [Binding](BINDING.md) procedure.
 - It is HIGHLY recommended to use the same firmware version on both the receiver and Tx module. The latest released firmware is also recommended, especially for new installs.  If your receiver and Tx module firmware versions don't match or are very much out of date, return to the previous step and install the latest mLRS firmware release.
 
-Use the mLRS Lua script to configure your mLRS system:
+Use the mLRS Configurator Lua script to configure your mLRS system:
 - Leave your receiver powered on and connected while you complete the following steps.
 - Set the correct ["RF Band"](PARAMETERS.md#rf-band) for your region (if using 900 MHz hardware).
 - You can change the ["Bind Phrase"](PARAMETERS.md#bind-phrase) if desired.
 - Set your desired ["Mode"](PARAMETERS.md#mode).
-- If you didn't connect the SBUS or CRSF RC output from your receiver to your flight controller, enter the "Edit Rx" page and set ["Rx Snd RcChannels"](PARAMETERS.md#rx-snd-rcchannel) to "rc override" (or "rc channels" for ArduPilot 4.6 with MAVLink RC receiver support).  Return to the main page.  If your radio has a black and white screen, you will need to use the [CLI](CLI.md) for this.
-- Select "Save" and verify that your receiver reconnects.
+- If you didn't connect the SBUS or CRSF RC output from your receiver to your flight controller, enter the "Edit Rx" page and set ["Rx Snd RcChannels"](PARAMETERS.md#rx-snd-rcchannel) to "rc override" (or "rc channels" for ArduPilot 4.6 with MAVLink RC receiver support).
+- If your radio has a color screen, return to the main page and select Save. If you have a black and white screen, you will need to save before leaving the page. After saving, verify that your receiver reconnects.
 - You may wish to review and adjust other settings at this time, but the defaults should be OK to get started.
 
 ## 6. Optionally, Install the Yaapu Telemetry script
@@ -125,36 +116,35 @@ There are MAVLink ground station applications available for all common platforms
 Wireless links are possible for all three of the recommended Tx modules.
 
 Bluetooth is very handy for mobile devices and is recommended for the MatekSys Tx modules since they include an HC04 module which is automatically configured by mLRS.
-- The [HC04](MATEKSYS.md#tx-module-hc-04-bluetooth-notes) will be discoverable soon after being powered on.
-- Bluetooth is also supported by some ESP32 boards such as the [M5 Stamp Pico Mate](https://shop.m5stack.com/products/m5stamp-pico-diy-kit) which is recommended for use with the [FrSky R9M Tx module](FRSKY_R9.md#esp32-wireless-bridge).
+- The [HC04](MATEKSYS.md#tx-module-hc-04-bluetooth-notes) support clasic Bluetooth Serial Profile and will be discoverable soon after being powered on.
 - First, pair your HC04 (pin: 1234) or ESP32 with your device or computer.  Look for a device which includes "mLRS" in its name.
-- iOS devices do not support the Bluetooth Serial Port Profile and QGroundControl does not support Bluetooth LE so QGroundControl will not connect over Bluetooth on iOS.  It has been reported that the SidePilot App works on iOS.
-- QGroundControl works well with Bluetooth on Android, Linux or Windows.  Create a new Bluetooth type connection via Application Settings -> Comm Links -> Add.
-- Mission Planner is recommended for Windows.  Connect to the COM port associated with the Bluetooth connection after pairing.
+- Bluetooth LE is supported by some ELRS Tx modules which use the ESP32C3 for their backpack; this works with newer versions of QGroundControl on mobile platforms.
+- QGroundControl works with clasic Bluetooth SP on Linux or Windows.  Create a new Bluetooth type connection via Application Settings -> Comm Links -> Add.
+- Mission Planner is recommended for Windows.  Connect to the COM port associated with the Clasic Bluetooth SP connection after pairing.
 
 UDP or TCP over WiFi is another popular wireless option.
-- All three of the recommended Tx modules could be connected to an external ESP32 board such as the M5 Stamp boards running the [Wireless Bridge](WIRELESS_BRIDGE.md) sketch.
+- Most ELRS Tx modules support UDP or TCP over WiFi.
 - All popular ground stations can connect via UDP.
 - The standard ports for MAVLink are 14550 for UDP and 5760 for TCP.
+- It is also possible to connect the MatekSys Tx module to an external ESP32 board such as the M5 Stamp boards running the [Wireless Bridge](WIRELESS_BRIDGE.md) sketch, but it must be configured in the sketch and compiled.
 
-All three of the recommended Tx modules include serial ports which may be used to connect to your ground station.
-- PC serial ports and RS232 serial USB adapters use higher voltage levels than the logic level required for serial connections on Tx modules.  You will need a TTL level USB serial adapter to connect your Tx serial port to a PC or mobile device.
+Some external Tx modules include serial ports which may be used to connect to your ground station.
+- Standard PC serial ports and RS232 serial USB adapters use higher voltage levels than the logic level required for serial connections on Tx modules.  You will need a TTL level USB serial adapter to connect your Tx serial port to a PC or mobile device.
 - The [MatekSys Tx modules](https://www.mateksys.com/?portfolio=mr24-30-tx#tab-id-2) provide 1 or 2 TTL level serial ports depending on the dip switch settings.
-- The FrSky R9M shares its single inverted serial port between CLI and MAVLink based on the position of [dip switch 1](FRSKY_R9.md#r9m-tx-module) at power on.  A [method](FRSKY_R9.md#diy-inverter-dongle) to invert the signals will be required.
 
 Direct USB connection is another useful option for both PCs and mobile devices which support OTG USB.
-- Unfortunately this option is not available with the FrSky R9M.
+- This option is recommended for external 2.4 GHz ELRS modules to reduce RF interference.
+- If you do this, you will want to use the mLRS lua Configurator script to set "Ser Port" to "com"
 - This option does not work out of the box with the recommended MatekSys Tx modules for this use case because the USB port on these modules is not accessible when installed in a radio JR bay.
 - It is possible to solder a type A USB cable directly to the USB pads on the back of the MatekSys Tx modules.
-- If you do this, you will need to flash the "siktelem" version of the firmware for your MatekSys Tx module.
 - If you solder a cable to these pads, you must then also use the soldered USB cable for flashing and not connect anything to the built-in USB-C jack.
 
 ## 8. Radio calibration
 
-There are many calibration and setup steps required for ArduPilot on a new aircraft.  Here, we mention just the RC calibration step.  Not only because RC calibration needs to be repeated when switching to mLRS from a different RC system, but also because of a quirk you may encounter.
+There are many calibration and setup steps required for ArduPilot on a new aircraft.  Here, we mention just the RC calibration step.  Not only because RC calibration needs to be repeated when switching to mLRS from a different RC system, but also because of a quirk you may encounter with older versions of QGroundControl.
 
-- If you did not connect SBUS or CRSF RC output from your receiver to your flight controller and are using ["rc\_override"](PARAMETERS.md#rx-snd-rcchannel) for your RC, you can't use QGroundControl to calibrate your radio. You will need to use another ground station such as Mission Planner or APM Planner 2.0 to perform radio calibration.
-- You can, of course, connect any of these ground stations via your mLRS Tx module or directly via USB to your flight controller.
+- If you did not connect SBUS or CRSF RC output from your receiver to your flight controller and are using ["rc\_override"](PARAMETERS.md#rx-snd-rcchannel) for your RC, you can't use older versions of QGroundControl to calibrate your radio. You will need to use a newer version of QGroundControl or another ground station such as Mission Planner or APM Planner 2.0 to perform radio calibration.
+- You can connect any of these ground stations via your mLRS Tx module or directly via USB to your flight controller for radio calibration.
 - This is a good time to configure and check the operation of any flight modes and switches you might want.
 
 ## 9. Bench and range testing
@@ -176,7 +166,7 @@ Before your first flight with mLRS, it is good to do some additional testing to 
 Check and test your failsafe behavior and configuration ***before*** you experience a connection loss in flight.
 
 - You may choose to configure ArduPilot for failsafe actions for loss of either MAVLink telemetry or radio control or both.
-- Note that even though both MAVLink and RC are transported by mLRS in the same radio frames, the design is such that loss of radio control will probably occur at a slightly greater distance than loss of telemetry at the receiver.
+- Note that even though both MAVLink and RC are transported by mLRS in the same radio frames, the design is such that loss of radio control may occur at a slightly greater distance than loss of telemetry at the receiver.
 - Note also that, of course, loss of MAVLink telemetry messages at the ground station may not occur at the same range as loss of MAVLink telemetry messages at the receiver, depending on the transmit power and RF conditions at either end of the radio link.  Thus, your ground station may report "communication lost" before or after ArduPilot initiates failsafe actions.
 - The "no signal" method is highly recommended for RC failsafe.
 - See ["Rx Failsafe Mode"](PARAMETERS.md#rx-failsafe-mode).
@@ -187,7 +177,7 @@ Check and test your failsafe behavior and configuration ***before*** you experie
 The above 10 steps should get you started with mLRS.  If something doesn't work, try the [Troubleshooting](TROUBLE.md) page.
 
 Here are some additional things you should consider to improve your experience:
-- Check your ArduPilot [Stream Rate](CRSF.md#stream-rates) parameters.  When you don't use a ground station, these have to be set to get the MAVLink messages which radio telemetry sensors and Yaapu need.
+- Check your ArduPilot [Stream Rate](CRSF.md#stream-rates) parameters.  When you don't use a ground station, these may have to be set to get the MAVLink messages which radio telemetry sensors and Yaapu need.
 - mLRS is constantly improving.  Update your firmware to get the latest features and bug fixes.  Your mLRS configuration parameters will normally be retained across firmware upgrade as long as you don't explicitly erase all flash.
 - Upgrade ArduPilot; the latest release of ArduPilot may well work better with mLRS than older versions did.  The mLRS team and others contribute features and fixes to ArduPilot to improve operation with mLRS.
 - Visit the mLRS [Discord server](https://discord.gg/vwjzCD6ws5) for help or to read about how others are using mLRS.
