@@ -27,7 +27,6 @@ We cover here three popular, commercially available, off-the-shelf Tx module opt
 - These use the SX126x LoRa chip and support 19 Hz, 31 Hz and FSK(50 Hz) modes.
 - This option does not work with SX127x or SX128x based ELRS receivers, but it does work with LR1121 based receivers.
 - The Tx module kit does not include an antenna or a JR bay case which must be 3D printed.  If you don't have access to a 3D printer, you can purchase a print from a number of 3D printing services and also from some vendors.
-- The [mR900-22](https://www.mateksys.com/?portfolio=mr900-22) is a compatible lower power receiver which is appropriate for smaller vehicles.  It is not as easy to flash since it does not include a USB port.
 
 ### MatekSys mLRS [mR24-30-TX](https://www.mateksys.com/?portfolio=mr24-30-tx) module kit with their [mr24-30](https://www.mateksys.com/?portfolio=mr24-30) receiver or any [Selected 2.4 GHz ELRS](ELRS_RECEIVERS.md#selected-elrs-receivers) receiver
 - These 2.4 GHz band modules were also designed specifically for mLRS and arrive pre-flashed with mLRS.
@@ -41,7 +40,7 @@ We cover here three popular, commercially available, off-the-shelf Tx module opt
 
 ### An ELRS TX module such as the [RadioMaster Nomad](ELRS_TX_MODULES.md##external-tx-modules) with a compatible receiver such as the [Bayck 915M Nano Pro](ELRS_RECEIVERS.md#selected-elrs-receivers) 900 MHz ELRS receiver
 - This option is recommended for users who already have a supported [ELRS Tx module](ELRS_TX_MODULES.md) and [receiver](ELRS_RECEIVERS.md).  It is also recommended if you want a complete off-the-shelf, no assembly, solution.
-- The Nomad is a compact, low cost, 1 Watt external Tx module using the LR1121 LoRa chip.  It supports ELRS 900 MHz and 2.4GHz band receivers as well as the MatekSys receivers discussed above.  An LR1121 based internal Tx module found in some newer EdgeTX radio handsets can also be used.
+- The Nomad is a fairly compact, low cost, 1 Watt external Tx module using the LR1121 LoRa chip.  It supports ELRS 900 MHz and 2.4GHz band receivers as well as the MatekSys receivers discussed above.  An LR1121 based internal Tx module found in some newer EdgeTX radio handsets can also be used.
 - ELRS Tx modules can be [flashed](ELRS_TX_MODULES.md#flashing-external-tx-modules) via USB using the [mLRS Web Flasher](https://olliw.eu/mlrsflasher) app.
 - The Bayck 915M Nano Pro, like most ELRS receivers, is not quite as easy to flash as the full power MatekSys.
 
@@ -118,9 +117,8 @@ Wireless links are possible for all three of the recommended Tx modules.
 
 Bluetooth is very handy for mobile devices and is recommended for the MatekSys Tx modules since they include an HC04 module which is automatically configured by mLRS.
 - The [HC04](MATEKSYS.md#tx-module-hc-04-bluetooth-notes) support clasic Bluetooth Serial Profile and will be discoverable soon after being powered on.
-- The ESP32 based ELRS backpacks in some ELRS TX modules also support classic Bluetooth SP.
 - First, pair your HC04 (pin: 1234) or ESP32 with your device or computer.  Look for a device which includes "mLRS" in its name.
-- Bluetooth LE is supported by most ELRS Tx modules and works with newer versions of QGroundControl on mobile platforms.
+- Bluetooth LE is supported by some ELRS Tx modules which use the ESP32C3 for their backpack; this works with newer versions of QGroundControl on mobile platforms.
 - QGroundControl works with clasic Bluetooth SP on Linux or Windows.  Create a new Bluetooth type connection via Application Settings -> Comm Links -> Add.
 - Mission Planner is recommended for Windows.  Connect to the COM port associated with the Clasic Bluetooth SP connection after pairing.
 
@@ -179,7 +177,7 @@ Check and test your failsafe behavior and configuration ***before*** you experie
 The above 10 steps should get you started with mLRS.  If something doesn't work, try the [Troubleshooting](TROUBLE.md) page.
 
 Here are some additional things you should consider to improve your experience:
-- Check your ArduCopter [Stream Rate](CRSF.md#stream-rates) parameters.  When you don't use a ground station, these have to be set to get the MAVLink messages which radio telemetry sensors and Yaapu need.
+- Check your ArduPilot [Stream Rate](CRSF.md#stream-rates) parameters.  When you don't use a ground station, these may have to be set to get the MAVLink messages which radio telemetry sensors and Yaapu need.
 - mLRS is constantly improving.  Update your firmware to get the latest features and bug fixes.  Your mLRS configuration parameters will normally be retained across firmware upgrade as long as you don't explicitly erase all flash.
 - Upgrade ArduPilot; the latest release of ArduPilot may well work better with mLRS than older versions did.  The mLRS team and others contribute features and fixes to ArduPilot to improve operation with mLRS.
 - Visit the mLRS [Discord server](https://discord.gg/vwjzCD6ws5) for help or to read about how others are using mLRS.
