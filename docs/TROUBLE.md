@@ -17,7 +17,7 @@ Some notation and terminology:
 
 In most cases, you can confirm that mLRS firmware is installed by observing the LED.  When either a Tx module or receiver is powered on by itself, a LED (usually red) should flash at 2 Hz (twice per second, on for 1/4 second then off for 1/4 second repeatedly).
 
-- If you don't see any LED activity, check power and ground connections and voltage.
+- If you don't see any LED activity, check voltage, and power/ground connections
 - If you don't see the expected LED pattern, follow the mLRS firmware install [documentation](https://github.com/olliw42/mLRS-docu?tab=readme-ov-file#stm32-hardware) for your hardware.
 - If you have trouble reliably flashing via ST-Link, try shorter wires, 20 cm or less.
 
@@ -45,7 +45,7 @@ You should also use the [mLRS Lua script](LUA.md) to confirm the radio link and 
 
 - If the radio link does not connect, follow the [Binding](BINDING.md) procedure.
 - If the binding procedure doesn't establish the connection, verify that both the receiver and Tx module are compatible, which means they must be on the same band (2.4 GHz, 915/868 MHz or 433 MHz). In the case of 915/868 MHz, also check that the LoRa chipsets are [compatible](SX126x_SX127x_INCOMPATIBILITY.md).  For example, the FrSky R9 series and ELRS 900 MHz receivers are not compatible with the MatekSys 900 MHz hardware.
-- Be sure you have flashed the correct [firmware file](https://github.com/olliw42/mLRS#firmware-flashing).  Files which start with tx are only for modules functioning in the Tx role and files which start with rx are only for modules functioning in the receiver role.  Also, pay attention to any use case or or hardware version variants.  For example, the MatekSys mR900-30 can be used as a Tx module or as a receiver.  A module with rx firmware flashed won't connect with any other module with rx firmware flashed and tx firmware won't connect with tx firmware.
+- Be sure you have flashed the correct [firmware file](https://github.com/olliw42/mLRS#firmware-flashing).  Files which start with tx are only for modules functioning in the Tx role and files which start with rx are only for modules functioning in the receiver role.  Also, pay attention to any use case or hardware version variants.  For example, the MatekSys mR900-30 can be used as a Tx module or as a receiver.  A module with rx firmware flashed won't connect with any other module with rx firmware flashed and tx firmware won't connect with tx firmware.
 
 ## 4. Confirm MAVLink message flow from flight controller to receiver and Tx module
 
@@ -103,7 +103,7 @@ Using your ground station connected to your Tx module, verify that you can chang
 
 Use the radio calibration page of your ground station (connected either via your Tx module or directly to USB) to verify all RC controls are working as expected.
 
-- If you use ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) = "rc override" or "rc_channels setting" instead of connecting a CRSF receiver output and are testing with QGroundControl, switch to Mission Planner or APM Planner 2.0 since some versions of QGroundControl dont show data from RC\_CHANNELS\_OVERRIDE MAVLink messages on this page.
+- If you use ["Rx Snd RcChannel"](PARAMETERS.md#rx-snd-rcchannel) = "rc override" or "rc_channels setting" instead of connecting a CRSF receiver output and are testing with QGroundControl, switch to Mission Planner or APM Planner 2.0 since some versions of QGroundControl don't show data from RC\_CHANNELS\_OVERRIDE MAVLink messages on this page.
 - If the display doesn't follow stick movement and you use a CRSF connection between your receiver and your flight controller, check that you have connected the wire to the correct pins/pads on both your receiver and flight controller.
 - For CRSF, check that you have correctly [configured ArduPilot](ARDUPILOT.md#crsf-receiver) to use this input.
 - For CRSF, check that you have correctly [configured your receiver](CRSF.md#mlrs-rx-module-setup) for CRSF output with ["Rx Out Mode"](PARAMETERS.md#rx-out-mode) = "crsf".
@@ -119,7 +119,7 @@ For Mission Planner, select "Stats" in the upper right, move the windows so you 
 
 You should see very few or no messages lost.
 
-- If you see more than the occasional lost message or if parameter download takes more time than expected (8 to 60 seconds, depending on mLRS mode and ArduPilot version), check that the ["Rx Ser Link Mode"](PARAMETERS.md#rx-ser-link-mode) parameter is set to "mavlinkX" or "mavlink" and that ["Rx Snd Radiostat"](PARAMETERS.md#rx-snd-radiostat) is set to "ardu_1" or "meth_b".
+- If you see more than the occasional lost message or if parameter download takes more time than expected (8 to 60 seconds, depending on RF mode and ArduPilot version), check that the ["Rx Ser Link Mode"](PARAMETERS.md#rx-ser-link-mode) parameter is set to "mavlinkX" or "mavlink" and that ["Rx Snd Radiostat"](PARAMETERS.md#rx-snd-radiostat) is set to "ardu_1" or "meth_b".
 - Depending on your ArduPilot version, it may help to adjust your [ArduPilot setup](CRSF.md#ardupilot-setup) to use the recommended baud rate between the receiver and flight controller; also adjust your configured stream rates as appropriate for your radio mode.
 - Upgrade to a newer version of ArduPilot which may have fixed flow control issues.
 
