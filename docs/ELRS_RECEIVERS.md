@@ -38,7 +38,7 @@ Additionally, the following ELRS receiver targets are also supported:
 To determine if your receiver hardware is supported with one of the generic targets, go to [ELRS Targets](https://github.com/ExpressLRS/targets/blob/master/targets.json) and look up the layout file that your hardware uses. Alternatively, you can use this browser based tool to look up the layout of your target: [ELRS Layout File Search](https://sunjunkim.github.io/elrs_target_search/) 
 
 > [!IMPORTANT]
-> - If you receiver uses the LR1121, be sure that it was running ELRS version 3.5 or newer before installing mLRS to ensure that the LR1121 RF chipset firmware is not outdated.
+> - If your receiver uses the LR1121, be sure that it was running ELRS version 3.5 or newer before installing mLRS to ensure that the LR1121 RF chipset firmware is not outdated.
 
 ## Connections ##
 
