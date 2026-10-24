@@ -2,41 +2,40 @@
 
 ([back to main page](../README.md))
 
-The mLRS Lua script provides a convenient way to change the Tx module and receiver settings.
+The mLRS Configuration Lua script provides a convenient way to change the Tx module and receiver settings.
 
-The Lua script works on EdgeTx, OpenTx, and Ethos radios but there are different versions depending on the display and OS of your radio:
-1. If your radio runs EdgeTx/OpenTx and has a 480x272 (e.g. Jumper T16, Radiomaster TX16S) or 480x320 (e.g. Jumper T15) color screen then use the "mLRS.lua" file
+The Lua script works on EdgeTx, OpenTx, and FrSky/ETHOS radios but there are different versions depending on the display and OS of your radio:
+1. If your radio runs EdgeTx/OpenTx and has a 480x272 (e.g. Jumper T16, Radiomaster TX16S), 480x320 (e.g. Jumper T15) or 800x480 (e.g. RadioMaster TX16SMk3) color screen then use the "mLRS.lua" file
 2. If your radio runs EdgeTx/OpenTx and has a black and white screen (e.g. FrSky Taranis X9E, Radiomaster Zorro) then use the "mLRS-bw.lua" file
-3. If your radio runs Ethos (e.g. FrSky X18, X20) then use the "mlrs.lua", "main.lua", and "icon.png" files located in the 'Ethos' folder
+3. If your radio runs ETHOS (e.g. FrSky X18, X20) then use the "mlrs.lua", "main.lua", and "icon.png" files located in the 'Ethos' folder
 
-## Tx Module Setup
+> [!TIP]
+> You can download and install the Lua scripts using the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher); it is the recommended method for installation.
+
+## mLRS Tx Module Setup
 
 The Tx module must be configured for CRSF mode, by setting the parameter "Tx Ch Source" to "crsf". This is the default setting after an initial flash. If this parameter was changed, you can set it using the OLED interface (if available) or the CLI. See [CLI Commands](CLI.md) for more details.
 
 ## EdgeTx/OpenTx Setup
 
 > [!IMPORTANT]
-> The mLRS Lua script requires EdgeTx version 2.9.x or later.
+> The mLRS Lua script requires EdgeTx version 2.9.x or later. For radios with H7 processor, please use EdgeTx version 2.12.4 or later.
 
-1. In EdgeTx/OpenTx, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF or mBridge protocol with 400K baud rate.
+1. In EdgeTx/OpenTx, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF protocol.
 
-    - ***Note***: mLRS only officially supports 400K baud rate.
+    - ***Note***: mLRS supports 400K, 921K and 1.87M baud rates since v1.4.04; for older firmware versions you need to use 400K.
 
 2. The Lua script "mLRS.lua" or "mLRS-bw.lua" needs to be copied to the "SCRIPTS/TOOLS" folder of the radio's SD card. One can follow the common tutorials for how to do this.
 
-    - ***Note***: You can download the Lua scripts from the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher) when using v1.3.04 or newer (for older versions they are found [here](https://github.com/olliw42/mLRS/tree/v1.3-release/lua))
-
 You should then be able to run the Lua script by going to SYS->TOOLS on the radio, and selecting "mLRS Configurator" or "mLRS-bw".
 
-## Ethos Setup
+## FrSky/ETHOS Setup
 
-1. In Ethos, navigate to Model->RF System and configure the External RF module for Crossfire protocol with 400K baud rate.
+1. In ETHOS, navigate to Model->RF System and configure the External RF module for Crossfire protocol.
 
-    - ***Note***: mLRS only officially supports 400K baud rate.
+    - ***Note***: mLRS supports 400K, 921K and 1.87M baud rates since v1.4.04; for older firmware versions you need to use 400K.
 
 2. The files "mlrs.lua", "main.lua" and "icon.png" need to be copied to the "/scripts/mLRS/" folder of the radio's SD card.
-
-    - ***Note***: You can download the Lua scripts from the [mLRS Web Flasher](https://www.olliw.eu/mlrsflasher)
 
 You should then be able to run the Lua script by going to System->MLRS.
 
@@ -53,7 +52,7 @@ Parameters are changed by:
 
 ## Color Lua Script Notes
 
-Parameters which are not available are not displayed on the screen (i.e. the list of shown parameters can vary depending on the device). For instance, on a device which does not support a buzzer the parameter "Buzzer" will not be displayed. Parameters which cannot be changed are displayed with the current selection but are greyed out and cannot be edited. For instance, on a device which does not support diversity the parameter "Diversity" is displayed but cannot be changed.
+Parameters which are not available are not displayed on the screen (i.e., the list of shown parameters can vary depending on the device). For instance, on a device which does not support a buzzer the parameter "Buzzer" will not be displayed. Parameters which cannot be changed are displayed with the current selection but are greyed out and cannot be edited. For instance, on a device which does not support diversity the parameter "Diversity" is displayed but cannot be changed.
 
 ## BW Lua Script Notes
 
