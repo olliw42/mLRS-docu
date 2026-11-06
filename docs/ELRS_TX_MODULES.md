@@ -8,7 +8,7 @@ mLRS supports a number of external ELRS modules as well as the internal ELRS mod
 > ELRS 868/915 MHz Tx modules using the SX127x RF chipset are only compatible with SX127x (e.g. Frsky R9MX, Bayck 915M Nano Pro) and LR1121 (e.g. RM XR4) receivers using the '19 Hz 7x' mode; they are incompatible with SX126x/STM32WLE hardware providing the '19 Hz' mode (MatekSys mR900, SeeedStudio Wio-E5, EBYTE E77 MBL, E77 Easy Solder)(see [here](SX126x_SX127x_INCOMPATIBILITY.md)).
 
 > [!NOTE]
-> mLRS only supports CRSF at 400k baudrate. For external Tx modules navigate to MODEL SETTINGS->MODEL SETUP->External RF and select Mode = CRSF and Baudrate = 400k; for internal Tx modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k.
+> mLRS supports CRSF baud rates of 400k, 921k and 1.87M (since v1.4.04; for older firmware versions you need to use 400k). For external Tx modules navigate to MODEL SETTINGS->MODEL SETUP->External RF and select Mode = CRSF and Baudrate = 400k, 921k or 1.87M; for internal Tx modules navigate to SYS->HARDWARE and select Type = CRSF and Baudrate = 400k, 921k or 1.87M.
 
 ## External Tx Modules ##
 

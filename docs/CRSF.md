@@ -27,10 +27,10 @@ It is recommended for the initial setup that the Tx module and receiver are left
 
 ## Radio Setup
 
-In EdgeTx/OpenTx, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF protocol with 400K baud rate.
+In EdgeTx/OpenTx, navigate to MDL->MODEL SETUP (or SYS->HARDWARE for internal modules) and configure the RF module for CRSF protocol with 400k, 921k or 1.87M baud rate (921k or higher is preferred over 400k if possible).
 
 > [!IMPORTANT]
-> mLRS only supports 400K baud rate.
+> mLRS supports CRSF baud rates of 400k, 921k and 1.87M since v1.4.04; for older firmware versions you need to use 400k.
 
 ## mLRS Tx Module Setup
 

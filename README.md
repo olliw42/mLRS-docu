@@ -49,6 +49,7 @@ Documentation for the [mLRS project](https://github.com/olliw42/mLRS).
 - [FHSS Shaping](docs/FHSS_SHAPING.md)
 - [MavlinkX](docs/MAVLINKX.md)
 - [Configuration using MAVLink Parameters](docs/MAVLINK_PARAMETERS.md)
+- [Privacy](docs/PRIVACY.md)
 
 ### Firmware/Build Notes ###
 - [Custom Boards & Targets](docs/CUSTOM_BOARDS_TARGETS.md)
