@@ -2,7 +2,7 @@
 
 ([back to main page](../README.md))
 
-**Important: Relay functionality is experimental and currently only available in the branch 'dev-relay', pre-compiled binaries can be found in the firmware folder ([here](https://github.com/olliw42/mLRS/tree/dev-relay/firmware)).**
+**Important: Relay functionality is experimental and currently only available in the branch [dev-relay](https://github.com/olliw42/mLRS/tree/dev-relay), pre-compiled binaries can be found in the [firmware folder](https://github.com/olliw42/mLRS/tree/dev-relay/firmware).**
 
 mLRS allows for a relay setup in which a main Tx, Rx pair is used with a secondary Tx, Rx pair to offer flexibility when locating the main Tx module. The relay setup will forward the RC channels from the radio to the flight controller while also sending the link statistics and CRSF sensors of the main Tx, Rx pair back to the radio. A relay setup is beneficial by allowing you to place the main Tx module on your antenna tracker while still being able to control the vehicle from the radio.
 
